@@ -9,6 +9,8 @@ J'ai créé un repertoire `app`
 
 J'ai créé un fichier `__init__.py` qui *executes and defines what symbols the package exposes to the outside world*
 
+J'ai créé un fichier `routes.py` qui contient les routes de notre application
+
 J'ai défini le *Python script at the top-level that defines the Flask application instance* et il se nomme `sdf.py` (systemedefacturation)
 
 Pour *set the FLASK_APP environment variable* j'ai créé le fichier `.flaskenv`
