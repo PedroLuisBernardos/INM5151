@@ -6,7 +6,7 @@
 
 [Sprint 1](https://docs.google.com/document/d/1YnsLE2BXZ-MREk3PWpu65Rmxpdcfev8nZcXn98PMk6g/edit#)
 
-[Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+[Documentation Flask - on est rendus chapitre 2](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
 
 ## [Les logs du projet](History-log.md)
 ---
