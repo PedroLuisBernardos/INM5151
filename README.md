@@ -8,6 +8,9 @@
 
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
+## [Les logs du projet](History-log.md)
+---
+
 ## Comment utiliser le programme
 ---
 Se connecter à l'environnement virtuel avec la commande:
