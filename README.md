@@ -14,3 +14,7 @@ Se connecter à l'environnement virtuel avec la commande:
 ```bash
 $ source venv/bin/activate
 ```
+Rouler l'application
+```bash
+(venv) $ flask run
+```
