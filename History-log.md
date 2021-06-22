@@ -6,8 +6,11 @@ On devrait écrire ici toutes nos manipulations pour que les autres soient capab
 ### 2. Setup des premiers packages et routes
 ---
 J'ai créé un repertoire `app`
+
 J'ai créé un fichier `__init__.py` qui *executes and defines what symbols the package exposes to the outside world*
+
 J'ai défini le *Python script at the top-level that defines the Flask application instance* et il se nomme `sdf.py` (systemedefacturation)
+
 Pour *set the FLASK_APP environment variable* j'ai créé le fichier `.flaskenv`
 
 ### 1. Installation de l'environnement virtuel
