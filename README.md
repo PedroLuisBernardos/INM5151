@@ -13,10 +13,17 @@
 
 ## Comment utiliser le programme
 ---
+Clôner ce dépot et accéder au repertoire principal
+```bash
+$ git clone https://github.com/ta-truong/inm5151-ete2021-projet
+$ cd inm5151-ete2021-projet
+```
+
 Se connecter à l'environnement virtuel avec la commande:
 ```bash
 $ source venv/bin/activate
 ```
+
 Rouler l'application
 ```bash
 (venv) $ flask run
