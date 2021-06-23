@@ -3,6 +3,8 @@
 On devrait écrire ici toutes nos manipulations pour que les autres soient capables de suivre !
 À lister en ordre décroissant pour faciliter la recherche.
 
+### 6. Ajout de Bootstrap et modification de `base.html`
+
 ### 5. Ajout du formulaire de connexion (la validation n'est pas traitée)
 ---
 J'ai ajouté un formulaire `forms.py` qui défini un *user login form*
