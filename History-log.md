@@ -54,7 +54,8 @@ J'ai ajouté la page `login.html`.
 
 ### 4. Ajout d'une SECRET_KEY
 ---
-J'ai créé un fichier de configuration, `config.py`, qui contient une `SECRET_KEY`. Celle-ci sert de *cryptographic key, useful to generate signatures or tokens. The Flask-WTF extension uses it to protect web forms against a nasty attack called Cross-Site Request Forgery or CSRF*
+J'ai créé un fichier de configuration, `config.py`, qui contient une `SECRET_KEY`. Celle-ci sert de *cryptographic key, useful to generate signatures or tokens. The Flask-WTF extension uses it to protect web forms against a nasty attack called Cross-Site Request Forgery or CSRF*.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7e313bca354ba3bda5ad2f701d52d2087318ae18#diff-117426151e93a626f8b46bfdb3a95b3f4a62e5f4dd6e65975a7c50759bf04482)
 
 J'ai linké le fichier `config.py` dans `__init__.py`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7e313bca354ba3bda5ad2f701d52d2087318ae18#diff-9cec7b11237bc29d77a439e81c9b7acfac003d8e8855731eb6bc130b5a8ce602)
