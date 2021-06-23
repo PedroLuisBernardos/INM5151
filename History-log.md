@@ -9,7 +9,7 @@
 ### 9. Modification du CSS et création d'une page de bienvenue
 ---
 Les fichiers CSS sont dans un répertoire `static`. J'ai dû aussi modifier les fichiers `__init__.py` et `base.html` pour dire où est ce répertoire.
-> PAR CONTRE MOI DANS MON ORDI LE CSS NE SEMBLE PAS MARCHER. SI VOUS MODIFIEZ `style.css` CA MARCHE PAS et jsp pourquoi :(
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/0a0bb300a4983c34ce19e99c72a5f4be147ea628)
 
 J'ai créé une page de bienvenue `wellcome.html` qui accueille les invités (non connectés). Si un invité essaie d'aller à une page `@login_required`, il sera automatiquement redirigé à cette page-là.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/1b74e07b04e3eb5b84a7f0fad799fbfdbe522347)
