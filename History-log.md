@@ -6,6 +6,49 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
+### 8. Ajout des User Logins/Logout/Register
+---
+J'ai modifié le fichier `models.py` en ajoutant des fonctions de génération et de vérification du mot de passe. J'ai aussi ajouté l'attribut `UserMixin` aux `User` pour avoir accès à des méthodes plus avancées telles-que: *is_authenticated* ou *is_active*. J'ai ajouté le module `@login.user_loader` qui permet de suivre quel utilisateur est actuellement connecté (si j'ai bien compris la partie [User Loader Function](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins))
+[lien]()
+
+J'ai modifié le fichier `__init__.py` pour initialiser l'instance de Flask-Login. J'ai aussi ajouté une option: si l'utilisateur n'est pas connecté, le rediriger vers la page `/login`.
+[lien]()
+
+J'ai modifié le fichier `routes.py` pour pouvoir vérifier si l'user/mdp sont les bons. Si oui, les logger à l'application grâce à Flask-Login. J'ai aussi ajouté une route `/logout`. J'ai ajouté le champ `@login_required` à aux pages qui en avaient besoin. Une route vers `register.html` a été ajoutée.
+[lien]()
+
+J'ai ajouté dans la nav-bar de `base.html` la route `/logout` avec la condition *si l'utilisateur actuel est anonyme, afficher Login, sinon, afficher Logout*.
+[lien]()
+
+J'ai ajouté un formulaire d'inscription dans le fichier `forms.py`.
+[lien]()
+
+Une nouvelle page a été ajoutée: `register.html`.
+[lien]()
+
+Un lien vers `register.html` a été ajouté dans `login.html`.
+[lien]()
+
+J'ai installé:
+```bash
+(venv) $ pip install flask-login
+(venv) $ pip install email-validator
+```
+
+#### Pour supprimer les utilisateurs de la bd:
+```bash
+(venv) $ flask shell
+>>> users = User.query.all()
+>>> for u in users:
+...     db.session.delete(u)
+...
+>>> factures = Facture.query.all()
+>>> for f in factures:
+...     db.session.delete(f)
+...
+>>> db.session.commit()
+```
+
 ### 7. Ajout de la Database
 ---
 J'ai modifié le fichier `config.py`. [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/733837a6abbeb6594f8cca5808b33e237abcd197#diff-117426151e93a626f8b46bfdb3a95b3f4a62e5f4dd6e65975a7c50759bf04482)

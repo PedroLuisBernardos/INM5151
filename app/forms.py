@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from app.models import User
 
 # Defini un formulaire de connexion
 class LoginForm(FlaskForm):
@@ -8,3 +9,25 @@ class LoginForm(FlaskForm):
     password = PasswordField('Mot de passe', validators=[DataRequired(message='Veuillez entrer un mot de passe valide')])
     remember_me = BooleanField('Se souvenir de moi')
     submit = SubmitField('Connexion')
+
+# Defini un formulaire de creation de compte
+class RegistrationForm(FlaskForm):
+    username = StringField('Utilisateur', validators=[DataRequired(message='Veuillez entrer un utilisateur valide')])
+    # le champ Email() verifie la bonne structure d'une adresse courriel
+    email = StringField('Email', validators=[DataRequired(message='Veuillez entrer une adresse courriel valide'), Email(message='Veuillez entrer une adresse courriel valide')])
+    password = PasswordField('Mot de passe', validators=[DataRequired(message='Veuillez entrer un mot de passe valide')])
+    password2 = PasswordField(
+        'Entrez à nouveau votre mot de passe', validators=[DataRequired(message='Veuillez entrer à nouveau votre mot de passe'), EqualTo('password')])
+    submit = SubmitField('Créer un compte')
+
+    # Si le nom d'utilisateur existe deja
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Le nom d\'utilsateur existe déjà.')
+
+    # Si le email existe deja
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('L\'adresse courriel existe déjà.')

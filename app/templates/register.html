@@ -1,9 +1,8 @@
-  
 {% extends "base.html" %}
 
 {% block content %}
     <!-- Form pour se connecter a l'application -->
-    <h1>Se connecter</h1>
+    <h1>S'inscrire</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }} <!-- ceci defini un token grace a la SECRET_KEY -->
         <!-- Utilisateur -->
@@ -11,6 +10,14 @@
             {{ form.username.label }}<br>
             {{ form.username(size=32) }}<br>
             {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <!-- Adresse courriel -->
+        <div class="form-group">
+            {{ form.email.label }}<br>
+            {{ form.email(size=64) }}<br>
+            {% for error in form.email.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </div>
@@ -22,13 +29,16 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </div>
-        <!-- Se souvenir de moi -->
-        <div class="form-check">
-            {{ form.remember_me() }} {{ form.remember_me.label }}
+        <div class="form-group">
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
         </div>
         <!-- Soumettre -->
         {{ form.submit(class_="btn btn-primary") }}
         <!-- Pour s'inscrire -->
-        <p>Nouvel utilisateur ? <a href="{{ url_for('register') }}">Click pour t'inscrire !</a></p>
+        <div>Nouvel utilisateur ? <a href="{{ url_for('register') }}">Click pour t'inscrire !</a></div>
     </form>
 {% endblock %}
