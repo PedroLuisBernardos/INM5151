@@ -15,4 +15,4 @@ login.login_view = 'wellcome'
 login.login_message = "Vous devez vous connecter pour accéder à cette page !"
 app.static_folder = 'static'
 
-from app import routes, models
+from app import routes, models, errors

@@ -33,12 +33,18 @@ Rouler l'application
 
 Ouvrir un navigateur et aller à l'adresse: http://127.0.0.1:5000/
 
-Un utilisateur de base est déjà présent:
-> user: admin
+Deux utilisateurs de base sont déjà présents:
+```
+user: admin
+email: admin@admin.com
+pass: admin
+```
 
-> email: admin@admin.com
-
-> pass: admin
+```
+user: admin2
+email: admin2@admin.com
+pass: admin2
+```
 
 ## Explication des répertoires et des fichiers
 ---

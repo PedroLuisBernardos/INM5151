@@ -6,6 +6,14 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
+### 11. Gestion des erreurs
+---
+J'ai ajouté un module d'erreurs dans le fichier `__init__.py`.
+[lien]()
+
+J'ai ajouté les fichiers `errors.py`, `404.html` et `500.html`. Pour tester la page 404, visiter une page inexistante. Pour tester la page 500, une des façons est de changer le nom de l'utilisateur `admin` pour un autre utilisateur existant: `admin2`.
+[lien]()
+
 ### 10. Ajout du profil et de l'avatar
 ---
 
