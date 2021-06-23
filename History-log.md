@@ -42,13 +42,18 @@
 ### 12. [Pagination](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 ---
 
-### 11. Gestion des erreurs (non terminée. On est rendus à [Sending Errors by Email](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling))
+### 11. Gestion des erreurs
 ---
 J'ai ajouté un module d'erreurs dans le fichier `__init__.py`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/75a3b3d6bba9326da7a82efbfa61d92564343bf4#diff-9cec7b11237bc29d77a439e81c9b7acfac003d8e8855731eb6bc130b5a8ce602)
 
 J'ai ajouté les fichiers `errors.py`, `404.html` et `500.html`. Pour tester la page 404, visiter une page inexistante. Pour tester la page 500, une des façons est de changer le nom de l'utilisateur `admin` pour un autre utilisateur existant: `admin2`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/75a3b3d6bba9326da7a82efbfa61d92564343bf4)
+
+Je n'ai pas fait la partie [Sending Errors by Email](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling).
+
+J'ai géré le bug *si on change le nom d'utilisateur pour un utilisateur qui existe déjà: erreur 500* en modifiant les fichiers `forms.py` et `routes.py`.
+[lien]()
 
 ### 10. Ajout du profil et de l'avatar
 ---

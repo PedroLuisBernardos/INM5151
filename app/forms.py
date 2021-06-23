@@ -24,16 +24,28 @@ class RegistrationForm(FlaskForm):
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
-            raise ValidationError('Le nom d\'utilisateur existe déjà.')
+            raise ValidationError('Ce nom d\'utilisateur a déjà été utilisé.')
 
     # Si le email existe déjà
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            raise ValidationError('L\'adresse courriel existe déjà.')
+            raise ValidationError('Cette adresse courriel a déjà été utilisée.')
 
 # Modifier le profil de l'utilisateur
 class EditProfileForm(FlaskForm):
     username = StringField('Utilisateur', validators=[DataRequired(message="Veuillez saisir un nom d'utilisateur")])
     about_me = TextAreaField('À propos de moi', validators=[Length(min=0, max=140)])
     submit = SubmitField('Soumettre')
+
+    # @Override du constructeur. Il a maintenant comme argument le current_user.username
+    def __init__(self, original_username, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.original_username = original_username
+
+    # Valider si l'utilisateur existe déjà
+    def validate_username(self, username):
+        if username.data != self.original_username:
+            user = User.query.filter_by(username=self.username.data).first()
+            if user is not None:
+                raise ValidationError('Ce nom d\'utilisateur a déjà été utilisé.')

@@ -6,7 +6,7 @@
 
 [Sprint 1](https://docs.google.com/document/d/1YnsLE2BXZ-MREk3PWpu65Rmxpdcfev8nZcXn98PMk6g/edit#)
 
-[Documentation Flask - on est rendus chapitre 7 - Error handling](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling)
+[Documentation Flask - on est rendus chapitre 8 - Followers (je ne sais pas si c'est utile, mais il faudrait voir s'il y a de l'information intéressante)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers)
 
 [PowerPoint présentation du projet](https://docs.google.com/presentation/d/1uslppIrlWSKgbWBgeMfVUH1LqGnuOxLnIFBX-3rYHqU/edit)
 
