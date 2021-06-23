@@ -42,7 +42,8 @@ app/                    --> répertoire qui héberge l'application
             style.css   --> CSS de l'application (en plus de Bootstrap)
     templates/          --> répertoire qui contient les modèles des pages HTML
         base.html       --> HTML de base
-        index.html      --> page d'accueil
+        index.html      --> page d'accueil des utilisateurs
+        wellcome.html   --> page d'accueil des invités
         login.html      --> page de login
         register.html   --> page d'inscription
     __init__.py         --> exécute et définis les symboles que les paquets exposent à l'extérieur de l'application.

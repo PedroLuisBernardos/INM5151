@@ -8,15 +8,22 @@ from flask_login import login_required
 from app import db
 from app.forms import RegistrationForm
 
-@app.route('/')
 @app.route('/index')
 @login_required
 def index():
     return render_template('index.html', title='Accueil')
 
+@app.route('/')
+@app.route('/wellcome')
+def wellcome():
+    # Si l'utilisateur est actuellement connecté, ne pas aller à la page /wellcome
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    return render_template('wellcome.html', title='Bienvenue')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    # Si l'utilisateur est actuellement connecté, ne pas aller a la page /login
+    # Si l'utilisateur est actuellement connecté, ne pas aller à la page /login
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = LoginForm()
