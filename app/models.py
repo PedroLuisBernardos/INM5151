@@ -1,8 +1,8 @@
 from datetime import datetime
-from app import db
-from werkzeug.security import generate_password_hash, check_password_hash
+from hashlib import md5
+from app import db, login
 from flask_login import UserMixin
-from app import login
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # Utilisateurs
 class User(UserMixin, db.Model):
@@ -11,10 +11,12 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Facture', backref='author', lazy='dynamic')
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Affichage des utilisateurs
     def __repr__(self):
-        return '<Utilisateur: {}>'.format(self.username)
+        return 'Utilisateur: {}'.format(self.username)
 
     # Set un mot de passe et le converti en hash_code (pour plus de sécurité)
     def set_password(self, password):
@@ -23,6 +25,11 @@ class User(UserMixin, db.Model):
     # Vérifie si le mot de passe est le bon
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    # Gestion de l'avatar
+    def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
 
 @login.user_loader
@@ -38,4 +45,4 @@ class Facture(db.Model):
 
     # Affichage des factures
     def __repr__(self):
-        return '<Facture: {} due pour le {}>'.format(self.body,format(self.timestamp))
+        return 'Facture: {} due pour le {}'.format(self.body,format(self.timestamp))

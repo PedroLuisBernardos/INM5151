@@ -6,7 +6,7 @@
 
 [Sprint 1](https://docs.google.com/document/d/1YnsLE2BXZ-MREk3PWpu65Rmxpdcfev8nZcXn98PMk6g/edit#)
 
-[Documentation Flask - on est rendus chapitre 6 - Profil page and Avatars](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars)
+[Documentation Flask - on est rendus chapitre 7 - Error handling](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling)
 
 [PowerPoint présentation du projet](https://docs.google.com/presentation/d/1uslppIrlWSKgbWBgeMfVUH1LqGnuOxLnIFBX-3rYHqU/edit)
 
@@ -33,30 +33,42 @@ Rouler l'application
 
 Ouvrir un navigateur et aller à l'adresse: http://127.0.0.1:5000/
 
+Un utilisateur de base est déjà présent:
+> user: admin
+
+> email: admin@admin.com
+
+> pass: admin
+
 ## Explication des répertoires et des fichiers
 ---
 ```
-app/                    --> répertoire qui héberge l'application
-    static/             --> répertoire qui contient les fichiers statiques de l'application
-        css/            --> répertoire qui contient le CSS de l'application
-            style.css   --> CSS de l'application (en plus de Bootstrap)
-    templates/          --> répertoire qui contient les modèles des pages HTML
-        base.html       --> HTML de base
-        index.html      --> page d'accueil des utilisateurs
-        wellcome.html   --> page d'accueil des invités
-        login.html      --> page de login
-        register.html   --> page d'inscription
-    __init__.py         --> exécute et définis les symboles que les paquets exposent à l'extérieur de l'application.
-    forms.py            --> définis les formulaires (connexion, inscription ...)
-    models.py           --> définis les modèles de la base de données (user, facture ...)
-    routes.py           --> définis les routes vers les différentes pages (/, /index, /login, ...)
+app/                        --> répertoire qui héberge l'application
+    static/                 --> répertoire qui contient les fichiers statiques de l'application
+        css/                --> répertoire qui contient le CSS de l'application
+            style.css       --> CSS de l'application (en plus de Bootstrap)
+        js/                 --> répertoire qui contient le JS de l'application
+            script.js       --> JS de l'application (en plus de Bootstrap)
+    templates/              --> répertoire qui contient les modèles des pages HTML
+        base.html           --> HTML de base
+        index.html          --> page d'accueil des utilisateurs
+        wellcome.html       --> page d'accueil des invités
+        login.html          --> page de login
+        register.html       --> page d'inscription
+        user.html           --> page du profil de l'utilisateur
+        edit_profile.html   --> page de modification du profil de l'utilisateur
+        _factures.html      --> page d'affichage des factures (le modèle de base)
+    __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application.
+    forms.py                --> définis les formulaires (connexion, inscription ...)
+    models.py               --> définis les modèles de la base de données (user, facture ...)
+    routes.py               --> définis les routes vers les différentes pages (/, /index, /login, ...)
 
-migrations/             --> répertoire qui contient les modifications faites dans la bd
-venv/                   --> répertoire contenant l'environnement virtuel
+migrations/                 --> répertoire qui contient les modifications faites dans la bd
+venv/                       --> répertoire contenant l'environnement virtuel
 
-.flaskenv               --> permet de paramétrer la variable d'environnement FLASK_APP automatiquement
-app.db                  --> base de données
-config.py               --> contient les variables de configuration, voir les [logs](History-log.md) pour plus d'information
-sdf.py                  --> défini l'instance de l'application Flask
+.flaskenv                   --> permet de paramétrer la variable d'environnement FLASK_APP automatiquement
+app.db                      --> base de données
+config.py                   --> contient les variables de configuration, voir les [logs](History-log.md) pour plus d'information
+sdf.py                      --> défini l'instance de l'application Flask
 .gitignore
 ```

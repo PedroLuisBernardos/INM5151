@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
 
 # Défini un formulaire de connexion
@@ -31,3 +31,9 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('L\'adresse courriel existe déjà.')
+
+# Modifier le profil de l'utilisateur
+class EditProfileForm(FlaskForm):
+    username = StringField('Utilisateur', validators=[DataRequired(message="Veuillez saisir un nom d'utilisateur")])
+    about_me = TextAreaField('À propos de moi', validators=[Length(min=0, max=140)])
+    submit = SubmitField('Soumettre')

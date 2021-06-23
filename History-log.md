@@ -6,6 +6,39 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
+### 10. Ajout du profil et de l'avatar
+---
+
+J'ai ajouté une route dans le fichier `routes.py` vers `/user/<username>`, où *<username>* est le nom d'utilisateur de l'utilisateur courant.
+[lien]()
+
+J'ai créé la page `user.html` qui est la page du profil de l'utilisateur.
+
+J'ai créé une page `_factures.html` que j'appelle dans `user.html`. Le but était de séparer le code. 
+[lien]()
+
+J'ai modifié la barre de navigation de `base.html` pour ajouter le Profil et le Logout sous forme de *dropdown*.
+[lien]()
+
+J'ai ajouté un modèle d'avatar dans `modules.py`. J'ai aussi ajouté les sections `about_me` et `last_seen`. J'ai ensuite migré et modifié la base de données:
+```bash
+(venv) $ flask db migrate -m "ajout de about_me et last_seen"
+(venv) $ flask db upgrade
+```
+[lien]()
+
+J'ai ajouté une section `last_seen` qui dit quand l'utilisateur s'est connecté pour la dernière fois. Cette modification a été faite dans `routes.py`: *The @before_request decorator from Flask register the decorated function to be executed right before the view function. This is extremely useful because now I can insert code that I want to execute before any view function in the application*.
+[lien]()
+
+J'ai ajouté un formulaire pour modifier le profil dans `forms.py`.
+[lien]()
+
+J'ai créé une page `edit_profile.html` pour éditer le profil de l'utilisateur courant.
+[lien]()
+
+J'ai ajouté la route vers la page `edit_profile.html`.
+[lien]()
+
 ### 9. Modification du CSS et création d'une page de bienvenue
 ---
 Les fichiers CSS sont dans un répertoire `static`. J'ai dû aussi modifier les fichiers `__init__.py` et `base.html` pour dire où est ce répertoire.
