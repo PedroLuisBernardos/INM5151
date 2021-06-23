@@ -21,12 +21,12 @@ J'ai créé une page `_factures.html` que j'appelle dans `user.html`. Le but ét
 J'ai modifié la barre de navigation de `base.html` pour ajouter le Profil et le Logout sous forme de *dropdown*.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-9ba5b84a377a6a734932f7f6a3003e6f8bae1b02c34cf4729cfc95a5fd6179c8)
 
-J'ai ajouté un modèle d'avatar dans `models.py`. J'ai aussi ajouté les sections `about_me` et `last_seen`. J'ai ensuite migré et modifié la base de données:
+J'ai ajouté un modèle d'avatar dans `models.py`. J'ai aussi ajouté les sections `about_me` et `last_seen`. J'ai ensuite migré et modifié la base de données.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
 ```bash
 (venv) $ flask db migrate -m "ajout de about_me et last_seen"
 (venv) $ flask db upgrade
 ```
-[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
 
 J'ai ajouté une section `last_seen` qui dit quand l'utilisateur s'est connecté pour la dernière fois. Cette modification a été faite dans `routes.py`: *The @before_request decorator from Flask register the decorated function to be executed right before the view function. This is extremely useful because now I can insert code that I want to execute before any view function in the application*.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-f67826701212aab477be0634a23fdcd7ffdfe748b8ce35eb27b8f690d334c732)
