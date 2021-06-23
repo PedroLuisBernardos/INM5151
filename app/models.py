@@ -16,11 +16,11 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return '<Utilisateur: {}>'.format(self.username)
 
-    # Set un mot de passe et le converti en hash_code (pour plus de securite)
+    # Set un mot de passe et le converti en hash_code (pour plus de sécurité)
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
-    # Verifie si le mot de passe est le bon
+    # Vérifie si le mot de passe est le bon
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 

@@ -8,7 +8,7 @@
 
 ### 8. Ajout des User Logins/Logout/Register
 ---
-J'ai modifié le fichier `models.py` en ajoutant des fonctions de génération et de vérification du mot de passe. J'ai aussi ajouté l'attribut `UserMixin` aux `User` pour avoir accès à des méthodes plus avancées telles-que: *is_authenticated* ou *is_active*. J'ai ajouté le module `@login.user_loader` qui permet de suivre quel utilisateur est actuellement connecté (si j'ai bien compris la partie [User Loader Function](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins))
+J'ai modifié le fichier `models.py` en ajoutant des fonctions de génération et de vérification du mot de passe. J'ai aussi ajouté l'attribut `UserMixin` aux `User` pour avoir accès à des méthodes plus avancées telles que: *is_authenticated* ou *is_active*. J'ai ajouté le module `@login.user_loader` qui permet de suivre quel utilisateur est actuellement connecté (si j'ai bien compris la partie [User Loader Function](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins))
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
 
 J'ai modifié le fichier `__init__.py` pour initialiser l'instance de Flask-Login. J'ai aussi ajouté une option: si l'utilisateur n'est pas connecté, le rediriger vers la page `/login`.
@@ -60,7 +60,7 @@ J'ai modifié le fichier `__init__.py`. [lien](https://github.com/ta-truong/inm5
   * Ajout d'un objet `Migrate`: *represents the migration engine*
   * Ajout du module `models`: *This module will define the structure of the database.*
 
-J'ai ajouté le fichier `models.py` qui défini les **utilisateurs** et les **factures** avec leur relations.
+J'ai ajouté le fichier `models.py` qui définit les **utilisateurs** et les **factures** avec leurs relations.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/733837a6abbeb6594f8cca5808b33e237abcd197#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
 
 J'ai créé le *migration repository (which is a directory in which it stores its migration scripts. Each time a change is made to the database schema, a migration script is added to the repository with the details of the change)* avec la commande:
@@ -78,7 +78,7 @@ Pour modifier la base de données (ou pour la créer (le fichier `app.db`) vu qu
 (venv) $ flask db upgrade
 ```
 
-> Pour mieux comprendre aller voir la section [Database Upgrade and Downgrade Workflow](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
+> Pour mieux comprendre, allez voir la section [Database Upgrade and Downgrade Workflow](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
 > La base de données suit maintenant les `models.py` et est prête à être utilisée.
 
 J'ai modifié le fichier `sdf.py` pour qu'on puisse utiliser le `(venv) $ flask shell`. Ceci nous évitera de devoir `import` tous les trucs à *import* lors de nos tests.
@@ -107,7 +107,7 @@ J'ai linké le fichier `config.py` dans `__init__.py`.
 
 ### 3. Ajout de templates
 ---
-J'ai ajouté un repertoire `templates`, dans lequel j'ai mis un template de base: `base.html` et la page `index.html`.
+J'ai ajouté un répertoire `templates`, dans lequel j'ai mis un template de base: `base.html` et la page `index.html`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7e313bca354ba3bda5ad2f701d52d2087318ae18#diff-a18b3b5de30df1bcf7531723d24c214d69b2acff3cd88540e1ff186409879b0a)
 
 J'ai complexifié un peu le fichier `routes.py` en ajoutant un utilisateur (hardcodé) et une nouvelle route `/index`.
@@ -115,7 +115,7 @@ J'ai complexifié un peu le fichier `routes.py` en ajoutant un utilisateur (hard
 
 ### 2. Setup des premiers packages et routes
 ---
-J'ai créé un repertoire `app`
+J'ai créé un répertoire `app`
 
 J'ai créé un fichier `__init__.py` qui *executes and defines what symbols the package exposes to the outside world*.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/4e74287b7a72e8af79cd3fde4cdafad2dd1c40e7#diff-9cec7b11237bc29d77a439e81c9b7acfac003d8e8855731eb6bc130b5a8ce602)

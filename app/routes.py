@@ -16,11 +16,11 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    # Si l'utilisateur est actuellement connecte, ne pas aller a la page /login
+    # Si l'utilisateur est actuellement connecté, ne pas aller a la page /login
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = LoginForm()
-    # Si le form a ete submit
+    # Si le form a été submit
     if form.validate_on_submit():
         # filter.by va lire la base de données. S'il y a un match ou pas, il va mettre cette valeur dans la variable user
         user = User.query.filter_by(username=form.username.data).first()

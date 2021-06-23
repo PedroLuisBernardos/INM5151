@@ -5,7 +5,7 @@
     <!-- Form pour se connecter a l'application -->
     <h1>Se connecter</h1>
     <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }} <!-- ceci defini un token grace a la SECRET_KEY -->
+        {{ form.hidden_tag() }} <!-- ceci défini un token grâce a la SECRET_KEY -->
         <!-- Utilisateur -->
         <div class="form-group">
             {{ form.username.label }}<br>
@@ -29,6 +29,6 @@
         <!-- Soumettre -->
         {{ form.submit(class_="btn btn-primary") }}
         <!-- Pour s'inscrire -->
-        <p>Nouvel utilisateur ? <a href="{{ url_for('register') }}">Inscris toi !</a></p>
+        <p>Nouvel utilisateur ? <a href="{{ url_for('register') }}">Inscris-toi !</a></p>
     </form>
 {% endblock %}
