@@ -10,34 +10,35 @@
 ---
 
 J'ai ajouté une route dans le fichier `routes.py` vers `/user/<username>`, où *<username>* est le nom d'utilisateur de l'utilisateur courant.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-f67826701212aab477be0634a23fdcd7ffdfe748b8ce35eb27b8f690d334c732)
 
 J'ai créé la page `user.html` qui est la page du profil de l'utilisateur.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-683c3160e4f8458e32177dbd2f8b46ccaa89779ce95a700e6d70ce9338f1fd45)
 
 J'ai créé une page `_factures.html` que j'appelle dans `user.html`. Le but était de séparer le code. 
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-a6d6b64db10f6d2749274e6d7a97987d54edcc06494a59b6a219549cd8409568)
 
 J'ai modifié la barre de navigation de `base.html` pour ajouter le Profil et le Logout sous forme de *dropdown*.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-9ba5b84a377a6a734932f7f6a3003e6f8bae1b02c34cf4729cfc95a5fd6179c8)
 
-J'ai ajouté un modèle d'avatar dans `modules.py`. J'ai aussi ajouté les sections `about_me` et `last_seen`. J'ai ensuite migré et modifié la base de données:
+J'ai ajouté un modèle d'avatar dans `models.py`. J'ai aussi ajouté les sections `about_me` et `last_seen`. J'ai ensuite migré et modifié la base de données:
 ```bash
 (venv) $ flask db migrate -m "ajout de about_me et last_seen"
 (venv) $ flask db upgrade
 ```
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
 
 J'ai ajouté une section `last_seen` qui dit quand l'utilisateur s'est connecté pour la dernière fois. Cette modification a été faite dans `routes.py`: *The @before_request decorator from Flask register the decorated function to be executed right before the view function. This is extremely useful because now I can insert code that I want to execute before any view function in the application*.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-f67826701212aab477be0634a23fdcd7ffdfe748b8ce35eb27b8f690d334c732)
 
 J'ai ajouté un formulaire pour modifier le profil dans `forms.py`.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-11d6970831623c0904e31518fb0efd2e718dab0c3b4f00a6a1bd81fb2c707156)
 
 J'ai créé une page `edit_profile.html` pour éditer le profil de l'utilisateur courant.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-deb01cb30dcc45affa7777fdee6284aced3d58c1aca021cbadcba0b3208f52f9)
 
-J'ai ajouté la route vers la page `edit_profile.html`.
-[lien]()
+J'ai ajouté la route vers la page `edit_profile.html` dans le fichier `routes.py`
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-f67826701212aab477be0634a23fdcd7ffdfe748b8ce35eb27b8f690d334c732)
 
 ### 9. Modification du CSS et création d'une page de bienvenue
 ---
