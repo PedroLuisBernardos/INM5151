@@ -9,7 +9,6 @@ def index():
     user = {'username': 'toi'}
     return render_template('index.html', title='Accueil', user=user)
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
