@@ -31,6 +31,8 @@ Rouler l'application
 (venv) $ flask run
 ```
 
+Ouvrir un navigateur et aller à l'adresse: `http://127.0.0.1:5000/`
+
 ## Explication des repertoires et des fichiers
 ---
 ```
