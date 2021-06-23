@@ -42,7 +42,7 @@
 ### 12. [Pagination](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 ---
 
-### 11. Gestion des erreurs
+### 11. Gestion des erreurs (il y a juste 404 et 500 qui ont été gérés)
 ---
 J'ai ajouté un module d'erreurs dans le fichier `__init__.py`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/75a3b3d6bba9326da7a82efbfa61d92564343bf4#diff-9cec7b11237bc29d77a439e81c9b7acfac003d8e8855731eb6bc130b5a8ce602)
