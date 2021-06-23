@@ -6,7 +6,18 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
-### 18. LE TUTORIEL EST TERMINÉ, MAINTENANT FAUDRA GOOGLER POUR AMÉLIORER L'APPLICATION :P
+### . LE TUTORIEL EST TERMINÉ, MAINTENANT FAUDRA GOOGLER POUR AMÉLIORER L'APPLICATION :P
+---
+
+### 22. [Deploiement du projet (linux/heroku/docker)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux)
+
+### 21. [Pour aller plus loin](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis)
+
+### 20. [Background jobs](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxii-background-jobs)
+
+### 19. [Gestion de notifications](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications)
+
+### 18. [Bonus: javascript](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic)
 ---
 
 ### 17. [Gestion de la recherche](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
