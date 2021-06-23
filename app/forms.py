@@ -38,7 +38,7 @@ class EditProfileForm(FlaskForm):
     about_me = TextAreaField('À propos de moi', validators=[Length(min=0, max=140)])
     submit = SubmitField('Soumettre')
 
-    # @Override du constructeur. Il a maintenant comme argument le current_user.username
+    # @Override du constructeur. Il a maintenant comme argument le original_username=current_user.username
     def __init__(self, original_username, *args, **kwargs):
         super(EditProfileForm, self).__init__(*args, **kwargs)
         self.original_username = original_username
