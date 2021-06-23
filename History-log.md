@@ -6,6 +6,27 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
+### 18. LE TUTORIEL EST TERMINÉ, MAINTENANT FAUDRA GOOGLER POUR AMÉLIORER L'APPLICATION :P
+---
+
+### 17. [Gestion de la `recherche`](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
+---
+
+### 16. [Amélioration de la structure de l'application](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
+---
+
+### 15. [Gestion de la langue](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n)
+---
+
+### 14. [Gestion des dates et du temps](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times)
+---
+
+### 13. [Support par email](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support)
+---
+
+### 12. [Pagination](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
+---
+
 ### 11. Gestion des erreurs (non terminée. On est rendus à [Sending Errors by Email](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling))
 ---
 J'ai ajouté un module d'erreurs dans le fichier `__init__.py`.
