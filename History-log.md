@@ -2,6 +2,8 @@
 ---
 > On devrait écrire ici toutes nos manipulations pour que les autres soient capables de suivre !
 
+> J'ai ajouté des liens vers les commits respectifs pour que ce soit facile de voir l'évolution du projet.
+
 À lister en ordre **décroissant** pour faciliter la recherche.
 
 ### 7. Ajout de la Database
