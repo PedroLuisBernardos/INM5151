@@ -17,7 +17,7 @@ class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(message='Veuillez entrer une adresse courriel valide'), Email(message='Veuillez entrer une adresse courriel valide')])
     password = PasswordField('Mot de passe', validators=[DataRequired(message='Veuillez entrer un mot de passe valide')])
     password2 = PasswordField(
-        'Entrez à nouveau votre mot de passe', validators=[DataRequired(message='Veuillez entrer à nouveau votre mot de passe'), EqualTo('password')])
+        'Entrez à nouveau votre mot de passe', validators=[DataRequired(message='Veuillez entrer à nouveau votre mot de passe'), EqualTo('password', message='Les mots de passe ne sont pas identiques')])
     submit = SubmitField('Créer un compte')
 
     # Si le nom d'utilisateur existe deja

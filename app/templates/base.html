@@ -45,7 +45,7 @@
         </ul>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Exemple: loyer" aria-label="Search" />
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Rechercher</button>
         </form>
       </div>
     </nav>
@@ -54,11 +54,11 @@
     <!-- Affichage des messages Flash precises dans Routes -->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul>
         {% for message in messages %}
-        <li>{{ message }}</li>
+        <div class="alert alert-warning">
+          <strong>Attention !</strong> {{ message }}
+        </div>
         {% endfor %}
-    </ul>
     {% endif %}
     {% endwith %}
 

@@ -11,5 +11,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 # Si l'utilisateur n'est pas connecte, le rediriger vers /login
 login.login_view = 'login'
+# Modification du message de demande de connexion
+login.login_message = "Vous devez vous connecter pour accéder à cette page !"
 
 from app import routes, models
