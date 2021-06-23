@@ -5,6 +5,8 @@
 ---
 On est rendus [ici (chapitre 8 - Followers)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers). Je ne sais pas si c'est utile, mais il faudrait voir s'il y a de l'information intéressante.
 
+J'ai mis très brievement ce qu'on doit faire dans les [logs](History-log.md) du projet.
+
 ## Documents
 ---
 [OpsCon](https://docs.google.com/document/d/1gFm7OCDQM8OezZi54VzVFRqCNnuyvWAwm8ISOs8H8CQ/edit#)
@@ -15,7 +17,7 @@ On est rendus [ici (chapitre 8 - Followers)](https://blog.miguelgrinberg.com/pos
 
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
-## [Les logs du projet](History-log.md)
+## Les [logs](History-log.md) du projet
 ---
 
 ## Comment utiliser l'application
