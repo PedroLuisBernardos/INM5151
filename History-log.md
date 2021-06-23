@@ -6,6 +6,11 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
+### 9. Modification du CSS
+---
+Les fichiers CSS sont dans un répertoire `static`. J'ai dû aussi modifier les fichiers `__init__.py` et `base.html` pour dire où est ce répertoire.
+> PAR CONTRE MOI DANS MON ORDI LE CSS NE SEMBLE PAS MARCHER. SI VOUS MODIFIEZ `style.css` CA MARCHE PAS et jsp pourquoi :(
+
 ### 8. Ajout des User Logins/Logout/Register
 ---
 J'ai modifié le fichier `models.py` en ajoutant des fonctions de génération et de vérification du mot de passe. J'ai aussi ajouté l'attribut `UserMixin` aux `User` pour avoir accès à des méthodes plus avancées telles que: *is_authenticated* ou *is_active*. J'ai ajouté le module `@login.user_loader` qui permet de suivre quel utilisateur est actuellement connecté (si j'ai bien compris la partie [User Loader Function](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins))

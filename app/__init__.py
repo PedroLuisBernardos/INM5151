@@ -13,5 +13,6 @@ login = LoginManager(app)
 login.login_view = 'login'
 # Modification du message de demande de connexion
 login.login_message = "Vous devez vous connecter pour accéder à cette page !"
+app.static_folder = 'static'
 
 from app import routes, models
