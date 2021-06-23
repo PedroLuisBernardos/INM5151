@@ -50,7 +50,7 @@ J'ai ajouté un module d'erreurs dans le fichier `__init__.py`.
 J'ai ajouté les fichiers `errors.py`, `404.html` et `500.html`. Pour tester la page 404, visiter une page inexistante. Pour tester la page 500, une des façons est de changer le nom de l'utilisateur `admin` pour un autre utilisateur existant: `admin2`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/75a3b3d6bba9326da7a82efbfa61d92564343bf4)
 
-Je n'ai pas fait la partie [Sending Errors by Email](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling).
+Je n'ai pas fait les parties [Sending Errors by Email et Logging to a File](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling).
 
 J'ai géré le bug *si on change le nom d'utilisateur pour un utilisateur qui existe déjà: erreur 500* en modifiant les fichiers `forms.py` et `routes.py`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7097fde95ae0359c91fa8a70d71553bc549e9c07)
