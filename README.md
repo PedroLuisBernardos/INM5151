@@ -28,3 +28,24 @@ Rouler l'application
 ```bash
 (venv) $ flask run
 ```
+
+## Explication des repertoires et des fichiers
+---
+app/              --> repertoire qui heberge l'application
+  templates/      --> repertoire qui contient les modeles des pages html
+    base.html     --> html de base
+    index.html    --> page d'accueil
+    login.html    --> page de login
+  __init__.py     --> execute et defini les symbols que les paquets exposent a l'exterieur de l'application
+  forms.py        --> defini les formulaires (connexion, inscription, ...)
+  models.py       --> defini les modeles de la base de donnees (user, facture, ...)
+  routes.py       --> defini les routes vers les differentes pages (/, /index, /login, ...)
+
+migrations/       --> repertoire qui contient les modifications faites dans la bd
+venv/             --> repertoire contenant l'environnement virtuel
+
+.flaskenv         --> permet de parametrer la variable d'environnement FLASK_APP automatiquement
+.gitignore
+app.db            --> base de données
+config.py         --> contient les variables de configuration, voir les [logs](History-log.md) pour plus d'information
+sdf.py            --> defini l'instance de l'application flask

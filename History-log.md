@@ -4,7 +4,43 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
+### 7. Ajout de la Database
+---
+J'ai modifié le fichier `config.py`:
+  * Ajout de la variable `SQLALCHEMY_DATABASE_URI`: *Flask-SQLAlchemy extension takes the location of the application's database from the SQLALCHEMY_DATABASE_URI configuration variable*
+  * Ajout de la variable `SQLALCHEMY_TRACK_MODIFICATIONS`: *option is set to False to disable a feature of Flask-SQLAlchemy that I do not need*
+
+J'ai modifié le fichier `__init__.py`:
+  * Ajout d'un objet `SQLAlchemy`: *represents the database*
+  * Ajout d'un objet `Migrate`: *represents the migration engine*
+  * Ajout du module `models`: *This module will define the structure of the database.*
+
+J'ai ajouté le fichier `models.py` qui défini les **utilisateurs** et les **factures** avec leur relations
+
+J'ai créé le *migration repository (which is a directory in which it stores its migration scripts. Each time a change is made to the database schema, a migration script is added to the repository with the details of the change)* avec la commande:
+```bash
+(venv) $ flask db init
+```
+
+J'ai fait ma première migration (*to make the database schema match the application models*) avec la commande:
+```bash
+(venv) $ flask db migrate -m "...commentaire ici..."
+```
+
+Pour modifier la base de données (ou pour la créer (le fichier `app.db`) vu qu'elle n'existe pas) j'ai fait la commande ci-dessous. Elle *generates the migration script*
+```bash
+(venv) $ flask db upgrade
+```
+
+> Pour mieux comprendre aller voir la section [Database Upgrade and Downgrade Workflow](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
+> La base de données suit maintenant les `models.py` et est prête à être utilisée.
+
+J'ai modifié le fichier `sdf.py` pour qu'on puisse utiliser le `(venv) $ flask shell`. Ceci nous évitera de devoir `import` tous les trucs à *import* lors de nos tests.
+
+> Pour faire un test de tout ceci aller à [Play Time](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
+
 ### 6. Ajout de Bootstrap et modification de `base.html`
+---
 
 ### 5. Ajout du formulaire de connexion (la validation n'est pas traitée)
 ---
