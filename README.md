@@ -6,7 +6,7 @@
 
 [Sprint 1](https://docs.google.com/document/d/1YnsLE2BXZ-MREk3PWpu65Rmxpdcfev8nZcXn98PMk6g/edit#)
 
-[Documentation Flask - on est rendus chapitre 4 - Databases](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
+[Documentation Flask - on est rendus chapitre 5 - User logins](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins)
 
 ## [Les logs du projet](History-log.md)
 ---
