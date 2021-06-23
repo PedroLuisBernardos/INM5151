@@ -3,7 +3,7 @@
 
 ## TODO
 ---
-On est rendus [ici (chapitre 8 - Followers)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers). J ne sais pas si c'est utile, mais il faudrait voir s'il y a de l'information intéressante.
+On est rendus [ici (chapitre 8 - Followers)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers). Je ne sais pas si c'est utile, mais il faudrait voir s'il y a de l'information intéressante.
 
 ## Documents
 ---
