@@ -9,7 +9,7 @@
 ### 18. LE TUTORIEL EST TERMINÉ, MAINTENANT FAUDRA GOOGLER POUR AMÉLIORER L'APPLICATION :P
 ---
 
-### 17. [Gestion de la `recherche`](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
+### 17. [Gestion de la recherche](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 ---
 
 ### 16. [Amélioration de la structure de l'application](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
