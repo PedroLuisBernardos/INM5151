@@ -9,25 +9,25 @@
 ### 8. Ajout des User Logins/Logout/Register
 ---
 J'ai modifié le fichier `models.py` en ajoutant des fonctions de génération et de vérification du mot de passe. J'ai aussi ajouté l'attribut `UserMixin` aux `User` pour avoir accès à des méthodes plus avancées telles-que: *is_authenticated* ou *is_active*. J'ai ajouté le module `@login.user_loader` qui permet de suivre quel utilisateur est actuellement connecté (si j'ai bien compris la partie [User Loader Function](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins))
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
 
 J'ai modifié le fichier `__init__.py` pour initialiser l'instance de Flask-Login. J'ai aussi ajouté une option: si l'utilisateur n'est pas connecté, le rediriger vers la page `/login`.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-9cec7b11237bc29d77a439e81c9b7acfac003d8e8855731eb6bc130b5a8ce602)
 
 J'ai modifié le fichier `routes.py` pour pouvoir vérifier si l'user/mdp sont les bons. Si oui, les logger à l'application grâce à Flask-Login. J'ai aussi ajouté une route `/logout`. J'ai ajouté le champ `@login_required` à aux pages qui en avaient besoin. Une route vers `register.html` a été ajoutée.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-f67826701212aab477be0634a23fdcd7ffdfe748b8ce35eb27b8f690d334c732)
 
 J'ai ajouté dans la nav-bar de `base.html` la route `/logout` avec la condition *si l'utilisateur actuel est anonyme, afficher Login, sinon, afficher Logout*.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-9ba5b84a377a6a734932f7f6a3003e6f8bae1b02c34cf4729cfc95a5fd6179c8)
 
 J'ai ajouté un formulaire d'inscription dans le fichier `forms.py`.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-11d6970831623c0904e31518fb0efd2e718dab0c3b4f00a6a1bd81fb2c707156)
 
 Une nouvelle page a été ajoutée: `register.html`.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-92eef37adb55fb4a2979aae075f722a09d73a6ce9f51e08895027852d5448fd0)
 
 Un lien vers `register.html` a été ajouté dans `login.html`.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-e1bc6bd8e3e268d122beae1cfee7bb0e06013a19b8fd6fe8b15b40f90b98a019)
 
 J'ai installé:
 ```bash
