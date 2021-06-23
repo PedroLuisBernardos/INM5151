@@ -8,10 +8,12 @@
 
 [Documentation Flask - on est rendus chapitre 5 - User logins](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins)
 
+[PowerPoint presentation du projet](https://docs.google.com/presentation/d/1uslppIrlWSKgbWBgeMfVUH1LqGnuOxLnIFBX-3rYHqU/edit)
+
 ## [Les logs du projet](History-log.md)
 ---
 
-## Comment utiliser le programme
+## Comment utiliser l'application
 ---
 Clôner ce dépot et accéder au repertoire principal
 ```bash
