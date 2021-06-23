@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>{{ title }} - Système de Facturation</title>
+    </head>
+    <body>
+        <div>
+            Système de Facturation:
+            <a href="{{ url_for('index') }}">Accueil</a>
+            <a href="{{ url_for('login') }}">Se connecter</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %} <!-- ceci affichera les flash messages precises dans les routes -->
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

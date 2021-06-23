@@ -3,6 +3,24 @@
 On devrait écrire ici toutes nos manipulations pour que les autres soient capables de suivre !
 À lister en ordre décroissant pour faciliter la recherche.
 
+### 5. Ajout du formulaire de connexion (la validation n'est pas traitée)
+---
+J'ai ajouté un formulaire `forms.py` qui défini un *user login form*
+
+J'ai ajouté la page `login.html`
+
+### 4. Ajout d'une SECRET_KEY
+---
+J'ai créé un fichier de configuration, `config.py`, qui contient une `SECRET_KEY`. Celle-ci sert de *cryptographic key, useful to generate signatures or tokens. The Flask-WTF extension uses it to protect web forms against a nasty attack called Cross-Site Request Forgery or CSRF*
+
+J'ai linké le fichier `config.py` dans `__init__.py`
+
+### 3. Ajout de templates
+---
+J'ai ajouté un repertoire `templates`, dans lequel j'ai mis un template de base: `base.html` et la page `index.html`
+
+J'ai complexifié un peu le fichier `routes.py` en ajoutant un utilisateur (hardcodé) et une nouvelle route `/index`
+
 ### 2. Setup des premiers packages et routes
 ---
 J'ai créé un repertoire `app`
