@@ -42,6 +42,9 @@
 ### 12. [Pagination](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 ---
 
+### Je n'ai pas fait la section [Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
+---
+
 ### 11. Gestion des erreurs (il y a juste 404 et 500 qui ont été gérés)
 ---
 J'ai ajouté un module d'erreurs dans le fichier `__init__.py`.
