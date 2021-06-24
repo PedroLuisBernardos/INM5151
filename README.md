@@ -22,8 +22,12 @@ J'ai mis très brievement ce qu'on doit faire dans les [logs](History-log.md) du
 
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
-## Les [logs](History-log.md) du projet
+Les [logs](History-log.md) du projet
+
+### Autre info
 ---
+J'ai modifié le .gitignore pour que l'environnement virtuel *venv* soit ajouté au dépôt. Si jamais vous ça marche pas, juste réinstallez les librairies que j'ai installées (tout est dans les logs).
+Aussi, les répertoires *pycache*, qui sont des répertoires inutiles, ne sont pas ajoutez grâce au .gitignore. Mais ceux qui sont dans *venv* ont éte ajoutez avec *venv* ! J'ai trop pas envie de les enlever et changer le .gitignore... hahaha
 
 ## Comment utiliser l'application
 ---
