@@ -1,3 +1,5 @@
+# sdf.py
+# défini l'instance de l'application Flask
 from app import app, db
 from app.models import User, Facture
 

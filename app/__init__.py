@@ -1,3 +1,5 @@
+# __init__.py
+# exécute et définit les symboles que les paquets exposent à l'extérieur de l'application
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate

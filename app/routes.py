@@ -1,3 +1,5 @@
+# routes.py
+# défini les routes de l'application
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
@@ -49,6 +51,7 @@ def logout():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    # Si l'utilisateur est actuellement connecté, ne pas aller à la page /login
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = RegistrationForm()
@@ -65,7 +68,7 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    # Ceci sont des factures example, on les enlevera quand on sauvegardera des factures dans la bd
+    # Ceci sont des factures example, on les enlèvera quand on sauvegardera des factures dans la bd
     factures = [
         {'author': user, 'body': 'Test facture #1'},
         {'author': user, 'body': 'Test facture #2'}

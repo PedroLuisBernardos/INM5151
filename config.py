@@ -1,3 +1,5 @@
+# config.py
+# contient les variables e configuration de l'application
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 

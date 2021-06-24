@@ -1,3 +1,5 @@
+# models.py
+# défini les modèles de classe de l'application
 from datetime import datetime
 from hashlib import md5
 from app import db, login

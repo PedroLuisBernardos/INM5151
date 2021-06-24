@@ -73,7 +73,7 @@ app/                        --> répertoire qui héberge l'application
         _factures.html      --> page d'affichage des factures (le modèle de base)
         404.html            --> page d'erreur 404
         500.html            --> page d'erreur 500
-    __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application.
+    __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application
     forms.py                --> définis les formulaires (connexion, inscription ...)
     models.py               --> définis les modèles de la base de données (user, facture ...)
     routes.py               --> définis les routes vers les différentes pages (/, /index, /login, ...)

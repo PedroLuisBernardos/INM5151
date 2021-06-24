@@ -1,3 +1,5 @@
+# errors.py
+# défini les erreurs possibles
 from flask import render_template
 from app import app, db
 
