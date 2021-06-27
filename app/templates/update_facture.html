@@ -1,0 +1,22 @@
+<!-- update_facture.html -->
+<!-- page de modification des factures -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Modifier facture {{ facture.id }}!</h1>
+    <hr>
+    <form action="/update/{{facture.id}}" method="post">
+      {{ form.hidden_tag() }} <!-- ceci défini un token grâce a la SECRET_KEY -->
+      <!-- Formulaire de la facture -->
+      <!-- À ajouter des attributs -->
+      <div class="form-group">
+          {{ form.body.label }}<br>
+          {{ form.body(cols=32, rows=4) }}<br>
+          {% for error in form.body.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </div>
+      <!-- Soumettre -->
+      {{ form.submit(class_="btn btn-primary") }}
+  </form>
+{% endblock %}

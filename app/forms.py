@@ -38,7 +38,7 @@ class RegistrationForm(FlaskForm):
 class EditProfileForm(FlaskForm):
     username = StringField('Utilisateur', validators=[DataRequired(message="Veuillez saisir un nom d'utilisateur")])
     about_me = TextAreaField('À propos de moi', validators=[Length(min=0, max=140)])
-    submit = SubmitField('Soumettre')
+    submit = SubmitField('Enregistrer')
 
     # @Override du constructeur. Il a maintenant comme argument le original_username=current_user.username
     def __init__(self, original_username, *args, **kwargs):
@@ -55,5 +55,5 @@ class EditProfileForm(FlaskForm):
 # Défini un formulaire pour la saisie de factures
 class FactureForm(FlaskForm):
     # À ajouter des attributs
-    facture = TextAreaField('Entrez votre facture', validators=[DataRequired(message="Veuillez écrire entre 1 et 140 caractères"), Length(min=1, max=140)])
+    body = TextAreaField('Entrez votre facture', validators=[DataRequired(message="Veuillez écrire entre 1 et 140 caractères"), Length(min=1, max=140)])
     submit = SubmitField('Enregistrer')

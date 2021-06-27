@@ -1,0 +1,13 @@
+<!-- all.html -->
+<!-- page qui liste tous les utilisateurs et toutes les factures -->
+<table>
+  {% for u in users %}
+    {{ u.username }}
+    <br>
+  {% endfor %}
+
+  {% for f in factures %}
+    {{ f.body }}
+    <br>
+  {% endfor %}
+</table>

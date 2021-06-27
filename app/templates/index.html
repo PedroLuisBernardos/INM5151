@@ -10,10 +10,10 @@
         <!-- Formulaire de la facture -->
         <!-- À ajouter des attributs -->
         <div class="form-group">
-            {{ form.facture.label }}<br>
-            {{ form.facture(cols=32, rows=4) }}<br>
-            {% for error in form.facture.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            {{ form.body.label }}<br>
+            {{ form.body(cols=32, rows=4) }}<br>
+            {% for error in form.body.errors %}
+                <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </div>
         <!-- Soumettre -->
@@ -21,12 +21,30 @@
     </form>
     <hr>
     <!-- Affichage des factures -->
-    <tr valign="top">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Utilisateur</th>
+            <th scope="col">Corps</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
     {% for facture in factures %}
         <!-- Corps des factures -->
-        <td>{{ facture.author.id }}</td>
-        <td>Facture à payer par {{ facture.author.username }} - {{ facture.body }}</td>
-        <br>
+        <tr>
+            <th scope="row">{{ facture.id }}</th>
+            <th>{{ facture.timestamp }}</th>
+            <td>{{ facture.author.username }}</td>
+            <td>{{ facture.body }}</td>
+            <td>
+                <a href="{{ url_for('update', facture_id=facture.id) }}">Modifier</a>
+                <a href="{{ url_for('delete', facture_id=facture.id) }}">Supprimer</a>
+            </td>
+        </tr>
     {% endfor %}
-    </tr>
+        </tbody>
+    </table>
 {% endblock %}

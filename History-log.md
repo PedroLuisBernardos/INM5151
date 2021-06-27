@@ -42,10 +42,16 @@
 ### 13. [Pagination](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 ---
 
-### 12. Ajout du formulaire de Factures
+### 12. Ajout du formulaire de Factures, de modification/suppression de factures et suppression des utilisateurs
 ---
 J'ai ajouté un formulaire pour la gestion de factures dans `forms.py`, une route dans `routes.py` et l'affichage de ces factures dans `index.html`. J'ai aussi migré et upgradé la base de données avec le modèle de `Facture`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/e288e2cc463b10461dd070f6bd90982a8bb827fb)
+
+J'ai ajouté la gestion de modification/suppréssion de factures dans `routes.py`, `index.html` et `update_facture.html` et la gestion de suppression du compte dans `user.html` et `routes.py`.
+[lien]()
+
+J'ai ajouté une page `all.html` (et sa route dans `routes.py`) qui contient la liste de tous les utilisateurs et toutes les factures.
+[lien]()
 
 ### Je n'ai pas fait la section [Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers)
 ---

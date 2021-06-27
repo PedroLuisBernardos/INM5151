@@ -10,6 +10,10 @@ J'ai skip le [chapitre 8 -Followers](https://blog.miguelgrinberg.com/post/the-fl
 
 Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles !
 
+La modification des factures ne fonctionne pas.
+
+Compléter la page `all.html` avec un tableau qui liste tous les attributs présents dans `models.py`
+
 J'ai mis très brievement ce qu'on doit faire dans les [logs](History-log.md) du projet.
 
 ## Documents
@@ -49,18 +53,14 @@ Rouler l'application
 
 Ouvrir un navigateur et aller à l'adresse: http://127.0.0.1:5000/
 
-Deux utilisateurs de base sont déjà présents:
+Un utilisateur de base est déjà présent:
 ```
 user: admin
 email: admin@admin.com
 pass: admin
 ```
 
-```
-user: admin2
-email: admin2@admin.com
-pass: admin2
-```
+Pour voir tous les utilisateurs et toutes les factures voir http://127.0.0.1:5000/all
 
 ## Explication des répertoires et des fichiers
 ---
@@ -79,8 +79,11 @@ app/                        --> répertoire qui héberge l'application
         register.html       --> page d'inscription
         user.html           --> page du profil de l'utilisateur
         edit_profile.html   --> page de modification du profil de l'utilisateur
+        update_facture.html --> page de modification de la facture sélectionnée
         404.html            --> page d'erreur 404
         500.html            --> page d'erreur 500
+        error.html          --> page d'erreurs généraux
+        all.html            --> page cachée, qui contient tous les utilisateurs et toutes les factures
     __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application
     forms.py                --> définis les formulaires (connexion, inscription ...)
     models.py               --> définis les modèles de la base de données (user, facture ...)
