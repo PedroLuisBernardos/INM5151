@@ -10,7 +10,7 @@ J'ai skip le [chapitre 8 -Followers](https://blog.miguelgrinberg.com/post/the-fl
 
 Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles !
 
-La modification des factures ne fonctionne pas.
+La route `Modifier des factures` et la page `update_facture.html` n'ont pas le même template que toutes les autres pages/routes. Il faudra le modifier, mais ça fonctionne.
 
 Compléter la page `all.html` avec un tableau qui liste tous les attributs présents dans `models.py`
 
