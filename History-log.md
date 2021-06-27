@@ -48,10 +48,10 @@ J'ai ajouté un formulaire pour la gestion de factures dans `forms.py`, une rout
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/e288e2cc463b10461dd070f6bd90982a8bb827fb)
 
 J'ai ajouté la gestion de modification/suppréssion de factures dans `routes.py`, `index.html` et `update_facture.html` et la gestion de suppression du compte dans `user.html` et `routes.py`.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/67a41090b6d2ad46135acc5ec80dcd5f86280afa)
 
 J'ai ajouté une page `all.html` (et sa route dans `routes.py`) qui contient la liste de tous les utilisateurs et toutes les factures.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/67a41090b6d2ad46135acc5ec80dcd5f86280afa#diff-0ff488b2e6357717687f02abc57d83507dca9b1e2d32c3b0f7f33df64098a3a7)
 
 ### Je n'ai pas fait la section [Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers)
 ---
