@@ -44,7 +44,7 @@
 
 ### 12. Ajout du formulaire de Factures
 ---
-J'ai ajouté un formulaire pour la gestion de factures dans `forms.py`, une route dans `routes.py` et l'affichage de ces factures dans `index.html`.
+J'ai ajouté un formulaire pour la gestion de factures dans `forms.py`, une route dans `routes.py` et l'affichage de ces factures dans `index.html`. J'ai aussi migré et upgradé la base de données avec le modèle de `Facture`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/e288e2cc463b10461dd070f6bd90982a8bb827fb)
 
 ### Je n'ai pas fait la section [Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers)
