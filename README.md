@@ -73,13 +73,12 @@ app/                        --> répertoire qui héberge l'application
             script.js       --> JS de l'application (en plus de Bootstrap)
     templates/              --> répertoire qui contient les modèles des pages HTML
         base.html           --> HTML de base
-        index.html          --> page d'accueil des utilisateurs
+        index.html          --> page d'accueil des utilisateurs où on voit les factures
         wellcome.html       --> page d'accueil des invités
         login.html          --> page de login
         register.html       --> page d'inscription
         user.html           --> page du profil de l'utilisateur
         edit_profile.html   --> page de modification du profil de l'utilisateur
-        _factures.html      --> page d'affichage des factures (le modèle de base)
         404.html            --> page d'erreur 404
         500.html            --> page d'erreur 500
     __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application

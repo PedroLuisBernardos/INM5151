@@ -3,6 +3,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <!--  -->
     <h1>Bonjour, {{ current_user.username }}!</h1>
+    <hr>
+    <form action="" method="post">
+        {{ form.hidden_tag() }} <!-- ceci défini un token grâce a la SECRET_KEY -->
+        <!-- Formulaire de la facture -->
+        <!-- À ajouter des attributs -->
+        <div class="form-group">
+            {{ form.facture.label }}<br>
+            {{ form.facture(cols=32, rows=4) }}<br>
+            {% for error in form.facture.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+        <!-- Soumettre -->
+        {{ form.submit(class_="btn btn-primary") }}
+    </form>
+    <hr>
+    <!-- Affichage des factures -->
+    <tr valign="top">
+    {% for facture in factures %}
+        <!-- Corps des factures -->
+        <td>{{ facture.author.id }}</td>
+        <td>Facture à payer par {{ facture.author.username }} - {{ facture.body }}</td>
+        <br>
+    {% endfor %}
+    </tr>
 {% endblock %}

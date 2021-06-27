@@ -51,3 +51,9 @@ class EditProfileForm(FlaskForm):
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError('Ce nom d\'utilisateur a déjà été utilisé.')
+
+# Défini un formulaire pour la saisie de factures
+class FactureForm(FlaskForm):
+    # À ajouter des attributs
+    facture = TextAreaField('Entrez votre facture', validators=[DataRequired(message="Veuillez écrire entre 1 et 140 caractères"), Length(min=1, max=140)])
+    submit = SubmitField('Enregistrer')

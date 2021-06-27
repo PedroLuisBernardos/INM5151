@@ -5,13 +5,22 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
-from app.models import User
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm
+from app.models import Facture, User
 
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    return render_template('index.html', title='Accueil')
+    form = FactureForm()
+    if form.validate_on_submit():
+        facture = Facture(body=form.facture.data, author=current_user)
+        db.session.add(facture)
+        db.session.commit()
+        flash('Votre facture a été ajoutée.')
+        return redirect(url_for('index'))
+    # Toutes les factures de l'utilisateur actuel
+    factures = Facture.query.filter_by(user_id=current_user.id).all()
+    return render_template("index.html", title='Accueil', form=form, factures=factures)
 
 @app.route('/')
 @app.route('/wellcome')
@@ -68,7 +77,7 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    # Ceci sont des factures example, on les enlèvera quand on sauvegardera des factures dans la bd
+    # Ceci sont des factures exemple, on les enlèvera quand on sauvegardera des factures dans la bd
     factures = [
         {'author': user, 'body': 'Test facture #1'},
         {'author': user, 'body': 'Test facture #2'}
