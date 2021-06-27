@@ -1,13 +1,49 @@
 <!-- all.html -->
 <!-- page qui liste tous les utilisateurs et toutes les factures -->
-<table>
-  {% for u in users %}
-    {{ u.username }}
-    <br>
-  {% endfor %}
+{% extends "base.html" %}
 
-  {% for f in factures %}
-    {{ f.body }}
-    <br>
-  {% endfor %}
-</table>
+{% block content %}
+  <h1>Utilisateurs</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">username</th>
+        <th scope="col">email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for u in users %}
+        <tr>
+          <th scope="row">{{ u.id }}</th>
+          <td>{{ u.username }}</td>
+          <td>{{ u.email }}</td>
+        </tr>
+        <br>
+      {% endfor %}
+    </tbody>
+  </table>
+  <hr>
+  <h1>Factures</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">user_id</th>
+        <th scope="col">id</th>
+        <th scope="col">timestamp</th>
+        <th scope="col">body</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for f in factures %}
+        <tr>
+          <th scope="row">{{ f.user_id }}</th>
+          <td>{{ f.id }}</td>
+          <td>{{ f.timestamp }}</td>
+          <td>{{ f.body }}</td>
+        </tr>
+        <br>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

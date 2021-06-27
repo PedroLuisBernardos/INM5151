@@ -5,10 +5,11 @@
 {% block content %}
     <h1>Modifier facture {{ facture.id }}!</h1>
     <hr>
-    <div class="form">
+    <div class="form-group">
         <form action="/update/{{facture.id}}" method="POST">
-            <input type="text" name="body" id="body" value="{{facture.body}}">
-            <input type="submit" value="Enregistrer">
+            <!-- À ajouter des attributs -->
+            <input type="text" name="body" value="{{facture.body}}">
+            <input class="btn btn-primary" type="submit" value="Enregistrer">
         </form>
     </div>
 {% endblock %}

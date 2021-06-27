@@ -56,7 +56,7 @@ def login():
         return render_template('login.html', title='Connexion', form=form)
     except:
         error_string = 'Il y a eu une erreur avec la connexion.'
-        return render_template('error.html', error=error_string)
+        return render_template('error.html', title='Erreur', error=error_string)
 
 # Se déconnecter
 @app.route('/logout')
@@ -70,7 +70,7 @@ def logout():
         return redirect(url_for('index'))
     except:
         error_string = 'Il y a eu une erreur avec la déconnexion.'
-        return render_template('error.html', error=error_string)
+        return render_template('error.html', title='Erreur', error=error_string)
 
 # Page d'enregistrement
 @app.route('/register', methods=['GET', 'POST'])
@@ -90,14 +90,14 @@ def register():
         return render_template('register.html', title='S\'inscrire', form=form)
     except:
         error_string = 'Il y a eu une erreur avec l\'inscription.'
-        return render_template('error.html', error=error_string)
+        return render_template('error.html', title='Erreur', error=error_string)
 
 # Page profil
 @app.route('/user/<username>')
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('user.html', user=user)
+    return render_template('user.html', title='Mon profil', user=user)
 
 # Supprimer un utilisateur et toutes ses factures
 @app.route('/delete_user/<username>')
@@ -114,7 +114,7 @@ def delete_user(username):
         return redirect(url_for('wellcome'))
     except:
         error_string = 'Il y a eu une erreur avec la suppression de l\'utilisateur.'
-        return render_template('error.html', error=error_string)
+        return render_template('error.html', title='Erreur', error=error_string)
 
 # Supprimer des factures
 @app.route('/delete/<facture_id>')
@@ -127,22 +127,23 @@ def delete(facture_id):
         return redirect(url_for('index'))
     except:
         error_string = 'Il y a eu une erreur avec la suppression de la facture.'
-        return render_template('error.html', error=error_string)
+        return render_template('error.html', title='Erreur', error=error_string)
 
 # Modifier des factures
 @app.route('/update/<facture_id>', methods=['GET', 'POST'])
 def update(facture_id):
     facture_to_update = Facture.query.get_or_404(facture_id)
     if request.method == 'POST':
+        # À ajouter des attributs
         facture_to_update.body = request.form['body']
         try:
             db.session.commit()
             return redirect(url_for('index'))
         except:
-            return 'There was an issue updating your task'
-
+            error_string = 'Il y a eu une erreur avec la modification de la facture.'
+            return render_template('error.html', title='Erreur', error=error_string)
     else:
-            return render_template('update_facture.html', title='Modification de factures', facture=facture_to_update)
+        return render_template('update_facture.html', title='Modification de factures', facture=facture_to_update)
 
 # Pour savoir c'est quand la dernière fois que l'utilisateur s'est connecté
 @app.before_request
@@ -169,7 +170,7 @@ def edit_profile():
         return render_template('edit_profile.html', title='Modifier votre profil',form=form)
     except:
         error_string = 'Il y a eu une erreur avec la modification du profil.'
-        return render_template('error.html', error=error_string)
+        return render_template('error.html', title='Erreur', error=error_string)
 
 @app.route('/all')
 # UNIQUEMENT POUR LES ADMINISTRATEURS
