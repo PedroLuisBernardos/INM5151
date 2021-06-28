@@ -1,10 +1,12 @@
 # INM5151 Système de Facturation (sdf)
 ---
-Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles ! J'ai mis très brievement ce qu'on doit faire dans les [logs](History-log.md) du projet.
+Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles ! J'ai mis très brievement ce qu'on doit faire dans les [logs](logs.md) du projet.
 
 ## TODO
 ---
-On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination).
+On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
+
+* Toutes les sections vides des [logs](logs.md) du projet.
 
 * La route `Modifier des factures` et la page `update_facture.html` n'ont pas le même template que toutes les autres pages/routes. Il faudra le modifier, mais ça fonctionne.
 
@@ -30,7 +32,7 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
-[Les logs du projet](History-log.md)
+[Les logs du projet](logs.md)
 
 ## Comment utiliser l'application
 ---
@@ -127,7 +129,7 @@ migrations/                 --> répertoire qui contient les modifications faite
 
 .flaskenv                   --> permet de paramétrer la variable d'environnement FLASK_APP automatiquement
 app.db                      --> base de données
-config.py                   --> contient les variables de configuration, voir les [logs](History-log.md) pour plus d'information
+config.py                   --> contient les variables de configuration, voir les [logs](logs.md) pour plus d'information
 sdf.py                      --> défini l'instance de l'application Flask
 requirements.txt            --> liste de librairies à installer
 .gitignore
