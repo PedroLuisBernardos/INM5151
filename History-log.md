@@ -36,20 +36,14 @@
 ### 15. [Gestion des dates et du temps](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times)
 ---
 
-### 14. [Support par email](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support)
+### 14. [Support par email et réinitialisation du mot de passe](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support)
 ---
 
-### 13. [Pagination](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
+### 14. [Pagination et navigation dans les factures](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 ---
 
-### 12. Ajout du formulaire de Factures, de modification/suppression de factures et suppression des utilisateurs
+### 13. Gestion des erreurs dans les routes, amélioration de l'installation des librairies et ajout d'une page pour les tests
 ---
-J'ai ajouté un formulaire pour la gestion de factures dans `forms.py`, une route dans `routes.py` et l'affichage de ces factures dans `index.html`. J'ai aussi migré et upgradé la base de données avec le modèle de `Facture`.
-[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/e288e2cc463b10461dd070f6bd90982a8bb827fb)
-
-J'ai ajouté la gestion de modification/suppression de factures dans `routes.py`, `index.html` et `update_facture.html` et la gestion de suppression du compte dans `user.html` et `routes.py`.
-[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/67a41090b6d2ad46135acc5ec80dcd5f86280afa)
-
 J'ai ajouté une page `all.html` (et sa route dans `routes.py`) qui contient la liste de tous les utilisateurs et toutes les factures.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/0570b73396c11ada16fb15039e8b07a8d8acf562#diff-0ff488b2e6357717687f02abc57d83507dca9b1e2d32c3b0f7f33df64098a3a7)
 
@@ -58,6 +52,15 @@ J'ai amélioré la gestion d'erreurs dans `routes.py` et j'ai créé une page pe
 
 J'ai ajouté le fichier `requirements.txt` qui contient toutes les librairies à installer pour pouvoir utiliser l'application. L'information est dans le [README](README.md)
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/ca7e19f75822e013ec7546b7825f75f01515baaf#diff-4d7c51b1efe9043e44439a949dfd92e5827321b34082903477fd04876edb7552)
+
+
+### 12. Ajout du formulaire de Factures, de modification/suppression de factures et suppression des utilisateurs
+---
+J'ai ajouté un formulaire pour la gestion de factures dans `forms.py`, une route dans `routes.py` et l'affichage de ces factures dans `index.html`. J'ai aussi migré et upgradé la base de données avec le modèle de `Facture`.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/e288e2cc463b10461dd070f6bd90982a8bb827fb)
+
+J'ai ajouté la gestion de modification/suppression de factures dans `routes.py`, `index.html` et `update_facture.html` et la gestion de suppression du compte dans `user.html` et `routes.py`.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/67a41090b6d2ad46135acc5ec80dcd5f86280afa)
 
 ### Je n'ai pas fait la section [Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers)
 ---
@@ -75,7 +78,7 @@ Je n'ai pas fait les parties [Sending Errors by Email et Logging to a File](http
 J'ai géré le bug *si on change le nom d'utilisateur pour un utilisateur qui existe déjà: erreur 500* en modifiant les fichiers `forms.py` et `routes.py`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7097fde95ae0359c91fa8a70d71553bc549e9c07)
 
-### 10. Ajout du profil et de l'avatar
+### 10. Ajout du profil, de l'avatar et d'une page de modification du profil
 ---
 
 J'ai ajouté une route dans le fichier `routes.py` vers `/user/<username>`, où *<username>* est le nom d'utilisateur de l'utilisateur courant.
@@ -117,7 +120,7 @@ Les fichiers CSS sont dans un répertoire `static`. J'ai dû aussi modifier les 
 J'ai créé une page de bienvenue `wellcome.html` qui accueille les invités (non connectés). Si un invité essaie d'aller à une page `@login_required`, il sera automatiquement redirigé à cette page-là.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/1b74e07b04e3eb5b84a7f0fad799fbfdbe522347)
 
-### 8. Ajout des User Logins/Logout/Register
+### 8. Ajout des formulaires de Logins/Logout/Register et amélioration de routes
 ---
 J'ai modifié le fichier `models.py` en ajoutant des fonctions de génération et de vérification du mot de passe. J'ai aussi ajouté l'attribut `UserMixin` aux `User` pour avoir accès à des méthodes plus avancées telles que: *is_authenticated* ou *is_active*. J'ai ajouté le module `@login.user_loader` qui permet de suivre quel utilisateur est actuellement connecté (si j'ai bien compris la partie [User Loader Function](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins))
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
@@ -140,7 +143,7 @@ Une nouvelle page a été ajoutée: `register.html`.
 Un lien vers `register.html` a été ajouté dans `login.html`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-e1bc6bd8e3e268d122beae1cfee7bb0e06013a19b8fd6fe8b15b40f90b98a019)
 
-### 7. Ajout de la Database
+### 7. Ajout de la Database, modeles d'Utilisateur et de Facture
 ---
 J'ai modifié le fichier `config.py`. [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/733837a6abbeb6594f8cca5808b33e237abcd197#diff-117426151e93a626f8b46bfdb3a95b3f4a62e5f4dd6e65975a7c50759bf04482)
   * Ajout de la variable `SQLALCHEMY_DATABASE_URI`: *Flask-SQLAlchemy extension takes the location of the application's database from the SQLALCHEMY_DATABASE_URI configuration variable*
@@ -177,8 +180,9 @@ J'ai modifié le fichier `sdf.py` pour qu'on puisse utiliser le `(venv) $ flask 
 
 > Pour faire un test de tout ceci aller à [Play Time](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
 
-### 6. Ajout de Bootstrap et modification de `base.html`. [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/4b4d0e3be6e40b319a1c1ce9ce1bc70bdf5666a1#diff-9ba5b84a377a6a734932f7f6a3003e6f8bae1b02c34cf4729cfc95a5fd6179c8)
+### 6. Ajout de Bootstrap et modification de `base.html`
 ---
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/4b4d0e3be6e40b319a1c1ce9ce1bc70bdf5666a1#diff-9ba5b84a377a6a734932f7f6a3003e6f8bae1b02c34cf4729cfc95a5fd6179c8)
 
 ### 5. Ajout du formulaire de connexion (la validation n'est pas traitée)
 ---
@@ -196,7 +200,7 @@ J'ai créé un fichier de configuration, `config.py`, qui contient une `SECRET_K
 J'ai linké le fichier `config.py` dans `__init__.py`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7e313bca354ba3bda5ad2f701d52d2087318ae18#diff-9cec7b11237bc29d77a439e81c9b7acfac003d8e8855731eb6bc130b5a8ce602)
 
-### 3. Ajout de templates
+### 3. Ajout de templates et de routes
 ---
 J'ai ajouté un répertoire `templates`, dans lequel j'ai mis un template de base: `base.html` et la page `index.html`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7e313bca354ba3bda5ad2f701d52d2087318ae18#diff-a18b3b5de30df1bcf7531723d24c214d69b2acff3cd88540e1ff186409879b0a)
@@ -220,7 +224,7 @@ J'ai défini le *Python script at the top-level that defines the Flask applicati
 Pour *set the FLASK_APP environment variable* j'ai créé le fichier `.flaskenv`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/4e74287b7a72e8af79cd3fde4cdafad2dd1c40e7#diff-49203977c1cb1429e3b5e556e63eb8850f78c6362e53239c451388f7dbfb7ff9)
 
-### 1. Installation de l'environnement virtuel
+### 1. Installation de l'environnement virtuel et des libraires
 ---
 J'ai installé le **venv** et me suis connecté avec: 
 ```bash
