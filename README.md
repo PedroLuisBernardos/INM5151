@@ -104,7 +104,7 @@ Pour voir tous les utilisateurs et toutes les factures voir <http://127.0.0.1:50
 On peut les supprimer dans l'application mais pour le faire en ligne de commande:
 
 ```bash
-(venv) $ flask shell
+flask shell
 >>> users = User.query.all()
 >>> for u in users:
 ...     db.session.delete(u)
@@ -119,14 +119,14 @@ On peut les supprimer dans l'application mais pour le faire en ligne de commande
 Pour mettre à jour les nouvelles versions de la bd (en changeant le fichier `modules.py`):
 
 ```
-(venv) $ flask db migrate -m "message de modification ici"
-(venv) $ flask db upgrade
+flask db migrate -m "message de modification ici"
+flask db upgrade
 ```
 
 En cas d'erreur:
 
 ```
-(venv) $ flask db downgrade
+flask db downgrade
 ```
 
 ## Explication des répertoires et des fichiers

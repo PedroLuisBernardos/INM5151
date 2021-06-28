@@ -141,8 +141,8 @@ J'ai ajouté un modèle d'avatar dans `models.py`. J'ai aussi ajouté les sectio
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/9a46fb9889616b579f63aebf70587cbf18e709b6#diff-90c680eba43456b516da8b4c2573d467ae17d1b0ed4373549f2a593ced3616d5)
 
 ```bash
-(venv) $ flask db migrate -m "ajout de about_me et last_seen"
-(venv) $ flask db upgrade
+flask db migrate -m "ajout de about_me et last_seen"
+flask db upgrade
 ```
 
 J'ai ajouté une section `last_seen` qui dit quand l'utilisateur s'est connecté pour la dernière fois. Cette modification a été faite dans `routes.py`: *The @before_request decorator from Flask register the decorated function to be executed right before the view function. This is extremely useful because now I can insert code that I want to execute before any view function in the application*.
@@ -210,25 +210,25 @@ J'ai ajouté le fichier `models.py` qui définit les **utilisateurs** et les **f
 J'ai créé le *migration repository (which is a directory in which it stores its migration scripts. Each time a change is made to the database schema, a migration script is added to the repository with the details of the change)* avec la commande:
 
 ```bash
-(venv) $ flask db init
+flask db init
 ```
 
 J'ai fait ma première migration (*to make the database schema match the application models*) avec la commande:
 
 ```bash
-(venv) $ flask db migrate -m "...commentaire ici..."
+flask db migrate -m "...commentaire ici..."
 ```
 
 Pour modifier la base de données (ou pour la créer (le fichier `app.db`) vu qu'elle n'existe pas) j'ai fait la commande ci-dessous. Elle *generates the migration script*
 
 ```bash
-(venv) $ flask db upgrade
+flask db upgrade
 ```
 
 > Pour mieux comprendre, allez voir la section [Database Upgrade and Downgrade Workflow](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
 > La base de données suit maintenant les `models.py` et est prête à être utilisée.
 
-J'ai modifié le fichier `sdf.py` pour qu'on puisse utiliser le `(venv) $ flask shell`. Ceci nous évitera de devoir `import` tous les trucs à *import* lors de nos tests.
+J'ai modifié le fichier `sdf.py` pour qu'on puisse utiliser le `flask shell`. Ceci nous évitera de devoir `import` tous les trucs à *import* lors de nos tests.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/733837a6abbeb6594f8cca5808b33e237abcd197#diff-c99a9313c27a862fb4664512cff6e9111cafd41bc9f44657edfc9b58d3589289)
 
 > Pour faire un test de tout ceci aller à [Play Time](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
@@ -296,11 +296,11 @@ source venv/bin/activate
 J'ai aussi installé ces librairies:
 
 ```bash
-(venv) $ pip install flask
-(venv) $ pip install python-dotenv
-(venv) $ ip install flask-wtf
-(venv) $ pip install flask-sqlalchemy
-(venv) $ pip install flask-migrate
-(venv) $ pip install flask-login
-(venv) $ pip install email-validator
+pip install flask
+pip install python-dotenv
+pip install flask-wtf
+pip install flask-sqlalchemy
+pip install flask-migrate
+pip install flask-login
+pip install email-validator
 ```
