@@ -1,28 +1,13 @@
 <!-- edit_profile.html -->
 <!-- page d'édition du profil de l'utilisateur courant -->
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
     <h1>Edit Profile</h1>
-    <form action="" method="post">
-        {{ form.hidden_tag() }} <!-- ceci défini un token grâce a la SECRET_KEY -->
-        <!-- Changer l'utilisateur -->
-        <div class="form-group">
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}<br>
-            {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
+    <div class="form-group">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
         </div>
-        <!-- Changer l'information à propos de l'utilisateur -->
-        <div class="form-group">
-            {{ form.about_me.label }}<br>
-            {{ form.about_me(cols=50, rows=4) }}<br>
-            {% for error in form.about_me.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </div>
-        <!-- Soumettre -->
-        {{ form.submit(class_="btn btn-primary") }}
-    </form>
+    </div>
 {% endblock %}

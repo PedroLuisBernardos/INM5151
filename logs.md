@@ -18,11 +18,11 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
-### 23. [API's](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis)
+### 24. [API's](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis)
 
 ---
 
-### 22. [Deploiement du projet (linux/heroku/docker)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux)
+### 23. [Deploiement du projet (linux/heroku/docker)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux)
 
 ---
 
@@ -34,37 +34,44 @@
 
 ---
 
-### 20. [Gestion de notifications](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications)
+### 22. [Gestion de notifications](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications)
 
 ---
 
-### 19. [Bonus: javascript](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic)
+### 21. [Bonus: javascript](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic)
 
 ---
 
-### 18. [Gestion de la recherche](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
+### 20. [Gestion de la recherche](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
 ---
 
-### 17. [Amélioration de la structure de l'application](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
+### 19. [Amélioration de la structure de l'application](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
 
 ---
 
-### 16. [Gestion de la langue](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n)
+### 18. [Gestion de la langue](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n)
 
 ---
 
-### 15. [Gestion des dates et du temps](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times)
+### 17. [Gestion des dates et du temps](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times)
 
 ---
 
-### 14. [Support par email et réinitialisation du mot de passe](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support)
+### 16. [Support par email et réinitialisation du mot de passe](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support)
 
 ---
 
-### 14. [Pagination et navigation dans les factures](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
+### 15. [Pagination et navigation dans les factures](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 
 ---
+
+### 14. Amélioration du CSS
+
+---
+
+J'ai ajouté la librairie `flask-bootstrap` et j'ai modifié le modèle de base de `base.html`. J'ai aussi modifié les formulaires grâce à `bootstrap/wtf.html` sauf celui dans la page `update_facture.html`.
+[lien]()
 
 ### 13. Gestion des erreurs dans les routes, amélioration de l'installation des librairies et ajout d'une page pour les tests
 

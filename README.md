@@ -12,8 +12,6 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 * La route `Modifier des factures` et la page `update_facture.html` n'ont pas le même template que toutes les autres pages/routes. Il faudra le modifier, mais ça fonctionne.
 
-* Remplacer les link style par [la librairie flask-bootstrap](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xi-facelift), ce lien montre comment faire.
-
 * Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
 
 * Séparer l'ajout de la facture et la page d'affichage de celles-ci.
