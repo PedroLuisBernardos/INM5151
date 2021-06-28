@@ -75,6 +75,16 @@ On peut les supprimer dans l'application mais pour le faire en ligne de commande
 >>> db.session.commit()
 ```
 
+Pour mettre à jour les nouvelles versions de la bd (en changeant le fichier `modules.py`):
+```
+(venv) $ flask db migrate -m "message de modification ici"
+(venv) $ flask db upgrade
+```
+En cas d'erreur:
+```
+(venv) $ flask db downgrade
+```
+
 ## Explication des répertoires et des fichiers
 ---
 ```
