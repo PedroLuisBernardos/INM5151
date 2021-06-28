@@ -134,12 +134,6 @@ Une nouvelle page a été ajoutée: `register.html`.
 Un lien vers `register.html` a été ajouté dans `login.html`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-e1bc6bd8e3e268d122beae1cfee7bb0e06013a19b8fd6fe8b15b40f90b98a019)
 
-J'ai installé:
-```bash
-(venv) $ pip install flask-login
-(venv) $ pip install email-validator
-```
-
 #### Pour supprimer les utilisateurs de la bd:
 ```bash
 (venv) $ flask shell
@@ -245,10 +239,11 @@ $ source venv/bin/activate
 
 J'ai aussi installé ces librairies:
 ```bash
-$ pip install flask
-$ pip install python-dotenv
-$ pip install flask-wtf
-$ pip install flask-sqlalchemy
-$ pip install flask-migrate
-$ pip install flask-login
+(venv) $ pip install flask
+(venv) $ pip install python-dotenv
+(venv) $ ip install flask-wtf
+(venv) $ pip install flask-sqlalchemy
+(venv) $ pip install flask-migrate
+(venv) $ pip install flask-login
+(venv) $ pip install email-validator
 ```

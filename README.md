@@ -37,14 +37,14 @@ $ git clone https://github.com/ta-truong/inm5151-ete2021-projet
 $ cd inm5151-ete2021-projet
 ```
 
-Se connecter à l'environnement virtuel avec la commande:
+Installer les librairies nescessaires:
 ```bash
-$ source venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 Rouler l'application
 ```bash
-(venv) $ flask run
+$ flask run
 ```
 
 Ouvrir un navigateur et aller à l'adresse: http://127.0.0.1:5000/
@@ -87,11 +87,11 @@ app/                        --> répertoire qui héberge l'application
     errors.py               --> défini les erreurs possibles
 
 migrations/                 --> répertoire qui contient les modifications faites dans la bd
-venv/                       --> répertoire contenant l'environnement virtuel
 
 .flaskenv                   --> permet de paramétrer la variable d'environnement FLASK_APP automatiquement
 app.db                      --> base de données
 config.py                   --> contient les variables de configuration, voir les [logs](History-log.md) pour plus d'information
 sdf.py                      --> défini l'instance de l'application Flask
+requirements.txt            --> liste de librairies à installer
 .gitignore
 ```
