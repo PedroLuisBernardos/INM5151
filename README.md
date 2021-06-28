@@ -40,8 +40,14 @@ Rouler l'application
 $ flask run
 ```
 
+### Ça ne marche pas ?
+---
+Remplacez `#!/usr/bin/python2` par `#!/usr/bin/python3` dans le fichier `/home/myUser/.local/bin/flask`.
+
 Ouvrir un navigateur et aller à l'adresse: http://127.0.0.1:5000/
 
+## Pour les administrateurs
+---
 Un utilisateur de base est déjà présent:
 ```
 user: admin
