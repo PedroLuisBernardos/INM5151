@@ -37,18 +37,8 @@
             <td>{{ facture.amount }}</td>
             <td>{{ facture.body }}</td>
             <td>
-                <!-- Call to action buttons -->
-                <ul class="list-inline m-0">
-                    <li class="list-inline-item">
-                        <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-table"></i></button>
-                    </li>
-                    <li class="list-inline-item">
-                        <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
-                    </li>
-                    <li class="list-inline-item">
-                        <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
-                    </li>
-                </ul>
+                <a href="{{ url_for('update', facture_id=facture.id) }}">Modifier</a>
+                <a href="{{ url_for('delete', facture_id=facture.id) }}">Supprimer</a>
             </td>
         </tr>
     {% endfor %}
