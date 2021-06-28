@@ -48,7 +48,11 @@ $ flask run
 ---
 Remplacez `#!/usr/bin/python2` par `#!/usr/bin/python3` dans le fichier `/home/myUser/.local/bin/flask`.
 
+### Allez utiliser l'application !
+---
 Ouvrir un navigateur et aller à l'adresse: http://127.0.0.1:5000/
+
+Une fois vous avez terminé faites `Ctrl+C` dans votre terminal.
 
 ## Pour les administrateurs
 ---
