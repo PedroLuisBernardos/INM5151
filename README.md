@@ -10,17 +10,19 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 * La route `Modifier des factures` et la page `update_facture.html` n'ont pas le même template que toutes les autres pages/routes. Il faudra le modifier, mais ça fonctionne.
 
-* Remplacer les link style par la librairie [flask-bootstrap](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xi-facelift)
+* Remplacer les link style par [la librairie flask-bootstrap](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xi-facelift), ce lien montre comment faire.
 
-* Améliorer le module Facture en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
+* Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
 
 * Séparer l'ajout de la facture et la page d'affichage de celles-ci.
 
-* Faire la gestion de la barre de recherche.
+* Faire la gestion de la barre de recherche (uniquement après avoir ajouté tous les attributs au modèle **Facture**).
 
-* Améliorer le CSS.
+* Améliorer le CSS pour rendre l'application plus belle.
 
-* Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.
+* Ajouter des `try/except` dans les routes du fichier `routes.py`.
+
+* *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
 
 ## Documents
 ---
