@@ -8,7 +8,9 @@
     <div class="form-group">
         <form action="/update/{{facture.id}}" method="POST">
             <!-- À ajouter des attributs -->
+            <input type="text" name="name" value="{{facture.name}}">
             <input type="text" name="body" value="{{facture.body}}">
+            <input type="text" name="amount" value="{{facture.amount}}">
             <input class="btn btn-primary" type="submit" value="Enregistrer">
         </form>
     </div>

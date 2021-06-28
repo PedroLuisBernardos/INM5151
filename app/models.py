@@ -41,8 +41,10 @@ def load_user(id):
 # Factures
 class Facture(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    amount = db.Column(db.Float)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     # Affichage des factures

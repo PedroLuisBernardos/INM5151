@@ -19,7 +19,9 @@
             <th scope="col">#</th>
             <th scope="col">Date</th>
             <th scope="col">Utilisateur</th>
-            <th scope="col">Corps</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Montant ($)</th>
+            <th scope="col">Description</th>
             <th scope="col">Options</th>
           </tr>
         </thead>
@@ -27,9 +29,12 @@
     {% for facture in factures %}
         <!-- Corps des factures -->
         <tr>
+            <!-- À ajouter des attributs -->
             <th scope="row">{{ facture.id }}</th>
             <th>{{ facture.timestamp }}</th>
             <td>{{ facture.author.username }}</td>
+            <td>{{ facture.name }}</td>
+            <td>{{ facture.amount }}</td>
             <td>{{ facture.body }}</td>
             <td>
                 <a href="{{ url_for('update', facture_id=facture.id) }}">Modifier</a>

@@ -47,6 +47,24 @@ git clone https://github.com/ta-truong/inm5151-ete2021-projet
 cd inm5151-ete2021-projet
 ```
 
+### Vous avez deux possibilités
+
+---
+
+#### 1: Makefile
+
+---
+
+Faites uniquement la commande suivante:
+
+```bash
+make
+```
+
+#### 2: Au long
+
+---
+
 Installer les librairies nescessaires:
 
 ```bash
@@ -147,6 +165,7 @@ migrations/                 --> répertoire qui contient les modifications faite
 .gitignore                  --> permet de ne pas ajouter au dépôt certains fichiers
 app.db                      --> base de données
 config.py                   --> contient les variables de configuration, voir les [logs](logs.md) pour plus d'information
+Makefile                    --> permet de rouler l'application en une seule commande
 requirements.txt            --> liste de librairies à installer
 sdf.py                      --> défini l'instance de l'application Flask
 ```

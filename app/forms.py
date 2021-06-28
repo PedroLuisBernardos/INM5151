@@ -1,7 +1,7 @@
 # forms.py
 # défini les formulaires de l'application
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
 
@@ -55,5 +55,7 @@ class EditProfileForm(FlaskForm):
 # Défini un formulaire pour la saisie de factures
 class FactureForm(FlaskForm):
     # À ajouter des attributs
+    name = TextAreaField('Entrez le nom de votre facture', validators=[DataRequired(message="Veuillez écrire entre 1 et 50 caractères"), Length(min=1, max=50)])
     body = TextAreaField('Entrez votre facture', validators=[DataRequired(message="Veuillez écrire entre 1 et 140 caractères"), Length(min=1, max=140)])
+    amount = DecimalField('Entrez le montant de votre facture', validators=[DataRequired(message="Veuillez entrer un montant numérique")], places=2)
     submit = SubmitField('Enregistrer')

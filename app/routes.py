@@ -16,7 +16,7 @@ def index():
     form = FactureForm()
     # À ajouter des attributs
     if form.validate_on_submit():
-        facture = Facture(body=form.body.data, author=current_user)
+        facture = Facture(name=form.name.data, body=form.body.data, author=current_user, amount=form.amount.data)
         db.session.add(facture)
         db.session.commit()
         flash('Votre facture a été ajoutée.')
@@ -135,7 +135,9 @@ def update(facture_id):
     facture_to_update = Facture.query.get_or_404(facture_id)
     if request.method == 'POST':
         # À ajouter des attributs
+        facture_to_update.name = request.form['name']
         facture_to_update.body = request.form['body']
+        facture_to_update.amount = request.form['amount']
         try:
             db.session.commit()
             return redirect(url_for('index'))
