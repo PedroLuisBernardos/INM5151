@@ -16,6 +16,8 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 * Faire la gestion de la barre de recherche (uniquement après avoir ajouté tous les attributs au modèle **Facture**).
 
+* Modifier les bouttons Modifier et Supprimer de la page `index.html`.
+
 * Améliorer le CSS pour rendre l'application plus belle.
 
 * Ajouter des `try/except` dans les routes du fichier `routes.py`.
