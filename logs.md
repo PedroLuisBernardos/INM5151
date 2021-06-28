@@ -66,7 +66,7 @@
 
 ---
 
-### 14. Amélioration du CSS
+### 14. Amélioration du CSS, ajout du Makefile et amélioration du modèle de Facture
 
 ---
 
@@ -75,6 +75,12 @@ J'ai ajouté la librairie `flask-bootstrap` et j'ai modifié les formulaires gr�
 
 J'ai modifié le modèle de base du fichier `base.html` en suivant la structure de bootstrap.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/060b1d880803f4b977af0086639ae373fe495903#diff-9ba5b84a377a6a734932f7f6a3003e6f8bae1b02c34cf4729cfc95a5fd6179c8)
+
+J'ai ajouté un fichier Makefile pour faciliter la saisie de commandes.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/79153ff7295e6f87da2f63f713d6a24a9ad0dd89#diff-76ed074a9305c04054cdebb9e9aad2d818052b07091de1f20cad0bbac34ffb52)
+
+J'ai amélioré le modèle de Facture en ajoutant d'autres attributs. Les modifications respectives ont été faites dans les fichiers suivants: `forms.py`, `models.py`, `routes.py`, `index.html` et `update_facture.html`.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/79153ff7295e6f87da2f63f713d6a24a9ad0dd89)
 
 ### 13. Gestion des erreurs dans les routes, amélioration de l'installation des librairies et ajout d'une page pour les tests
 
