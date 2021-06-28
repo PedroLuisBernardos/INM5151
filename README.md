@@ -107,30 +107,30 @@ app/                        --> répertoire qui héberge l'application
         js/                 --> répertoire qui contient le JS de l'application
             script.js       --> JS de l'application (en plus de Bootstrap)
     templates/              --> répertoire qui contient les modèles des pages HTML
+        404.html            --> page d'erreur 404
+        500.html            --> page d'erreur 500
+        all.html            --> page cachée, qui contient tous les utilisateurs et toutes les factures
         base.html           --> HTML de base
+        edit_profile.html   --> page de modification du profil de l'utilisateur
+        error.html          --> page d'erreurs généraux
         index.html          --> page d'accueil des utilisateurs où on voit les factures
-        wellcome.html       --> page d'accueil des invités
         login.html          --> page de login
         register.html       --> page d'inscription
         user.html           --> page du profil de l'utilisateur
-        edit_profile.html   --> page de modification du profil de l'utilisateur
         update_facture.html --> page de modification de la facture sélectionnée
-        404.html            --> page d'erreur 404
-        500.html            --> page d'erreur 500
-        error.html          --> page d'erreurs généraux
-        all.html            --> page cachée, qui contient tous les utilisateurs et toutes les factures
+        wellcome.html       --> page d'accueil des invités
     __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application
-    forms.py                --> définis les formulaires (connexion, inscription ...)
-    models.py               --> définis les modèles de la base de données (user, facture ...)
-    routes.py               --> définis les routes vers les différentes pages (/, /index, /login, ...)
     errors.py               --> défini les erreurs possibles
+    forms.py                --> défini les formulaires (connexion, inscription ...)
+    models.py               --> défini les modèles de la base de données (user, facture ...)
+    routes.py               --> défini les routes vers les différentes pages (/, /index, /login, ...)
 
 migrations/                 --> répertoire qui contient les modifications faites dans la bd
 
 .flaskenv                   --> permet de paramétrer la variable d'environnement FLASK_APP automatiquement
+.gitignore                  --> permet de ne pas ajouter au dépôt certains fichiers
 app.db                      --> base de données
 config.py                   --> contient les variables de configuration, voir les [logs](logs.md) pour plus d'information
-sdf.py                      --> défini l'instance de l'application Flask
 requirements.txt            --> liste de librairies à installer
-.gitignore
+sdf.py                      --> défini l'instance de l'application Flask
 ```

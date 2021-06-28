@@ -1,4 +1,4 @@
-# History log
+# Logs
 ---
 > On devrait écrire ici toutes nos manipulations pour que les autres soient capables de suivre !
 
