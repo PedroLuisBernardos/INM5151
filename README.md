@@ -50,6 +50,20 @@ pass: admin
 ```
 
 Pour voir tous les utilisateurs et toutes les factures voir http://127.0.0.1:5000/all
+On peut les supprimer dans l'application mais pour le faire en ligne de commande:
+
+```bash
+(venv) $ flask shell
+>>> users = User.query.all()
+>>> for u in users:
+...     db.session.delete(u)
+...
+>>> factures = Facture.query.all()
+>>> for f in factures:
+...     db.session.delete(f)
+...
+>>> db.session.commit()
+```
 
 ## Explication des répertoires et des fichiers
 ---

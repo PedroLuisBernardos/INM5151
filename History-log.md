@@ -56,6 +56,9 @@ J'ai ajouté une page `all.html` (et sa route dans `routes.py`) qui contient la 
 J'ai amélioré la gestion d'erreurs dans `routes.py` et j'ai créé une page personnalisée pour les erreurs: `error.html`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/0570b73396c11ada16fb15039e8b07a8d8acf562#diff-f67826701212aab477be0634a23fdcd7ffdfe748b8ce35eb27b8f690d334c732)
 
+J'ai ajouté le fichier `requirements.txt` qui contient toutes les librairies à installer pour pouvoir utiliser l'application. L'information est dans le [README](README.md)
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/ca7e19f75822e013ec7546b7825f75f01515baaf#diff-4d7c51b1efe9043e44439a949dfd92e5827321b34082903477fd04876edb7552)
+
 ### Je n'ai pas fait la section [Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers)
 ---
 
@@ -136,20 +139,6 @@ Une nouvelle page a été ajoutée: `register.html`.
 
 Un lien vers `register.html` a été ajouté dans `login.html`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/78994ab4a81d2dd0d3e84014803277537aa26c99#diff-e1bc6bd8e3e268d122beae1cfee7bb0e06013a19b8fd6fe8b15b40f90b98a019)
-
-#### Pour supprimer les utilisateurs de la bd:
-```bash
-(venv) $ flask shell
->>> users = User.query.all()
->>> for u in users:
-...     db.session.delete(u)
-...
->>> factures = Facture.query.all()
->>> for f in factures:
-...     db.session.delete(f)
-...
->>> db.session.commit()
-```
 
 ### 7. Ajout de la Database
 ---
