@@ -1,14 +1,12 @@
 # INM5151 Système de Facturation (sdf)
 ---
+Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles ! J'ai mis très brievement ce qu'on doit faire dans les [logs](History-log.md) du projet.
 
 ## TODO
 ---
 On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-paginations).
 
-J'ai skip le [chapitre 8 -Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers) parce qu'il ne nous était pas utile. **Par contre**, certaines de ses fonctionnalités sont utilisées dans le chapitre 9. Il faudra voir comment on peut transformer les *posts* en *factures*.
-> On devra peut-être se rencontrer pour setter ça!
-
-Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles ! J'ai mis très brievement ce qu'on doit faire dans les [logs](History-log.md) du projet.
+J'ai skip le [chapitre 8 -Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers) parce qu'il ne nous était pas utile. **Par contre**, certaines de ses fonctionnalités sont utilisées dans le chapitre 9. Il faudra voir comment on peut transformer les *posts* en *factures*. On devra peut-être se rencontrer pour setter ça!
 
 La route `Modifier des factures` et la page `update_facture.html` n'ont pas le même template que toutes les autres pages/routes. Il faudra le modifier, mais ça fonctionne.
 
@@ -23,11 +21,6 @@ La route `Modifier des factures` et la page `update_facture.html` n'ont pas le m
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
 [Les logs du projet](History-log.md)
-
-### Autre info
----
-J'ai modifié le .gitignore pour que l'environnement virtuel *venv* soit ajouté au dépôt. Si jamais vous ça marche pas, juste réinstallez les librairies que j'ai installées (tout est dans les logs).
-Aussi, les répertoires *pycache*, qui sont des répertoires inutiles, ne sont pas ajoutez grâce au .gitignore. Mais ceux qui sont dans *venv* ont éte ajoutez avec *venv* ! J'ai trop pas envie de les enlever et changer le .gitignore... hahaha
 
 ## Comment utiliser l'application
 ---
