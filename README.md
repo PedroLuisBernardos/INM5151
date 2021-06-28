@@ -4,7 +4,7 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 ## TODO
 ---
-On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-paginations).
+On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination).
 
 * La route `Modifier des factures` et la page `update_facture.html` n'ont pas le même template que toutes les autres pages/routes. Il faudra le modifier, mais ça fonctionne.
 
