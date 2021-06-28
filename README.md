@@ -118,14 +118,14 @@ flask shell
 
 Pour mettre à jour les nouvelles versions de la bd (en changeant le fichier `modules.py`):
 
-```
+```bash
 flask db migrate -m "message de modification ici"
 flask db upgrade
 ```
 
 En cas d'erreur:
 
-```
+```bash
 flask db downgrade
 ```
 
