@@ -7,14 +7,15 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
-## . LE TUTORIEL EST TERMINÉ, MAINTENANT FAUDRA GOOGLER POUR AMÉLIORER L'APPLICATION :P
+## . LE TUTORIEL EST TERMINÉ, MAINTENANT FAUDRA GOOGLER POUR AMÉLIORER L'APPLICATION 😝
 
 ---
 
-## Est-ce que ces deux parties sont utiles?
+## Est-ce que ces deux parties sont utiles ?
 
 ---
 [Chapitre 14 - Ajax](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiv-ajax)
+
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
 ### 23. [API's](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis)
