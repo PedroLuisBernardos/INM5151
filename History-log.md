@@ -47,11 +47,14 @@
 J'ai ajouté un formulaire pour la gestion de factures dans `forms.py`, une route dans `routes.py` et l'affichage de ces factures dans `index.html`. J'ai aussi migré et upgradé la base de données avec le modèle de `Facture`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/e288e2cc463b10461dd070f6bd90982a8bb827fb)
 
-J'ai ajouté la gestion de modification/suppréssion de factures dans `routes.py`, `index.html` et `update_facture.html` et la gestion de suppression du compte dans `user.html` et `routes.py`.
+J'ai ajouté la gestion de modification/suppression de factures dans `routes.py`, `index.html` et `update_facture.html` et la gestion de suppression du compte dans `user.html` et `routes.py`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/67a41090b6d2ad46135acc5ec80dcd5f86280afa)
 
 J'ai ajouté une page `all.html` (et sa route dans `routes.py`) qui contient la liste de tous les utilisateurs et toutes les factures.
-[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/67a41090b6d2ad46135acc5ec80dcd5f86280afa#diff-0ff488b2e6357717687f02abc57d83507dca9b1e2d32c3b0f7f33df64098a3a7)
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/0570b73396c11ada16fb15039e8b07a8d8acf562#diff-0ff488b2e6357717687f02abc57d83507dca9b1e2d32c3b0f7f33df64098a3a7)
+
+J'ai amélioré la gestion d'erreurs dans `routes.py` et j'ai créé une page personnalisée pour les erreurs: `error.html`.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/0570b73396c11ada16fb15039e8b07a8d8acf562#diff-f67826701212aab477be0634a23fdcd7ffdfe748b8ce35eb27b8f690d334c732)
 
 ### Je n'ai pas fait la section [Followers](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers)
 ---
