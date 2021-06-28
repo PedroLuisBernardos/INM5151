@@ -70,8 +70,11 @@
 
 ---
 
-J'ai ajouté la librairie `flask-bootstrap` et j'ai modifié le modèle de base de `base.html`. J'ai aussi modifié les formulaires grâce à `bootstrap/wtf.html` sauf celui dans la page `update_facture.html`.
+J'ai ajouté la librairie `flask-bootstrap` et j'ai modifié les formulaires grâce à `bootstrap/wtf.html` sauf celui dans la page `update_facture.html`.
 [lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/060b1d880803f4b977af0086639ae373fe495903)
+
+J'ai modifié le modèle de base du fichier `base.html` en suivant la structure de bootstrap.
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/060b1d880803f4b977af0086639ae373fe495903#diff-9ba5b84a377a6a734932f7f6a3003e6f8bae1b02c34cf4729cfc95a5fd6179c8)
 
 ### 13. Gestion des erreurs dans les routes, amélioration de l'installation des librairies et ajout d'une page pour les tests
 
