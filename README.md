@@ -1,8 +1,10 @@
 # INM5151 Système de Facturation (sdf)
+
 ---
 Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles ! J'ai mis très brievement ce qu'on doit faire dans les [logs](logs.md) du projet.
 
 ## TODO
+
 ---
 On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 
@@ -25,6 +27,7 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 * *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
 
 ## Documents
+
 ---
 [OpsCon](https://docs.google.com/document/d/1gFm7OCDQM8OezZi54VzVFRqCNnuyvWAwm8ISOs8H8CQ/edit#)
 
@@ -37,43 +40,51 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 [Les logs du projet](logs.md)
 
 ## Comment utiliser l'application
+
 ---
 Cloner ce dépôt et accéder au répertoire principal
+
 ```bash
-$ git clone https://github.com/ta-truong/inm5151-ete2021-projet
-$ cd inm5151-ete2021-projet
+git clone https://github.com/ta-truong/inm5151-ete2021-projet
+cd inm5151-ete2021-projet
 ```
 
 Installer les librairies nescessaires:
+
 ```bash
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Rouler l'application
+
 ```bash
-$ flask run
+flask run
 ```
 
 ### Ça ne marche pas ?
+
 ---
 Remplacez `#!/usr/bin/python2` par `#!/usr/bin/python3` dans le fichier `/home/myUser/.local/bin/flask`.
 
-### Allez utiliser l'application !
+### Allez utiliser l'application
+
 ---
-Ouvrir un navigateur et aller à l'adresse: http://127.0.0.1:5000/
+Ouvrir un navigateur et aller à l'adresse: <http://127.0.0.1:5000/>
 
 Une fois vous avez terminé faites `Ctrl+C` dans votre terminal.
 
 ## Pour les administrateurs
+
 ---
 Un utilisateur de base est déjà présent:
+
 ```
 user: admin
 email: admin@admin.com
 pass: admin
 ```
 
-Pour voir tous les utilisateurs et toutes les factures voir http://127.0.0.1:5000/all
+Pour voir tous les utilisateurs et toutes les factures voir <http://127.0.0.1:5000/all>
 On peut les supprimer dans l'application mais pour le faire en ligne de commande:
 
 ```bash
@@ -90,17 +101,22 @@ On peut les supprimer dans l'application mais pour le faire en ligne de commande
 ```
 
 Pour mettre à jour les nouvelles versions de la bd (en changeant le fichier `modules.py`):
+
 ```
 (venv) $ flask db migrate -m "message de modification ici"
 (venv) $ flask db upgrade
 ```
+
 En cas d'erreur:
+
 ```
 (venv) $ flask db downgrade
 ```
 
 ## Explication des répertoires et des fichiers
+
 ---
+
 ```
 app/                        --> répertoire qui héberge l'application
     static/                 --> répertoire qui contient les fichiers statiques de l'application
