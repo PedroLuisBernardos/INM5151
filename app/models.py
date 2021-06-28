@@ -1,5 +1,5 @@
 # models.py
-# défini les modèles de classe de l'application
+# défini les modèles de classe de l'application, si un modèle est ajouté, modfier le fichier sdf.py
 from datetime import datetime
 from hashlib import md5
 from app import db, login
