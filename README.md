@@ -14,6 +14,12 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 * Séparer l'ajout de la facture et la page d'affichage de celles-ci.
 
+* Faire la gestion de la barre de recherche.
+
+* Améliorer le CSS.
+
+* Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.
+
 ## Documents
 ---
 [OpsCon](https://docs.google.com/document/d/1gFm7OCDQM8OezZi54VzVFRqCNnuyvWAwm8ISOs8H8CQ/edit#)
