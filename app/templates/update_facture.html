@@ -1,17 +1,14 @@
 <!-- update_facture.html -->
 <!-- page de modification des factures -->
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
     <h1>Modifier facture {{ facture.id }}!</h1>
     <hr>
     <div class="form-group">
-        <form action="/update/{{facture.id}}" method="POST">
-            <!-- À ajouter des attributs -->
-            <input type="text" name="name" value="{{facture.name}}">
-            <input type="text" name="body" value="{{facture.body}}">
-            <input type="text" name="amount" value="{{facture.amount}}">
-            <input class="btn btn-primary" type="submit" value="Enregistrer">
-        </form>
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
     </div>
 {% endblock %}

@@ -132,20 +132,24 @@ def delete(facture_id):
 # Modifier des factures
 @app.route('/update/<facture_id>', methods=['GET', 'POST'])
 def update(facture_id):
-    facture_to_update = Facture.query.get_or_404(facture_id)
-    if request.method == 'POST':
-        # À ajouter des attributs
-        facture_to_update.name = request.form['name']
-        facture_to_update.body = request.form['body']
-        facture_to_update.amount = request.form['amount']
-        try:
+    try:
+        facture_to_update = Facture.query.get_or_404(facture_id)
+        form = FactureForm()
+        if form.validate_on_submit():
+            facture_to_update.name = form.name.data
+            facture_to_update.body = form.body.data
+            facture_to_update.amount = form.amount.data
             db.session.commit()
+            flash('Les modifications ont été sauvegardées')
             return redirect(url_for('index'))
-        except:
-            error_string = 'Il y a eu une erreur avec la modification de la facture.'
-            return render_template('error.html', title='Erreur', error=error_string)
-    else:
-        return render_template('update_facture.html', title='Modification de factures', facture=facture_to_update)
+        elif request.method == 'GET':
+            form.name.data = facture_to_update.name
+            form.body.data = facture_to_update.body
+            form.amount.data = facture_to_update.amount
+        return render_template('update_facture.html', title='Modifification de la facture',form=form, facture=facture_to_update)
+    except:
+        error_string = 'Il y a eu une erreur avec la modification de la facture.'
+        return render_template('error.html', title='Erreur', error=error_string)
 
 # Pour savoir c'est quand la dernière fois que l'utilisateur s'est connecté
 @app.before_request
