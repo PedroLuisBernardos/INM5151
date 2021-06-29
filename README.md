@@ -33,6 +33,8 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 [Sprint 1](https://docs.google.com/document/d/1YnsLE2BXZ-MREk3PWpu65Rmxpdcfev8nZcXn98PMk6g/edit#)
 
+[PowerPoint Sprint 1](https://docs.google.com/presentation/d/1ovp0vUbbqoy77J7YeX1wLURpROjskBO-f2CdZjpM9RQ/edit?usp=sharing)
+
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
 [Les logs du projet](logs.md)
