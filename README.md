@@ -3,26 +3,69 @@
 ---
 Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles ! J'ai mis très brievement ce qu'on doit faire dans les [logs](logs.md) du projet.
 
-## TODO
-
----
 On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
 
-* Toutes les sections vides des [logs](logs.md) du projet.
+## TODO sprint 2
+
+---
+
+* Ajouter une pagination et une navigation entre facutres. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination).
+
+* Ajouter un support par email et une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
+
+* Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
+
+* Ajouter une gestion de la langue. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n).
+
+* Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
+
+* Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
+
+* Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
+
+* Ajouter un modèle `profil d'entreprise` et une page `profils_entreprise.html`. Cette page sera la première page que l'utilisateur **connecté** verra. On va devoir **ajouter**, **modifier** et **supprimer** des profils d'entreprise (au maximum 5). Une fois le profil sélectionné, on est redirigés à la page `index.html`. Ajouter dans la barre de navigation (sûrement dans le *drop-down* de **Mon profil** un lien pour modifier le profil courrant).
 
 * Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
+  * Un deuxième `id`. Lui qui est déjà présent est l'id de la base de données, nous on veut un deuxième `id`, **unique** et **personnalisable**. L'ajouter dans le formulaire et dans l'affichage des factures.
+  * Un booléen nommé `paiement`, en *drop-down*: **payée** ou **non-payée**. L'ajouter dans le formulaire et dans l'affichage des factures. Par défaut, se placer sur `non-payée`.
+  * Une valeur fixe `taxe` qui est de **14.975%**. L'ajouter dans le formulaire et dans l'affichage des factures. Faire le calcul du montant `amount` automatiquement.
+  * Un *drop-down* **modifiable** nommé `comptes de revenus/dépenses`. Il va avoir une page pour les créer et ils seront disponibles dans le *drop-down* des factures. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin). L'ajouter dans le formulaire et dans l'affichage des factures.
+  * idem mais nommé `contacts`.
+  * Créer une page nommée `modele_facture.html` dans la barre de navigation. Il y aura un formulaire qui nous permet d'ajouter des modèles de facture. Ces modèles seront visibles dans l'ajout (uniquement l'ajout) de factures sous forme de *drop-down*. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin).
+
+## TODO sprint 3
+
+---
+
+* Ajouter du javascript. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic).
+
+* Lui je sais pas c'est quoi, faudra voir si c'est pertinent. Ajouter des background jobs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxii-background-jobs).
+
+* Gérer l'exportation de factures en format PDF.
+
+* Gérer l'envoi des factures par email (exportées en PDF).
+
+* Si c'est pas déjà fait, gérer les notifications de rappel par email (le email qui est dans le modèle `User`).
+
+* Gérer le filtrage de factures.
+
+* Gérer le calcul des montants des factures sélectionnées.
+
+* Gérer la modification du thème (page supplémentaire dans **Mon profil**).
 
 * Séparer l'ajout de la facture et la page d'affichage de celles-ci.
-
-* Faire la gestion de la barre de recherche (uniquement après avoir ajouté tous les attributs au modèle **Facture**).
 
 * Modifier les bouttons Modifier et Supprimer de la page `index.html`.
 
 * Améliorer le CSS pour rendre l'application plus belle.
 
-* Ajouter des `try/except` dans les routes du fichier `routes.py`.
+* Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
 
 * *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
+
+* Pour aller plus loin selon Miguel. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis). Aussi, pour aller plus loin, section sur les APIs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis).
+
+* Déploiement sur Héroku, Linux ou Docker. Faudra en choisir un des trois. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux).
 
 ## Documents
 

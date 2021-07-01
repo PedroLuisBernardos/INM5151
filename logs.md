@@ -6,64 +6,12 @@
 
 À lister en ordre **décroissant** pour faciliter la recherche.
 
-## . LE TUTORIEL EST TERMINÉ, MAINTENANT FAUDRA GOOGLER POUR AMÉLIORER L'APPLICATION 😝
-
----
-
 ## Est-ce que ces deux parties sont utiles ?
 
 ---
 [Chapitre 14 - Ajax](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiv-ajax)
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
-
-### 24. [API's](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis)
-
----
-
-### 23. [Deploiement du projet (linux/heroku/docker)](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux)
-
----
-
-### 22. [Pour aller plus loin](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis)
-
----
-
-### 21. [Background jobs](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxii-background-jobs)
-
----
-
-### 22. [Gestion de notifications](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications)
-
----
-
-### 21. [Bonus: javascript](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic)
-
----
-
-### 20. [Gestion de la recherche](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
-
----
-
-### 19. [Amélioration de la structure de l'application](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
-
----
-
-### 18. [Gestion de la langue](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n)
-
----
-
-### 17. [Gestion des dates et du temps](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times)
-
----
-
-### 16. [Support par email et réinitialisation du mot de passe](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support)
-
----
-
-### 15. [Pagination et navigation dans les factures](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination)
-
----
 
 ### 14. Amélioration du CSS, ajout du Makefile et amélioration du modèle de Facture
 
