@@ -9,6 +9,8 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 ---
 
+* Traduire tout ce qui est en anglais en français: modifier le texte `Edit Profile` dans son profil pour `Modifier mon profil`, les erreurs dans les formulaires, les hover dans les formulaires, etc.
+
 * Ajouter une pagination et une navigation entre facutres. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination).
 
 * Ajouter un support par email et une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
