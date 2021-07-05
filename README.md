@@ -43,6 +43,8 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 * Gérer l'exportation de factures en format PDF.
 
+* Ajouter un favicon
+
 * Gérer l'envoi des factures par email (exportées en PDF).
 
 * Si c'est pas déjà fait, gérer les notifications de rappel par email (le email qui est dans le modèle `User`).
