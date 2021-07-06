@@ -9,6 +9,8 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 ---
 
+* Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
+
 * Traduire tout ce qui est en anglais en français: modifier le texte `Edit Profile` dans son profil pour `Modifier mon profil`, les erreurs dans les formulaires, les hover dans les formulaires, etc.
 
 * Ajouter une pagination et une navigation entre facutres. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination).
