@@ -43,6 +43,15 @@
             {% if current_user.is_anonymous %}
             <a class="nav-link" href="{{ url_for('login') }}">Se connecter</a>
             {% else %}
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Comptes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Profils d'entreprise</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon profil</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -52,9 +61,6 @@
               </div>
             </li>
             {% endif %}
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">À venir</a>
           </li>
         </ul>
         <form class="form-inline">
