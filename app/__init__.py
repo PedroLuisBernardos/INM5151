@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 # Si l'utilisateur n'est pas connecte, le rediriger vers /wellcome
-login.login_view = 'wellcome'
+login.login_view = 'welcome'
 # Modification du message de demande de connexion
 login.login_message = "Vous devez vous connecter pour accéder à cette page !"
 app.static_folder = 'static'

@@ -27,12 +27,12 @@ def index():
 
 # Page d'accueil pour les invités
 @app.route('/')
-@app.route('/wellcome')
-def wellcome():
-    # Si l'utilisateur est actuellement connecté, ne pas aller à la page /wellcome
+@app.route('/welcome')
+def welcome():
+    # Si l'utilisateur est actuellement connecté, ne pas aller à la page /welcome
     if current_user.is_authenticated:
         return redirect(url_for('index'))
-    return render_template('wellcome.html', title='Bienvenue')
+    return render_template('welcome.html', title='Bienvenue')
 
 # Se connecter
 @app.route('/login', methods=['GET', 'POST'])
@@ -66,7 +66,7 @@ def logout():
         if current_user.is_authenticated:
             logout_user()
             flash('Vous avez été déconnecté')
-            return redirect(url_for('wellcome'))
+            return redirect(url_for('welcome'))
         return redirect(url_for('index'))
     except:
         error_string = 'Il y a eu une erreur avec la déconnexion.'
@@ -111,7 +111,7 @@ def delete_user(username):
         logout_user()
         db.session.delete(user)
         db.session.commit()
-        return redirect(url_for('wellcome'))
+        return redirect(url_for('welcome'))
     except:
         error_string = 'Il y a eu une erreur avec la suppression de l\'utilisateur.'
         return render_template('error.html', title='Erreur', error=error_string)
