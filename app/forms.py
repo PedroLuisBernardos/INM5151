@@ -56,6 +56,6 @@ class EditProfileForm(FlaskForm):
 class FactureForm(FlaskForm):
     # À ajouter des attributs
     name = TextAreaField('Entrez le nom de votre facture', validators=[DataRequired(message="Veuillez entrer un nom"), Length(min=1, max=50, message='Veuillez écrire entre 1 et 50 caractères')])
-    body = TextAreaField('Entrez votre facture', validators=[DataRequired(message="Veuillez entrer une description"), Length(min=1, max=140, message='Veuillez écrire entre 1 et 50 caractères')])
+    body = TextAreaField('Entrez la description de votre facture', validators=[DataRequired(message="Veuillez entrer une description"), Length(min=1, max=140, message='Veuillez écrire entre 1 et 50 caractères')])
     amount = DecimalField('Entrez le montant de votre facture', validators=[DataRequired(message="Veuillez entrer un montant numérique")], places=2)
     submit = SubmitField('Enregistrer')
