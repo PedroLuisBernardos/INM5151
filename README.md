@@ -139,7 +139,7 @@ Une fois vous avez terminé faites `Ctrl+C` dans votre terminal.
 
 ---
 
-La langue est choisie selon [la langue de votre navigateur](settings/?search=language). Les langues disponibles sont le français (par défaut), l'anglais et l'espagnol.
+La langue est choisie selon [la langue de votre navigateur](//settings/?search=language). Les langues disponibles sont le français (par défaut), l'anglais et l'espagnol.
 
 ## Pour les administrateurs
 
