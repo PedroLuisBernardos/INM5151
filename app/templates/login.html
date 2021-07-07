@@ -6,12 +6,12 @@
 
 {% block app_content %}
     <!-- Form pour se connecter a l'application -->
-    <h1>Se connecter</h1>
+    <h1>{{ _('Se connecter') }}</h1>
     <div class="form-group">
         <div class="col-md-4">
             {{ wtf.quick_form(form) }}
         </div>
     </div>
     <!-- Pour s'inscrire -->
-    <p>Nouvel utilisateur ? <a href="{{ url_for('register') }}">Inscris-toi !</a></p>
+    <p>{{ _('Nouvel utilisateur ?') }} <a href="{{ url_for('register') }}">{{ _('Inscris-toi !') }}</a></p>
 {% endblock %}

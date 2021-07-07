@@ -8,6 +8,7 @@ from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm
 from app.models import Facture, User
+from flask_babel import _
 
 # Page d'accueil pour les utilisateurs
 @app.route('/index', methods=['GET', 'POST'])
@@ -19,14 +20,14 @@ def index():
         facture = Facture(name=form.name.data, body=form.body.data, author=current_user, amount=form.amount.data)
         db.session.add(facture)
         db.session.commit()
-        flash('Votre facture a été ajoutée.')
+        flash(_('Votre facture a été ajoutée.'))
         return redirect(url_for('index'))
     # Toutes les factures de l'utilisateur actuel
     page = request.args.get('page', 1, type=int)
     factures = Facture.query.filter_by(user_id=current_user.id).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
     next_url = url_for('index', page=factures.next_num) if factures.has_next else None
     prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
-    return render_template("index.html", title='Accueil', form=form, factures=factures.items, next_url=next_url, prev_url=prev_url)
+    return render_template("index.html", title=_('Accueil'), form=form, factures=factures.items, next_url=next_url, prev_url=prev_url)
 
 # Page d'accueil pour les invités
 @app.route('/')
@@ -35,7 +36,7 @@ def welcome():
     # Si l'utilisateur est actuellement connecté, ne pas aller à la page /welcome
     if current_user.is_authenticated:
         return redirect(url_for('index'))
-    return render_template('welcome.html', title='Bienvenue')
+    return render_template('welcome.html', title=_('Bienvenue'))
 
 # Se connecter
 @app.route('/login', methods=['GET', 'POST'])
@@ -51,15 +52,15 @@ def login():
             user = User.query.filter_by(username=form.username.data).first()
             # Si l'utilisateur n'existe pas OU si le mot de passe est incorrect... Erreur !
             if user is None or not user.check_password(form.password.data):
-                flash('Utilisateur ou mot de passes invalides !')
+                flash(_('Utilisateur ou mot de passes invalides !'))
                 return redirect(url_for('login'))
             # Si l'utilisateur et le mdp sont justes, le Flask-Forms va le marquer comme logged. Des variables comme current_user seront maintenant remplies
             login_user(user, remember=form.remember_me.data)
             return redirect(url_for('index'))
-        return render_template('login.html', title='Connexion', form=form)
+        return render_template('login.html', title=_('Connexion'), form=form)
     except:
-        error_string = 'Il y a eu une erreur avec la connexion.'
-        return render_template('error.html', title='Erreur', error=error_string)
+        error_string = _('Il y a eu une erreur avec la connexion.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Se déconnecter
 @app.route('/logout')
@@ -68,12 +69,12 @@ def logout():
         # Si l'utilisateur est actuellement connecté, le déconnecter
         if current_user.is_authenticated:
             logout_user()
-            flash('Vous avez été déconnecté')
+            flash(_('Vous avez été déconnecté'))
             return redirect(url_for('welcome'))
         return redirect(url_for('index'))
     except:
-        error_string = 'Il y a eu une erreur avec la déconnexion.'
-        return render_template('error.html', title='Erreur', error=error_string)
+        error_string = _('Il y a eu une erreur avec la déconnexion.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Page d'enregistrement
 @app.route('/register', methods=['GET', 'POST'])
@@ -88,19 +89,19 @@ def register():
             user.set_password(form.password.data)
             db.session.add(user)
             db.session.commit()
-            flash('Vous êtes maintenant inscrit !')
+            flash(_('Vous êtes maintenant inscrit !'))
             return redirect(url_for('login'))
-        return render_template('register.html', title='S\'inscrire', form=form)
+        return render_template('register.html', title=_('S\'inscrire'), form=form)
     except:
-        error_string = 'Il y a eu une erreur avec l\'inscription.'
-        return render_template('error.html', title='Erreur', error=error_string)
+        error_string = _('Il y a eu une erreur avec l\'inscription.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Page profil
 @app.route('/user/<username>')
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('user.html', title='Mon profil', user=user)
+    return render_template('user.html', title=_('Mon profil'), user=user)
 
 # Supprimer un utilisateur et toutes ses factures
 @app.route('/delete_user/<username>')
@@ -116,8 +117,8 @@ def delete_user(username):
         db.session.commit()
         return redirect(url_for('welcome'))
     except:
-        error_string = 'Il y a eu une erreur avec la suppression de l\'utilisateur.'
-        return render_template('error.html', title='Erreur', error=error_string)
+        error_string = _('Il y a eu une erreur avec la suppression de l\'utilisateur.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Supprimer des factures
 @app.route('/delete/<facture_id>')
@@ -129,8 +130,8 @@ def delete(facture_id):
         db.session.commit()
         return redirect(url_for('index'))
     except:
-        error_string = 'Il y a eu une erreur avec la suppression de la facture.'
-        return render_template('error.html', title='Erreur', error=error_string)
+        error_string = _('Il y a eu une erreur avec la suppression de la facture.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Modifier des factures
 @app.route('/update/<facture_id>', methods=['GET', 'POST'])
@@ -143,16 +144,16 @@ def update(facture_id):
             facture_to_update.body = form.body.data
             facture_to_update.amount = form.amount.data
             db.session.commit()
-            flash('Les modifications ont été sauvegardées')
+            flash(_('Les modifications ont été sauvegardées'))
             return redirect(url_for('index'))
         elif request.method == 'GET':
             form.name.data = facture_to_update.name
             form.body.data = facture_to_update.body
             form.amount.data = facture_to_update.amount
-        return render_template('update_facture.html', title='Modifification de la facture',form=form, facture=facture_to_update)
+        return render_template('update_facture.html', title=_('Modifification de la facture'),form=form, facture=facture_to_update)
     except:
-        error_string = 'Il y a eu une erreur avec la modification de la facture.'
-        return render_template('error.html', title='Erreur', error=error_string)
+        error_string = _('Il y a eu une erreur avec la modification de la facture.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Pour savoir c'est quand la dernière fois que l'utilisateur s'est connecté
 @app.before_request
@@ -171,15 +172,15 @@ def edit_profile():
             current_user.username = form.username.data
             current_user.about_me = form.about_me.data
             db.session.commit()
-            flash('Les modifications ont été sauvegardées')
+            flash(_('Les modifications ont été sauvegardées'))
             return redirect(url_for('user', username=current_user.username))
         elif request.method == 'GET':
             form.username.data = current_user.username
             form.about_me.data = current_user.about_me
-        return render_template('edit_profile.html', title='Modifier votre profil',form=form)
+        return render_template('edit_profile.html', title=_('Modifier votre profil'),form=form)
     except:
-        error_string = 'Il y a eu une erreur avec la modification du profil.'
-        return render_template('error.html', title='Erreur', error=error_string)
+        error_string = _('Il y a eu une erreur avec la modification du profil.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
 
 @app.route('/all')
 # UNIQUEMENT POUR LES ADMINISTRATEURS

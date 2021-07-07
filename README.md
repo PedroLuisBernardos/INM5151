@@ -9,13 +9,11 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 * Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
 
-* Traduire tout ce qui est en anglais en français: modifier le texte `Edit Profile` dans son profil pour `Modifier mon profil`, les erreurs dans les formulaires, les hover dans les formulaires, etc.
+* Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
 
 * Ajouter un support par email et une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
 
 * Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
-
-* Ajouter une gestion de la langue. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n).
 
 * Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
 
@@ -185,6 +183,9 @@ app/                        --> répertoire qui héberge l'application
             style.css       --> CSS de l'application (en plus de Bootstrap)
         js/                 --> répertoire qui contient le JS de l'application
             script.js       --> JS de l'application (en plus de Bootstrap)
+        translations/       --> répertoire qui contient les traductions
+            en/             --> répertoire qui contient les traductions en anglais
+            es/             --> répertoire qui contient les traductions en espagnol
     templates/              --> répertoire qui contient les modèles des pages HTML
         404.html            --> page d'erreur 404
         500.html            --> page d'erreur 500
@@ -199,6 +200,7 @@ app/                        --> répertoire qui héberge l'application
         update_facture.html --> page de modification de la facture sélectionnée
         wellcome.html       --> page d'accueil des invités
     __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application
+    cli.py                  --> défini des commandes flask traduction plus simples pour la gestion des traductions
     errors.py               --> défini les erreurs possibles
     forms.py                --> défini les formulaires (connexion, inscription ...)
     models.py               --> défini les modèles de la base de données (user, facture ...)
@@ -209,6 +211,7 @@ migrations/                 --> répertoire qui contient les modifications faite
 .flaskenv                   --> permet de paramétrer la variable d'environnement FLASK_APP automatiquement
 .gitignore                  --> permet de ne pas ajouter au dépôt certains fichiers
 app.db                      --> base de données
+babel.cfg                   --> contient la configuration de la traduction
 config.py                   --> contient les variables de configuration, voir les [logs](logs.md) pour plus d'information
 Makefile                    --> permet de rouler l'application en une seule commande
 requirements.txt            --> liste de librairies à installer

@@ -4,7 +4,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>Bonjour, {{ current_user.username }}!</h1>
+    <h1>{{ _('Bonjour') }}, {{ current_user.username }}!</h1>
     <hr>
     {% if form %}
         <div class="form-group">
@@ -18,13 +18,13 @@
     <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Date</th>
-            <th scope="col">Utilisateur</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Montant ($)</th>
-            <th scope="col">Description</th>
-            <th scope="col">Options</th>
+            <th scope="col">{{ _('#') }}</th>
+            <th scope="col">{{ _('Date') }}</th>
+            <th scope="col">{{ _('Utilisateur') }}</th>
+            <th scope="col">{{ _('Nom') }}</th>
+            <th scope="col">{{ _('Montant') }} ($)</th>
+            <th scope="col">{{ _('Description') }}</th>
+            <th scope="col">{{ _('Options') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -39,8 +39,8 @@
             <td>{{ facture.amount }}</td>
             <td>{{ facture.body }}</td>
             <td>
-                <a class="btn btn-info" href="{{ url_for('update', facture_id=facture.id) }}">Modifier</a>
-                <a class="btn btn-danger" href="{{ url_for('delete', facture_id=facture.id) }}">Supprimer</a>
+                <a class="btn btn-info" href="{{ url_for('update', facture_id=facture.id) }}">{{ _('Modifier') }}</a>
+                <a class="btn btn-danger" href="{{ url_for('delete', facture_id=facture.id) }}">{{ _('Supprimer') }}</a>
             </td>
         </tr>
     {% endfor %}
@@ -48,10 +48,10 @@
     </table>
     <!-- Pagination -->
     {% if prev_url %}
-        <a class="btn btn-link" href="{{ prev_url }}">Page précédente</a>
+        <a class="btn btn-link" href="{{ prev_url }}">{{ _('Page précédente') }}</a>
     {% endif %}
     {% if next_url %}
-        <a class="btn btn-link" href="{{ next_url }}">Page suivante</a>
+        <a class="btn btn-link" href="{{ next_url }}">{{ _('Page suivante') }}</a>
     {% endif %}
     <br><br>
 {% endblock %}

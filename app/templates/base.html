@@ -10,9 +10,9 @@
     {% endblock %}
     {% block title %}
       {% if title %}
-        <title>{{ title }} - Système de Facturation</title>
+        <title>{{ title }} - {{ _('Système de Facturation') }}</title>
       {% else %}
-        <title>Système de Facturation</title>
+        <title>{{ _('Système de Facturation') }}</title>
       {% endif %}
     {% endblock %}
     {% block styles %}
@@ -30,46 +30,46 @@
     <!-- Barre de navigation -->
     {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{{ url_for('index') }}">Système de facturation</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">{{ _('Système de facturation') }}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('index') }}">Accueil</a>
+              <a class="nav-link" href="{{ url_for('index') }}">{{ _('Accueil') }}</a>
             </li>
             {% if current_user.is_anonymous %}
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('register') }}">S'inscrire</a>
+              <a class="nav-link" href="{{ url_for('register') }}">{{ _("S'inscrire") }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('login') }}">Se connecter</a>
+              <a class="nav-link" href="{{ url_for('login') }}">{{ _('Se connecter') }}</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Contacts</a>
+              <a class="nav-link disabled" href="#">{{ _('Contacts') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Comptes</a>
+              <a class="nav-link disabled" href="#">{{ _('Comptes') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Profils d'entreprise</a>
+              <a class="nav-link disabled" href="#">{{ _("Profils d'entreprise") }}</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon profil</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ _('Mon profil') }}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url_for('user', username=current_user.username) }}">Mon profil</a>
+                <a class="dropdown-item" href="{{ url_for('user', username=current_user.username) }}">{{ _('Mon profil') }}</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url_for('logout') }}">Se déconnecter</a>
+                <a class="dropdown-item" href="{{ url_for('logout') }}">{{ _('Se déconnecter') }}</a>
               </div>
             </li>
             {% endif %}
           </li>
         </ul>
         <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Exemple: loyer" aria-label="Search" />
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Rechercher</button>
+          <input class="form-control mr-sm-2" type="search" placeholder={{ _("Exemple: loyer") }} aria-label="Search" />
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">{{ _('Rechercher') }}</button>
         </form>
       </div>
     </nav>

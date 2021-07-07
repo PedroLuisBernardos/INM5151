@@ -6,3 +6,4 @@ flask-migrate
 flask-login
 email-validator
 flask-bootstrap
+flask-babel

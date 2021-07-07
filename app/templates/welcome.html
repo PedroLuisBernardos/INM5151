@@ -4,8 +4,8 @@
 
 {% block app_content %}
     <!--  -->
-    <h1>Bienvenue !</h1>
+    <h1>{{ _('Bienvenue !') }}</h1>
     <div>
-      Veuillez vous <a href="{{ url_for('login') }}">connecter</a> pour accéder à l'application.
+      {{ _('Veuillez vous') }} <a href="{{ url_for('login') }}">{{ _('connecter') }}</a> {{ _("pour accéder à l'application.") }}
     </div>
 {% endblock %}

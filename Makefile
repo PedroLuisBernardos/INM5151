@@ -6,6 +6,9 @@ install:
 run: install
 	flask run
 
+traduct:
+	flask translate --help
+
 migrate:
 	flask db migrate -m "update"
 	flask db upgrade

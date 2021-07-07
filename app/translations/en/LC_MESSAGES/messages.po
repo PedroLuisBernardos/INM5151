@@ -1,0 +1,348 @@
+# English translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-07-07 11:49-0400\n"
+"PO-Revision-Date: 2021-07-07 11:49-0400\n"
+"Last-Translator: \n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+"X-Generator: Poedit 3.0\n"
+
+#: app/__init__.py:20
+msgid "Vous devez vous connecter pour accéder à cette page !"
+msgstr "You need to be logged to access to this page!"
+
+#: app/forms.py:11 app/forms.py:18 app/forms.py:40 app/templates/index.html:23
+msgid "Utilisateur"
+msgstr "User"
+
+#: app/forms.py:11 app/forms.py:18
+msgid "Veuillez entrer un utilisateur valide"
+msgstr "Please enter a valid user"
+
+#: app/forms.py:12
+msgid "Mot de passe"
+msgstr "Password"
+
+#: app/forms.py:12 app/forms.py:21
+msgid "Veuillez entrer un mot de passe valide"
+msgstr "Please enter a valid password"
+
+#: app/forms.py:13
+msgid "Se souvenir de moi"
+msgstr "Remember me"
+
+#: app/forms.py:14 app/routes.py:60
+msgid "Connexion"
+msgstr "Sign In"
+
+#: app/forms.py:20
+msgid "Adresse courriel"
+msgstr "Email"
+
+#: app/forms.py:20
+msgid "Veuillez entrer une adresse courriel valide"
+msgstr "Please enter a valid email address"
+
+#: app/forms.py:23
+msgid "Entrez à nouveau votre mot de passe"
+msgstr "Please enter your password again"
+
+#: app/forms.py:23
+msgid "Veuillez entrer à nouveau votre mot de passe"
+msgstr "Please enter your password again"
+
+#: app/forms.py:23
+msgid "Les mots de passe ne sont pas identiques"
+msgstr "The passwords do not match"
+
+#: app/forms.py:24
+msgid "Créer un compte"
+msgstr "Sign up"
+
+#: app/forms.py:30 app/forms.py:54
+msgid "Ce nom d'utilisateur a déjà été utilisé."
+msgstr "The username is already taken."
+
+#: app/forms.py:36
+msgid "Cette adresse courriel a déjà été utilisée."
+msgstr "The email is already taken."
+
+#: app/forms.py:40
+msgid "Veuillez saisir un nom d'utilisateur"
+msgstr "Please enter an username"
+
+#: app/forms.py:41
+msgid "À propos de moi"
+msgstr "About me"
+
+#: app/forms.py:42 app/forms.py:62
+msgid "Enregistrer"
+msgstr "Save"
+
+#: app/forms.py:59
+msgid "Entrez le nom de votre facture"
+msgstr "Enter your bill's name"
+
+#: app/forms.py:59
+msgid "Veuillez entrer un nom"
+msgstr "Please enter a name"
+
+#: app/forms.py:59 app/forms.py:60
+msgid "Veuillez écrire entre 1 et 50 caractères"
+msgstr "Please write between 1 and 50 characters"
+
+#: app/forms.py:60
+msgid "Entrez la description de votre facture"
+msgstr "Please enter your bill's description"
+
+#: app/forms.py:60
+msgid "Veuillez entrer une description"
+msgstr "Please enter a description"
+
+#: app/forms.py:61
+msgid "Entrez le montant de votre facture"
+msgstr "Please enter your bill's amount"
+
+#: app/forms.py:61
+msgid "Veuillez entrer un montant numérique"
+msgstr "Please enter a number"
+
+#: app/routes.py:23
+msgid "Votre facture a été ajoutée."
+msgstr "Your bill was added."
+
+#: app/routes.py:30 app/templates/base.html:40
+msgid "Accueil"
+msgstr "Home"
+
+#: app/routes.py:39
+msgid "Bienvenue"
+msgstr "Welcome"
+
+#: app/routes.py:55
+msgid "Utilisateur ou mot de passes invalides !"
+msgstr "Invalid username or password!"
+
+#: app/routes.py:62
+msgid "Il y a eu une erreur avec la connexion."
+msgstr "There was an error with the connection."
+
+#: app/routes.py:63 app/routes.py:77 app/routes.py:97 app/routes.py:121
+#: app/routes.py:134 app/routes.py:156 app/routes.py:183
+msgid "Erreur"
+msgstr "Error"
+
+#: app/routes.py:72
+msgid "Vous avez été déconnecté"
+msgstr "You were logged out"
+
+#: app/routes.py:76
+msgid "Il y a eu une erreur avec la déconnexion."
+msgstr "There was an error with the logout."
+
+#: app/routes.py:92
+msgid "Vous êtes maintenant inscrit !"
+msgstr "You are now registered!"
+
+#: app/routes.py:94 app/templates/base.html:44 app/templates/register.html:8
+msgid "S'inscrire"
+msgstr "Sign up"
+
+#: app/routes.py:96
+msgid "Il y a eu une erreur avec l'inscription."
+msgstr "There was an error with the inscription."
+
+#: app/routes.py:104 app/templates/base.html:60 app/templates/base.html:62
+msgid "Mon profil"
+msgstr "My profile"
+
+#: app/routes.py:120
+msgid "Il y a eu une erreur avec la suppression de l'utilisateur."
+msgstr "There was an error with the user deletion."
+
+#: app/routes.py:133
+msgid "Il y a eu une erreur avec la suppression de la facture."
+msgstr "There was an error with the bill's deletion."
+
+#: app/routes.py:147 app/routes.py:175
+msgid "Les modifications ont été sauvegardées"
+msgstr "The changes have been saved"
+
+#: app/routes.py:153
+msgid "Modifification de la facture"
+msgstr "Modification of the bill"
+
+#: app/routes.py:155
+msgid "Il y a eu une erreur avec la modification de la facture."
+msgstr "There was an error with the modification of the bill."
+
+#: app/routes.py:180 app/templates/user.html:16
+msgid "Modifier votre profil"
+msgstr "Edit your profile"
+
+#: app/routes.py:182
+msgid "Il y a eu une erreur avec la modification du profil."
+msgstr "There was an error with the modification of the profile."
+
+#: app/templates/404.html:6
+msgid "Cette page n'existe pas"
+msgstr "This page does not exist"
+
+#: app/templates/404.html:7 app/templates/500.html:8 app/templates/error.html:9
+msgid "Retourner"
+msgstr "Return"
+
+#: app/templates/500.html:6
+msgid "Une erreur inattendue est survenue"
+msgstr "An unattended error has occurred"
+
+#: app/templates/500.html:7 app/templates/error.html:7
+msgid "Un administrateur a été prévenu, désolé pour l'inconvénient."
+msgstr "An administrator has been notified, sorry for the inconvenience."
+
+#: app/templates/all.html:6
+msgid "Utilisateurs"
+msgstr "Users"
+
+#: app/templates/all.html:27
+msgid "Factures"
+msgstr "Bills"
+
+#: app/templates/base.html:13 app/templates/base.html:15
+msgid "Système de Facturation"
+msgstr "Billing System"
+
+#: app/templates/base.html:33
+msgid "Système de facturation"
+msgstr "Billing System"
+
+#: app/templates/base.html:47 app/templates/login.html:9
+msgid "Se connecter"
+msgstr "Sign in"
+
+#: app/templates/base.html:51
+msgid "Contacts"
+msgstr "Contacts"
+
+#: app/templates/base.html:54
+msgid "Comptes"
+msgstr "Accounts"
+
+#: app/templates/base.html:57
+msgid "Profils d'entreprise"
+msgstr "Business profiles"
+
+#: app/templates/base.html:64
+msgid "Se déconnecter"
+msgstr "Logout"
+
+#: app/templates/base.html:71
+msgid "Exemple: loyer"
+msgstr "Example: rent"
+
+#: app/templates/base.html:72
+msgid "Rechercher"
+msgstr "Search"
+
+#: app/templates/edit_profile.html:7
+msgid "Modifier le profil"
+msgstr "Edit your profile"
+
+#: app/templates/index.html:7
+msgid "Bonjour"
+msgstr "Hello"
+
+#: app/templates/index.html:21
+msgid "#"
+msgstr "#"
+
+#: app/templates/index.html:22
+msgid "Date"
+msgstr "Date"
+
+#: app/templates/index.html:24
+msgid "Nom"
+msgstr "Name"
+
+#: app/templates/index.html:25
+msgid "Montant"
+msgstr "Amount"
+
+#: app/templates/index.html:26
+msgid "Description"
+msgstr "Description"
+
+#: app/templates/index.html:27
+msgid "Options"
+msgstr "Settings"
+
+#: app/templates/index.html:42
+msgid "Modifier"
+msgstr "Modify"
+
+#: app/templates/index.html:43
+msgid "Supprimer"
+msgstr "Delete"
+
+#: app/templates/index.html:51
+msgid "Page précédente"
+msgstr "Previous page"
+
+#: app/templates/index.html:54
+msgid "Page suivante"
+msgstr "Next page"
+
+#: app/templates/login.html:16
+msgid "Nouvel utilisateur ?"
+msgstr "New ?"
+
+#: app/templates/login.html:16
+msgid "Inscris-toi !"
+msgstr "Sign up!"
+
+#: app/templates/update_facture.html:7
+msgid "Modifier facture"
+msgstr "Edit your bill"
+
+#: app/templates/user.html:11
+msgid "Profil de l'utilisateur"
+msgstr "User's profile"
+
+#: app/templates/user.html:13
+msgid "Dernière connexion"
+msgstr "Last seen"
+
+#: app/templates/user.html:22
+msgid "Supprimer le compte"
+msgstr "Delete account"
+
+#: app/templates/welcome.html:7
+msgid "Bienvenue !"
+msgstr "Welcome!"
+
+#: app/templates/welcome.html:9
+msgid "Veuillez vous"
+msgstr "Please"
+
+#: app/templates/welcome.html:9
+msgid "connecter"
+msgstr "sign in"
+
+#: app/templates/welcome.html:9
+msgid "pour accéder à l'application."
+msgstr "to access the application."
+
+#~ msgid "Email"
+#~ msgstr "Email"

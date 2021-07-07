@@ -1,6 +1,6 @@
 # sdf.py
 # défini l'instance de l'application Flask
-from app import app, db
+from app import app, db, cli
 from app.models import User, Facture
 
 # Ceci importera automatiquement les modèles définis et seront disponible dans le Flask Shell

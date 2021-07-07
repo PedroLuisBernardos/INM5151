@@ -13,6 +13,62 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 16. Traduction en anglais et en espagnol
+
+---
+
+J'ai fait la gestion de la traduction (sauf les dates). Tous les fichiers ont été modifiés pour pouvoir être traduits.
+
+Pour les fichiers `html`, procéder de cette façon:
+```html
+{{ _("S'inscrire") }}
+```
+
+Pour les fichiers `py`, procéder de cette façon:
+Utiliser `_()` ou `_l()` selon les `import` du fichier.
+```
+_l('Entrez à nouveau votre mot de passe')
+_('Accueil')
+```
+
+Un fichier de configuration a été ajouté: `babel.cfg`. Des configurations supplémentaires ont été ajoutées dans `__init__.py`, `config.py` et `sdf.py`.
+
+Les `requierements` ont été modifiés.
+
+Un fichier `cli.py` a été ajouté pour simplifier les commandes:
+
+avant:
+```bash
+pybabel init -i messages.pot -d app/translations -l <language>
+pybabel extract -F babel.cfg -k _l -o messages.pot .
+pybabel compile -d app/translations
+```
+
+après
+```bash
+flask translate init <language>
+flask translate update
+flask translate compile
+```
+
+Des fichiers `translations/en/messages.po` et `translations/es/messages.po` ont été modifiés grâce à l'outil [Poedit](https://poedit.net). On peut aussi les modifier directement.
+
+Les fichiers `messages.mo` sont les fichiers compilés.
+
+#### Comment faire si vous ajoutez des textes à traduire ?
+
+---
+
+* Utilisez la bonne syntaxe comme expliqué ci-dessus.
+
+* `flask translate update`
+
+* Modifier les fichiers `messages.po`
+
+* `flask translate compile`
+
+[lien]()
+
 ### 15. Pagination
 
 ---
