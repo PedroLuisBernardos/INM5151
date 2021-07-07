@@ -18,7 +18,7 @@
 ---
 
 J'ai géré la pagination de factures. Une variable `FACTURES_PAR_PAGE` est définie dans `config.py`. Les routes de `/index` ont été modifiées dans `routes.py` et la page `index.html` a été ajustée.
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/dbc43cf86a07e11a3f7d444fdc1add3c5ae5a71e)
 
 ### 14. Amélioration du CSS, ajout du Makefile et amélioration du modèle de Facture
 
