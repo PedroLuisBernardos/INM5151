@@ -67,7 +67,7 @@ Les fichiers `messages.mo` sont les fichiers compilés.
 
 * `flask translate compile`
 
-[lien]()
+[lien](https://github.com/ta-truong/inm5151-ete2021-projet/commit/c6f328270c148fe3130d0d1303946f2dbd5c8157)
 
 ### 15. Pagination
 
