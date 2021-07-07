@@ -35,6 +35,8 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 ---
 
+* Ajouter un bouton pour modifier la langue au lieu de se fier de la langue du navigateur.
+
 * Ajouter du javascript. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic).
 
 * Lui je sais pas c'est quoi, faudra voir si c'est pertinent. Ajouter des background jobs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxii-background-jobs).
@@ -128,9 +130,16 @@ Remplacez `#!/usr/bin/python2` par `#!/usr/bin/python3` dans le fichier `/home/m
 ### Allez utiliser l'application
 
 ---
+
 Ouvrir un navigateur et aller à l'adresse: <http://127.0.0.1:5000/>
 
 Une fois vous avez terminé faites `Ctrl+C` dans votre terminal.
+
+### Modifier la langue
+
+---
+
+La langue est choisie selon [la langue de votre navigateur](settings/?search=language). Les langues disponibles sont le français (par défaut), l'anglais et l'espagnol.
 
 ## Pour les administrateurs
 
