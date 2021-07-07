@@ -78,7 +78,9 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 [Sprint 1](https://docs.google.com/document/d/1YnsLE2BXZ-MREk3PWpu65Rmxpdcfev8nZcXn98PMk6g/edit#)
 
-[PowerPoint Sprint 1](https://docs.google.com/presentation/d/1ovp0vUbbqoy77J7YeX1wLURpROjskBO-f2CdZjpM9RQ/edit?usp=sharing)
+[Sprint 2](https://docs.google.com/document/d/1lO-c5NVTmTi0fNSdPrdDFZLOJ1LAXKsj9Yy7t4s5Eb0/edit?usp=sharing)
+
+[PowerPoint Sprint 2](https://docs.google.com/presentation/d/1ovp0vUbbqoy77J7YeX1wLURpROjskBO-f2CdZjpM9RQ/edit?usp=sharing)
 
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
