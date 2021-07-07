@@ -13,6 +13,13 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 15. Pagination
+
+---
+
+J'ai géré la pagination de factures. Une variable `FACTURES_PAR_PAGE` est définie dans `config.py`. Les routes de `/index` ont été modifiées dans `routes.py` et la page `index.html` a été ajustée.
+[lien]()
+
 ### 14. Amélioration du CSS, ajout du Makefile et amélioration du modèle de Facture
 
 ---

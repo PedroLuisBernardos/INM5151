@@ -13,8 +13,6 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 
 * Traduire tout ce qui est en anglais en français: modifier le texte `Edit Profile` dans son profil pour `Modifier mon profil`, les erreurs dans les formulaires, les hover dans les formulaires, etc.
 
-* Ajouter une pagination et une navigation entre facutres. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination).
-
 * Ajouter un support par email et une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
 
 * Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
@@ -60,8 +58,6 @@ On est rendus [ici (chapitre 9 - Pagination)](https://blog.miguelgrinberg.com/po
 * Gérer la modification du thème (page supplémentaire dans **Mon profil**).
 
 * Séparer l'ajout de la facture et la page d'affichage de celles-ci.
-
-* Modifier les bouttons Modifier et Supprimer de la page `index.html`.
 
 * Améliorer le CSS pour rendre l'application plus belle.
 

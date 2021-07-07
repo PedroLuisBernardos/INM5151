@@ -22,8 +22,11 @@ def index():
         flash('Votre facture a été ajoutée.')
         return redirect(url_for('index'))
     # Toutes les factures de l'utilisateur actuel
-    factures = Facture.query.filter_by(user_id=current_user.id).all()
-    return render_template("index.html", title='Accueil', form=form, factures=factures)
+    page = request.args.get('page', 1, type=int)
+    factures = Facture.query.filter_by(user_id=current_user.id).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
+    next_url = url_for('index', page=factures.next_num) if factures.has_next else None
+    prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
+    return render_template("index.html", title='Accueil', form=form, factures=factures.items, next_url=next_url, prev_url=prev_url)
 
 # Page d'accueil pour les invités
 @app.route('/')
