@@ -4,6 +4,9 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
+    # Admins
+    ADMINS = {'email': 'systemedefacturation@gmail.com'}
+
     # YzNjbC0zNXQtYzRjaDM= peut être n'importe quoi
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'YzNjbC0zNXQtYzRjaDM='
 
