@@ -7,67 +7,67 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 ---
 
-* Pourquoi **loyer** ne s'affiche pas dans aucune langue dans la barre de navigation ?
+* [ ] Pourquoi **loyer** ne s'affiche pas dans aucune langue dans la barre de navigation ?
 
-* Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
+* [ ] Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
 
-* Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
+* [ ] Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
 
-* Ajouter un support par email et une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
+* [X] Ajouter un support par email pour une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
 
-* Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
+* [ ] Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
 
-* Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
+* [ ] Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
 
-* Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
+* [ ] Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
 
-* Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
+* [ ] Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
 
-* Ajouter un modèle `profil d'entreprise` et une page `profils_entreprise.html`. Cette page sera la première page que l'utilisateur **connecté** verra. On va devoir **ajouter**, **modifier** et **supprimer** des profils d'entreprise (au maximum 5). Une fois le profil sélectionné, on est redirigés à la page `index.html`. Ajouter dans la barre de navigation (sûrement dans le *drop-down* de **Mon profil** un lien pour modifier le profil courrant).
+* [ ] Ajouter un modèle `profil d'entreprise` et une page `profils_entreprise.html`. Cette page sera la première page que l'utilisateur **connecté** verra. On va devoir **ajouter**, **modifier** et **supprimer** des profils d'entreprise (au maximum 5). Une fois le profil sélectionné, on est redirigés à la page `index.html`. Ajouter dans la barre de navigation (sûrement dans le *drop-down* de **Mon profil** un lien pour modifier le profil courrant).
 
-* Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
-  * Un deuxième `id`. Lui qui est déjà présent est l'id de la base de données, nous on veut un deuxième `id`, **unique** et **personnalisable**. L'ajouter dans le formulaire et dans l'affichage des factures.
-  * Un booléen nommé `paiement`, en *drop-down*: **payée** ou **non-payée**. L'ajouter dans le formulaire et dans l'affichage des factures. Par défaut, se placer sur `non-payée`.
-  * Une valeur fixe `taxe` qui est de **14.975%**. L'ajouter dans le formulaire et dans l'affichage des factures. Faire le calcul du montant `amount` automatiquement.
-  * Un *drop-down* **modifiable** nommé `comptes de revenus/dépenses`. Il va avoir une page pour les créer et ils seront disponibles dans le *drop-down* des factures. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin). L'ajouter dans le formulaire et dans l'affichage des factures.
-  * idem mais nommé `contacts`.
-  * Créer une page nommée `modele_facture.html` dans la barre de navigation. Il y aura un formulaire qui nous permet d'ajouter des modèles de facture. Ces modèles seront visibles dans l'ajout (uniquement l'ajout) de factures sous forme de *drop-down*. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin).
+* [ ] Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
+  * [ ] Un deuxième `id`. Lui qui est déjà présent est l'id de la base de données, nous on veut un deuxième `id`, **unique** et **personnalisable**. L'ajouter dans le formulaire et dans l'affichage des factures.
+  * [ ] Un booléen nommé `paiement`, en *drop-down*: **payée** ou **non-payée**. L'ajouter dans le formulaire et dans l'affichage des factures. Par défaut, se placer sur `non-payée`.
+  * [ ] Une valeur fixe `taxe` qui est de **14.975%**. L'ajouter dans le formulaire et dans l'affichage des factures. Faire le calcul du montant `amount` automatiquement.
+  * [ ] Un *drop-down* **modifiable** nommé `comptes de revenus/dépenses`. Il va avoir une page pour les créer et ils seront disponibles dans le *drop-down* des factures. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin). L'ajouter dans le formulaire et dans l'affichage des factures.
+  * [ ] idem mais nommé `contacts`.
+  * [ ] Créer une page nommée `modele_facture.html` dans la barre de navigation. Il y aura un formulaire qui nous permet d'ajouter des modèles de facture. Ces modèles seront visibles dans l'ajout (uniquement l'ajout) de factures sous forme de *drop-down*. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin).
 
 ## TODO sprint 3
 
 ---
 
-* Ajouter un bouton pour modifier la langue au lieu de se fier de la langue du navigateur.
+* [ ] Ajouter un bouton pour modifier la langue au lieu de se fier de la langue du navigateur.
 
-* Ajouter du javascript. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic).
+* [ ] Ajouter du javascript. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic).
 
-* Lui je sais pas c'est quoi, faudra voir si c'est pertinent. Ajouter des background jobs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxii-background-jobs).
+* [ ] Lui je sais pas c'est quoi, faudra voir si c'est pertinent. Ajouter des background jobs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxii-background-jobs).
 
-* Gérer l'exportation de factures en format PDF.
+* [ ] Gérer l'exportation de factures en format PDF.
 
-* Ajouter un favicon
+* [ ] Ajouter un favicon
 
-* Gérer l'envoi des factures par email (exportées en PDF).
+* [ ] Gérer l'envoi des factures par email (exportées en PDF).
 
-* Si c'est pas déjà fait, gérer les notifications de rappel par email (le email qui est dans le modèle `User`).
+* [ ] Si c'est pas déjà fait, gérer les notifications de rappel par email (le email qui est dans le modèle `User`).
 
-* Gérer le filtrage de factures.
+* [ ] Gérer le filtrage de factures.
 
-* Gérer le calcul des montants des factures sélectionnées.
+* [ ] Gérer le calcul des montants des factures sélectionnées.
 
-* Gérer la modification du thème (page supplémentaire dans **Mon profil**).
+* [ ] Gérer la modification du thème (page supplémentaire dans **Mon profil**).
 
-* Séparer l'ajout de la facture et la page d'affichage de celles-ci.
+* [ ] Séparer l'ajout de la facture et la page d'affichage de celles-ci.
 
-* Améliorer le CSS pour rendre l'application plus belle.
+* [ ] Améliorer le CSS pour rendre l'application plus belle.
 
-* Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
+* [ ] Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
 
-* *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
+* [ ] *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
 
-* Pour aller plus loin selon Miguel. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis). Aussi, pour aller plus loin, section sur les APIs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis).
+* [ ] Pour aller plus loin selon Miguel. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis). Aussi, pour aller plus loin, section sur les APIs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis).
 
-* Déploiement sur Héroku, Linux ou Docker. Faudra en choisir un des trois. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux).
+* [ ] Déploiement sur Héroku, Linux ou Docker. Faudra en choisir un des trois. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux).
 
 ## Documents
 
