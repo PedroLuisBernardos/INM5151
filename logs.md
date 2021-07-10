@@ -13,6 +13,28 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 17. Support par email pour la réinitialisation d'un mot de passe
+
+---
+
+J'ai ajouté un lien sur la page de connection (`app/templates/login.html`) qui dirige vers un formulaire qui permet de ***demander*** une réinitialisation du mot de passe (`app/templates/reset_password_request.html`) : les instructions sont envoyées au courriel soumis (il doit être inscrit dans la *db*).
+Une route et un formulaire ont donc été ajouté : `app/routes.py`, `app/forms.py`.
+
+J'ai ajouté le nouvelle *requirement* `pyjwt` (`requirements.txt`) et des *functions* qui permet de générer et de vérifier un *token* pour s'assurer que seuls les liens valides peuvent être utilisés pour réinitialiser le mot de passe (`app/models.py`).
+
+J'ai ajouté le fichier `app/templates/email/reset_password.html` pour le *body* du courriel de réinitialisation du mot de passe (instructions et lien).
+
+J'ai créer un courriel *gmail* : `systemedefacturation@gmail.com` qui se trouve dans `app.config['ADMINS']['email']` pour nous permettre d'envoyer des courriels. Le mot de passe est celle de `app.config[SECRET_KEY]`. Voir `config.py`.
+
+J'ai ajouté le fichier `app/email.py` qui permet d'initialiser le courriel à cet effet et de l'envoyer à l'utilisateur.
+
+J'ai ajouté le fichier `app/templates/reset_password.html` qui permet de ***réinitialiser*** le mot de passe.
+Une route (lien + *token*) et un formulaire ont donc été ajouté : `app/routes.py`, `app/forms.py`
+
+Enfin, la traduction en anglais et en espagnol a été mise à jour.
+
+[Commit : d54896cf5ff709a7deeea89a4e636c6903e0276f](https://github.com/ta-truong/inm5151-ete2021-projet/commit/d54896cf5ff709a7deeea89a4e636c6903e0276f)
+
 ### 16. Traduction en anglais et en espagnol
 
 ---
