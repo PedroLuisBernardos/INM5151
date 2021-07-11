@@ -13,6 +13,15 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 18. Mettre en "blanc" l'onglet actif
+
+---
+
+Ajout du caractère en blanc sur l'onglet actif en modifiant la `app/templates/base.html` en ajoutant des conditions "if" sur les classes "nav-item" de la balise "li" de chacune des onglets fonctionnels.
+
+Ps: Cette façon de faire a été privilégier car la manière javascript, bien qu'elle peut modifier la classe en ajoutant "active" à la suite du "nav-item" elle ne modifie que la page courante et ne sauvegarde pas la modification lors d'un changement de page. En bref, le changement se fait en une fraction de seconde (lors du clique sur l'onglet) et à la nouvelle page, elle retourne comme avant. À moins d'utiliser un "LocalStorage" ou une base de donnée pour traiter ces changements, j'ai décidé d'opter pour la méthode conditionnelle avec python qui semble être plus simple. Est-ce la meilleur solution? Je ne sais pas.
+
+
 ### 17. Support par email pour la réinitialisation d'un mot de passe
 
 ---

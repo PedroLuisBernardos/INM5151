@@ -9,7 +9,7 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 * [ ] Pourquoi **loyer** ne s'affiche pas dans aucune langue dans la barre de navigation ?
 
-* [ ] Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
+* [X] Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
 
 * [ ] Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
 
