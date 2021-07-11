@@ -36,14 +36,14 @@
       </button>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item {% if request.url_rule.endpoint == 'welcome' %}active {% elif request.url_rule.endpoint == 'index'%}active{% endif %}">
               <a class="nav-link" href="{{ url_for('index') }}">{{ _('Accueil') }}</a>
             </li>
             {% if current_user.is_anonymous %}
-            <li class="nav-item">
+            <li class="nav-item {% if request.url_rule.endpoint == 'register' %}active{% endif %}">
               <a class="nav-link" href="{{ url_for('register') }}">{{ _("S'inscrire") }}</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if request.url_rule.endpoint == 'login' %}active{% endif %}">
               <a class="nav-link" href="{{ url_for('login') }}">{{ _('Se connecter') }}</a>
             </li>
             {% else %}
@@ -56,7 +56,7 @@
             <li class="nav-item">
               <a class="nav-link disabled" href="#">{{ _("Profils d'entreprise") }}</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown {% if request.url_rule.endpoint == 'user' %}active{% endif %}">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ _('Mon profil') }}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('user', username=current_user.username) }}">{{ _('Mon profil') }}</a>
