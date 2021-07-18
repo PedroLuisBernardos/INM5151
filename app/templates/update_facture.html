@@ -4,7 +4,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Modifier facture') }} {{ facture.id }}!</h1>
+    <h1>{{ _('Modifier la facture') }} <em>{{ facture.reference }}</em></h1>
     <hr>
     <div class="form-group">
         <div class="col-md-4">

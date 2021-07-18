@@ -4,7 +4,8 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Bonjour') }}, {{ current_user.username }}!</h1>
+    <h1>{{ _('Bonjour') }}, <strong>{{ current_user.username }}</strong> !</h1>
+    <h1>{{ _('Enregistrer une facture') }}</h1>
     <hr>
     {% if form %}
         <div class="form-group">
@@ -18,12 +19,10 @@
     <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">{{ _('#') }}</th>
+            <th scope="col">{{ _('Référence') }}</th>
             <th scope="col">{{ _('Date') }}</th>
-            <th scope="col">{{ _('Utilisateur') }}</th>
-            <th scope="col">{{ _('Nom') }}</th>
-            <th scope="col">{{ _('Montant') }} ($)</th>
             <th scope="col">{{ _('Description') }}</th>
+            <th scope="col">{{ _('Montant') }} ($)</th>
             <th scope="col">{{ _('Options') }}</th>
           </tr>
         </thead>
@@ -32,12 +31,10 @@
         <!-- Corps des factures -->
         <tr>
             <!-- À ajouter des attributs -->
-            <th scope="row">{{ facture.id }}</th>
-            <th>{{ facture.timestamp }}</th>
-            <td>{{ facture.author.username }}</td>
-            <td>{{ facture.name }}</td>
+            <td>{{ facture.reference }}</td>
+            <th>{{ facture.date }}</th>
+            <td>{{ facture.description }}</td>
             <td>{{ facture.amount }}</td>
-            <td>{{ facture.body }}</td>
             <td>
                 <a class="btn btn-info" href="{{ url_for('update', facture_id=facture.id) }}">{{ _('Modifier') }}</a>
                 <a class="btn btn-danger" href="{{ url_for('delete', facture_id=facture.id) }}">{{ _('Supprimer') }}</a>

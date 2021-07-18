@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-10 06:38-0400\n"
+"POT-Creation-Date: 2021-07-18 01:12-0400\n"
 "PO-Revision-Date: 2021-07-07 11:59-0400\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -26,7 +26,7 @@ msgstr "¡Debe iniciar sesión para acceder a esta página!"
 msgid "[SDF] Réinitialisez votre mot de passe"
 msgstr "[SDF] Restablecer su contraseña"
 
-#: app/forms.py:11 app/forms.py:30 app/forms.py:52 app/templates/index.html:23
+#: app/forms.py:11 app/forms.py:30 app/forms.py:52
 msgid "Utilisateur"
 msgstr "Usuario"
 
@@ -83,11 +83,11 @@ msgid "Créer un compte"
 msgstr "Crear una cuenta"
 
 #: app/forms.py:42 app/forms.py:66
-msgid "Ce nom d'utilisateur a déjà été utilisé."
+msgid "Ce nom d'utilisateur est déjà utilisé"
 msgstr "Este nombre de usuario ya se ha utilizado."
 
 #: app/forms.py:48
-msgid "Cette adresse courriel a déjà été utilisée."
+msgid "Cette adresse courriel est déjà utilisée"
 msgstr "Esta dirección de correo electrónico ya se ha utilizado."
 
 #: app/forms.py:52
@@ -102,29 +102,29 @@ msgstr "Acerca de mí"
 msgid "Enregistrer"
 msgstr "Guardar"
 
-#: app/forms.py:71
-msgid "Entrez le nom de votre facture"
-msgstr "Introduce el nombre de tu factura"
+#: app/forms.py:71 app/templates/index.html:22
+msgid "Référence"
+msgstr "Referencia"
 
 #: app/forms.py:71
-msgid "Veuillez entrer un nom"
-msgstr "Introduce un nombre"
+msgid "Veuillez entrer une référence"
+msgstr "Introduce una referencia"
 
 #: app/forms.py:71 app/forms.py:72
 msgid "Veuillez écrire entre 1 et 50 caractères"
 msgstr "Escribe entre 1 y 50 caracteres"
 
-#: app/forms.py:72
-msgid "Entrez la description de votre facture"
-msgstr "Introduce la descripción de tu factura"
+#: app/forms.py:72 app/templates/index.html:24
+msgid "Description"
+msgstr "Descripción"
 
 #: app/forms.py:72
 msgid "Veuillez entrer une description"
 msgstr "Introduce una descripción"
 
-#: app/forms.py:73
-msgid "Entrez le montant de votre facture"
-msgstr "Introduce el monto de tu factura"
+#: app/forms.py:73 app/templates/index.html:25
+msgid "Montant"
+msgstr "Monto"
 
 #: app/forms.py:73
 msgid "Veuillez entrer un montant numérique"
@@ -291,43 +291,31 @@ msgstr "Modificar el perfil"
 msgid "Bonjour"
 msgstr "Hola"
 
-#: app/templates/index.html:21
-msgid "#"
-msgstr "#"
+#: app/templates/index.html:8
+msgid "Enregistrer une facture"
+msgstr "Registra una factura"
 
-#: app/templates/index.html:22
+#: app/templates/index.html:23
 msgid "Date"
 msgstr "Fecha"
 
-#: app/templates/index.html:24
-msgid "Nom"
-msgstr "Nombre"
-
-#: app/templates/index.html:25
-msgid "Montant"
-msgstr "Monto"
-
 #: app/templates/index.html:26
-msgid "Description"
-msgstr "Descripción"
-
-#: app/templates/index.html:27
 msgid "Options"
 msgstr "Opciones"
 
-#: app/templates/index.html:42
+#: app/templates/index.html:39
 msgid "Modifier"
 msgstr "Modificar"
 
-#: app/templates/index.html:43
+#: app/templates/index.html:40
 msgid "Supprimer"
 msgstr "Suprimir"
 
-#: app/templates/index.html:51
+#: app/templates/index.html:48
 msgid "Page précédente"
 msgstr "Página anterior"
 
-#: app/templates/index.html:54
+#: app/templates/index.html:51
 msgid "Page suivante"
 msgstr "Página siguiente"
 
@@ -336,7 +324,7 @@ msgid "Mot de passe oublié ?"
 msgstr "¿Contraseña olvidada?"
 
 #: app/templates/login.html:15
-msgid "Réinitialisez le ici."
+msgid "Réinitialisez-le ici."
 msgstr "Restablecerlo aquí."
 
 #: app/templates/login.html:17
@@ -352,8 +340,8 @@ msgid "Réinitialisez votre mot de passe"
 msgstr "Restablecer su contraseña"
 
 #: app/templates/update_facture.html:7
-msgid "Modifier facture"
-msgstr "Modificar factura"
+msgid "Modifier la facture"
+msgstr "Modificar la factura"
 
 #: app/templates/user.html:11
 msgid "Profil de l'utilisateur"
@@ -396,15 +384,9 @@ msgid "Alternativement, vous pouvez coller le lien suivant dans votre navigateur
 msgstr "Alternativamente, puede pegar el siguiente enlace en su navegador:"
 
 #: app/templates/email/reset_password.html:10
-msgid ""
-"Si vous n'avez pas demandé la réinitialisation de votre mot de passe, "
-"ignorez ce message."
-msgstr "Si no ha solicitado restablecer su contraseña, ignore este mensaje"
+msgid "Si vous n'avez pas demandé la réinitialisation de votre mot de passe, ignorez ce message."
+msgstr "Si no ha solicitado restablecer su contraseña, ignore este mensaje."
 
 #: app/templates/email/reset_password.html:12
 msgid "Sincèrement,"
 msgstr "Realmente,"
-
-#~ msgid "Inscris-toi !"
-#~ msgstr "¡Inscribete!"
-

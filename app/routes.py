@@ -20,7 +20,7 @@ def index():
     form = FactureForm()
     # À ajouter des attributs
     if form.validate_on_submit():
-        facture = Facture(name=form.name.data, body=form.body.data, author=current_user, amount=form.amount.data)
+        facture = Facture(reference=form.reference.data, description=form.description.data, author=current_user, amount=form.amount.data)
         db.session.add(facture)
         db.session.commit()
         flash(_('Votre facture a été ajoutée.'))
@@ -176,15 +176,15 @@ def update(facture_id):
         facture_to_update = Facture.query.get_or_404(facture_id)
         form = FactureForm()
         if form.validate_on_submit():
-            facture_to_update.name = form.name.data
-            facture_to_update.body = form.body.data
+            facture_to_update.reference = form.reference.data
+            facture_to_update.description = form.description.data
             facture_to_update.amount = form.amount.data
             db.session.commit()
             flash(_('Les modifications ont été sauvegardées'))
             return redirect(url_for('index'))
         elif request.method == 'GET':
-            form.name.data = facture_to_update.name
-            form.body.data = facture_to_update.body
+            form.reference.data = facture_to_update.reference
+            form.description.data = facture_to_update.description
             form.amount.data = facture_to_update.amount
         return render_template('update_facture.html', title=_('Modifification de la facture'),form=form, facture=facture_to_update)
     except:

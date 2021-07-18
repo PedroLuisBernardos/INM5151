@@ -57,12 +57,12 @@ def load_user(id):
 # Factures
 class Facture(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50))
-    body = db.Column(db.String(140))
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    reference = db.Column(db.String(50))
+    description = db.Column(db.String(140))
+    date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     amount = db.Column(db.Float)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     # Affichage des factures
     def __repr__(self):
-        return 'Facture: {} due pour le {}'.format(self.body,format(self.timestamp))
+        return 'Facture: {} due pour le {}'.format(self.description, format(self.date))

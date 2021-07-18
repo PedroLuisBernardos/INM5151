@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-10 06:38-0400\n"
+"POT-Creation-Date: 2021-07-18 01:12-0400\n"
 "PO-Revision-Date: 2021-07-07 11:49-0400\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -26,7 +26,7 @@ msgstr "You need to be logged to access to this page!"
 msgid "[SDF] Réinitialisez votre mot de passe"
 msgstr "[SDF] Reset your password"
 
-#: app/forms.py:11 app/forms.py:30 app/forms.py:52 app/templates/index.html:23
+#: app/forms.py:11 app/forms.py:30 app/forms.py:52
 msgid "Utilisateur"
 msgstr "User"
 
@@ -83,12 +83,12 @@ msgid "Créer un compte"
 msgstr "Sign up"
 
 #: app/forms.py:42 app/forms.py:66
-msgid "Ce nom d'utilisateur a déjà été utilisé."
-msgstr "The username is already taken."
+msgid "Ce nom d'utilisateur est déjà utilisé"
+msgstr "The username is already taken"
 
 #: app/forms.py:48
-msgid "Cette adresse courriel a déjà été utilisée."
-msgstr "The email is already taken."
+msgid "Cette adresse courriel est déjà utilisée"
+msgstr "The email is already taken"
 
 #: app/forms.py:52
 msgid "Veuillez saisir un nom d'utilisateur"
@@ -102,29 +102,29 @@ msgstr "About me"
 msgid "Enregistrer"
 msgstr "Save"
 
-#: app/forms.py:71
-msgid "Entrez le nom de votre facture"
-msgstr "Enter your bill's name"
+#: app/forms.py:71 app/templates/index.html:22
+msgid "Référence"
+msgstr "Reference"
 
 #: app/forms.py:71
-msgid "Veuillez entrer un nom"
-msgstr "Please enter a name"
+msgid "Veuillez entrer une référence"
+msgstr "Please enter a reference"
 
 #: app/forms.py:71 app/forms.py:72
 msgid "Veuillez écrire entre 1 et 50 caractères"
 msgstr "Please write between 1 and 50 characters"
 
-#: app/forms.py:72
-msgid "Entrez la description de votre facture"
-msgstr "Please enter your bill's description"
+#: app/forms.py:72 app/templates/index.html:24
+msgid "Description"
+msgstr "Description"
 
 #: app/forms.py:72
 msgid "Veuillez entrer une description"
 msgstr "Please enter a description"
 
-#: app/forms.py:73
-msgid "Entrez le montant de votre facture"
-msgstr "Please enter your bill's amount"
+#: app/forms.py:73 app/templates/index.html:25
+msgid "Montant"
+msgstr "Amount"
 
 #: app/forms.py:73
 msgid "Veuillez entrer un montant numérique"
@@ -291,43 +291,31 @@ msgstr "Edit your profile"
 msgid "Bonjour"
 msgstr "Hello"
 
-#: app/templates/index.html:21
-msgid "#"
-msgstr "#"
+#: app/templates/index.html:8
+msgid "Enregistrer une facture"
+msgstr "Create a bill"
 
-#: app/templates/index.html:22
+#: app/templates/index.html:23
 msgid "Date"
 msgstr "Date"
 
-#: app/templates/index.html:24
-msgid "Nom"
-msgstr "Name"
-
-#: app/templates/index.html:25
-msgid "Montant"
-msgstr "Amount"
-
 #: app/templates/index.html:26
-msgid "Description"
-msgstr "Description"
-
-#: app/templates/index.html:27
 msgid "Options"
 msgstr "Settings"
 
-#: app/templates/index.html:42
+#: app/templates/index.html:39
 msgid "Modifier"
 msgstr "Modify"
 
-#: app/templates/index.html:43
+#: app/templates/index.html:40
 msgid "Supprimer"
 msgstr "Delete"
 
-#: app/templates/index.html:51
+#: app/templates/index.html:48
 msgid "Page précédente"
 msgstr "Previous page"
 
-#: app/templates/index.html:54
+#: app/templates/index.html:51
 msgid "Page suivante"
 msgstr "Next page"
 
@@ -336,7 +324,7 @@ msgid "Mot de passe oublié ?"
 msgstr "Forgot your password ?"
 
 #: app/templates/login.html:15
-msgid "Réinitialisez le ici."
+msgid "Réinitialisez-le ici."
 msgstr "Reset here."
 
 #: app/templates/login.html:17
@@ -352,8 +340,8 @@ msgid "Réinitialisez votre mot de passe"
 msgstr "Reset your password"
 
 #: app/templates/update_facture.html:7
-msgid "Modifier facture"
-msgstr "Edit your bill"
+msgid "Modifier la facture"
+msgstr "Edit bill"
 
 #: app/templates/user.html:11
 msgid "Profil de l'utilisateur"
@@ -369,7 +357,7 @@ msgstr "Delete account"
 
 #: app/templates/welcome.html:7
 msgid "Bienvenue !"
-msgstr "Welcome!"
+msgstr "Welcome !"
 
 #: app/templates/welcome.html:9
 msgid "Veuillez vous"
@@ -404,10 +392,3 @@ msgstr "If you have not requested a password reset, ignore this message."
 #: app/templates/email/reset_password.html:12
 msgid "Sincèrement,"
 msgstr "Sincerely,"
-
-#~ msgid "Email"
-#~ msgstr "Email"
-
-#~ msgid "Inscris-toi !"
-#~ msgstr "Sign up!"
-

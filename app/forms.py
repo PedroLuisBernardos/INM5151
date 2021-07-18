@@ -39,13 +39,13 @@ class RegistrationForm(FlaskForm):
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
-            raise ValidationError(_l('Ce nom d\'utilisateur a déjà été utilisé.'))
+            raise ValidationError(_l('Ce nom d\'utilisateur est déjà utilisé'))
 
     # Si le email existe déjà
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            raise ValidationError(_l('Cette adresse courriel a déjà été utilisée.'))
+            raise ValidationError(_l('Cette adresse courriel est déjà utilisée'))
 
 # Modifier le profil de l'utilisateur
 class EditProfileForm(FlaskForm):
@@ -63,12 +63,12 @@ class EditProfileForm(FlaskForm):
         if username.data != self.original_username:
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
-                raise ValidationError(_l('Ce nom d\'utilisateur a déjà été utilisé.'))
+                raise ValidationError(_l('Ce nom d\'utilisateur est déjà utilisé'))
 
 # Défini un formulaire pour la saisie de factures
 class FactureForm(FlaskForm):
     # À ajouter des attributs
-    name = TextAreaField(_l('Entrez le nom de votre facture'), validators=[DataRequired(message=_l("Veuillez entrer un nom")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
-    body = TextAreaField(_l('Entrez la description de votre facture'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 50 caractères')))])
-    amount = DecimalField(_l('Entrez le montant de votre facture'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
+    reference = TextAreaField(_l('Référence'), validators=[DataRequired(message=_l("Veuillez entrer une référence")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
+    description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 50 caractères')))])
+    amount = DecimalField(_l('Montant'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
     submit = SubmitField(_l('Enregistrer'))
