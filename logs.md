@@ -13,6 +13,32 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 19. Rectifier les attributs de facture & database et autres améliorations
+
+---
+
+J'ai corrigé les noms de colonnes de la *database* `app.db`:
+* name -> référence
+* body -> description
+* timestamp -> date
+
+La correction a été fait dans les fichiers: `app/forms.py`, `app/models.py` `app/routes.py`, `app/templates/all.html`, `app/templates/index.html`
+
+J'ai changé l'affichage des attributs des factures pour en garder ceux pertinents (`app/templates/index.html`):
+* Référence
+* Date
+* Description
+* Montant ($)
+* Options
+
+J'ai modifier les fichiers `app/templates/reset_password.html` et `app/templates/reset_password_request.html` pour l'adapter à la structure du code actuel (*WTForms*)
+
+J'ai améliorer l'affichage de quelques attributs et messages.
+
+Enfin, la traduction en anglais et en espagnol a été mise à jour.
+
+[Commit: 5a46deaa328c6d98b9ab9109d94dfb1603bd5426](https://github.com/ta-truong/inm5151-ete2021-projet/commit/5a46deaa328c6d98b9ab9109d94dfb1603bd5426)
+
 ### 18. Mettre en "blanc" l'onglet actif
 
 ---
