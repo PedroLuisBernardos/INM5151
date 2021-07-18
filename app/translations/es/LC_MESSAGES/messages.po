@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-18 01:12-0400\n"
+"POT-Creation-Date: 2021-07-18 04:07-0400\n"
 "PO-Revision-Date: 2021-07-07 11:59-0400\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -26,109 +26,121 @@ msgstr "¡Debe iniciar sesión para acceder a esta página!"
 msgid "[SDF] Réinitialisez votre mot de passe"
 msgstr "[SDF] Restablecer su contraseña"
 
-#: app/forms.py:11 app/forms.py:30 app/forms.py:52
+#: app/forms.py:12 app/forms.py:31 app/forms.py:53
 msgid "Utilisateur"
 msgstr "Usuario"
 
-#: app/forms.py:11 app/forms.py:30
+#: app/forms.py:12 app/forms.py:31
 msgid "Veuillez entrer un utilisateur valide"
 msgstr "Introduce un usuario válido"
 
-#: app/forms.py:12 app/forms.py:23 app/forms.py:33
+#: app/forms.py:13 app/forms.py:24 app/forms.py:34
 msgid "Mot de passe"
 msgstr "Contraseña"
 
-#: app/forms.py:12 app/forms.py:23 app/forms.py:33
+#: app/forms.py:13 app/forms.py:24 app/forms.py:34
 msgid "Veuillez entrer un mot de passe valide"
 msgstr "Introduce una contraseña válida"
 
-#: app/forms.py:13
+#: app/forms.py:14
 msgid "Se souvenir de moi"
 msgstr "Recuérdame"
 
-#: app/forms.py:14 app/routes.py:63
+#: app/forms.py:15 app/routes.py:63
 msgid "Connexion"
 msgstr "Conexión"
 
-#: app/forms.py:18 app/forms.py:32
+#: app/forms.py:19 app/forms.py:33
 msgid "Adresse courriel"
 msgstr "Correo electrónico"
 
-#: app/forms.py:18 app/forms.py:32
+#: app/forms.py:19 app/forms.py:33
 msgid "Veuillez entrer une adresse courriel valide"
 msgstr "Introduce una dirección de correo electrónico válida"
 
-#: app/forms.py:19
+#: app/forms.py:20
 msgid "Demander la réinitialisation"
 msgstr "Solicitar"
 
-#: app/forms.py:25 app/forms.py:35
+#: app/forms.py:26 app/forms.py:36
 msgid "Entrez à nouveau votre mot de passe"
 msgstr "Vuelva a introducir su contraseña"
 
-#: app/forms.py:25 app/forms.py:35
+#: app/forms.py:26 app/forms.py:36
 msgid "Veuillez entrer à nouveau votre mot de passe"
 msgstr "Vuelve a introducir la contraseña"
 
-#: app/forms.py:25 app/forms.py:35
+#: app/forms.py:26 app/forms.py:36
 msgid "Les mots de passe ne sont pas identiques"
 msgstr "Las contraseñas no son las mismas"
 
-#: app/forms.py:26
+#: app/forms.py:27
 msgid "Réinitialiser votre mot de passe"
 msgstr "Restablecer su contraseña"
 
-#: app/forms.py:36
+#: app/forms.py:37
 msgid "Créer un compte"
 msgstr "Crear una cuenta"
 
-#: app/forms.py:42 app/forms.py:66
+#: app/forms.py:43 app/forms.py:67
 msgid "Ce nom d'utilisateur est déjà utilisé"
 msgstr "Este nombre de usuario ya se ha utilizado."
 
-#: app/forms.py:48
+#: app/forms.py:49
 msgid "Cette adresse courriel est déjà utilisée"
 msgstr "Esta dirección de correo electrónico ya se ha utilizado."
 
-#: app/forms.py:52
+#: app/forms.py:53
 msgid "Veuillez saisir un nom d'utilisateur"
 msgstr "Introduce un nombre de usuario"
 
-#: app/forms.py:53
+#: app/forms.py:54
 msgid "À propos de moi"
 msgstr "Acerca de mí"
 
-#: app/forms.py:54 app/forms.py:74
+#: app/forms.py:55 app/forms.py:76
 msgid "Enregistrer"
 msgstr "Guardar"
 
-#: app/forms.py:71 app/templates/index.html:22
+#: app/forms.py:72 app/templates/index.html:22
 msgid "Référence"
 msgstr "Referencia"
 
-#: app/forms.py:71
+#: app/forms.py:72
 msgid "Veuillez entrer une référence"
 msgstr "Introduce una referencia"
 
-#: app/forms.py:71 app/forms.py:72
+#: app/forms.py:72 app/forms.py:74
 msgid "Veuillez écrire entre 1 et 50 caractères"
 msgstr "Escribe entre 1 y 50 caracteres"
 
-#: app/forms.py:72 app/templates/index.html:24
+#: app/forms.py:73 app/templates/index.html:23
+msgid "Date"
+msgstr "Fecha"
+
+#: app/forms.py:73
+msgid "Veuillez entrer une date (AAAA-MM-JJ)"
+msgstr "Introduce una fecha (AAAA-MM-DD)"
+
+#: app/forms.py:74 app/templates/index.html:24
 msgid "Description"
 msgstr "Descripción"
 
-#: app/forms.py:72
+#: app/forms.py:74
 msgid "Veuillez entrer une description"
 msgstr "Introduce una descripción"
 
-#: app/forms.py:73 app/templates/index.html:25
+#: app/forms.py:75 app/templates/index.html:25
 msgid "Montant"
 msgstr "Monto"
 
-#: app/forms.py:73
+#: app/forms.py:75
 msgid "Veuillez entrer un montant numérique"
 msgstr "Introduce un número"
+
+#: app/forms.py:82
+msgid "Cette référence existe déjà"
+msgstr "La referencia ya existe"
 
 #: app/routes.py:26
 msgid "Votre facture a été ajoutée."
@@ -295,10 +307,6 @@ msgstr "Hola"
 msgid "Enregistrer une facture"
 msgstr "Registra una factura"
 
-#: app/templates/index.html:23
-msgid "Date"
-msgstr "Fecha"
-
 #: app/templates/index.html:26
 msgid "Options"
 msgstr "Opciones"
@@ -390,3 +398,4 @@ msgstr "Si no ha solicitado restablecer su contraseña, ignore este mensaje."
 #: app/templates/email/reset_password.html:12
 msgid "Sincèrement,"
 msgstr "Realmente,"
+
