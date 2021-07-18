@@ -1,10 +1,11 @@
 # forms.py
 # défini les formulaires de l'application
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from flask_babel import _, lazy_gettext as _l
-from app.models import User
+from datetime import date
+from app.models import User, Facture
 
 # Défini un formulaire de connexion
 class LoginForm(FlaskForm):
@@ -69,6 +70,13 @@ class EditProfileForm(FlaskForm):
 class FactureForm(FlaskForm):
     # À ajouter des attributs
     reference = TextAreaField(_l('Référence'), validators=[DataRequired(message=_l("Veuillez entrer une référence")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
+    date = DateField(_l('Date'), default=date.today(), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date (AAAA-MM-JJ)"))])
     description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 50 caractères')))])
     amount = DecimalField(_l('Montant'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
     submit = SubmitField(_l('Enregistrer'))
+
+    # Valider si la référence existe déjà
+    def validate_reference(self, reference):
+        facture = Facture.query.filter_by(reference=reference.data).first()
+        if facture is not None:
+            raise ValidationError(_l('Cette référence existe déjà'))

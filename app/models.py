@@ -59,10 +59,10 @@ class Facture(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     reference = db.Column(db.String(50))
     description = db.Column(db.String(140))
-    date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    date = db.Column(db.Date, index=True)
     amount = db.Column(db.Float)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     # Affichage des factures
     def __repr__(self):
-        return 'Facture: {} due pour le {}'.format(self.description, format(self.date))
+        return 'Facture: {} du {}'.format(self.reference, format(self.date))

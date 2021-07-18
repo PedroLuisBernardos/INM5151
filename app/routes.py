@@ -20,7 +20,7 @@ def index():
     form = FactureForm()
     # À ajouter des attributs
     if form.validate_on_submit():
-        facture = Facture(reference=form.reference.data, description=form.description.data, author=current_user, amount=form.amount.data)
+        facture = Facture(reference=form.reference.data, date=form.date.data, description=form.description.data, author=current_user, amount=form.amount.data)
         db.session.add(facture)
         db.session.commit()
         flash(_('Votre facture a été ajoutée.'))
