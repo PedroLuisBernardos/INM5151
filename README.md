@@ -15,7 +15,7 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 * [X] Ajouter un support par email pour une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
 
-* [ ] Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
+* [X] Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
 
 * [ ] Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
 

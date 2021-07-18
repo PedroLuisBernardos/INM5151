@@ -13,6 +13,19 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 20. Ajouter la gestion de dates et valider l'attribut de référence (facture)
+
+---
+
+J'ai ajouter l'attribut *Date* au modèle de factures. Le type de la colonne *date* dans la *database* (app.db) est désormais *DATE* puisque c'est seulement la date qui m'intéresse.
+(`app/forms.py`, `app/models.py`, `app/routes.py`)
+
+J'ai ajouter une validation pour la *référence* de la facture pour que celle-ci soit unique (`app/forms.py`).
+
+[Commit: 7d09073a239f18eff792d518244c93a01741a2ef](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7d09073a239f18eff792d518244c93a01741a2ef)
+
+Enfin, la traduction en anglais et en espagnol a été mise à jour : [Commit: 93a7da4ddf201811aa84886469302ffdde80724c](https://github.com/ta-truong/inm5151-ete2021-projet/commit/93a7da4ddf201811aa84886469302ffdde80724c)
+
 ### 19. Rectifier les attributs de facture & database et autres améliorations
 
 ---
