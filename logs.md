@@ -13,6 +13,13 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 21. Amélioration du module Facture
+
+---
+
+À venir...
+
+
 ### 20. Ajouter la gestion de dates et valider l'attribut de référence (facture)
 
 ---

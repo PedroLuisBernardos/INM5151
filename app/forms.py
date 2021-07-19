@@ -1,11 +1,13 @@
 # forms.py
 # défini les formulaires de l'application
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField, DecimalField
+from wtforms.fields.simple import HiddenField
+from wtforms.validators import NumberRange, ValidationError, DataRequired, Email, EqualTo, Length
 from flask_babel import _, lazy_gettext as _l
-from datetime import date
+from datetime import date, datetime
 from app.models import User, Facture
+import time
 
 # Défini un formulaire de connexion
 class LoginForm(FlaskForm):
@@ -73,7 +75,8 @@ class FactureForm(FlaskForm):
     date = DateField(_l('Date'), default=date.today(), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date (AAAA-MM-JJ)"))])
     description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 50 caractères')))])
     amount = DecimalField(_l('Montant'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
-    submit = SubmitField(_l('Enregistrer'))
+    tax = DecimalField(_l('Taxe (%)'), validators=[NumberRange(0,100, "Veuillez entrer un nombre entre 0 à 100")], places=0, render_kw={"value": "14.975"})
+    submit = SubmitField(_l('Enregistrer'), render_kw= {"onclick": "calculationTax()"})
 
     # Valider si la référence existe déjà
     def validate_reference(self, reference):
