@@ -7,3 +7,7 @@ from app.models import User, Facture
 @app.shell_context_processor
 def make_shell_context():
     return {'db': db, 'User': User, 'Facture': Facture}
+    
+# Écrire python3 "sdf.py" pour activer le debuggeur
+if __name__ == "__main__":
+    app.run(debug=True)

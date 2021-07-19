@@ -7,6 +7,7 @@ from config import Config
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel, lazy_gettext as _l
+from flask_moment import Moment
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -21,6 +22,8 @@ login.login_message = _l('Vous devez vous connecter pour accéder à cette page 
 app.static_folder = 'static'
 #Gestion de la langue
 babel = Babel(app)
+#Gestion du fuseau horaire selon l'endroit de l'utilisateur
+moment = Moment(app)
 
 # Ceci choisi la meilleure langue à utiliser selon les préférences de l'utilisateur
 @babel.localeselector
