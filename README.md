@@ -7,23 +7,13 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 ---
 
-* [ ] Pourquoi **loyer** ne s'affiche pas dans aucune langue dans la barre de navigation ?
-
 * [X] Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
-
-* [ ] Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
 
 * [X] Ajouter un support par email pour une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
 
 * [X] Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
 
 * [ ] Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
-
-* [ ] Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
-
-* [ ] Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
-
-* [ ] Ajouter un modèle `profil d'entreprise` et une page `profils_entreprise.html`. Cette page sera la première page que l'utilisateur **connecté** verra. On va devoir **ajouter**, **modifier** et **supprimer** des profils d'entreprise (au maximum 5). Une fois le profil sélectionné, on est redirigés à la page `index.html`. Ajouter dans la barre de navigation (sûrement dans le *drop-down* de **Mon profil** un lien pour modifier le profil courrant).
 
 * [ ] Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
   * [ ] Un deuxième `id`. Lui qui est déjà présent est l'id de la base de données, nous on veut un deuxième `id`, **unique** et **personnalisable**. L'ajouter dans le formulaire et dans l'affichage des factures.
@@ -36,6 +26,16 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 ## TODO sprint 3
 
 ---
+
+* [ ] Pourquoi **loyer** ne s'affiche pas dans aucune langue dans la barre de navigation ?
+
+* [ ] Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
+
+* [ ] Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
+
+* [ ] Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
+
+* [ ] Ajouter un modèle `profil d'entreprise` et une page `profils_entreprise.html`. Cette page sera la première page que l'utilisateur **connecté** verra. On va devoir **ajouter**, **modifier** et **supprimer** des profils d'entreprise (au maximum 5). Une fois le profil sélectionné, on est redirigés à la page `index.html`. Ajouter dans la barre de navigation (sûrement dans le *drop-down* de **Mon profil** un lien pour modifier le profil courrant).
 
 * [ ] Ajouter un bouton pour modifier la langue au lieu de se fier de la langue du navigateur.
 
