@@ -75,7 +75,7 @@ class FactureForm(FlaskForm):
     date = DateField(_l('Date'), default=date.today(), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date (AAAA-MM-JJ)"))])
     description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 50 caractères')))])
     amount = DecimalField(_l('Montant'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
-    tax = DecimalField(_l('Taxe (%)'), validators=[NumberRange(0,100, "Veuillez entrer un nombre entre 0 à 100")], places=0, render_kw={"value": "14.975"})
+    tax = DecimalField(_l('Taxe (%)'), validators=[NumberRange(0,100, _l("Veuillez entrer un nombre entre 0 et 100"))], places=0, render_kw={"value": "14.975"})
     submit = SubmitField(_l('Enregistrer'), render_kw= {"onclick": "calculationTax()"})
 
     # Valider si la référence existe déjà

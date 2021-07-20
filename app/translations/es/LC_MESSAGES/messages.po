@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-18 04:07-0400\n"
+"POT-Creation-Date: 2021-07-20 11:21-0400\n"
 "PO-Revision-Date: 2021-07-07 11:59-0400\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: app/__init__.py:20
+#: app/__init__.py:21
 msgid "Vous devez vous connecter pour accéder à cette page !"
 msgstr "¡Debe iniciar sesión para acceder a esta página!"
 
@@ -26,119 +26,128 @@ msgstr "¡Debe iniciar sesión para acceder a esta página!"
 msgid "[SDF] Réinitialisez votre mot de passe"
 msgstr "[SDF] Restablecer su contraseña"
 
-#: app/forms.py:12 app/forms.py:31 app/forms.py:53
+#: app/forms.py:14 app/forms.py:33 app/forms.py:55
 msgid "Utilisateur"
 msgstr "Usuario"
 
-#: app/forms.py:12 app/forms.py:31
+#: app/forms.py:14 app/forms.py:33
 msgid "Veuillez entrer un utilisateur valide"
 msgstr "Introduce un usuario válido"
 
-#: app/forms.py:13 app/forms.py:24 app/forms.py:34
+#: app/forms.py:15 app/forms.py:26 app/forms.py:36
 msgid "Mot de passe"
 msgstr "Contraseña"
 
-#: app/forms.py:13 app/forms.py:24 app/forms.py:34
+#: app/forms.py:15 app/forms.py:26 app/forms.py:36
 msgid "Veuillez entrer un mot de passe valide"
 msgstr "Introduce una contraseña válida"
 
-#: app/forms.py:14
+#: app/forms.py:16
 msgid "Se souvenir de moi"
 msgstr "Recuérdame"
 
-#: app/forms.py:15 app/routes.py:63
+#: app/forms.py:17 app/routes.py:63
 msgid "Connexion"
 msgstr "Conexión"
 
-#: app/forms.py:19 app/forms.py:33
+#: app/forms.py:21 app/forms.py:35
 msgid "Adresse courriel"
 msgstr "Correo electrónico"
 
-#: app/forms.py:19 app/forms.py:33
+#: app/forms.py:21 app/forms.py:35
 msgid "Veuillez entrer une adresse courriel valide"
 msgstr "Introduce una dirección de correo electrónico válida"
 
-#: app/forms.py:20
+#: app/forms.py:22
 msgid "Demander la réinitialisation"
 msgstr "Solicitar"
 
-#: app/forms.py:26 app/forms.py:36
+#: app/forms.py:28 app/forms.py:38
 msgid "Entrez à nouveau votre mot de passe"
 msgstr "Vuelva a introducir su contraseña"
 
-#: app/forms.py:26 app/forms.py:36
+#: app/forms.py:28 app/forms.py:38
 msgid "Veuillez entrer à nouveau votre mot de passe"
 msgstr "Vuelve a introducir la contraseña"
 
-#: app/forms.py:26 app/forms.py:36
+#: app/forms.py:28 app/forms.py:38
 msgid "Les mots de passe ne sont pas identiques"
 msgstr "Las contraseñas no son las mismas"
 
-#: app/forms.py:27
+#: app/forms.py:29
 msgid "Réinitialiser votre mot de passe"
 msgstr "Restablecer su contraseña"
 
-#: app/forms.py:37
+#: app/forms.py:39
 msgid "Créer un compte"
 msgstr "Crear una cuenta"
 
-#: app/forms.py:43 app/forms.py:67
+#: app/forms.py:45 app/forms.py:69
 msgid "Ce nom d'utilisateur est déjà utilisé"
 msgstr "Este nombre de usuario ya se ha utilizado."
 
-#: app/forms.py:49
+#: app/forms.py:51
 msgid "Cette adresse courriel est déjà utilisée"
 msgstr "Esta dirección de correo electrónico ya se ha utilizado."
 
-#: app/forms.py:53
+#: app/forms.py:55
 msgid "Veuillez saisir un nom d'utilisateur"
 msgstr "Introduce un nombre de usuario"
 
-#: app/forms.py:54
+#: app/forms.py:56
 msgid "À propos de moi"
 msgstr "Acerca de mí"
 
-#: app/forms.py:55 app/forms.py:76
+#: app/forms.py:57 app/forms.py:79
 msgid "Enregistrer"
 msgstr "Guardar"
 
-#: app/forms.py:72 app/templates/index.html:22
+#: app/forms.py:74 app/templates/index.html:24
 msgid "Référence"
 msgstr "Referencia"
 
-#: app/forms.py:72
+#: app/forms.py:74
 msgid "Veuillez entrer une référence"
 msgstr "Introduce una referencia"
 
-#: app/forms.py:72 app/forms.py:74
+#: app/forms.py:74 app/forms.py:76
 msgid "Veuillez écrire entre 1 et 50 caractères"
 msgstr "Escribe entre 1 y 50 caracteres"
 
-#: app/forms.py:73 app/templates/index.html:23
+#: app/forms.py:75 app/templates/index.html:25
 msgid "Date"
 msgstr "Fecha"
 
-#: app/forms.py:73
+#: app/forms.py:75
 msgid "Veuillez entrer une date (AAAA-MM-JJ)"
 msgstr "Introduce una fecha (AAAA-MM-DD)"
 
-#: app/forms.py:74 app/templates/index.html:24
+#: app/forms.py:76 app/templates/index.html:26
 msgid "Description"
 msgstr "Descripción"
 
-#: app/forms.py:74
+#: app/forms.py:76
 msgid "Veuillez entrer une description"
 msgstr "Introduce una descripción"
 
-#: app/forms.py:75 app/templates/index.html:25
+#: app/forms.py:77 app/templates/index.html:27
 msgid "Montant"
 msgstr "Monto"
 
-#: app/forms.py:75
+#: app/forms.py:77
 msgid "Veuillez entrer un montant numérique"
 msgstr "Introduce un número"
 
-#: app/forms.py:82
+#: app/forms.py:78
+msgid "Taxe (%)"
+msgstr "Impuesto (%)"
+
+#: app/forms.py:78
+#, fuzzy
+msgid "Veuillez entrer un nombre entre 0 et 100"
+msgstr "Introduce una referencia"
+
+#: app/forms.py:85
 msgid "Cette référence existe déjà"
 msgstr "La referencia ya existe"
 
@@ -146,7 +155,7 @@ msgstr "La referencia ya existe"
 msgid "Votre facture a été ajoutée."
 msgstr "Se ha agregado la factura."
 
-#: app/routes.py:33 app/templates/base.html:40
+#: app/routes.py:33 app/templates/base.html:43
 msgid "Accueil"
 msgstr "Página principal"
 
@@ -177,7 +186,9 @@ msgstr "Hubo un error con la desconexión."
 
 #: app/routes.py:93
 msgid "Cette adresse courriel n'est pas inscrite."
-msgstr "Esta dirección de correo electrónico Esta dirección de email no está registrada."
+msgstr ""
+"Esta dirección de correo electrónico Esta dirección de email no está "
+"registrada."
 
 #: app/routes.py:95
 msgid "Consultez vos courriels pour réinitialiser votre mot de passe."
@@ -195,7 +206,7 @@ msgstr "Tu contraseña ha sido restablecida."
 msgid "Vous êtes maintenant inscrit !"
 msgstr "¡Ya estás registrado!"
 
-#: app/routes.py:130 app/templates/base.html:44 app/templates/register.html:8
+#: app/routes.py:130 app/templates/base.html:47 app/templates/register.html:8
 msgid "S'inscrire"
 msgstr "Registrarse"
 
@@ -203,7 +214,7 @@ msgstr "Registrarse"
 msgid "Il y a eu une erreur avec l'inscription."
 msgstr "Hubo un error con el registro."
 
-#: app/routes.py:140 app/templates/base.html:60 app/templates/base.html:62
+#: app/routes.py:140 app/templates/base.html:63 app/templates/base.html:65
 msgid "Mon profil"
 msgstr "Mi perfil"
 
@@ -263,35 +274,35 @@ msgstr "Facturas"
 msgid "Système de Facturation"
 msgstr "Sistema de Facturación"
 
-#: app/templates/base.html:33
+#: app/templates/base.html:36
 msgid "Système de facturation"
 msgstr "Sistema de Facturación"
 
-#: app/templates/base.html:47 app/templates/login.html:8
+#: app/templates/base.html:50 app/templates/login.html:8
 msgid "Se connecter"
 msgstr "Conectarse"
 
-#: app/templates/base.html:51
+#: app/templates/base.html:54
 msgid "Contacts"
 msgstr "Contactos"
 
-#: app/templates/base.html:54
+#: app/templates/base.html:57
 msgid "Comptes"
 msgstr "Cuentas"
 
-#: app/templates/base.html:57
+#: app/templates/base.html:60
 msgid "Profils d'entreprise"
 msgstr "Perfiles de empresa"
 
-#: app/templates/base.html:64
+#: app/templates/base.html:67
 msgid "Se déconnecter"
 msgstr "Desconectarse"
 
-#: app/templates/base.html:71
+#: app/templates/base.html:74
 msgid "Exemple: loyer"
 msgstr "Ejemplo: renta"
 
-#: app/templates/base.html:72
+#: app/templates/base.html:75
 msgid "Rechercher"
 msgstr "Buscar"
 
@@ -299,31 +310,31 @@ msgstr "Buscar"
 msgid "Modifier le profil"
 msgstr "Modificar el perfil"
 
-#: app/templates/email/reset_password.html:3 app/templates/index.html:7
+#: app/templates/email/reset_password.html:3 app/templates/index.html:9
 msgid "Bonjour"
 msgstr "Hola"
 
-#: app/templates/index.html:8
+#: app/templates/index.html:10
 msgid "Enregistrer une facture"
 msgstr "Registra una factura"
 
-#: app/templates/index.html:26
+#: app/templates/index.html:28
 msgid "Options"
 msgstr "Opciones"
 
-#: app/templates/index.html:39
+#: app/templates/index.html:41
 msgid "Modifier"
 msgstr "Modificar"
 
-#: app/templates/index.html:40
+#: app/templates/index.html:42
 msgid "Supprimer"
 msgstr "Suprimir"
 
-#: app/templates/index.html:48
+#: app/templates/index.html:50
 msgid "Page précédente"
 msgstr "Página anterior"
 
-#: app/templates/index.html:51
+#: app/templates/index.html:53
 msgid "Page suivante"
 msgstr "Página siguiente"
 
@@ -392,10 +403,12 @@ msgid "Alternativement, vous pouvez coller le lien suivant dans votre navigateur
 msgstr "Alternativamente, puede pegar el siguiente enlace en su navegador:"
 
 #: app/templates/email/reset_password.html:10
-msgid "Si vous n'avez pas demandé la réinitialisation de votre mot de passe, ignorez ce message."
+msgid ""
+"Si vous n'avez pas demandé la réinitialisation de votre mot de passe, "
+"ignorez ce message."
 msgstr "Si no ha solicitado restablecer su contraseña, ignore este mensaje."
 
 #: app/templates/email/reset_password.html:12
 msgid "Sincèrement,"
-msgstr "Realmente,"
+msgstr "Sinceramente,"
 
