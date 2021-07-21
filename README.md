@@ -17,7 +17,7 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 * [ ] Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
   * [X] Un deuxième `id` (attribut `reference`). Lui qui est déjà présent est l'id de la base de données, nous on veut un deuxième `id` (attribut `reference`), **unique** et **personnalisable**. L'ajouter dans le formulaire et dans l'affichage des factures.
-  * [ ] Un booléen nommé `paiement`, en *drop-down*: **payée** ou **non-payée**. L'ajouter dans le formulaire et dans l'affichage des factures. Par défaut, se placer sur `non-payée`.
+  * [X] Un booléen nommé `paiement`, en *drop-down*: **payée** ou **non-payée**. L'ajouter dans le formulaire et dans l'affichage des factures. Par défaut, se placer sur `non-payée`.
   * [X] Une valeur fixe `taxe` qui est de **14.975%**. L'ajouter dans le formulaire et dans l'affichage des factures. Faire le calcul du montant `amount` automatiquement.
   * [ ] Un *drop-down* **modifiable** nommé `comptes de revenus/dépenses`. Il va avoir une page pour les créer et ils seront disponibles dans le *drop-down* des factures. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin). L'ajouter dans le formulaire et dans l'affichage des factures.
   * [ ] idem mais nommé `contacts`.

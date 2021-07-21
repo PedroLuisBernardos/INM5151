@@ -13,12 +13,21 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
-### 21. Amélioration du module Facture
+### 21. Ajouter la gestion du statut (impayée/payée) à la facture
 
 ---
 
-À venir...
+J'ai ajouter l'attribut *Statut* au modèle de factures (`app.db`, `app/forms.py`, `app/models.py`, `app/routes.py`).
 
+En SQL, les colonnes de type *boolean* n'existe. Il fonctionne plutôt avec des *INTEGER* dont *0 = False* et *1 = True*.
+
+La *db* (`app.db`) a désormais une colonne *paid*, dont les valeurs possibles sont : 
+  * *0* pour faux: impayée
+  * *1* pour vrai: payée
+    
+Désormais, dans la liste d'affichage de factures, la date d'échéance et le statut s'affichent en rouge lorsque la date d'échance est =< à la date d'aujourd'hui et que le statut est « Impayée » (`app/templates/index.html`).
+
+[Commit: 20d396200263bfe6741c8bd06b55fbec7a4be8ee](https://github.com/ta-truong/inm5151-ete2021-projet/commit/20d396200263bfe6741c8bd06b55fbec7a4be8ee)
 
 ### 20. Ajouter la gestion de dates et valider l'attribut de référence (facture)
 
