@@ -25,9 +25,13 @@ babel = Babel(app)
 #Gestion du fuseau horaire selon l'endroit de l'utilisateur
 moment = Moment(app)
 
-# Ceci choisi la meilleure langue à utiliser selon les préférences de l'utilisateur
+#Ceci choisi la meilleure langue à utiliser selon les préférences de l'utilisateur
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
-from app import routes, models, errors
+#Gestion des erreurs
+from app.errors import bp as errors_bp
+app.register_blueprint(errors_bp)
+
+from app import routes, models
