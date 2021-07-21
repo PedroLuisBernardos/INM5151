@@ -62,6 +62,7 @@ class Facture(db.Model):
     date = db.Column(db.Date, nullable=False)
     due_date = db.Column(db.Date, nullable=False)
     amount = db.Column(db.Float, nullable=False)
+    paid = db.Column(db.Integer, default=0, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     # Affichage des factures

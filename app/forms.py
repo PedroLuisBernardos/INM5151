@@ -1,7 +1,7 @@
 # forms.py
 # défini les formulaires de l'application
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField, DecimalField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField, SelectField
 from wtforms.validators import NumberRange, ValidationError, DataRequired, Email, EqualTo, Length
 from flask_babel import _, lazy_gettext as _l
 from datetime import date
@@ -69,6 +69,7 @@ class EditProfileForm(FlaskForm):
 # Défini un formulaire pour la saisie de factures
 class FactureForm(FlaskForm):
     # À ajouter des attributs
+    paid = SelectField('', choices=[(0, _l('Impayée')), (1, _l('Payée'))], coerce=int)
     reference = TextAreaField(_l('Référence'), validators=[DataRequired(message=_l("Veuillez entrer une référence")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
     date = DateField(_l('Date'), default=date.today(), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date (AAAA-MM-JJ)"))])
     due_date = DateField(_l('Date d\'échéance'), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date d'échéance (AAAA-MM-JJ)"))])

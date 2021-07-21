@@ -26,14 +26,21 @@
             <th scope="col">{{ _('Date') }}</th>
             <th scope="col">{{ _('Date d\'échéance') }}</th>
             <th scope="col">{{ _('Montant') }} ($)</th>
+            <th scope="col">{{ _('Statut') }}</th>
             <th scope="col">{{ _('Options') }}</th>
           </tr>
         </thead>
         <tbody>
     {% for facture in factures %}
-        <!-- Valide si la date d'échéance est dépassée -->
-        {% if facture.due_date <= date_today %}
-            {% set date_state = 'past-due' %}
+        <!-- Valide l'état de la facture -->
+        {% if facture.paid %}
+            {% set facture_state = _('Payée') %}
+        {% else %}
+            {% set facture_state = _('Impayée') %}
+            <!-- Valide si la date d'échéance est dépassée alors qu'elle est impayée -->
+            {% if facture.due_date <= date_today%}
+                {% set date_state = 'past-due' %}
+            {% endif %}
         {% endif %}
         <!-- Corps des factures -->
         <tr>
@@ -43,6 +50,7 @@
             <td>{{ facture.date }}</td>
             <td class="{{ date_state }}">{{ facture.due_date }}</td>
             <td>{{ facture.amount }}</td>
+            <td class="{{ date_state }}">{{ facture_state }}</td>
             <td>
                 <a class="btn btn-info" href="{{ url_for('update', facture_id=facture.id) }}">{{ _('Modifier') }}</a>
                 <a class="btn btn-danger" href="{{ url_for('delete', facture_id=facture.id) }}">{{ _('Supprimer') }}</a>

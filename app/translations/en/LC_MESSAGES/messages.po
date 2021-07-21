@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-21 02:07-0400\n"
+"POT-Creation-Date: 2021-07-21 05:00-0400\n"
 "PO-Revision-Date: 2021-07-07 11:49-0400\n"
 "Last-Translator: \n"
 "Language: en\n"
@@ -26,216 +26,224 @@ msgstr "You need to be logged to access to this page!"
 msgid "[SDF] Réinitialisez votre mot de passe"
 msgstr "[SDF] Reset your password"
 
-#: app/forms.py:14 app/forms.py:33 app/forms.py:55
+#: app/forms.py:12 app/forms.py:31 app/forms.py:53
 msgid "Utilisateur"
 msgstr "User"
 
-#: app/forms.py:14 app/forms.py:33
+#: app/forms.py:12 app/forms.py:31
 msgid "Veuillez entrer un utilisateur valide"
 msgstr "Please enter a valid user"
 
-#: app/forms.py:15 app/forms.py:26 app/forms.py:36
+#: app/forms.py:13 app/forms.py:24 app/forms.py:34
 msgid "Mot de passe"
 msgstr "Password"
 
-#: app/forms.py:15 app/forms.py:26 app/forms.py:36
+#: app/forms.py:13 app/forms.py:24 app/forms.py:34
 msgid "Veuillez entrer un mot de passe valide"
 msgstr "Please enter a valid password"
 
-#: app/forms.py:16
+#: app/forms.py:14
 msgid "Se souvenir de moi"
 msgstr "Remember me"
 
-#: app/forms.py:17 app/routes.py:67
+#: app/forms.py:15 app/routes.py:65
 msgid "Connexion"
 msgstr "Sign In"
 
-#: app/forms.py:21 app/forms.py:35
+#: app/forms.py:19 app/forms.py:33
 msgid "Adresse courriel"
 msgstr "Email"
 
-#: app/forms.py:21 app/forms.py:35
+#: app/forms.py:19 app/forms.py:33
 msgid "Veuillez entrer une adresse courriel valide"
 msgstr "Please enter a valid email address"
 
-#: app/forms.py:22
+#: app/forms.py:20
 msgid "Demander la réinitialisation"
 msgstr "Request"
 
-#: app/forms.py:28 app/forms.py:38
+#: app/forms.py:26 app/forms.py:36
 msgid "Entrez à nouveau votre mot de passe"
 msgstr "Please enter your password again"
 
-#: app/forms.py:28 app/forms.py:38
+#: app/forms.py:26 app/forms.py:36
 msgid "Veuillez entrer à nouveau votre mot de passe"
 msgstr "Please enter your password again"
 
-#: app/forms.py:28 app/forms.py:38
+#: app/forms.py:26 app/forms.py:36
 msgid "Les mots de passe ne sont pas identiques"
 msgstr "The passwords do not match"
 
-#: app/forms.py:29
+#: app/forms.py:27
 msgid "Réinitialiser votre mot de passe"
 msgstr "Reset your password"
 
-#: app/forms.py:39
+#: app/forms.py:37
 msgid "Créer un compte"
 msgstr "Sign up"
 
-#: app/forms.py:45 app/forms.py:69
+#: app/forms.py:43 app/forms.py:67
 msgid "Ce nom d'utilisateur est déjà utilisé"
 msgstr "The username is already taken"
 
-#: app/forms.py:51
+#: app/forms.py:49
 msgid "Cette adresse courriel est déjà utilisée"
 msgstr "The email is already taken"
 
-#: app/forms.py:55
+#: app/forms.py:53
 msgid "Veuillez saisir un nom d'utilisateur"
 msgstr "Please enter an username"
 
-#: app/forms.py:56
+#: app/forms.py:54
 msgid "À propos de moi"
 msgstr "About me"
 
-#: app/forms.py:57 app/forms.py:80
+#: app/forms.py:55 app/forms.py:79
 msgid "Enregistrer"
 msgstr "Save"
 
-#: app/forms.py:74 app/templates/index.html:24
+#: app/forms.py:72 app/templates/index.html:39
+msgid "Impayée"
+msgstr "Unpaid"
+
+#: app/forms.py:72 app/templates/index.html:37
+msgid "Payée"
+msgstr "Paid"
+
+#: app/forms.py:73 app/templates/index.html:24
 msgid "Référence"
 msgstr "Reference"
 
-#: app/forms.py:74
+#: app/forms.py:73
 msgid "Veuillez entrer une référence"
 msgstr "Please enter a reference"
 
-#: app/forms.py:74 app/forms.py:77
+#: app/forms.py:73 app/forms.py:76
 msgid "Veuillez écrire entre 1 et 50 caractères"
 msgstr "Please write between 1 and 50 characters"
 
-#: app/forms.py:75 app/templates/index.html:26
+#: app/forms.py:74 app/templates/index.html:26
 msgid "Date"
 msgstr "Date"
 
-#: app/forms.py:75
+#: app/forms.py:74
 msgid "Veuillez entrer une date (AAAA-MM-JJ)"
 msgstr "Please enter a date (YYYY-MM-DD)"
 
-#: app/forms.py:76 app/templates/index.html:27
+#: app/forms.py:75 app/templates/index.html:27
 msgid "Date d'échéance"
 msgstr "Due date"
 
-#: app/forms.py:76
+#: app/forms.py:75
 msgid "Veuillez entrer une date d'échéance (AAAA-MM-JJ)"
 msgstr "Please enter a due date (YYYY-MM-DD)"
 
-#: app/forms.py:77 app/templates/index.html:25
+#: app/forms.py:76 app/templates/index.html:25
 msgid "Description"
 msgstr "Description"
 
-#: app/forms.py:77
+#: app/forms.py:76
 msgid "Veuillez entrer une description"
 msgstr "Please enter a description"
 
-#: app/forms.py:78 app/templates/index.html:28
+#: app/forms.py:77 app/templates/index.html:28
 msgid "Montant"
 msgstr "Amount"
 
-#: app/forms.py:78
+#: app/forms.py:77
 msgid "Veuillez entrer un montant numérique"
 msgstr "Please enter a number"
 
-#: app/forms.py:79
+#: app/forms.py:78
 msgid "Taxe (%)"
 msgstr "Tax (%)"
 
-#: app/forms.py:79
+#: app/forms.py:78
 msgid "Veuillez entrer un nombre entre 0 et 100"
 msgstr "Please enter a number between 0 and 100"
 
-#: app/forms.py:85
+#: app/forms.py:84
 msgid "La date d'échéance doit être la même ou après la date initale"
 msgstr "The due date must be the same or after the initial date"
 
-#: app/routes.py:25 app/routes.py:184
+#: app/routes.py:23 app/routes.py:182
 msgid "Cette référence existe déjà."
 msgstr "The reference already exists."
 
-#: app/routes.py:30
+#: app/routes.py:28
 msgid "Votre facture a été ajoutée."
 msgstr "Your bill was added."
 
-#: app/routes.py:37 app/templates/base.html:43
+#: app/routes.py:35 app/templates/base.html:43
 msgid "Accueil"
 msgstr "Home"
 
-#: app/routes.py:46
+#: app/routes.py:44
 msgid "Bienvenue"
 msgstr "Welcome"
 
-#: app/routes.py:62
+#: app/routes.py:60
 msgid "Utilisateur ou mot de passes invalides !"
 msgstr "Invalid username or password!"
 
-#: app/routes.py:69
+#: app/routes.py:67
 msgid "Il y a eu une erreur avec la connexion."
 msgstr "There was an error with the connection."
 
-#: app/routes.py:70 app/routes.py:84 app/routes.py:136 app/routes.py:160
-#: app/routes.py:173 app/routes.py:203 app/routes.py:230
+#: app/routes.py:68 app/routes.py:82 app/routes.py:134 app/routes.py:158
+#: app/routes.py:171 app/routes.py:203 app/routes.py:230
 msgid "Erreur"
 msgstr "Error"
 
-#: app/routes.py:79
+#: app/routes.py:77
 msgid "Vous avez été déconnecté."
 msgstr "You were logged out."
 
-#: app/routes.py:83
+#: app/routes.py:81
 msgid "Il y a eu une erreur avec la déconnexion."
 msgstr "There was an error with the logout."
 
-#: app/routes.py:96
+#: app/routes.py:94
 msgid "Consultez vos courriels pour réinitialiser votre mot de passe."
 msgstr "Check your emails to reset your password."
 
-#: app/routes.py:99
+#: app/routes.py:97
 msgid "Cette adresse courriel n'est pas inscrite."
 msgstr "This email address is not registered."
 
-#: app/routes.py:100 app/templates/reset_password_request.html:7
+#: app/routes.py:98 app/templates/reset_password_request.html:7
 msgid "Réinitialiser un mot de passe"
 msgstr "Reset password request"
 
-#: app/routes.py:114
+#: app/routes.py:112
 msgid "Votre mot de passe a été réinitialisé."
 msgstr "Your password has been reset."
 
-#: app/routes.py:131
+#: app/routes.py:129
 msgid "Vous êtes maintenant inscrit !"
 msgstr "You are now registered!"
 
-#: app/routes.py:133 app/templates/base.html:47 app/templates/register.html:8
+#: app/routes.py:131 app/templates/base.html:47 app/templates/register.html:8
 msgid "S'inscrire"
 msgstr "Sign up"
 
-#: app/routes.py:135
+#: app/routes.py:133
 msgid "Il y a eu une erreur avec l'inscription."
 msgstr "There was an error with the inscription."
 
-#: app/routes.py:143 app/templates/base.html:63 app/templates/base.html:65
+#: app/routes.py:141 app/templates/base.html:63 app/templates/base.html:65
 msgid "Mon profil"
 msgstr "My profile"
 
-#: app/routes.py:159
+#: app/routes.py:157
 msgid "Il y a eu une erreur avec la suppression de l'utilisateur."
 msgstr "There was an error with the user deletion."
 
-#: app/routes.py:172
+#: app/routes.py:170
 msgid "Il y a eu une erreur avec la suppression de la facture."
 msgstr "There was an error with the bill's deletion."
 
-#: app/routes.py:192 app/routes.py:222
+#: app/routes.py:191 app/routes.py:222
 msgid "Les modifications ont été sauvegardées."
 msgstr "The modifications have been saved."
 
@@ -328,22 +336,26 @@ msgid "Enregistrer une facture"
 msgstr "Create a bill"
 
 #: app/templates/index.html:29
+msgid "Statut"
+msgstr "Status"
+
+#: app/templates/index.html:30
 msgid "Options"
 msgstr "Settings"
 
-#: app/templates/index.html:43
+#: app/templates/index.html:55
 msgid "Modifier"
 msgstr "Modify"
 
-#: app/templates/index.html:44
+#: app/templates/index.html:56
 msgid "Supprimer"
 msgstr "Delete"
 
-#: app/templates/index.html:52
+#: app/templates/index.html:64
 msgid "Page précédente"
 msgstr "Previous page"
 
-#: app/templates/index.html:55
+#: app/templates/index.html:67
 msgid "Page suivante"
 msgstr "Next page"
 

@@ -22,7 +22,7 @@ def index():
         if facture:
             flash(_('Cette référence existe déjà.'))
         else:
-            facture = Facture(reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, author=current_user, amount=form.amount.data)
+            facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, author=current_user, amount=form.amount.data)
             db.session.add(facture)
             db.session.commit()
             flash(_('Votre facture a été ajoutée.'))
@@ -181,6 +181,7 @@ def update(facture_id):
             if facture and facture is not facture_to_update:
                 flash(_('Cette référence existe déjà.'))
             else:
+                facture_to_update.paid = form.paid.data
                 facture_to_update.reference = form.reference.data
                 facture_to_update.date = form.date.data
                 facture_to_update.due_date = form.due_date.data
@@ -190,6 +191,7 @@ def update(facture_id):
                 flash(_('Les modifications ont été sauvegardées.'))
                 return redirect(url_for('index'))
         elif request.method == 'GET':
+            form.paid.data = facture_to_update.paid
             form.reference.data = facture_to_update.reference
             form.date.data = facture_to_update.date
             form.due_date.data = facture_to_update.due_date

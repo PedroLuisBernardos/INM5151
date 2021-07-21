@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-21 02:07-0400\n"
+"POT-Creation-Date: 2021-07-21 05:00-0400\n"
 "PO-Revision-Date: 2021-07-07 11:59-0400\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -26,218 +26,226 @@ msgstr "¡Debe iniciar sesión para acceder a esta página!"
 msgid "[SDF] Réinitialisez votre mot de passe"
 msgstr "[SDF] Restablecer su contraseña"
 
-#: app/forms.py:14 app/forms.py:33 app/forms.py:55
+#: app/forms.py:12 app/forms.py:31 app/forms.py:53
 msgid "Utilisateur"
 msgstr "Usuario"
 
-#: app/forms.py:14 app/forms.py:33
+#: app/forms.py:12 app/forms.py:31
 msgid "Veuillez entrer un utilisateur valide"
 msgstr "Introduce un usuario válido"
 
-#: app/forms.py:15 app/forms.py:26 app/forms.py:36
+#: app/forms.py:13 app/forms.py:24 app/forms.py:34
 msgid "Mot de passe"
 msgstr "Contraseña"
 
-#: app/forms.py:15 app/forms.py:26 app/forms.py:36
+#: app/forms.py:13 app/forms.py:24 app/forms.py:34
 msgid "Veuillez entrer un mot de passe valide"
 msgstr "Introduce una contraseña válida"
 
-#: app/forms.py:16
+#: app/forms.py:14
 msgid "Se souvenir de moi"
 msgstr "Recuérdame"
 
-#: app/forms.py:17 app/routes.py:67
+#: app/forms.py:15 app/routes.py:65
 msgid "Connexion"
 msgstr "Conexión"
 
-#: app/forms.py:21 app/forms.py:35
+#: app/forms.py:19 app/forms.py:33
 msgid "Adresse courriel"
 msgstr "Correo electrónico"
 
-#: app/forms.py:21 app/forms.py:35
+#: app/forms.py:19 app/forms.py:33
 msgid "Veuillez entrer une adresse courriel valide"
 msgstr "Introduce una dirección de correo electrónico válida"
 
-#: app/forms.py:22
+#: app/forms.py:20
 msgid "Demander la réinitialisation"
 msgstr "Solicitar"
 
-#: app/forms.py:28 app/forms.py:38
+#: app/forms.py:26 app/forms.py:36
 msgid "Entrez à nouveau votre mot de passe"
 msgstr "Vuelva a introducir su contraseña"
 
-#: app/forms.py:28 app/forms.py:38
+#: app/forms.py:26 app/forms.py:36
 msgid "Veuillez entrer à nouveau votre mot de passe"
 msgstr "Vuelve a introducir la contraseña"
 
-#: app/forms.py:28 app/forms.py:38
+#: app/forms.py:26 app/forms.py:36
 msgid "Les mots de passe ne sont pas identiques"
 msgstr "Las contraseñas no son las mismas"
 
-#: app/forms.py:29
+#: app/forms.py:27
 msgid "Réinitialiser votre mot de passe"
 msgstr "Restablecer su contraseña"
 
-#: app/forms.py:39
+#: app/forms.py:37
 msgid "Créer un compte"
 msgstr "Crear una cuenta"
 
-#: app/forms.py:45 app/forms.py:69
+#: app/forms.py:43 app/forms.py:67
 msgid "Ce nom d'utilisateur est déjà utilisé"
 msgstr "Este nombre de usuario ya se ha utilizado."
 
-#: app/forms.py:51
+#: app/forms.py:49
 msgid "Cette adresse courriel est déjà utilisée"
 msgstr "Esta dirección de correo electrónico ya se ha utilizado."
 
-#: app/forms.py:55
+#: app/forms.py:53
 msgid "Veuillez saisir un nom d'utilisateur"
 msgstr "Introduce un nombre de usuario"
 
-#: app/forms.py:56
+#: app/forms.py:54
 msgid "À propos de moi"
 msgstr "Acerca de mí"
 
-#: app/forms.py:57 app/forms.py:80
+#: app/forms.py:55 app/forms.py:79
 msgid "Enregistrer"
 msgstr "Guardar"
 
-#: app/forms.py:74 app/templates/index.html:24
+#: app/forms.py:72 app/templates/index.html:39
+msgid "Impayée"
+msgstr "No pagada"
+
+#: app/forms.py:72 app/templates/index.html:37
+msgid "Payée"
+msgstr "Pagada"
+
+#: app/forms.py:73 app/templates/index.html:24
 msgid "Référence"
 msgstr "Referencia"
 
-#: app/forms.py:74
+#: app/forms.py:73
 msgid "Veuillez entrer une référence"
 msgstr "Introduce una referencia"
 
-#: app/forms.py:74 app/forms.py:77
+#: app/forms.py:73 app/forms.py:76
 msgid "Veuillez écrire entre 1 et 50 caractères"
 msgstr "Escribe entre 1 y 50 caracteres"
 
-#: app/forms.py:75 app/templates/index.html:26
+#: app/forms.py:74 app/templates/index.html:26
 msgid "Date"
 msgstr "Fecha"
 
-#: app/forms.py:75
+#: app/forms.py:74
 msgid "Veuillez entrer une date (AAAA-MM-JJ)"
 msgstr "Introduce una fecha (AAAA-MM-DD)"
 
-#: app/forms.py:76 app/templates/index.html:27
+#: app/forms.py:75 app/templates/index.html:27
 msgid "Date d'échéance"
 msgstr "Fecha de vencimiento"
 
-#: app/forms.py:76
+#: app/forms.py:75
 msgid "Veuillez entrer une date d'échéance (AAAA-MM-JJ)"
 msgstr "Introduce una fecha de vencimiento (AAAA-MM-DD)"
 
-#: app/forms.py:77 app/templates/index.html:25
+#: app/forms.py:76 app/templates/index.html:25
 msgid "Description"
 msgstr "Descripción"
 
-#: app/forms.py:77
+#: app/forms.py:76
 msgid "Veuillez entrer une description"
 msgstr "Introduce una descripción"
 
-#: app/forms.py:78 app/templates/index.html:28
+#: app/forms.py:77 app/templates/index.html:28
 msgid "Montant"
 msgstr "Monto"
 
-#: app/forms.py:78
+#: app/forms.py:77
 msgid "Veuillez entrer un montant numérique"
 msgstr "Introduce un número"
 
-#: app/forms.py:79
+#: app/forms.py:78
 msgid "Taxe (%)"
 msgstr "Impuesto (%)"
 
-#: app/forms.py:79
+#: app/forms.py:78
 msgid "Veuillez entrer un nombre entre 0 et 100"
 msgstr "Introduce un número entre 0 y 100"
 
-#: app/forms.py:85
+#: app/forms.py:84
 msgid "La date d'échéance doit être la même ou après la date initale"
 msgstr "La fecha de vencimiento debe ser igual o posterior a la fecha original"
 
-#: app/routes.py:25 app/routes.py:184
+#: app/routes.py:23 app/routes.py:182
 msgid "Cette référence existe déjà."
 msgstr "La referencia ya existe."
 
-#: app/routes.py:30
+#: app/routes.py:28
 msgid "Votre facture a été ajoutée."
 msgstr "Se ha agregado la factura."
 
-#: app/routes.py:37 app/templates/base.html:43
+#: app/routes.py:35 app/templates/base.html:43
 msgid "Accueil"
 msgstr "Página principal"
 
-#: app/routes.py:46
+#: app/routes.py:44
 msgid "Bienvenue"
 msgstr "Bienvenido"
 
-#: app/routes.py:62
+#: app/routes.py:60
 msgid "Utilisateur ou mot de passes invalides !"
 msgstr "¡Usuario o contraseña no válidos!"
 
-#: app/routes.py:69
+#: app/routes.py:67
 msgid "Il y a eu une erreur avec la connexion."
 msgstr "Se ha producido un error con la conexión."
 
-#: app/routes.py:70 app/routes.py:84 app/routes.py:136 app/routes.py:160
-#: app/routes.py:173 app/routes.py:203 app/routes.py:230
+#: app/routes.py:68 app/routes.py:82 app/routes.py:134 app/routes.py:158
+#: app/routes.py:171 app/routes.py:203 app/routes.py:230
 msgid "Erreur"
 msgstr "Error"
 
-#: app/routes.py:79
+#: app/routes.py:77
 msgid "Vous avez été déconnecté."
 msgstr "Se ha desconectado."
 
-#: app/routes.py:83
+#: app/routes.py:81
 msgid "Il y a eu une erreur avec la déconnexion."
 msgstr "Hubo un error con la desconexión."
 
-#: app/routes.py:96
+#: app/routes.py:94
 msgid "Consultez vos courriels pour réinitialiser votre mot de passe."
 msgstr "Revise sus correos electrónicos para restablecer su contraseña."
 
-#: app/routes.py:99
+#: app/routes.py:97
 msgid "Cette adresse courriel n'est pas inscrite."
 msgstr ""
 "Esta dirección de correo electrónico Esta dirección de email no está "
 "registrada."
 
-#: app/routes.py:100 app/templates/reset_password_request.html:7
+#: app/routes.py:98 app/templates/reset_password_request.html:7
 msgid "Réinitialiser un mot de passe"
 msgstr "Restablecer la contraseña"
 
-#: app/routes.py:114
+#: app/routes.py:112
 msgid "Votre mot de passe a été réinitialisé."
 msgstr "Tu contraseña ha sido restablecida."
 
-#: app/routes.py:131
+#: app/routes.py:129
 msgid "Vous êtes maintenant inscrit !"
 msgstr "¡Ya estás registrado!"
 
-#: app/routes.py:133 app/templates/base.html:47 app/templates/register.html:8
+#: app/routes.py:131 app/templates/base.html:47 app/templates/register.html:8
 msgid "S'inscrire"
 msgstr "Registrarse"
 
-#: app/routes.py:135
+#: app/routes.py:133
 msgid "Il y a eu une erreur avec l'inscription."
 msgstr "Hubo un error con el registro."
 
-#: app/routes.py:143 app/templates/base.html:63 app/templates/base.html:65
+#: app/routes.py:141 app/templates/base.html:63 app/templates/base.html:65
 msgid "Mon profil"
 msgstr "Mi perfil"
 
-#: app/routes.py:159
+#: app/routes.py:157
 msgid "Il y a eu une erreur avec la suppression de l'utilisateur."
 msgstr "Se ha producido un error con la eliminación del usuario."
 
-#: app/routes.py:172
+#: app/routes.py:170
 msgid "Il y a eu une erreur avec la suppression de la facture."
 msgstr "Se ha producido un error con la supresión de la factura."
 
-#: app/routes.py:192 app/routes.py:222
+#: app/routes.py:191 app/routes.py:222
 msgid "Les modifications ont été sauvegardées."
 msgstr "Se han guardado los cambios."
 
@@ -330,22 +338,26 @@ msgid "Enregistrer une facture"
 msgstr "Registra una factura"
 
 #: app/templates/index.html:29
+msgid "Statut"
+msgstr "Estado"
+
+#: app/templates/index.html:30
 msgid "Options"
 msgstr "Opciones"
 
-#: app/templates/index.html:43
+#: app/templates/index.html:55
 msgid "Modifier"
 msgstr "Modificar"
 
-#: app/templates/index.html:44
+#: app/templates/index.html:56
 msgid "Supprimer"
 msgstr "Suprimir"
 
-#: app/templates/index.html:52
+#: app/templates/index.html:64
 msgid "Page précédente"
 msgstr "Página anterior"
 
-#: app/templates/index.html:55
+#: app/templates/index.html:67
 msgid "Page suivante"
 msgstr "Página siguiente"
 
