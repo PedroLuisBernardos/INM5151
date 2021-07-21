@@ -2,12 +2,10 @@
 # défini les formulaires de l'application
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField, DecimalField
-from wtforms.fields.simple import HiddenField
 from wtforms.validators import NumberRange, ValidationError, DataRequired, Email, EqualTo, Length
 from flask_babel import _, lazy_gettext as _l
-from datetime import date, datetime
-from app.models import User, Facture
-import time
+from datetime import date
+from app.models import User
 
 # Défini un formulaire de connexion
 class LoginForm(FlaskForm):

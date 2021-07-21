@@ -24,14 +24,18 @@
 
 ---
 
-J'ai ajouter l'attribut *Date* au modèle de factures. Le type de la colonne *date* dans la *database* (app.db) est désormais *DATE* puisque c'est seulement la date qui m'intéresse.
+J'ai ajouter l'attribut *Date* au modèle de factures. Le type de la colonne *date* dans la *database* (`app.db`) est désormais *DATE* puisque c'est seulement la date qui m'intéresse.
 (`app/forms.py`, `app/models.py`, `app/routes.py`)
 
 J'ai ajouter une validation pour la *référence* de la facture pour que celle-ci soit unique (`app/forms.py`).
 
 [Commit: 7d09073a239f18eff792d518244c93a01741a2ef](https://github.com/ta-truong/inm5151-ete2021-projet/commit/7d09073a239f18eff792d518244c93a01741a2ef)
 
-Enfin, la traduction en anglais et en espagnol a été mise à jour : [Commit: 93a7da4ddf201811aa84886469302ffdde80724c](https://github.com/ta-truong/inm5151-ete2021-projet/commit/93a7da4ddf201811aa84886469302ffdde80724c)
+J'ai ajouter l'attribut *Date d'échéance* au modèle de factures (`app.db`, `app/models.py`, `app/routes.py`, ).
+Validation: elle doit être => à la date de la facture (`app/forms.py`).
+Lorsque la date d'échéance est =< à la date d'aujourd'hui, elle s'affiche en rouge (`app/templates/index.html`, `app/static/css/style.css`).
+
+[Commit: dcd9b420359c96edd7d71134b317827d907c5d3d](https://github.com/ta-truong/inm5151-ete2021-projet/commit/dcd9b420359c96edd7d71134b317827d907c5d3d)
 
 ### 19. Rectifier les attributs de facture & database et autres améliorations
 
@@ -54,8 +58,6 @@ J'ai changé l'affichage des attributs des factures pour en garder ceux pertinen
 J'ai modifier les fichiers `app/templates/reset_password.html` et `app/templates/reset_password_request.html` pour l'adapter à la structure du code actuel (*WTForms*)
 
 J'ai améliorer l'affichage de quelques attributs et messages.
-
-Enfin, la traduction en anglais et en espagnol a été mise à jour.
 
 [Commit: 5a46deaa328c6d98b9ab9109d94dfb1603bd5426](https://github.com/ta-truong/inm5151-ete2021-projet/commit/5a46deaa328c6d98b9ab9109d94dfb1603bd5426)
 
@@ -85,8 +87,6 @@ J'ai ajouté le fichier `app/email.py` qui permet d'initialiser le courriel à c
 
 J'ai ajouté le fichier `app/templates/reset_password.html` qui permet de ***réinitialiser*** le mot de passe.
 Une route (lien + *token*) et un formulaire ont donc été ajouté : `app/routes.py`, `app/forms.py`
-
-Enfin, la traduction en anglais et en espagnol a été mise à jour.
 
 [Commit : d54896cf5ff709a7deeea89a4e636c6903e0276f](https://github.com/ta-truong/inm5151-ete2021-projet/commit/d54896cf5ff709a7deeea89a4e636c6903e0276f)
 
