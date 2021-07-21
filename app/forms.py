@@ -73,7 +73,13 @@ class FactureForm(FlaskForm):
     # À ajouter des attributs
     reference = TextAreaField(_l('Référence'), validators=[DataRequired(message=_l("Veuillez entrer une référence")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
     date = DateField(_l('Date'), default=date.today(), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date (AAAA-MM-JJ)"))])
+    due_date = DateField(_l('Date d\'échéance'), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date d'échéance (AAAA-MM-JJ)"))])
     description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 50 caractères')))])
     amount = DecimalField(_l('Montant'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
     tax = DecimalField(_l('Taxe (%)'), validators=[NumberRange(0, 100, _l("Veuillez entrer un nombre entre 0 et 100"))], places=0, render_kw={"value": "14.975"})
     submit = SubmitField(_l('Enregistrer'), render_kw= {"onclick": "calculationTax()"})
+
+    # Valider si date d'échéance est la même ou après la date initiale
+    def validate_due_date(self, due_date):
+        if due_date.data < self.date.data:
+            raise ValidationError(_l('La date d\'échéance doit être la même ou après la date initale'))

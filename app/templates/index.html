@@ -22,20 +22,26 @@
         <thead>
           <tr>
             <th scope="col">{{ _('Référence') }}</th>
-            <th scope="col">{{ _('Date') }}</th>
             <th scope="col">{{ _('Description') }}</th>
+            <th scope="col">{{ _('Date') }}</th>
+            <th scope="col">{{ _('Date d\'échéance') }}</th>
             <th scope="col">{{ _('Montant') }} ($)</th>
             <th scope="col">{{ _('Options') }}</th>
           </tr>
         </thead>
         <tbody>
     {% for facture in factures %}
+        <!-- Valide si la date d'échéance est dépassée -->
+        {% if facture.due_date <= date_today %}
+            {% set date_state = 'past-due' %}
+        {% endif %}
         <!-- Corps des factures -->
         <tr>
             <!-- À ajouter des attributs -->
             <td>{{ facture.reference }}</td>
-            <th>{{ facture.date }}</th>
             <td>{{ facture.description }}</td>
+            <td>{{ facture.date }}</td>
+            <td class="{{ date_state }}">{{ facture.due_date }}</td>
             <td>{{ facture.amount }}</td>
             <td>
                 <a class="btn btn-info" href="{{ url_for('update', facture_id=facture.id) }}">{{ _('Modifier') }}</a>

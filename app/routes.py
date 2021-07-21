@@ -1,6 +1,6 @@
 # routes.py
 # défini les routes de l'application
-from datetime import datetime
+from datetime import date, datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask.globals import session
 from flask_login import login_user, logout_user, current_user, login_required
@@ -24,7 +24,7 @@ def index():
         if facture:
             flash(_('Cette référence existe déjà.'))
         else:
-            facture = Facture(reference=form.reference.data, date=form.date.data, description=form.description.data, author=current_user, amount=form.amount.data)
+            facture = Facture(reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, author=current_user, amount=form.amount.data)
             db.session.add(facture)
             db.session.commit()
             flash(_('Votre facture a été ajoutée.'))
@@ -34,7 +34,7 @@ def index():
     factures = Facture.query.filter_by(user_id=current_user.id).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
     next_url = url_for('index', page=factures.next_num) if factures.has_next else None
     prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
-    return render_template("index.html", title=_('Accueil'), form=form, factures=factures.items, next_url=next_url, prev_url=prev_url)
+    return render_template("index.html", title=_('Accueil'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
 
 # Page d'accueil pour les invités
 @app.route('/')
@@ -185,6 +185,7 @@ def update(facture_id):
             else:
                 facture_to_update.reference = form.reference.data
                 facture_to_update.date = form.date.data
+                facture_to_update.due_date = form.due_date.data
                 facture_to_update.description = form.description.data
                 facture_to_update.amount = form.amount.data
                 db.session.commit()
@@ -193,6 +194,7 @@ def update(facture_id):
         elif request.method == 'GET':
             form.reference.data = facture_to_update.reference
             form.date.data = facture_to_update.date
+            form.due_date.data = facture_to_update.due_date
             form.description.data = facture_to_update.description
             form.amount.data = facture_to_update.amount
         return render_template('update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
