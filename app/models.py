@@ -57,7 +57,7 @@ def load_user(id):
 # Factures
 class Facture(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    reference = db.Column(db.String(50))
+    reference = db.Column(db.String(50), unique=True)
     description = db.Column(db.String(140))
     date = db.Column(db.Date, index=True)
     amount = db.Column(db.Float)

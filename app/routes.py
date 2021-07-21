@@ -20,11 +20,15 @@ def index():
     form = FactureForm()
     # À ajouter des attributs
     if form.validate_on_submit():
-        facture = Facture(reference=form.reference.data, date=form.date.data, description=form.description.data, author=current_user, amount=form.amount.data)
-        db.session.add(facture)
-        db.session.commit()
-        flash(_('Votre facture a été ajoutée.'))
-        return redirect(url_for('index'))
+        facture = Facture.query.filter_by(reference=form.reference.data).first()
+        if facture:
+            flash(_('Cette référence existe déjà.'))
+        else:
+            facture = Facture(reference=form.reference.data, date=form.date.data, description=form.description.data, author=current_user, amount=form.amount.data)
+            db.session.add(facture)
+            db.session.commit()
+            flash(_('Votre facture a été ajoutée.'))
+            return redirect(url_for('index'))
     # Toutes les factures de l'utilisateur actuel
     page = request.args.get('page', 1, type=int)
     factures = Facture.query.filter_by(user_id=current_user.id).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
@@ -72,7 +76,7 @@ def logout():
         # Si l'utilisateur est actuellement connecté, le déconnecter
         if current_user.is_authenticated:
             logout_user()
-            flash(_('Vous avez été déconnecté'))
+            flash(_('Vous avez été déconnecté.'))
             return redirect(url_for('welcome'))
         return redirect(url_for('index'))
     except:
@@ -89,11 +93,10 @@ def reset_password_request():
         user = User.query.filter_by(email=form.email.data).first()
         if user:
             send_password_reset_email(user)
+            flash(_('Consultez vos courriels pour réinitialiser votre mot de passe.'))
+            return redirect(url_for('login'))
         else:
             flash(_('Cette adresse courriel n\'est pas inscrite.'))
-            return redirect(url_for('reset_password_request'))
-        flash(_('Consultez vos courriels pour réinitialiser votre mot de passe.'))
-        return redirect(url_for('login'))
     return render_template('reset_password_request.html', title=_('Réinitialiser un mot de passe'), form=form)
 
 # Page de réinitialisation du mot de passe
@@ -176,17 +179,23 @@ def update(facture_id):
         facture_to_update = Facture.query.get_or_404(facture_id)
         form = FactureForm()
         if form.validate_on_submit():
-            facture_to_update.reference = form.reference.data
-            facture_to_update.description = form.description.data
-            facture_to_update.amount = form.amount.data
-            db.session.commit()
-            flash(_('Les modifications ont été sauvegardées'))
-            return redirect(url_for('index'))
+            facture = Facture.query.filter_by(reference=form.reference.data).first()
+            if facture and facture is not facture_to_update:
+                flash(_('Cette référence existe déjà.'))
+            else:
+                facture_to_update.reference = form.reference.data
+                facture_to_update.date = form.date.data
+                facture_to_update.description = form.description.data
+                facture_to_update.amount = form.amount.data
+                db.session.commit()
+                flash(_('Les modifications ont été sauvegardées.'))
+                return redirect(url_for('index'))
         elif request.method == 'GET':
             form.reference.data = facture_to_update.reference
+            form.date.data = facture_to_update.date
             form.description.data = facture_to_update.description
             form.amount.data = facture_to_update.amount
-        return render_template('update_facture.html', title=_('Modifification de la facture'),form=form, facture=facture_to_update)
+        return render_template('update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification de la facture.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
@@ -208,7 +217,7 @@ def edit_profile():
             current_user.username = form.username.data
             current_user.about_me = form.about_me.data
             db.session.commit()
-            flash(_('Les modifications ont été sauvegardées'))
+            flash(_('Les modifications ont été sauvegardées.'))
             return redirect(url_for('user', username=current_user.username))
         elif request.method == 'GET':
             form.username.data = current_user.username
