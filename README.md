@@ -13,8 +13,6 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 
 * [X] Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
 
-* [ ] Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
-
 * [ ] Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
   * [X] Un deuxième `id` (attribut `reference`). Lui qui est déjà présent est l'id de la base de données, nous on veut un deuxième `id` (attribut `reference`), **unique** et **personnalisable**. L'ajouter dans le formulaire et dans l'affichage des factures.
   * [X] Un booléen nommé `paiement`, en *drop-down*: **payée** ou **non-payée**. L'ajouter dans le formulaire et dans l'affichage des factures. Par défaut, se placer sur `non-payée`.
@@ -62,6 +60,8 @@ Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne 
 * [ ] Améliorer le CSS pour rendre l'application plus belle.
 
 * [ ] Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
+
+* [ ] Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
 
 * [ ] *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
 

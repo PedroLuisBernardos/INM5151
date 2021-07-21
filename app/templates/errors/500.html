@@ -1,0 +1,9 @@
+<!-- 500.html -->
+<!-- page qui gère l'erreur 500 -->
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>500: {{ _('Une erreur inattendue est survenue') }}</h1>
+    <p>{{ _("Un administrateur a été prévenu, désolé pour l'inconvénient.") }}</p>
+    <p><a href="{{ url_for('index') }}">{{ _('Retourner') }}</a></p>
+{% endblock %}
