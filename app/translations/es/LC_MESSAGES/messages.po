@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-07-23 06:33-0400\n"
+"POT-Creation-Date: 2021-07-23 06:56-0400\n"
 "PO-Revision-Date: 2021-07-07 11:59-0400\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -451,7 +451,7 @@ msgstr "Restablecer su contraseña"
 
 #: app/templates/update_contact.html:7
 msgid "Modifier le contact"
-msgstr "Modificar la factura"
+msgstr "Modificar el contacto"
 
 #: app/templates/update_facture.html:7
 msgid "Modifier la facture"
