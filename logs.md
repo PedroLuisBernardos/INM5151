@@ -13,6 +13,22 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 22. Ajouter la gestion de contacts
+
+---
+
+J'ai ajouter un modèle et table *Contact*: `app.db`, `app/models.py`
+
+Un réajustement de la *db* (`app.db`) a donc été fait: `migrations/versions/75e5773c0465_reajustement_pour_ajouter_table_contact.py`
+
+Le lien de l'onglet *Contacts* est activé: `app/templates/base.html`
+
+On peut désormais *enregistrer*, *modifier* et *supprimer* un contact ainsi qu'une pagination pour l'affichage des contacts (15 par page): `app/routes.py`, `config.py`
+
+Les fichiers *HTML* ajoutés à cet effet sont: `app/templates/contacts.html`, `app/templates/update_contact.html`
+
+[Commit: daa452b4ed6d8d89c3043bcaaf867c618ee6d686](https://github.com/ta-truong/inm5151-ete2021-projet/commit/daa452b4ed6d8d89c3043bcaaf867c618ee6d686)
+
 ### 21. Ajouter la gestion du statut (impayée/payée) à la facture
 
 ---
