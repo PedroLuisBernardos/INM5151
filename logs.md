@@ -28,6 +28,8 @@ contact = QuerySelectField(query_factory=lambda:Contact.query.all(),get_label="n
 
 Il resterai à ajouter l'option **Créer un Contact** mais j'ignore comment faire.
 
+[Commit:](https://github.com/ta-truong/inm5151-ete2021-projet/commit/e03bcdcc3aeb3971c920d3e4024c67974050d5d9)
+
 ### 22. Ajouter la gestion de contacts
 
 ---
