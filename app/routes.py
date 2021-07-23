@@ -22,8 +22,8 @@ def index():
         if facture:
             flash(_('Cette référence existe déjà.'))
         else:
-            facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, author=current_user, 
-            amount = form.calculationTax(form.tax.data, form.amount.data), tax=form.tax.data)
+            facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, author=current_user,
+                              amount = form.get_total(form.tax.data, form.amount.data), tax=form.tax.data)
             db.session.add(facture)
             db.session.commit()
             flash(_('Votre facture a été ajoutée.'))
@@ -187,7 +187,7 @@ def update(facture_id):
                 facture_to_update.date = form.date.data
                 facture_to_update.due_date = form.due_date.data
                 facture_to_update.description = form.description.data
-                facture_to_update.amount = form.calculationTax(form.tax.data, form.amount.data)
+                facture_to_update.amount = form.get_total(form.tax.data, form.amount.data)
                 facture_to_update.tax = form.tax.data
 
                 db.session.commit()
