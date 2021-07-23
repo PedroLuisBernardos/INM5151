@@ -61,7 +61,7 @@ class Facture(db.Model):
     description = db.Column(db.String(140), nullable=False)
     date = db.Column(db.Date, nullable=False)
     due_date = db.Column(db.Date, nullable=False)
-    sub_total = db.Column(db.Float, nullable=True)
+    subtotal = db.Column(db.Float, nullable=True)
     total = db.Column(db.Float, nullable=True)
     tax = db.Column(db.Float, nullable=True)
     paid = db.Column(db.Integer, default=0, nullable=False)

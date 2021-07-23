@@ -23,7 +23,7 @@ def index():
             flash(_('Cette référence existe déjà.'))
         else:
             facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, author=current_user,
-                              sub_total=form.sub_total.data, total=form.get_total(form.tax.data, form.sub_total.data), tax=form.tax.data)
+                              subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data)
             db.session.add(facture)
             db.session.commit()
             flash(_('Votre facture a été ajoutée.'))
@@ -187,8 +187,8 @@ def update(facture_id):
                 facture_to_update.date = form.date.data
                 facture_to_update.due_date = form.due_date.data
                 facture_to_update.description = form.description.data
-                facture_to_update.sub_total = form.sub_total.data
-                facture_to_update.total = form.get_total(form.tax.data, form.sub_total.data)
+                facture_to_update.subtotal = form.subtotal.data
+                facture_to_update.total = form.get_total(form.tax.data, form.subtotal.data)
                 facture_to_update.tax = form.tax.data
 
                 db.session.commit()
@@ -200,7 +200,7 @@ def update(facture_id):
             form.date.data = facture_to_update.date
             form.due_date.data = facture_to_update.due_date
             form.description.data = facture_to_update.description
-            form.sub_total.data = facture_to_update.sub_total
+            form.subtotal.data = facture_to_update.subtotal
             form.tax.data = facture_to_update.tax
         return render_template('update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
     except:
