@@ -2,6 +2,7 @@
 # défini les modèles de classe de l'application, si un modèle est ajouté, modfier le fichier sdf.py
 from datetime import datetime
 from hashlib import md5
+from sqlalchemy.orm import load_only
 from app import db, login
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,9 +16,10 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
-    factures = db.relationship('Facture', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    factures = db.relationship('Facture', backref='author', lazy='dynamic')
+    contacts = db.relationship('Contact', backref='author', lazy='dynamic')
 
     # Affichage des utilisateurs
     def __repr__(self):
@@ -66,7 +68,22 @@ class Facture(db.Model):
     tax = db.Column(db.Float, nullable=True)
     paid = db.Column(db.Integer, default=0, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    contact_id = db.Column(db.Integer, db.ForeignKey('contact.id'))
 
     # Affichage des factures
     def __repr__(self):
-        return 'Facture: {} du {}'.format(self.reference, format(self.date))
+        return 'Facture: {} en date du {}'.format(self.reference, format(self.date))
+
+# Contacts
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), unique=True, nullable=False)
+    phone_number = db.Column(db.String(13), unique=False, nullable=True)
+    email = db.Column(db.String(120), unique=False, nullable=True)
+    address = db.Column(db.String(140), unique=False, nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    factures = db.relationship('Facture', backref='contact', lazy='dynamic')
+
+    # Affichage des contacts
+    def __repr__(self):
+        return 'Contact: {}'.format(self.name)

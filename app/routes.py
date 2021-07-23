@@ -4,8 +4,8 @@ from datetime import date, datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm
-from app.models import Facture, User
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm, ContactForm
+from app.models import User, Facture, Contact
 from flask_babel import _
 from app.forms import ResetPasswordRequestForm
 from app.email import send_password_reset_email
@@ -22,7 +22,7 @@ def index():
         if facture:
             flash(_('Cette référence existe déjà.'))
         else:
-            facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, author=current_user,
+            facture = Facture(author=current_user, paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data,
                               subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data)
             db.session.add(facture)
             db.session.commit()
@@ -34,6 +34,28 @@ def index():
     next_url = url_for('index', page=factures.next_num) if factures.has_next else None
     prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
     return render_template("index.html", title=_('Accueil'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
+
+# Page des contacts
+@app.route('/contacts', methods=['GET', 'POST'])
+@login_required
+def contacts():
+    form = ContactForm()
+    if form.validate_on_submit():
+        contact = Contact.query.filter_by(name=form.name.data).first()
+        if contact:
+            flash(_('Ce contact existe déjà.'))
+        else:
+            contact = Contact(author=current_user, name=form.name.data, phone_number=form.phone_number.data, email=form.email.data, address=form.address.data)
+            db.session.add(contact)
+            db.session.commit()
+            flash(_('Votre contact a été ajouté.'))
+            return redirect(url_for('contacts'))
+    # Toute les contacts de l'utilisateur actuel
+    page = request.args.get('page', 1, type=int)
+    contacts = Contact.query.filter_by(user_id=current_user.id).paginate(page, app.config['CONTACTS_PAR_PAGE'], False)
+    next_url = url_for('contacts', page=contacts.next_num) if contacts.has_next else None
+    prev_url = url_for('contacts', page=contacts.prev_num) if contacts.has_prev else None
+    return render_template("contacts.html", title=_('Contacts'), form=form, contacts=contacts.items, next_url=next_url, prev_url=prev_url)
 
 # Page d'accueil pour les invités
 @app.route('/')
@@ -159,9 +181,9 @@ def delete_user(username):
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Supprimer des factures
-@app.route('/delete/<facture_id>')
+@app.route('/delete_bill/<facture_id>')
 @login_required
-def delete(facture_id):
+def delete_bill(facture_id):
     facture_to_delete = Facture.query.get_or_404(facture_id)
     try:
         db.session.delete(facture_to_delete)
@@ -171,9 +193,22 @@ def delete(facture_id):
         error_string = _('Il y a eu une erreur avec la suppression de la facture.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
+# Supprimer des contacts
+@app.route('/delete_contact/<contact_id>')
+@login_required
+def delete_contact(contact_id):
+    contact_to_delete = Contact.query.get_or_404(contact_id)
+    try:
+        db.session.delete(contact_to_delete)
+        db.session.commit()
+        return redirect(url_for('contacts'))
+    except:
+        error_string = _('Il y a eu une erreur avec la suppression du contact.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
+
 # Modifier des factures
-@app.route('/update/<facture_id>', methods=['GET', 'POST'])
-def update(facture_id):
+@app.route('/update_bill/<facture_id>', methods=['GET', 'POST'])
+def update_bill(facture_id):
     try:
         facture_to_update = Facture.query.get_or_404(facture_id)
         form = FactureForm()
@@ -205,6 +240,35 @@ def update(facture_id):
         return render_template('update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification de la facture.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
+
+# Modifier des contacts
+@app.route('/update_contact/<contact_id>', methods=['GET', 'POST'])
+def update_contact(contact_id):
+    try:
+        contact_to_update = Contact.query.get_or_404(contact_id)
+        form = ContactForm()
+        if form.validate_on_submit():
+            contact = Contact.query.filter_by(name=form.name.data).first()
+            if contact and contact is not contact_to_update:
+                flash(_('Ce contact existe déjà.'))
+            else:
+                contact_to_update.name = form.name.data
+                contact_to_update.phone_number = form.phone_number.data
+                contact_to_update.email = form.email.data
+                contact_to_update.address = form.address.data
+
+                db.session.commit()
+                flash(_('Les modifications ont été sauvegardées.'))
+                return redirect(url_for('contacts'))
+        elif request.method == 'GET':
+            form.name.data = contact_to_update.name
+            form.phone_number.data = contact_to_update.phone_number
+            form.email.data = contact_to_update.email
+            form.address.data = contact_to_update.address
+        return render_template('update_contact.html', title=_('Modification du contact'), form=form, contact=contact_to_update)
+    except:
+        error_string = _('Il y a eu une erreur avec la modification du contact.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Pour savoir c'est quand la dernière fois que l'utilisateur s'est connecté

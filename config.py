@@ -15,5 +15,6 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     FACTURES_PAR_PAGE = 15
+    CONTACTS_PAR_PAGE = 15
 
     LANGUAGES = ['fr', 'en', 'es']

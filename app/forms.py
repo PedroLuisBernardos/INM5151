@@ -6,6 +6,7 @@ from wtforms.validators import NumberRange, ValidationError, DataRequired, Email
 from flask_babel import _, lazy_gettext as _l
 from datetime import date
 from app.models import User
+import re
 
 # Défini un formulaire de connexion
 class LoginForm(FlaskForm):
@@ -70,7 +71,7 @@ class EditProfileForm(FlaskForm):
 class FactureForm(FlaskForm):
     # À ajouter des attributs
     paid = SelectField('', choices=[(0, _l('Impayée')), (1, _l('Payée'))], coerce=int)
-    reference = TextAreaField(_l('Référence'), validators=[DataRequired(message=_l("Veuillez entrer une référence")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
+    reference = StringField(_l('Référence'), validators=[DataRequired(message=_l("Veuillez entrer une référence")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
     date = DateField(_l('Date'), default=date.today(), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date (AAAA-MM-JJ)"))])
     due_date = DateField(_l('Date d\'échéance'), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date d'échéance (AAAA-MM-JJ)"))])
     description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 140 caractères')))])
@@ -87,3 +88,19 @@ class FactureForm(FlaskForm):
     @staticmethod
     def get_total(tax, sub_total):
         return round((sub_total * (tax + 100) / 100), 2)
+
+# Défini un formulaire pour la saisie de contacts
+class ContactForm(FlaskForm):
+    # Validation à améliorer
+    name = StringField(_l('Nom'), validators=[DataRequired(message=_l("Veuillez entrer un nom")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
+    phone_number = StringField(_l('Téléphone'), [DataRequired(Length(min=12, max=12, message=_l('Veuillez entrer un numéro de téléphone (123-456-7890)')))])
+    email = StringField(_l('Adresse courriel'), validators=[DataRequired(message=_l('Veuillez entrer une adresse courriel valide')), Email(message=_l('Veuillez entrer une adresse courriel valide'))])
+    address = TextAreaField(_l('Adresse'), validators=[DataRequired(message=_l("Veuillez entrer une adresse")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 140 caractères')))])
+    submit = SubmitField(_l('Enregistrer'))
+
+    def validate_phone_number(self, phone_number):
+        phone_number = phone_number.data
+        pattern = "^\d{3}-\d{3}-\d{4}$"
+        match = re.search(pattern, phone_number)
+        if not match:
+            raise ValidationError(_l('Veuillez entrer un numéro de téléphone valide (123-456-7890)'))
