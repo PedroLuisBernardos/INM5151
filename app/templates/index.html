@@ -27,6 +27,7 @@
             <th scope="col">{{ _('Date d\'échéance') }}</th>
             <th scope="col">{{ _('Montant') }} ($)</th>
             <th scope="col">{{ _('Taxe') }} (%)</th>
+            <th scope="col">{{ _('Total') }} ($)</th>
             <th scope="col">{{ _('Statut') }}</th>
             <th scope="col">{{ _('Options') }}</th>
           </tr>
@@ -50,8 +51,9 @@
             <td>{{ facture.description }}</td>
             <td>{{ facture.date }}</td>
             <td class="{{ date_state }}">{{ facture.due_date }}</td>
-            <td>{{ facture.amount }}</td>
+            <td>{{ facture.sub_total }}</td>
             <td>{{ facture.tax }}</td>
+            <td>{{ facture.total }}</td>
             <td class="{{ date_state }}">{{ facture_state }}</td>
             <td>
                 <a class="btn btn-info" href="{{ url_for('update', facture_id=facture.id) }}">{{ _('Modifier') }}</a>

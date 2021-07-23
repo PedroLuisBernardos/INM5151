@@ -74,7 +74,7 @@ class FactureForm(FlaskForm):
     date = DateField(_l('Date'), default=date.today(), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date (AAAA-MM-JJ)"))])
     due_date = DateField(_l('Date d\'échéance'), format='%Y-%m-%d', validators=[DataRequired(message=_l("Veuillez entrer une date d'échéance (AAAA-MM-JJ)"))])
     description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 50 caractères')))])
-    amount = DecimalField(_l('Montant'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
+    sub_total = DecimalField(_l('Montant'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
     tax = DecimalField(_l('Taxe (%)'), default=14.975, validators=[NumberRange(0, 100, _l("Veuillez entrer un nombre entre 0 et 100"))], places=3)
     submit = SubmitField(_l('Enregistrer'))
 
@@ -84,5 +84,5 @@ class FactureForm(FlaskForm):
             raise ValidationError(_l('La date d\'échéance doit être la même ou après la date initale'))
 
     @staticmethod
-    def get_total(tax, amount):
-        return amount * (tax + 100) / 100
+    def get_total(tax, sub_total):
+        return sub_total * (tax + 100) / 100
