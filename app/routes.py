@@ -22,8 +22,8 @@ def index():
         if facture:
             flash(_('Cette référence existe déjà.'))
         else:
-            facture = Facture(author=current_user, paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data,
-                              subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data)
+            facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data,
+            contact_id = form.contact_id.data.id, subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data, user_id=current_user.id)
             db.session.add(facture)
             db.session.commit()
             flash(_('Votre facture a été ajoutée.'))
@@ -45,7 +45,7 @@ def contacts():
         if contact:
             flash(_('Ce contact existe déjà.'))
         else:
-            contact = Contact(author=current_user, name=form.name.data, phone_number=form.phone_number.data, email=form.email.data, address=form.address.data)
+            contact = Contact(name=form.name.data, phone_number=form.phone_number.data, email=form.email.data, address=form.address.data, user_id=current_user.id)
             db.session.add(contact)
             db.session.commit()
             flash(_('Votre contact a été ajouté.'))
@@ -225,6 +225,7 @@ def update_bill(facture_id):
                 facture_to_update.subtotal = form.subtotal.data
                 facture_to_update.total = form.get_total(form.tax.data, form.subtotal.data)
                 facture_to_update.tax = form.tax.data
+                facture_to_update.contact_id = form.contact_id.id
 
                 db.session.commit()
                 flash(_('Les modifications ont été sauvegardées.'))
@@ -237,6 +238,7 @@ def update_bill(facture_id):
             form.description.data = facture_to_update.description
             form.subtotal.data = facture_to_update.subtotal
             form.tax.data = facture_to_update.tax
+            form.contact_id.id = facture_to_update.contact_id
         return render_template('update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification de la facture.')

@@ -3,10 +3,12 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField, SelectField
 from wtforms.validators import NumberRange, ValidationError, DataRequired, Email, EqualTo, Length
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from flask_babel import _, lazy_gettext as _l
 from datetime import date
-from app.models import User
+from app.models import User, Contact
 import re
+from flask_login import current_user
 
 # Défini un formulaire de connexion
 class LoginForm(FlaskForm):
@@ -77,6 +79,12 @@ class FactureForm(FlaskForm):
     description = TextAreaField(_l('Description'), validators=[DataRequired(message=_l("Veuillez entrer une description")), Length(min=1, max=140, message=_l(_l('Veuillez écrire entre 1 et 140 caractères')))])
     subtotal = DecimalField(_l('Sous-total'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
     tax = DecimalField(_l('Taxe (%)'), default=14.975, validators=[NumberRange(0, 100, _l("Veuillez entrer un nombre entre 0 et 100"))], places=3)
+
+    # Query qui get tous les contacts de l'utilisateur actif
+    def get_contacts():
+        return Contact.query.filter_by(user_id=current_user.id)
+
+    contact_id = QuerySelectField(_l('Contact ID'), validators=[DataRequired(message=_l('Veuillez entrer un contact'))], query_factory=get_contacts, get_label="id", allow_blank=True)
     submit = SubmitField(_l('Enregistrer'))
 
     # Valider si date d'échéance est la même ou après la date initiale

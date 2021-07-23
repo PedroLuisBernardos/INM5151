@@ -18,8 +18,6 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
-    factures = db.relationship('Facture', backref='author', lazy='dynamic')
-    contacts = db.relationship('Contact', backref='author', lazy='dynamic')
 
     # Affichage des utilisateurs
     def __repr__(self):
@@ -59,16 +57,19 @@ def load_user(id):
 # Factures
 class Facture(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    paid = db.Column(db.Integer, default=0, nullable=False)
     reference = db.Column(db.String(50), unique=True, nullable=False)
-    description = db.Column(db.String(140), nullable=False)
     date = db.Column(db.Date, nullable=False)
     due_date = db.Column(db.Date, nullable=False)
+    description = db.Column(db.String(140), nullable=False)
     subtotal = db.Column(db.Float, nullable=True)
-    total = db.Column(db.Float, nullable=True)
     tax = db.Column(db.Float, nullable=True)
-    paid = db.Column(db.Integer, default=0, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     contact_id = db.Column(db.Integer, db.ForeignKey('contact.id'))
+    total = db.Column(db.Float, nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    contact = db.relationship('Contact', foreign_keys=contact_id)
+    user = db.relationship('User', foreign_keys=user_id)
 
     # Affichage des factures
     def __repr__(self):
@@ -82,7 +83,8 @@ class Contact(db.Model):
     email = db.Column(db.String(120), unique=False, nullable=True)
     address = db.Column(db.String(140), unique=False, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    factures = db.relationship('Facture', backref='contact', lazy='dynamic')
+
+    user = db.relationship('User', foreign_keys=user_id)
 
     # Affichage des contacts
     def __repr__(self):

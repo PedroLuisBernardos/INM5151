@@ -1,10 +1,13 @@
-all: migrate run
+all: run
 
 install:
 	pip install -r requirements.txt --user
 
-run: install
+run: compile install
 	flask run
+
+compile:
+	flask translate compile
 
 traduct:
 	flask translate --help

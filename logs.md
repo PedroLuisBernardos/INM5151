@@ -13,6 +13,21 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 23. Ajouter dropdown Contacts dans le formulaire de Facture
+
+---
+
+J'ai ajouté ces lignes dans `forms.py`:
+
+```python
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
+from app.models import Contact
+...
+contact = QuerySelectField(query_factory=lambda:Contact.query.all(),get_label="name")
+```
+
+Il resterai à ajouter l'option **Créer un Contact** mais j'ignore comment faire.
+
 ### 22. Ajouter la gestion de contacts
 
 ---

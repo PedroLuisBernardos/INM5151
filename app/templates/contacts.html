@@ -20,6 +20,7 @@
     <table class="table table-hover">
         <thead>
           <tr>
+            <th scope="col">ID</th>
             <th scope="col">{{ _('Nom') }}</th>
             <th scope="col">{{ _('Téléphone') }}</th>
             <th scope="col">{{ _('Adresse courriel') }}</th>
@@ -32,6 +33,7 @@
         <!-- Corps des contacts -->
         <tr>
             <!-- À ajouter des attributs -->
+            <td>{{ contact.id }}</td>
             <td>{{ contact.name }}</td>
             <td>{{ contact.phone_number }}</td>
             <td>{{ contact.email }}</td>
