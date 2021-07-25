@@ -427,6 +427,10 @@ msgstr "Hola"
 msgid "Enregistrer une facture"
 msgstr "Registra una factura"
 
+#: app/templates/index.html:29
+msgid "Sous-total"
+msgstr "Total parcial"
+
 #: app/templates/index.html:30
 msgid "Taxe"
 msgstr "Impuesto"
