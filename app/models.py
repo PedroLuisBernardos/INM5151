@@ -67,9 +67,12 @@ class Facture(db.Model):
     contact_id = db.Column(db.Integer, db.ForeignKey('contact.id'))
     total = db.Column(db.Float, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    #profilEntreprise_id = db.Column(db.Integer, db.ForeignKey('profil_entreprise.id'))
 
     contact = db.relationship('Contact', foreign_keys=contact_id)
     user = db.relationship('User', foreign_keys=user_id)
+    #profilEntreprise = db.relationship('ProfilEntreprise', foreign_keys=profilEntreprise_id)
+
 
     # Affichage des factures
     def __repr__(self):
@@ -89,3 +92,17 @@ class Contact(db.Model):
     # Affichage des contacts
     def __repr__(self):
         return 'Contact: {}'.format(self.name)
+
+# Modèle d'entreprise
+class CompanyProfil(db.Model):
+    # Le "__tablename__" pour changer le nom mais n'est pas nécessaire. 
+    # Par défaut, SqlAlchemy crée un nom donc : profil_entreprise
+    #__tablename__ = "profilEntreprise"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), unique=True, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User', foreign_keys=user_id)
+
+    # Affichage des profils d'entreprise
+    def __repr__(self):
+        return 'Profil d\'entreprise: {}'.format(self.name)

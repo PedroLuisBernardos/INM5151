@@ -6,7 +6,7 @@ from wtforms.validators import NumberRange, ValidationError, DataRequired, Email
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from flask_babel import _, lazy_gettext as _l
 from datetime import date
-from app.models import User, Contact
+from app.models import User, Contact, CompanyProfil
 import re
 from flask_login import current_user
 
@@ -112,3 +112,19 @@ class ContactForm(FlaskForm):
         match = re.search(pattern, phone_number)
         if not match:
             raise ValidationError(_l('Veuillez entrer un numéro de téléphone valide (123-456-7890)'))
+
+# Défini un formulaire pour la profil d'entreprise
+class CompanyProfilForm(FlaskForm):
+    # Validation à améliorer
+    name = StringField(_l('Nom'), validators=[DataRequired(message=_l("Veuillez entrer un nom")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
+    submit = SubmitField(_l('Enregistrer'))
+
+# Défini un formulaire de sélection de profil d'entreprise
+class SelectCompanyProfilForm(FlaskForm):
+    # Query qui get tous les contacts de l'utilisateur actif
+    def get_company_profil():
+        return CompanyProfil.query.filter_by(user_id=current_user.id)
+
+    company_profil_name = QuerySelectField(_l('Nom de l\'entreprise'), validators=[DataRequired(message=_l('Veuillez choisir un profil d\'entreprise'))], 
+                                         query_factory=get_company_profil, get_label="name", allow_blank=False)
+    submit = SubmitField(_l('Sélectionner'))

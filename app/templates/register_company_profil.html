@@ -1,0 +1,53 @@
+<!-- login.html -->
+<!-- page de connexion pour les utilisateurs -->
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+    <h1>{{ _('Enregistrer un profil d\'entreprise') }}</h1>
+    <!-- Form pour se connecter a l'application -->
+    <hr>
+    {% if form %}
+        <div class="form-group">
+            <div class="col-md-4">
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+        <hr>
+    {% endif %}
+    <!-- Affichage des contacts -->
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">{{ _('Nom') }}</th>
+            <th scope="col">{{ _('Options') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+    {% for company_profil in companyProfil %}
+        <!-- Corps des contacts -->
+        <tr>
+            <!-- À ajouter des attributs -->
+            <td>{{ company_profil.id }}</td>
+            <td>{{ company_profil.name }}</td>
+            <td>
+                <a class="btn btn-info" href="{{ url_for('update_company_profil', company_profil_id=company_profil.id) }}">{{ _('Modifier') }}</a>
+                <a class="btn btn-danger" href="{{ url_for('delete_company_profil', company_profil_id=company_profil.id) }}">{{ _('Supprimer') }}</a>
+            </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    <!-- Pagination -->
+    {% if prev_url %}
+        <a class="btn btn-link" href="{{ prev_url }}">{{ _('Page précédente') }}</a>
+    {% endif %}
+    {% if next_url %}
+        <a class="btn btn-link" href="{{ next_url }}">{{ _('Page suivante') }}</a>
+    {% endif %}
+    <br><br>
+
+{% endblock %}

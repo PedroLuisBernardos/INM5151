@@ -4,8 +4,8 @@ from datetime import date, datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm, ContactForm
-from app.models import User, Facture, Contact
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm, ContactForm, CompanyProfilForm, SelectCompanyProfilForm
+from app.models import User, Facture, Contact, CompanyProfil
 from flask_babel import _
 from app.forms import ResetPasswordRequestForm
 from app.email import send_password_reset_email
@@ -15,6 +15,54 @@ from app.forms import ResetPasswordForm
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
+    form = SelectCompanyProfilForm()
+    if form.validate_on_submit():
+        companyProfil = CompanyProfil.query.filter_by(name=form.company_profil_name.data.name).first()
+        #nameSelect = companyProfil.name
+        if companyProfil:
+            flash(_('Vous avez sélectionné ' + companyProfil.name))
+            #db.session.add(companyProfil)
+            #db.session.commit()
+        else:
+            companyProfil = CompanyProfil(name=form.company_profil_name.data, user_id=current_user.id)
+            flash(_('Erreur. Profil d\'entreprise non trouvé.'))
+            return redirect(url_for('index'))
+
+
+    page = request.args.get('page', 1, type=int)
+    companyProfil = CompanyProfil.query.filter_by(user_id=current_user.id).paginate(page, app.config['COMPANY_PROFIL_PAR_PAGE'], False)
+    next_url = url_for('index', companyProfil=index.next_num) if companyProfil.has_next else None
+    prev_url = url_for('index', companyProfil=index.prev_num) if companyProfil.has_prev else None
+    return render_template("index.html", title=_('Accueil'), form=form, companyProfil=companyProfil.items, next_url=next_url, prev_url=prev_url)
+
+# Page de modification de profil d'entreprise
+@app.route('/register_company_profil', methods=['GET', 'POST'])
+@login_required
+def register_company_profil():
+    form = CompanyProfilForm()
+
+    if form.validate_on_submit():
+        companyProfil = CompanyProfil.query.filter_by(name=form.name.data).first()
+        if companyProfil:
+            flash(_('Ce profil d\'entreprise existe déjà.'))
+        else:
+            companyProfil = CompanyProfil(name=form.name.data, user_id=current_user.id)
+            db.session.add(companyProfil)
+            db.session.commit()
+            flash(_('Votre profile d\'entreprise a été ajouté.'))
+            return redirect(url_for('index'))
+    
+    page = request.args.get('page', 1, type=int)
+    companyProfil = CompanyProfil.query.filter_by(user_id=current_user.id).paginate(page, app.config['COMPANY_PROFIL_PAR_PAGE'], False)
+    next_url = url_for('register_company_profil', companyProfil=register_company_profil.next_num) if companyProfil.has_next else None
+    prev_url = url_for('register_company_profil', companyProfil=register_company_profil.prev_num) if companyProfil.has_prev else None
+    return render_template("register_company_profil.html", title=_('Accueil'), companyProfil=companyProfil.items, form=form, next_url=next_url, prev_url=prev_url)
+
+
+# Page d'accueil pour les utilisateurs
+@app.route('/bill', methods=['GET', 'POST'])
+@login_required
+def bill():
     form = FactureForm()
     # À ajouter des attributs
     if form.validate_on_submit():
@@ -27,13 +75,13 @@ def index():
             db.session.add(facture)
             db.session.commit()
             flash(_('Votre facture a été ajoutée.'))
-            return redirect(url_for('index'))
+            return redirect(url_for('bill'))
     # Toutes les factures de l'utilisateur actuel
     page = request.args.get('page', 1, type=int)
     factures = Facture.query.filter_by(user_id=current_user.id).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
     next_url = url_for('index', page=factures.next_num) if factures.has_next else None
     prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
-    return render_template("index.html", title=_('Accueil'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
+    return render_template("bill.html", title=_('Facture'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
 
 # Page des contacts
 @app.route('/contacts', methods=['GET', 'POST'])
@@ -188,7 +236,7 @@ def delete_bill(facture_id):
     try:
         db.session.delete(facture_to_delete)
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('bill'))
     except:
         error_string = _('Il y a eu une erreur avec la suppression de la facture.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
@@ -204,6 +252,19 @@ def delete_contact(contact_id):
         return redirect(url_for('contacts'))
     except:
         error_string = _('Il y a eu une erreur avec la suppression du contact.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
+
+# Supprimer des profils d'entreprise
+@app.route('/delete_company_profil/<company_profil_id>')
+@login_required
+def delete_company_profil(company_profil_id):
+    company_profil_to_delete = CompanyProfil.query.get_or_404(company_profil_id)
+    try:
+        db.session.delete(company_profil_to_delete)
+        db.session.commit()
+        return redirect(url_for('index'))
+    except:
+        error_string = _('Il y a eu une erreur avec la suppression du profil d\'entreprise.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Modifier des factures
@@ -229,7 +290,7 @@ def update_bill(facture_id):
 
                 db.session.commit()
                 flash(_('Les modifications ont été sauvegardées.'))
-                return redirect(url_for('index'))
+                return redirect(url_for('bill'))
         elif request.method == 'GET':
             form.paid.data = facture_to_update.paid
             form.reference.data = facture_to_update.reference
@@ -271,6 +332,28 @@ def update_contact(contact_id):
         return render_template('update_contact.html', title=_('Modification du contact'), form=form, contact=contact_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification du contact.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
+
+# Modifier des profils d'entreprise
+@app.route('/update_company_profil/<company_profil_id>', methods=['GET', 'POST'])
+def update_company_profil(company_profil_id):
+    try:
+        company_profile_to_update = CompanyProfil.query.get_or_404(company_profil_id)
+        form = CompanyProfilForm()
+        if form.validate_on_submit():
+            company_profile = CompanyProfil.query.filter_by(name=form.name.data).first()
+            if company_profile and company_profile is not company_profile_to_update:
+                flash(_('Ce profil d\'entreprise existe déjà.'))
+            else:
+                company_profile_to_update.name = form.name.data
+                db.session.commit()
+                flash(_('Les modifications ont été sauvegardées.'))
+                return redirect(url_for('index'))
+        elif request.method == 'GET':
+            form.name.data = company_profile_to_update.name
+        return render_template('update_company_profil.html', title=_('Modification du profil d\'entreprise'), form=form, company_profile=company_profile_to_update)
+    except:
+        error_string = _('Il y a eu une erreur avec la modification du profil d\'entreprise.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Pour savoir c'est quand la dernière fois que l'utilisateur s'est connecté

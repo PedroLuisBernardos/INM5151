@@ -1,5 +1,5 @@
-<!-- index.html -->
-<!-- page d'accueil pour les utilisateurs -->
+<!-- login.html -->
+<!-- page de connexion pour les utilisateurs -->
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
@@ -7,70 +7,35 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 
     <h1>{{ _('Bonjour') }}, <strong>{{ current_user.username }}</strong> !</h1>
-    <h1>{{ _('Enregistrer une facture') }}</h1>
+    <h1>{{ _('Vos profil d\'entreprise') }}</h1>
     <hr>
-    {% if form %}
-        <div class="form-group">
-            <div class="col-md-4">
-                {{ wtf.quick_form(form) }}
+    {% if companyProfil|length > 0 %}
+        <h2>{{ _('Sélectionner votre entreprise') }}</h2>
+        <h3>{{ _('Le profil sélectionné est') }}<strong>{{  nameSelect }}</strong></h3>
+        {% if form %}
+            <div class="form-group">
+                <div class="col-md-4">
+                    {{ wtf.quick_form(form) }}
+                </div>
             </div>
-        </div>
-        <hr>
-    {% endif %}
-    <!-- Affichage des factures -->
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">{{ _('Référence') }}</th>
-            <th scope="col">{{ _('Description') }}</th>
-            <th scope="col">{{ _('Contact ID') }}</th>
-            <th scope="col">{{ _('Date') }}</th>
-            <th scope="col">{{ _('Date d\'échéance') }}</th>
-            <th scope="col">{{ _('Sous-total') }} ($)</th>
-            <th scope="col">{{ _('Taxe') }} (%)</th>
-            <th scope="col">{{ _('Total') }} ($)</th>
-            <th scope="col">{{ _('Statut') }}</th>
-            <th scope="col">{{ _('Options') }}</th>
-          </tr>
-        </thead>
-        <tbody>
-    {% for facture in factures %}
-        <!-- Valide l'état de la facture -->
-        {% if facture.paid %}
-            {% set facture_state = _('Payée') %}
-        {% else %}
-            {% set facture_state = _('Impayée') %}
-            <!-- Valide si la date d'échéance est dépassée alors qu'elle est impayée -->
-            {% if facture.due_date <= date_today%}
-                {% set date_state = 'past-due' %}
-            {% endif %}
+            <hr>
         {% endif %}
-        <!-- Corps des factures -->
-        <tr>
-            <!-- À ajouter des attributs -->
-            <td>{{ facture.reference }}</td>
-            <td>{{ facture.description }}</td>
-            <td>{{ facture.contact_id }}</td>
-            <td>{{ facture.date }}</td>
-            <td class="{{ date_state }}">{{ facture.due_date }}</td>
-            <td>{{ facture.subtotal }}</td>
-            <td>{{ facture.tax }}</td>
-            <td>{{ facture.total }}</td>
-            <td class="{{ date_state }}">{{ facture_state }}</td>
-            <td>
-                <a class="btn btn-info" href="{{ url_for('update_bill', facture_id=facture.id) }}">{{ _('Modifier') }}</a>
-                <a class="btn btn-danger" href="{{ url_for('delete_bill', facture_id=facture.id) }}">{{ _('Supprimer') }}</a>
-            </td>
-        </tr>
-    {% endfor %}
-        </tbody>
-    </table>
-    <!-- Pagination -->
-    {% if prev_url %}
-        <a class="btn btn-link" href="{{ prev_url }}">{{ _('Page précédente') }}</a>
-    {% endif %}
-    {% if next_url %}
-        <a class="btn btn-link" href="{{ next_url }}">{{ _('Page suivante') }}</a>
-    {% endif %}
-    <br><br>
+        
+        {% for company_profil in companyProfil %}
+
+                <a href="{{ url_for('register_company_profil') }}">
+                    <span>
+                        {{ _('Gérer vos profil d\'entreprise') }}
+                    </span>
+                </a>
+        {% endfor %}
+    {% else %}
+        <h2>{{ _('Vous n\'avez pas de profil d\'entreprise') }}</h2>
+        <a href="{{ url_for('register_company_profil') }}">
+            <span>
+                {{ _('Ajouter un profil d\'entreprise') }}
+            </span>
+        </a>
+    {% endif %}
+    
 {% endblock %}

@@ -57,7 +57,7 @@
               <a class="nav-link disabled" href="#">{{ _('Comptes') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">{{ _("Profils d'entreprise") }}</a>
+              <a class="nav-link {% if request.url_rule.endpoint == 'bill' %}active{% endif %}" href="{{ url_for('bill') }}">{{ _("Factures") }}</a>
             </li>
             <li class="nav-item dropdown {% if request.url_rule.endpoint == 'user' %}active{% endif %}">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ _('Mon profil') }}</a>
