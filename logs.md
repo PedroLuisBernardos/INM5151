@@ -13,6 +13,22 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### 24. Ajouter gestion de Profil d'entreprise
+
+---
+
+Terminé à 77%
+
+J'ai déplacé la gestion de factures (initialement à la page d'accueil/index) vers sa propre page `bill.html`
+
+La page d'accueil contient la gestion de profil d'entreprise. On peut ajouter/modifier/supprimer un profil d'entreprise
+mais un profil d'entreprise ne lit pas encore les factures correspondant au profil d'entreprise sélectionné.
+
+On veut pouvoir afficher une liste de factures qui est propre à un profil d'entreprise sélectionné.
+
+[Commit:](https://github.com/ta-truong/inm5151-ete2021-projet/commit/d2ee68bcc54489d98ff3b1b37bbd114dfe15b710)
+
+
 ### 23. Ajouter dropdown Contacts dans le formulaire de Facture
 
 ---
