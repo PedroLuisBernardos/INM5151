@@ -125,6 +125,5 @@ class SelectCompanyProfilForm(FlaskForm):
     def get_company_profil():
         return CompanyProfil.query.filter_by(user_id=current_user.id)
 
-    company_profil_name = QuerySelectField(_l('Nom de l\'entreprise'), validators=[DataRequired(message=_l('Veuillez choisir un profil d\'entreprise'))], 
-                                         query_factory=get_company_profil, get_label="name", allow_blank=False)
+    company_profil_name = QuerySelectField(_l('Nom de l\'entreprise'), validators=[DataRequired(message=_l('Veuillez choisir un profil d\'entreprise'))], query_factory=get_company_profil, get_label="name", allow_blank=False)
     submit = SubmitField(_l('Sélectionner'))

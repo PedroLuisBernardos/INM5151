@@ -2,7 +2,7 @@
 # défini les modèles de classe de l'application, si un modèle est ajouté, modfier le fichier sdf.py
 from datetime import datetime
 from hashlib import md5
-from sqlalchemy.orm import load_only
+from sqlalchemy.orm import load_only, relationship
 from app import db, login
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -12,12 +12,18 @@ from app import app
 
 # Utilisateurs
 class User(UserMixin, db.Model):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    profil_courrant = db.Column(db.Integer)
+
+    profilEntreprise = db.relationship('CompanyProfil', back_populates="user")
+    contact = db.relationship('Contact', back_populates="user")
+    facture = db.relationship('Facture', back_populates="user")
 
     # Affichage des utilisateurs
     def __repr__(self):
@@ -56,6 +62,7 @@ def load_user(id):
 
 # Factures
 class Facture(db.Model):
+    __tablename__ = "facture"
     id = db.Column(db.Integer, primary_key=True)
     paid = db.Column(db.Integer, default=0, nullable=False)
     reference = db.Column(db.String(50), unique=True, nullable=False)
@@ -64,15 +71,15 @@ class Facture(db.Model):
     description = db.Column(db.String(140), nullable=False)
     subtotal = db.Column(db.Float, nullable=True)
     tax = db.Column(db.Float, nullable=True)
-    contact_id = db.Column(db.Integer, db.ForeignKey('contact.id'))
     total = db.Column(db.Float, nullable=True)
+
+    contact_id = db.Column(db.Integer, db.ForeignKey('contact.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    #profilEntreprise_id = db.Column(db.Integer, db.ForeignKey('profil_entreprise.id'))
+    profilEntreprise_id = db.Column(db.Integer, db.ForeignKey('profilEntreprise.id'))
 
-    contact = db.relationship('Contact', foreign_keys=contact_id)
-    user = db.relationship('User', foreign_keys=user_id)
-    #profilEntreprise = db.relationship('ProfilEntreprise', foreign_keys=profilEntreprise_id)
-
+    user = relationship("User", back_populates="facture")
+    contact = relationship("Contact", back_populates="facture")
+    profilEntreprise = relationship("CompanyProfil", back_populates="facture")
 
     # Affichage des factures
     def __repr__(self):
@@ -80,28 +87,34 @@ class Facture(db.Model):
 
 # Contacts
 class Contact(db.Model):
+    __tablename__ = "contact"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True, nullable=False)
+    name = db.Column(db.String(50), unique=False, nullable=False)
     phone_number = db.Column(db.String(13), unique=False, nullable=True)
     email = db.Column(db.String(120), unique=False, nullable=True)
     address = db.Column(db.String(140), unique=False, nullable=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-    user = db.relationship('User', foreign_keys=user_id)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    profilEntreprise_id = db.Column(db.Integer, db.ForeignKey('profilEntreprise.id'))
+
+    facture = db.relationship('Facture', back_populates="contact")
+    user = relationship("User", back_populates="contact")
+    profilEntreprise = relationship("CompanyProfil", back_populates="contact")
 
     # Affichage des contacts
     def __repr__(self):
         return 'Contact: {}'.format(self.name)
 
-# Modèle d'entreprise
+# Profils d'entreprise
 class CompanyProfil(db.Model):
-    # Le "__tablename__" pour changer le nom mais n'est pas nécessaire. 
-    # Par défaut, SqlAlchemy crée un nom donc : profil_entreprise
-    #__tablename__ = "profilEntreprise"
+    __tablename__ = "profilEntreprise"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User', foreign_keys=user_id)
+
+    facture = db.relationship('Facture', back_populates="profilEntreprise")
+    contact = db.relationship('Contact', back_populates="profilEntreprise")
+    user = relationship("User", back_populates="profilEntreprise")
 
     # Affichage des profils d'entreprise
     def __repr__(self):

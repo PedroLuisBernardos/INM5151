@@ -11,25 +11,26 @@ from app.forms import ResetPasswordRequestForm
 from app.email import send_password_reset_email
 from app.forms import ResetPasswordForm
 
-# Page d'accueil pour les utilisateurs
+# Page d'accueil pour les utilisateurs - page pour choisir les profils d'entreprise
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
     form = SelectCompanyProfilForm()
     if form.validate_on_submit():
         companyProfil = CompanyProfil.query.filter_by(name=form.company_profil_name.data.name).first()
-        #nameSelect = companyProfil.name
         if companyProfil:
+            user_to_update = User.query.get_or_404(current_user.id)
+            user_to_update.profil_courrant = companyProfil.id
+            db.session.commit()
             flash(_('Vous avez sélectionné ' + companyProfil.name))
-            #db.session.add(companyProfil)
-            #db.session.commit()
         else:
             companyProfil = CompanyProfil(name=form.company_profil_name.data, user_id=current_user.id)
             flash(_('Erreur. Profil d\'entreprise non trouvé.'))
             return redirect(url_for('index'))
 
-
     page = request.args.get('page', 1, type=int)
+
+    # Tous les profils d'entreprise de l'utilisateur actuel
     companyProfil = CompanyProfil.query.filter_by(user_id=current_user.id).paginate(page, app.config['COMPANY_PROFIL_PAR_PAGE'], False)
     next_url = url_for('index', companyProfil=index.next_num) if companyProfil.has_next else None
     prev_url = url_for('index', companyProfil=index.prev_num) if companyProfil.has_prev else None
@@ -59,51 +60,59 @@ def register_company_profil():
     return render_template("register_company_profil.html", title=_('Accueil'), companyProfil=companyProfil.items, form=form, next_url=next_url, prev_url=prev_url)
 
 
-# Page d'accueil pour les utilisateurs
+# Page de création de factures
 @app.route('/bill', methods=['GET', 'POST'])
 @login_required
 def bill():
-    form = FactureForm()
-    # À ajouter des attributs
-    if form.validate_on_submit():
-        facture = Facture.query.filter_by(reference=form.reference.data).first()
-        if facture:
-            flash(_('Cette référence existe déjà.'))
-        else:
-            facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data,
-            contact_id = form.contact_id.data.id, subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data, user_id=current_user.id)
-            db.session.add(facture)
-            db.session.commit()
-            flash(_('Votre facture a été ajoutée.'))
-            return redirect(url_for('bill'))
-    # Toutes les factures de l'utilisateur actuel
-    page = request.args.get('page', 1, type=int)
-    factures = Facture.query.filter_by(user_id=current_user.id).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
-    next_url = url_for('index', page=factures.next_num) if factures.has_next else None
-    prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
-    return render_template("bill.html", title=_('Facture'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
+    if current_user.profilEntreprise:
+        form = FactureForm()
+        # À ajouter des attributs
+        if form.validate_on_submit():
+            facture = Facture.query.filter_by(reference=form.reference.data).first()
+            if facture:
+                flash(_('Cette référence existe déjà.'))
+            else:
+                facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data,
+                contact_id=form.contact_id.data.id, profilEntreprise_id=current_user.profil_courrant, subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data, user_id=current_user.id)
+                db.session.add(facture)
+                db.session.commit()
+                flash(_('Votre facture a été ajoutée.'))
+                return redirect(url_for('bill'))
+
+        # Toutes les factures de l'utilisateur actuel et du profil d'entreprise actuel
+        page = request.args.get('page', 1, type=int)
+        factures = Facture.query.filter_by(user_id=current_user.id, profilEntreprise_id=current_user.profil_courrant).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
+        next_url = url_for('index', page=factures.next_num) if factures.has_next else None
+        prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
+        return render_template("bill.html", title=_('Facture'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
+    else:
+        return redirect(url_for('index'))
 
 # Page des contacts
 @app.route('/contacts', methods=['GET', 'POST'])
 @login_required
 def contacts():
-    form = ContactForm()
-    if form.validate_on_submit():
-        contact = Contact.query.filter_by(name=form.name.data).first()
-        if contact:
-            flash(_('Ce contact existe déjà.'))
-        else:
-            contact = Contact(name=form.name.data, phone_number=form.phone_number.data, email=form.email.data, address=form.address.data, user_id=current_user.id)
-            db.session.add(contact)
-            db.session.commit()
-            flash(_('Votre contact a été ajouté.'))
-            return redirect(url_for('contacts'))
-    # Toute les contacts de l'utilisateur actuel
-    page = request.args.get('page', 1, type=int)
-    contacts = Contact.query.filter_by(user_id=current_user.id).paginate(page, app.config['CONTACTS_PAR_PAGE'], False)
-    next_url = url_for('contacts', page=contacts.next_num) if contacts.has_next else None
-    prev_url = url_for('contacts', page=contacts.prev_num) if contacts.has_prev else None
-    return render_template("contacts.html", title=_('Contacts'), form=form, contacts=contacts.items, next_url=next_url, prev_url=prev_url)
+    if current_user.profilEntreprise:
+        form = ContactForm()
+        if form.validate_on_submit():
+            contact = Contact.query.filter_by(name=form.name.data, profilEntreprise_id=current_user.profil_courrant).first()
+            if contact:
+                flash(_('Ce contact existe déjà.'))
+            else:
+                contact = Contact(name=form.name.data, phone_number=form.phone_number.data, email=form.email.data, address=form.address.data, user_id=current_user.id, profilEntreprise_id=current_user.profil_courrant)
+                db.session.add(contact)
+                db.session.commit()
+                flash(_('Votre contact a été ajouté.'))
+                return redirect(url_for('contacts'))
+
+        # Toute les contacts de l'utilisateur actuel
+        page = request.args.get('page', 1, type=int)
+        contacts = Contact.query.filter_by(user_id=current_user.id, profilEntreprise_id=current_user.profil_courrant).paginate(page, app.config['CONTACTS_PAR_PAGE'], False)
+        next_url = url_for('contacts', page=contacts.next_num) if contacts.has_next else None
+        prev_url = url_for('contacts', page=contacts.prev_num) if contacts.has_prev else None
+        return render_template("contacts.html", title=_('Contacts'), form=form, contacts=contacts.items, next_url=next_url, prev_url=prev_url)
+    else:
+        return redirect(url_for('index'))
 
 # Page d'accueil pour les invités
 @app.route('/')

@@ -15,3 +15,10 @@ traduct:
 migrate:
 	flask db migrate -m "update"
 	flask db upgrade
+
+init-db:
+	rm -rf migrations/
+	rm app.db
+	flask db init
+	flask db migrate -m "Initialisation de la bd"
+	flask db upgrade
