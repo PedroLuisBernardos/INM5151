@@ -1,11 +1,9 @@
-<!-- login.html -->
-<!-- page de connexion pour les utilisateurs -->
+<!-- index.html -->
+<!-- page de sélection des profils d'entreprise -->
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-
     <h1>{{ _('Bonjour') }}, <strong>{{ current_user.username }}</strong> !</h1>
     <h1>{{ _('Vos profil d\'entreprise') }}</h1>
     <hr>
@@ -20,15 +18,13 @@
             </div>
             <hr>
         {% endif %}
-        
-        {% for company_profil in companyProfil %}
 
-                <a href="{{ url_for('register_company_profil') }}">
-                    <span>
-                        {{ _('Gérer vos profil d\'entreprise') }}
-                    </span>
-                </a>
-        {% endfor %}
+        <a href="{{ url_for('register_company_profil') }}">
+            <span>
+                {{ _('Gérer vos profil d\'entreprise') }}
+            </span>
+        </a>
+
     {% else %}
         <h2>{{ _('Vous n\'avez pas de profil d\'entreprise') }}</h2>
         <a href="{{ url_for('register_company_profil') }}">
