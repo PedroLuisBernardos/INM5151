@@ -200,10 +200,13 @@ app/                        --> répertoire qui héberge l'application
             en/             --> répertoire qui contient les traductions en anglais
             es/             --> répertoire qui contient les traductions en espagnol
     templates/              --> répertoire qui contient les modèles des pages HTML
-        404.html            --> page d'erreur 404
-        500.html            --> page d'erreur 500
+        email/              --> répertoire qui gère les pages en lien avec les email
+        errors/             --> répertoire qui gère les pages en lien avec les erreurs
         all.html            --> page cachée, qui contient tous les utilisateurs et toutes les factures
         base.html           --> HTML de base
+        bill.html           --> page de factures
+        comptes.html        --> page des comptes
+        contacts.html       --> page des contacts
         edit_profile.html   --> page de modification du profil de l'utilisateur
         error.html          --> page d'erreurs généraux
         index.html          --> page d'accueil des utilisateurs où on voit les factures

@@ -19,6 +19,8 @@
 
 Idem que contacts.
 
+[commit:](https://github.com/ta-truong/inm5151-ete2021-projet/commit/161afb035c9d3ffe2ae5e3d9f90bfc0f85712d15)
+
 ### 24. Ajouter gestion de Profil d'entreprise
 
 ---
