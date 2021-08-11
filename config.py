@@ -16,6 +16,7 @@ class Config(object):
 
     FACTURES_PAR_PAGE = 15
     CONTACTS_PAR_PAGE = 15
+    COMPTES_PAR_PAGE = 15
     COMPANY_PROFIL_PAR_PAGE = 15
 
     LANGUAGES = ['fr', 'en', 'es']

@@ -6,7 +6,7 @@ from wtforms.validators import NumberRange, ValidationError, DataRequired, Email
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from flask_babel import _, lazy_gettext as _l
 from datetime import date
-from app.models import User, Contact, CompanyProfil
+from app.models import User, Contact, CompanyProfil, Compte
 import re
 from flask_login import current_user
 
@@ -84,7 +84,14 @@ class FactureForm(FlaskForm):
     def get_contacts():
         return Contact.query.filter_by(user_id=current_user.id)
 
-    contact_id = QuerySelectField(_l('Contact ID'), validators=[DataRequired(message=_l('Veuillez entrer un contact'))], query_factory=get_contacts, get_label="id", allow_blank=True)
+    contact_id = QuerySelectField(_l('Contact ID'), validators=[DataRequired(message=_l('Veuillez entrer un contact'))], query_factory=get_contacts, get_label="name", allow_blank=True)
+
+    # Query qui get tous les comptes de l'utilisateur actif
+    def get_comptes():
+        return Compte.query.filter_by(user_id=current_user.id)
+
+    compte_id = QuerySelectField(_l('Compte ID'), validators=[DataRequired(message=_l('Veuillez entrer un compte'))], query_factory=get_comptes, get_label="name", allow_blank=True)
+
     submit = SubmitField(_l('Enregistrer'))
 
     # Valider si date d'échéance est la même ou après la date initiale
@@ -112,6 +119,11 @@ class ContactForm(FlaskForm):
         match = re.search(pattern, phone_number)
         if not match:
             raise ValidationError(_l('Veuillez entrer un numéro de téléphone valide (123-456-7890)'))
+
+# Défini un formulaire pour la saisie de comptes
+class CompteForm(FlaskForm):
+    name = StringField(_l('Nom'), validators=[DataRequired(message=_l("Veuillez entrer un nom")), Length(min=1, max=50, message=_l('Veuillez écrire entre 1 et 50 caractères'))])
+    submit = SubmitField(_l('Enregistrer'))
 
 # Défini un formulaire pour la profil d'entreprise
 class CompanyProfilForm(FlaskForm):

@@ -13,6 +13,12 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
+### Ajout de la gestion de comptes
+
+---
+
+Idem que contacts.
+
 ### 24. Ajouter gestion de Profil d'entreprise
 
 ---

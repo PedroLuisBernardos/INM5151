@@ -4,8 +4,8 @@ from datetime import date, datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm, ContactForm, CompanyProfilForm, SelectCompanyProfilForm
-from app.models import User, Facture, Contact, CompanyProfil
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm, ContactForm, CompanyProfilForm, SelectCompanyProfilForm, CompteForm
+from app.models import User, Facture, Contact, CompanyProfil, Compte
 from flask_babel import _
 from app.forms import ResetPasswordRequestForm
 from app.email import send_password_reset_email
@@ -86,6 +86,7 @@ def bill():
         prev_url = url_for('index', page=factures.prev_num) if factures.has_prev else None
         return render_template("bill.html", title=_('Facture'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
     else:
+        flash(_('Veuillez créer un profil d\'entreprise avant d\'effectuer cette action.'))
         return redirect(url_for('index'))
 
 # Page des contacts
@@ -105,13 +106,41 @@ def contacts():
                 flash(_('Votre contact a été ajouté.'))
                 return redirect(url_for('contacts'))
 
-        # Toute les contacts de l'utilisateur actuel
+        # Tous les contacts de l'utilisateur actuel
         page = request.args.get('page', 1, type=int)
         contacts = Contact.query.filter_by(user_id=current_user.id, profilEntreprise_id=current_user.profil_courrant).paginate(page, app.config['CONTACTS_PAR_PAGE'], False)
         next_url = url_for('contacts', page=contacts.next_num) if contacts.has_next else None
         prev_url = url_for('contacts', page=contacts.prev_num) if contacts.has_prev else None
         return render_template("contacts.html", title=_('Contacts'), form=form, contacts=contacts.items, next_url=next_url, prev_url=prev_url)
     else:
+        flash(_('Veuillez créer un profil d\'entreprise avant d\'effectuer cette action.'))
+        return redirect(url_for('index'))
+
+# Page des comptes
+@app.route('/comptes', methods=['GET', 'POST'])
+@login_required
+def comptes():
+    if current_user.profilEntreprise:
+        form = CompteForm()
+        if form.validate_on_submit():
+            compte = Compte.query.filter_by(name=form.name.data, profilEntreprise_id=current_user.profil_courrant).first()
+            if compte:
+                flash(_('Ce compte existe déjà.'))
+            else:
+                compte = Compte(name=form.name.data, user_id=current_user.id, profilEntreprise_id=current_user.profil_courrant)
+                db.session.add(compte)
+                db.session.commit()
+                flash(_('Votre compte a été ajouté.'))
+                return redirect(url_for('comptes'))
+
+        # Tous les comptes de l'utilisateur actuel
+        page = request.args.get('page', 1, type=int)
+        comptes = Compte.query.filter_by(user_id=current_user.id, profilEntreprise_id=current_user.profil_courrant).paginate(page, app.config['COMPTES_PAR_PAGE'], False)
+        next_url = url_for('comptes', page=comptes.next_num) if comptes.has_next else None
+        prev_url = url_for('comptes', page=comptes.prev_num) if comptes.has_prev else None
+        return render_template("comptes.html", title=_('Comptes'), form=form, comptes=comptes.items, next_url=next_url, prev_url=prev_url)
+    else:
+        flash(_('Veuillez créer un profil d\'entreprise avant d\'effectuer cette action.'))
         return redirect(url_for('index'))
 
 # Page d'accueil pour les invités
@@ -263,6 +292,19 @@ def delete_contact(contact_id):
         error_string = _('Il y a eu une erreur avec la suppression du contact.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
+# Supprimer des comptes
+@app.route('/delete_compte/<compte_id>')
+@login_required
+def delete_compte(compte_id):
+    compte_to_delete = Compte.query.get_or_404(compte_id)
+    try:
+        db.session.delete(compte_to_delete)
+        db.session.commit()
+        return redirect(url_for('comptes'))
+    except:
+        error_string = _('Il y a eu une erreur avec la suppression du compte.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
+
 # Supprimer des profils d'entreprise
 @app.route('/delete_company_profil/<company_profil_id>')
 @login_required
@@ -341,6 +383,28 @@ def update_contact(contact_id):
         return render_template('update_contact.html', title=_('Modification du contact'), form=form, contact=contact_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification du contact.')
+        return render_template('error.html', title=_('Erreur'), error=error_string)
+
+# Modifier des comptes
+@app.route('/update_compte/<compte_id>', methods=['GET', 'POST'])
+def update_compte(compte_id):
+    try:
+        compte_to_update = Compte.query.get_or_404(compte_id)
+        form = CompteForm()
+        if form.validate_on_submit():
+            compte = Compte.query.filter_by(name=form.name.data).first()
+            if compte and compte is not compte_to_update:
+                flash(_('Ce compte existe déjà.'))
+            else:
+                compte_to_update.name = form.name.data
+                db.session.commit()
+                flash(_('Les modifications ont été sauvegardées.'))
+                return redirect(url_for('comptes'))
+        elif request.method == 'GET':
+            form.name.data = compte_to_update.name
+        return render_template('update_compte.html', title=_('Modification du compte'), form=form, compte=compte_to_update)
+    except:
+        error_string = _('Il y a eu une erreur avec la modification du compte.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
 # Modifier des profils d'entreprise

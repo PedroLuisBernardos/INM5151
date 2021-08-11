@@ -23,6 +23,7 @@ class User(UserMixin, db.Model):
 
     profilEntreprise = db.relationship('CompanyProfil', back_populates="user")
     contact = db.relationship('Contact', back_populates="user")
+    compte = db.relationship('Compte', back_populates="user")
     facture = db.relationship('Facture', back_populates="user")
 
     # Affichage des utilisateurs
@@ -75,10 +76,12 @@ class Facture(db.Model):
 
     contact_id = db.Column(db.Integer, db.ForeignKey('contact.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    compte_id = db.Column(db.Integer, db.ForeignKey('compte.id'))
     profilEntreprise_id = db.Column(db.Integer, db.ForeignKey('profilEntreprise.id'))
 
     user = relationship("User", back_populates="facture")
     contact = relationship("Contact", back_populates="facture")
+    compte = db.relationship('Compte', back_populates="facture")
     profilEntreprise = relationship("CompanyProfil", back_populates="facture")
 
     # Affichage des factures
@@ -105,6 +108,23 @@ class Contact(db.Model):
     def __repr__(self):
         return 'Contact: {}'.format(self.name)
 
+# Comptes de revenus/depenses
+class Compte(db.Model):
+    __tablename__ = "compte"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), unique=False, nullable=False)
+
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    profilEntreprise_id = db.Column(db.Integer, db.ForeignKey('profilEntreprise.id'))
+
+    facture = db.relationship('Facture', back_populates="compte")
+    user = relationship("User", back_populates="compte")
+    profilEntreprise = relationship("CompanyProfil", back_populates="compte")
+
+    # Affichage des comptes
+    def __repr__(self):
+        return 'Compte de revenu/dépense: {}'.format(self.name)
+
 # Profils d'entreprise
 class CompanyProfil(db.Model):
     __tablename__ = "profilEntreprise"
@@ -114,6 +134,7 @@ class CompanyProfil(db.Model):
 
     facture = db.relationship('Facture', back_populates="profilEntreprise")
     contact = db.relationship('Contact', back_populates="profilEntreprise")
+    compte = db.relationship('Compte', back_populates="profilEntreprise")
     user = relationship("User", back_populates="profilEntreprise")
 
     # Affichage des profils d'entreprise

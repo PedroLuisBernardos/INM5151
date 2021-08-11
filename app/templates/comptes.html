@@ -1,0 +1,49 @@
+<!-- comptes.html -->
+<!-- page comptes pour les utilisateurs -->
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>{{ _('Enregistrer un compte') }}</h1>
+    <hr>
+    {% if form %}
+        <div class="form-group">
+            <div class="col-md-4">
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+        <hr>
+    {% endif %}
+    <!-- Affichage des comptes -->
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">{{ _('Nom') }}</th>
+            <th scope="col">{{ _('Options') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+    {% for compte in comptes %}
+        <!-- Corps des comptes -->
+        <tr>
+            <!-- À ajouter des attributs -->
+            <td>{{ compte.id }}</td>
+            <td>{{ compte.name }}</td>
+            <td>
+                <a class="btn btn-info" href="{{ url_for('update_compte', compte_id=compte.id) }}">{{ _('Modifier') }}</a>
+                <a class="btn btn-danger" href="{{ url_for('delete_compte', compte_id=compte.id) }}">{{ _('Supprimer') }}</a>
+            </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    <!-- Pagination -->
+    {% if prev_url %}
+        <a class="btn btn-link" href="{{ prev_url }}">{{ _('Page précédente') }}</a>
+    {% endif %}
+    {% if next_url %}
+        <a class="btn btn-link" href="{{ next_url }}">{{ _('Page suivante') }}</a>
+    {% endif %}
+    <br><br>
+{% endblock %}
