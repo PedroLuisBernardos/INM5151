@@ -19,8 +19,7 @@
 
 Ajout de fonctionnalité permettant l'affichage de l'application web en mode clair ou sombre 
 
-Toutefois, il faut être connecté et accéder à son profil pour changer le thème. Le thème persiste même après la déconnection.
-On devrait peut-être pouvoir changer à partir de n'importe où
+Update: On peut désormais le changer à partir de n'importe quel page via la barre de navigation. Encore, le thème persiste même après la déconnection.
 
 [Commit:](https://github.com/ta-truong/inm5151-ete2021-projet/commit/b4266fb3b6bd849be8884ca0db865589d2d6eb13)
 

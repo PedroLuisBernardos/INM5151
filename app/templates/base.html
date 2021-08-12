@@ -61,6 +61,9 @@
             </li>
             {% endif %}
           </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor:pointer" id="switch" name="theme" value="test" >Changer Thème</a>
+          </li>
         </ul>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder={{ _("Exemple: loyer") }} aria-label="Search" />
@@ -69,6 +72,12 @@
       </div>
     </nav>
     <hr>
+    <!--
+    <div class="container">
+      <div class="toggle-container">
+          <input type="hidden" id="switch" name="theme" /><label for="switch"></label>
+      </div>
+    </div>-->
     {% endblock %}
     <!-- Affichage des messages Flash précisés dans Routes -->
     {% block content %}
