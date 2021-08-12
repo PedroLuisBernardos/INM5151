@@ -13,7 +13,19 @@
 
 [Chapitre 16 - Full text search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
 
-### Ajout de la gestion de comptes
+### 26. Ajouter de fonctionnalité thème sombre/clair
+
+---
+
+Ajout de fonctionnalité permettant l'affichage de l'application web en mode clair ou sombre 
+
+Toutefois, il faut être connecté et accéder à son profil pour changer le thème. Le thème persiste même après la déconnection.
+On devrait peut-être pouvoir changer à partir de n'importe où
+
+[Commit:](https://github.com/ta-truong/inm5151-ete2021-projet/commit/b4266fb3b6bd849be8884ca0db865589d2d6eb13)
+
+
+### 25. Ajout de la gestion de comptes
 
 ---
 
@@ -25,16 +37,12 @@ Idem que contacts.
 
 ---
 
-Terminé à 77%
-
 J'ai déplacé la gestion de factures (initialement à la page d'accueil/index) vers sa propre page `bill.html`
 
 La page d'accueil contient la gestion de profil d'entreprise. On peut ajouter/modifier/supprimer un profil d'entreprise
-mais un profil d'entreprise ne lit pas encore les factures correspondant au profil d'entreprise sélectionné.
+et un profil d'entreprise lit les factures et contacts correspondant au profil d'entreprise sélectionné.
 
-On veut pouvoir afficher une liste de factures qui est propre à un profil d'entreprise sélectionné.
-
-[Commit:](https://github.com/ta-truong/inm5151-ete2021-projet/commit/d2ee68bcc54489d98ff3b1b37bbd114dfe15b710)
+[Commit:](https://github.com/ta-truong/inm5151-ete2021-projet/commit/c9dea110c4aedd1da2bc7a711d70d9dd3befd7d8)
 
 
 ### 23. Ajouter dropdown Contacts dans le formulaire de Facture
