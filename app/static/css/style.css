@@ -1,9 +1,23 @@
 /* CSS général de l'application */
+html{
+    color: black;
+    background-color: white;
+}
+
 body {
     width:97%;
     margin-left:auto;
     margin-right:auto;
+    background-color: var(--bg); 
+    color: var(--bg);
 }
+
+
+html[theme='dark'] {
+    color: white;
+    background: #282828;
+}
+
 
 .past-due {
     color: red;

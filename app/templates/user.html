@@ -3,6 +3,7 @@
 {% extends "base.html" %}
 
 {% block app_content %}
+
     <table>
         <!-- Body du profil -->
         <tr valign="top">
@@ -15,6 +16,8 @@
                 {% if user == current_user %}
                 <p><a href="{{ url_for('edit_profile') }}">{{ _('Modifier votre profil') }}</a></p>
                 {% endif %}
+                <input type="button" id="switch" name="theme" value="{{ _('Changer le thème') }}"/><label for="switch"></label>
+
             </td>
         </tr>
         <tr>
