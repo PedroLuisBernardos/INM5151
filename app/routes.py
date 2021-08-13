@@ -1,7 +1,7 @@
 # routes.py
 # défini les routes de l'application
 from datetime import date, datetime
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, session
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm, ContactForm, CompanyProfilForm, SelectCompanyProfilForm, CompteForm
@@ -457,9 +457,15 @@ def edit_profile():
         error_string = _('Il y a eu une erreur avec la modification du profil.')
         return render_template('error.html', title=_('Erreur'), error=error_string)
 
-@app.route('/all')
 # UNIQUEMENT POUR LES ADMINISTRATEURS
+@app.route('/all')
 def all():
     users = User.query.all()
     factures = Facture.query.all()
     return render_template('all.html', users=users, factures=factures)
+
+# Modifier la langue
+@app.route('/language/<language>')
+def set_language(language=None):
+    session['language'] = language
+    return redirect(url_for('index'))

@@ -19,4 +19,4 @@ class Config(object):
     COMPTES_PAR_PAGE = 15
     COMPANY_PROFIL_PAR_PAGE = 15
 
-    LANGUAGES = ['fr', 'en', 'es']
+    LANGUAGES = {'fr': 'Français', 'en': 'English', 'es': 'Español'}

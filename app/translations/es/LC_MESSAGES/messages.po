@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-11 08:51-0400\n"
+"POT-Creation-Date: 2021-08-13 15:26-0400\n"
 "PO-Revision-Date: 2021-07-07 11:59-0400\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -46,16 +46,16 @@ msgstr "Introduce una contraseña válida"
 msgid "Se souvenir de moi"
 msgstr "Recuérdame"
 
-#: app/forms.py:18 app/routes.py:174
+#: app/forms.py:18 app/routes.py:175
 msgid "Connexion"
 msgstr "Conexión"
 
-#: app/forms.py:22 app/forms.py:36 app/forms.py:112
+#: app/forms.py:22 app/forms.py:36 app/forms.py:108
 #: app/templates/contacts.html:24
 msgid "Adresse courriel"
 msgstr "Correo electrónico"
 
-#: app/forms.py:22 app/forms.py:36 app/forms.py:112
+#: app/forms.py:22 app/forms.py:36 app/forms.py:108
 msgid "Veuillez entrer une adresse courriel valide"
 msgstr "Introduce una dirección de correo electrónico válida"
 
@@ -99,8 +99,8 @@ msgstr "Introduce un nombre de usuario"
 msgid "À propos de moi"
 msgstr "Acerca de mí"
 
-#: app/forms.py:58 app/forms.py:95 app/forms.py:114 app/forms.py:126
-#: app/forms.py:132
+#: app/forms.py:58 app/forms.py:91 app/forms.py:110 app/forms.py:122
+#: app/forms.py:128
 msgid "Enregistrer"
 msgstr "Guardar"
 
@@ -120,7 +120,7 @@ msgstr "Referencia"
 msgid "Veuillez entrer une référence"
 msgstr "Introduce una referencia"
 
-#: app/forms.py:76 app/forms.py:110 app/forms.py:125 app/forms.py:131
+#: app/forms.py:76 app/forms.py:106 app/forms.py:121 app/forms.py:127
 msgid "Veuillez écrire entre 1 et 50 caractères"
 msgstr "Escribe entre 1 y 50 caracteres"
 
@@ -148,7 +148,7 @@ msgstr "Descripción"
 msgid "Veuillez entrer une description"
 msgstr "Introduce una descripción"
 
-#: app/forms.py:79 app/forms.py:113
+#: app/forms.py:79 app/forms.py:109
 msgid "Veuillez écrire entre 1 et 140 caractères"
 msgstr "Escribe entre 1 y 140 caracteres"
 
@@ -168,71 +168,71 @@ msgstr "Impuesto (%)"
 msgid "Veuillez entrer un nombre entre 0 et 100"
 msgstr "Introduce un número entre 0 y 100"
 
-#: app/forms.py:87 app/templates/bill.html:23
+#: app/forms.py:83 app/templates/bill.html:23
 #, fuzzy
 msgid "Contact ID"
 msgstr "ID del Contacto"
 
-#: app/forms.py:87
+#: app/forms.py:83
 #, fuzzy
 msgid "Veuillez entrer un contact"
 msgstr "Introduce un contacto"
 
-#: app/forms.py:93
+#: app/forms.py:89
 #, fuzzy
 msgid "Compte ID"
 msgstr "Cuentas ID"
 
-#: app/forms.py:93
+#: app/forms.py:89
 #, fuzzy
 msgid "Veuillez entrer un compte"
 msgstr "Introduce una nombre de cuenta"
 
-#: app/forms.py:100
+#: app/forms.py:96
 msgid "La date d'échéance doit être la même ou après la date initale"
 msgstr "La fecha de vencimiento debe ser igual o posterior a la fecha original"
 
-#: app/forms.py:110 app/forms.py:125 app/forms.py:131
+#: app/forms.py:106 app/forms.py:121 app/forms.py:127
 #: app/templates/comptes.html:22 app/templates/contacts.html:22
 #: app/templates/register_company_profil.html:25
 msgid "Nom"
 msgstr "Nombre"
 
-#: app/forms.py:110 app/forms.py:125 app/forms.py:131
+#: app/forms.py:106 app/forms.py:121 app/forms.py:127
 msgid "Veuillez entrer un nom"
 msgstr "Introduce una nombre"
 
-#: app/forms.py:111 app/templates/contacts.html:23
+#: app/forms.py:107 app/templates/contacts.html:23
 msgid "Téléphone"
 msgstr "Número de teléfono"
 
-#: app/forms.py:111
+#: app/forms.py:107
 msgid "Veuillez entrer un numéro de téléphone (123-456-7890)"
 msgstr "Introduce un número de teléfono (123-456-7890)"
 
-#: app/forms.py:113 app/templates/contacts.html:25
+#: app/forms.py:109 app/templates/contacts.html:25
 msgid "Adresse"
 msgstr "Dirección"
 
-#: app/forms.py:113
+#: app/forms.py:109
 msgid "Veuillez entrer une adresse"
 msgstr "Introduce una dirección"
 
-#: app/forms.py:121
+#: app/forms.py:117
 msgid "Veuillez entrer un numéro de téléphone valide (123-456-7890)"
 msgstr "Introduce un número de teléfono válido (123-456-7890)"
 
-#: app/forms.py:140
+#: app/forms.py:136
 #, fuzzy
 msgid "Nom de l'entreprise"
-msgstr "Perfiles de empresa"
+msgstr "Nombre de la empresa"
 
-#: app/forms.py:140
+#: app/forms.py:136
 #, fuzzy
 msgid "Veuillez choisir un profil d'entreprise"
 msgstr "Introduce un perfil de empresa"
 
-#: app/forms.py:141
+#: app/forms.py:137
 msgid "Sélectionner"
 msgstr "Seleccione"
 
@@ -246,11 +246,11 @@ msgstr "Se ha desconectado."
 msgid "Erreur. Profil d'entreprise non trouvé."
 msgstr "Error. Perfil de empresa no encontrado."
 
-#: app/routes.py:37 app/routes.py:60 app/templates/base.html:43
+#: app/routes.py:37 app/routes.py:60 app/templates/base.html:35
 msgid "Accueil"
 msgstr "Página principal"
 
-#: app/routes.py:48 app/routes.py:419
+#: app/routes.py:48 app/routes.py:420
 #, fuzzy
 msgid "Ce profil d'entreprise existe déjà."
 msgstr "Este perfil de empresa ya existe."
@@ -260,178 +260,178 @@ msgstr "Este perfil de empresa ya existe."
 msgid "Votre profile d'entreprise a été ajouté."
 msgstr "Se ha agregado su perfil de empresa."
 
-#: app/routes.py:73 app/routes.py:330
+#: app/routes.py:74 app/routes.py:331
 msgid "Cette référence existe déjà."
 msgstr "La referencia ya existe."
 
-#: app/routes.py:79
+#: app/routes.py:80
 msgid "Votre facture a été ajoutée."
 msgstr "Se ha agregado la factura."
 
-#: app/routes.py:87
+#: app/routes.py:88
 #, fuzzy
 msgid "Facture"
 msgstr "Facturas"
 
-#: app/routes.py:89 app/routes.py:116 app/routes.py:143
+#: app/routes.py:90 app/routes.py:117 app/routes.py:144
 msgid "Veuillez créer un profil d'entreprise avant d'effectuer cette action."
 msgstr "Por favor cree un perfil de empresa antes de hacer esta acción."
 
-#: app/routes.py:101 app/routes.py:368
+#: app/routes.py:102 app/routes.py:369
 msgid "Ce contact existe déjà."
 msgstr "El contacto ya existe."
 
-#: app/routes.py:106
+#: app/routes.py:107
 msgid "Votre contact a été ajouté."
 msgstr "Se ha agregado el contacto."
 
-#: app/routes.py:114 app/templates/base.html:54
+#: app/routes.py:115 app/templates/base.html:46
 msgid "Contacts"
 msgstr "Contactos"
 
-#: app/routes.py:128 app/routes.py:397
+#: app/routes.py:129 app/routes.py:398
 #, fuzzy
 msgid "Ce compte existe déjà."
 msgstr "El contacto ya existe."
 
-#: app/routes.py:133
+#: app/routes.py:134
 #, fuzzy
 msgid "Votre compte a été ajouté."
 msgstr "Se ha agregado el contacto."
 
-#: app/routes.py:141 app/templates/base.html:57
+#: app/routes.py:142 app/templates/base.html:49
 msgid "Comptes"
 msgstr "Cuentas"
 
-#: app/routes.py:153
+#: app/routes.py:154
 msgid "Bienvenue"
 msgstr "Bienvenido"
 
-#: app/routes.py:169
+#: app/routes.py:170
 msgid "Utilisateur ou mot de passes invalides !"
 msgstr "¡Usuario o contraseña no válidos!"
 
-#: app/routes.py:176
+#: app/routes.py:177
 msgid "Il y a eu une erreur avec la connexion."
 msgstr "Se ha producido un error con la conexión."
 
-#: app/routes.py:177 app/routes.py:191 app/routes.py:243 app/routes.py:267
-#: app/routes.py:280 app/routes.py:293 app/routes.py:306 app/routes.py:319
-#: app/routes.py:357 app/routes.py:386 app/routes.py:408 app/routes.py:430
-#: app/routes.py:457
+#: app/routes.py:178 app/routes.py:192 app/routes.py:244 app/routes.py:268
+#: app/routes.py:281 app/routes.py:294 app/routes.py:307 app/routes.py:320
+#: app/routes.py:358 app/routes.py:387 app/routes.py:409 app/routes.py:431
+#: app/routes.py:458
 msgid "Erreur"
 msgstr "Error"
 
-#: app/routes.py:186
+#: app/routes.py:187
 msgid "Vous avez été déconnecté."
 msgstr "Se ha desconectado."
 
-#: app/routes.py:190
+#: app/routes.py:191
 msgid "Il y a eu une erreur avec la déconnexion."
 msgstr "Hubo un error con la desconexión."
 
-#: app/routes.py:203
+#: app/routes.py:204
 msgid "Consultez vos courriels pour réinitialiser votre mot de passe."
 msgstr "Revise sus correos electrónicos para restablecer su contraseña."
 
-#: app/routes.py:206
+#: app/routes.py:207
 msgid "Cette adresse courriel n'est pas inscrite."
 msgstr ""
 "Esta dirección de correo electrónico Esta dirección de email no está "
 "registrada."
 
-#: app/routes.py:207 app/templates/reset_password_request.html:7
+#: app/routes.py:208 app/templates/reset_password_request.html:7
 msgid "Réinitialiser un mot de passe"
 msgstr "Restablecer la contraseña"
 
-#: app/routes.py:221
+#: app/routes.py:222
 msgid "Votre mot de passe a été réinitialisé."
 msgstr "Tu contraseña ha sido restablecida."
 
-#: app/routes.py:238
+#: app/routes.py:239
 msgid "Vous êtes maintenant inscrit !"
 msgstr "¡Ya estás registrado!"
 
-#: app/routes.py:240 app/templates/base.html:47 app/templates/register.html:8
+#: app/routes.py:241 app/templates/base.html:39 app/templates/register.html:8
 msgid "S'inscrire"
 msgstr "Registrarse"
 
-#: app/routes.py:242
+#: app/routes.py:243
 msgid "Il y a eu une erreur avec l'inscription."
 msgstr "Hubo un error con el registro."
 
-#: app/routes.py:250 app/templates/base.html:63 app/templates/base.html:65
+#: app/routes.py:251 app/templates/base.html:55 app/templates/base.html:57
 msgid "Mon profil"
 msgstr "Mi perfil"
 
-#: app/routes.py:266
+#: app/routes.py:267
 msgid "Il y a eu une erreur avec la suppression de l'utilisateur."
 msgstr "Se ha producido un error con la eliminación del usuario."
 
-#: app/routes.py:279
+#: app/routes.py:280
 msgid "Il y a eu une erreur avec la suppression de la facture."
 msgstr "Se ha producido un error con la supresión de la factura."
 
-#: app/routes.py:292
+#: app/routes.py:293
 msgid "Il y a eu une erreur avec la suppression du contact."
 msgstr "Se ha producido un error con la supresión del contacto."
 
-#: app/routes.py:305
+#: app/routes.py:306
 #, fuzzy
 msgid "Il y a eu une erreur avec la suppression du compte."
-msgstr "Se ha producido un error con la supresión del contacto."
+msgstr "Se ha producido un error con la supresión de la cuenta."
 
-#: app/routes.py:318
+#: app/routes.py:319
 #, fuzzy
 msgid "Il y a eu une erreur avec la suppression du profil d'entreprise."
 msgstr "Se ha producido un error con la supresión del perfil de empresa."
 
-#: app/routes.py:343 app/routes.py:376 app/routes.py:401 app/routes.py:423
-#: app/routes.py:449
+#: app/routes.py:344 app/routes.py:377 app/routes.py:402 app/routes.py:424
+#: app/routes.py:450
 msgid "Les modifications ont été sauvegardées."
 msgstr "Se han guardado los cambios."
 
-#: app/routes.py:354
+#: app/routes.py:355
 msgid "Modification de la facture"
 msgstr "Modifification de la facture"
 
-#: app/routes.py:356
+#: app/routes.py:357
 msgid "Il y a eu une erreur avec la modification de la facture."
 msgstr "Se ha producido un error con la modificación de la factura."
 
-#: app/routes.py:383
+#: app/routes.py:384
 msgid "Modification du contact"
 msgstr "Modificación de contacto"
 
-#: app/routes.py:385
+#: app/routes.py:386
 msgid "Il y a eu une erreur avec la modification du contact."
 msgstr "Se ha producido un error con la modificación del contacto."
 
-#: app/routes.py:405
+#: app/routes.py:406
 #, fuzzy
 msgid "Modification du compte"
-msgstr "Modificación de contacto"
+msgstr "Modificación de la cuenta"
 
-#: app/routes.py:407
+#: app/routes.py:408
 #, fuzzy
 msgid "Il y a eu une erreur avec la modification du compte."
-msgstr "Se ha producido un error con la modificación del contacto."
+msgstr "Se ha producido un error con la modificación de la cuenta."
 
-#: app/routes.py:427
+#: app/routes.py:428
 #, fuzzy
 msgid "Modification du profil d'entreprise"
 msgstr "Modificación del perfil de empresa"
 
-#: app/routes.py:429
+#: app/routes.py:430
 #, fuzzy
 msgid "Il y a eu une erreur avec la modification du profil d'entreprise."
 msgstr "Se ha producido un error con la modificación del perfil de empresa."
 
-#: app/routes.py:454 app/templates/user.html:16
+#: app/routes.py:455 app/templates/user.html:17
 msgid "Modifier votre profil"
 msgstr "Edita tu perfil"
 
-#: app/routes.py:456
+#: app/routes.py:457
 msgid "Il y a eu une erreur avec la modification du profil."
 msgstr "Se ha producido un error con la modificación del perfil."
 
@@ -457,33 +457,42 @@ msgstr "Un administrador ha sido notificado, lo siento por las molestias."
 msgid "Utilisateurs"
 msgstr "Usuarios"
 
-#: app/templates/all.html:27 app/templates/base.html:60
+#: app/templates/all.html:27 app/templates/base.html:52
 msgid "Factures"
 msgstr "Facturas"
 
-#: app/templates/base.html:13 app/templates/base.html:15
+#: app/templates/base.html:14 app/templates/base.html:16
 msgid "Système de Facturation"
-msgstr "Sistema de Facturación"
+msgstr ""
 
-#: app/templates/base.html:36
+#: app/templates/base.html:28
 msgid "Système de facturation"
-msgstr "Sistema de Facturación"
+msgstr ""
 
-#: app/templates/base.html:50 app/templates/login.html:8
+#: app/templates/base.html:42 app/templates/login.html:8
 msgid "Se connecter"
 msgstr "Conectarse"
 
-#: app/templates/base.html:67
+#: app/templates/base.html:59
+#, fuzzy
 msgid "Se déconnecter"
-msgstr "Desconectarse"
+msgstr "Conectarse"
 
-#: app/templates/base.html:74
+#: app/templates/base.html:65 app/templates/user.html:19
+msgid "Changer le thème"
+msgstr "Cambiar el tema"
+
+#: app/templates/base.html:68
+msgid "Changer la langue"
+msgstr ""
+
+#: app/templates/base.html:82
 msgid "Exemple: loyer"
-msgstr "Ejemplo: renta"
+msgstr ""
 
-#: app/templates/base.html:75
+#: app/templates/base.html:83
 msgid "Rechercher"
-msgstr "Buscar"
+msgstr ""
 
 #: app/templates/bill.html:7
 msgid "Enregistrer une facture"
@@ -545,7 +554,7 @@ msgstr "Hola"
 
 #: app/templates/index.html:8
 #, fuzzy
-msgid "Vos profil d'entreprise"
+msgid "Vos profils d'entreprise"
 msgstr "Sus perfiles de empresa"
 
 #: app/templates/index.html:11
@@ -604,7 +613,7 @@ msgstr "Modificar el perfil de empresa"
 #: app/templates/update_compte.html:7
 #, fuzzy
 msgid "Modifier le compte"
-msgstr "Modificar el contacto"
+msgstr "Modificar la cuenta"
 
 #: app/templates/update_contact.html:7
 msgid "Modifier le contact"
@@ -614,15 +623,15 @@ msgstr "Modificar el contacto"
 msgid "Modifier la facture"
 msgstr "Modificar la factura"
 
-#: app/templates/user.html:11
+#: app/templates/user.html:12
 msgid "Profil de l'utilisateur"
 msgstr "Perfil del usuario"
 
-#: app/templates/user.html:13
+#: app/templates/user.html:14
 msgid "Dernière connexion"
 msgstr "Última conexión"
 
-#: app/templates/user.html:22
+#: app/templates/user.html:25
 msgid "Supprimer le compte"
 msgstr "Borrar la cuenta"
 
@@ -663,4 +672,22 @@ msgstr "Si no ha solicitado restablecer su contraseña, ignore este mensaje."
 #: app/templates/email/reset_password.html:12
 msgid "Sincèrement,"
 msgstr "Sinceramente,"
+
+#~ msgid "Système de Facturation"
+#~ msgstr "Sistema de Facturación"
+
+#~ msgid "Système de facturation"
+#~ msgstr "Sistema de Facturación"
+
+#~ msgid "Se déconnecter"
+#~ msgstr "Desconectarse"
+
+#~ msgid "Changer la langue"
+#~ msgstr "Cambiar el idioma"
+
+#~ msgid "Exemple: loyer"
+#~ msgstr "Ejemplo: renta"
+
+#~ msgid "Rechercher"
+#~ msgstr "Buscar"
 

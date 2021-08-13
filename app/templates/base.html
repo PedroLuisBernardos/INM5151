@@ -62,7 +62,20 @@
             {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="cursor:pointer" id="switch" name="theme" value="test" >Changer Thème</a>
+            <a class="nav-link" style="cursor:pointer" id="switch" name="theme" value="test" >{{ _('Changer le thème') }}</a>
+          </li>
+          <li class="nav-item dropdown {% if request.url_rule.endpoint == 'user' %}active{% endif %}">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ _('Changer la langue') }}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for language in AVAILABLE_LANGUAGES.items() %}
+                {% if CURRENT_LANGUAGE == language[0] %}
+                  {{ language[1] }}
+                {% else %}
+                  <a class="dropdown-item" href="{{ url_for('set_language', language=language[0]) }}">{{ language[1] }}</a>
+                  <div class="dropdown-divider"></div>
+                {% endif %}
+              {% endfor %}
+            </div>
           </li>
         </ul>
         <form class="form-inline">
