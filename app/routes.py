@@ -66,6 +66,7 @@ def register_company_profil():
 def bill():
     if current_user.profilEntreprise:
         form = FactureForm()
+        form.contact_id.choices = [''] + [(row.name) for row in Contact.query.filter_by(user_id=current_user.id)]
         # À ajouter des attributs
         if form.validate_on_submit():
             facture = Facture.query.filter_by(reference=form.reference.data).first()
