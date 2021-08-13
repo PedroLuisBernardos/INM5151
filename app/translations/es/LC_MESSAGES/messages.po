@@ -169,22 +169,18 @@ msgid "Veuillez entrer un nombre entre 0 et 100"
 msgstr "Introduce un número entre 0 y 100"
 
 #: app/forms.py:83 app/templates/bill.html:23
-#, fuzzy
 msgid "Contact ID"
 msgstr "ID del Contacto"
 
 #: app/forms.py:83
-#, fuzzy
 msgid "Veuillez entrer un contact"
 msgstr "Introduce un contacto"
 
 #: app/forms.py:89
-#, fuzzy
 msgid "Compte ID"
 msgstr "Cuentas ID"
 
 #: app/forms.py:89
-#, fuzzy
 msgid "Veuillez entrer un compte"
 msgstr "Introduce una nombre de cuenta"
 
@@ -223,12 +219,10 @@ msgid "Veuillez entrer un numéro de téléphone valide (123-456-7890)"
 msgstr "Introduce un número de teléfono válido (123-456-7890)"
 
 #: app/forms.py:136
-#, fuzzy
 msgid "Nom de l'entreprise"
 msgstr "Nombre de la empresa"
 
 #: app/forms.py:136
-#, fuzzy
 msgid "Veuillez choisir un profil d'entreprise"
 msgstr "Introduce un perfil de empresa"
 
@@ -237,12 +231,10 @@ msgid "Sélectionner"
 msgstr "Seleccione"
 
 #: app/routes.py:25
-#, fuzzy
 msgid "Vous avez sélectionné "
 msgstr "Se ha desconectado."
 
 #: app/routes.py:28
-#, fuzzy
 msgid "Erreur. Profil d'entreprise non trouvé."
 msgstr "Error. Perfil de empresa no encontrado."
 
@@ -251,12 +243,10 @@ msgid "Accueil"
 msgstr "Página principal"
 
 #: app/routes.py:48 app/routes.py:420
-#, fuzzy
 msgid "Ce profil d'entreprise existe déjà."
 msgstr "Este perfil de empresa ya existe."
 
 #: app/routes.py:53
-#, fuzzy
 msgid "Votre profile d'entreprise a été ajouté."
 msgstr "Se ha agregado su perfil de empresa."
 
@@ -269,7 +259,6 @@ msgid "Votre facture a été ajoutée."
 msgstr "Se ha agregado la factura."
 
 #: app/routes.py:88
-#, fuzzy
 msgid "Facture"
 msgstr "Facturas"
 
@@ -290,12 +279,10 @@ msgid "Contacts"
 msgstr "Contactos"
 
 #: app/routes.py:129 app/routes.py:398
-#, fuzzy
 msgid "Ce compte existe déjà."
 msgstr "El contacto ya existe."
 
 #: app/routes.py:134
-#, fuzzy
 msgid "Votre compte a été ajouté."
 msgstr "Se ha agregado el contacto."
 
@@ -377,12 +364,10 @@ msgid "Il y a eu une erreur avec la suppression du contact."
 msgstr "Se ha producido un error con la supresión del contacto."
 
 #: app/routes.py:306
-#, fuzzy
 msgid "Il y a eu une erreur avec la suppression du compte."
 msgstr "Se ha producido un error con la supresión de la cuenta."
 
 #: app/routes.py:319
-#, fuzzy
 msgid "Il y a eu une erreur avec la suppression du profil d'entreprise."
 msgstr "Se ha producido un error con la supresión del perfil de empresa."
 
@@ -408,22 +393,18 @@ msgid "Il y a eu une erreur avec la modification du contact."
 msgstr "Se ha producido un error con la modificación del contacto."
 
 #: app/routes.py:406
-#, fuzzy
 msgid "Modification du compte"
 msgstr "Modificación de la cuenta"
 
 #: app/routes.py:408
-#, fuzzy
 msgid "Il y a eu une erreur avec la modification du compte."
 msgstr "Se ha producido un error con la modificación de la cuenta."
 
 #: app/routes.py:428
-#, fuzzy
 msgid "Modification du profil d'entreprise"
 msgstr "Modificación del perfil de empresa"
 
 #: app/routes.py:430
-#, fuzzy
 msgid "Il y a eu une erreur avec la modification du profil d'entreprise."
 msgstr "Se ha producido un error con la modificación del perfil de empresa."
 
@@ -463,18 +444,17 @@ msgstr "Facturas"
 
 #: app/templates/base.html:14 app/templates/base.html:16
 msgid "Système de Facturation"
-msgstr ""
+msgstr "Sistema de cobronza"
 
 #: app/templates/base.html:28
 msgid "Système de facturation"
-msgstr ""
+msgstr "Sistema de cobronza"
 
 #: app/templates/base.html:42 app/templates/login.html:8
 msgid "Se connecter"
 msgstr "Conectarse"
 
 #: app/templates/base.html:59
-#, fuzzy
 msgid "Se déconnecter"
 msgstr "Conectarse"
 
@@ -484,15 +464,15 @@ msgstr "Cambiar el tema"
 
 #: app/templates/base.html:68
 msgid "Changer la langue"
-msgstr ""
+msgstr "Cambiar el idioma"
 
 #: app/templates/base.html:82
 msgid "Exemple: loyer"
-msgstr ""
+msgstr "Ejemplo: alquiler"
 
 #: app/templates/base.html:83
 msgid "Rechercher"
-msgstr ""
+msgstr "Buscar"
 
 #: app/templates/bill.html:7
 msgid "Enregistrer une facture"
@@ -536,9 +516,12 @@ msgid "Page suivante"
 msgstr "Página siguiente"
 
 #: app/templates/comptes.html:7
-#, fuzzy
 msgid "Enregistrer un compte"
 msgstr "Registra un contacto"
+
+#: app/templates/comptes.html:22
+msgid "Nom"
+msgstr "Apellido"
 
 #: app/templates/contacts.html:7
 msgid "Enregistrer un contact"
@@ -553,7 +536,6 @@ msgid "Bonjour"
 msgstr "Hola"
 
 #: app/templates/index.html:8
-#, fuzzy
 msgid "Vos profils d'entreprise"
 msgstr "Sus perfiles de empresa"
 
@@ -566,17 +548,14 @@ msgid "Le profil sélectionné est"
 msgstr "El perfil seleccionado es"
 
 #: app/templates/index.html:24
-#, fuzzy
 msgid "Gérer vos profil d'entreprise"
 msgstr "Gestionar sus perfiles de empresa"
 
 #: app/templates/index.html:29
-#, fuzzy
 msgid "Vous n'avez pas de profil d'entreprise"
 msgstr "Usted no tiene ningun perfil de empresa"
 
 #: app/templates/index.html:32
-#, fuzzy
 msgid "Ajouter un profil d'entreprise"
 msgstr "Agregar un perfil de empresa"
 
@@ -597,7 +576,6 @@ msgid "Inscrivez-vous !"
 msgstr "¡Registrarse!"
 
 #: app/templates/register_company_profil.html:9
-#, fuzzy
 msgid "Enregistrer un profil d'entreprise"
 msgstr "Guardar un perfil de empresa"
 
@@ -606,12 +584,10 @@ msgid "Réinitialisez votre mot de passe"
 msgstr "Restablecer su contraseña"
 
 #: app/templates/update_company_profil.html:7
-#, fuzzy
 msgid "Modifier le profil d'entreprise"
 msgstr "Modificar el perfil de empresa"
 
 #: app/templates/update_compte.html:7
-#, fuzzy
 msgid "Modifier le compte"
 msgstr "Modificar la cuenta"
 
