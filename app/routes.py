@@ -57,7 +57,7 @@ def register_company_profil():
     companyProfil = CompanyProfil.query.filter_by(user_id=current_user.id).paginate(page, app.config['COMPANY_PROFIL_PAR_PAGE'], False)
     next_url = url_for('register_company_profil', companyProfil=register_company_profil.next_num) if companyProfil.has_next else None
     prev_url = url_for('register_company_profil', companyProfil=register_company_profil.prev_num) if companyProfil.has_prev else None
-    return render_template("register_company_profil.html", title=_('Accueil'), companyProfil=companyProfil.items, form=form, next_url=next_url, prev_url=prev_url)
+    return render_template("update/register_company_profil.html", title=_('Accueil'), companyProfil=companyProfil.items, form=form, next_url=next_url, prev_url=prev_url)
 
 
 # Page de création de factures
@@ -73,8 +73,7 @@ def bill():
             if facture:
                 flash(_('Cette référence existe déjà.'))
             else:
-                facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data,
-                contact_id=form.contact_id.data.id, profilEntreprise_id=current_user.profil_courrant, subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data, user_id=current_user.id)
+                facture = Facture(paid=form.paid.data, reference=form.reference.data, date=form.date.data, due_date=form.due_date.data, description=form.description.data, contact_id=form.contact_id.data.id, compte_id=form.compte_id.data.id, profilEntreprise_id=current_user.profil_courrant, subtotal=form.subtotal.data, total=form.get_total(form.tax.data, form.subtotal.data), tax=form.tax.data, user_id=current_user.id)
                 db.session.add(facture)
                 db.session.commit()
                 flash(_('Votre facture a été ajoutée.'))
@@ -175,7 +174,7 @@ def login():
         return render_template('login.html', title=_('Connexion'), form=form)
     except:
         error_string = _('Il y a eu une erreur avec la connexion.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Se déconnecter
 @app.route('/logout')
@@ -189,7 +188,7 @@ def logout():
         return redirect(url_for('index'))
     except:
         error_string = _('Il y a eu une erreur avec la déconnexion.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Page de de demande de réinitialisation du mot de passe
 @app.route('/reset_password_request', methods=['GET', 'POST'])
@@ -205,7 +204,7 @@ def reset_password_request():
             return redirect(url_for('login'))
         else:
             flash(_('Cette adresse courriel n\'est pas inscrite.'))
-    return render_template('reset_password_request.html', title=_('Réinitialiser un mot de passe'), form=form)
+    return render_template('update/reset_password_request.html', title=_('Réinitialiser un mot de passe'), form=form)
 
 # Page de réinitialisation du mot de passe
 @app.route('/reset_password/<token>', methods=['GET', 'POST'])
@@ -221,7 +220,7 @@ def reset_password(token):
         db.session.commit()
         flash(_('Votre mot de passe a été réinitialisé.'))
         return redirect(url_for('login'))
-    return render_template('reset_password.html', form=form)
+    return render_template('update/reset_password.html', form=form)
 
 # Page d'enregistrement
 @app.route('/register', methods=['GET', 'POST'])
@@ -241,7 +240,7 @@ def register():
         return render_template('register.html', title=_('S\'inscrire'), form=form)
     except:
         error_string = _('Il y a eu une erreur avec l\'inscription.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Page profil
 @app.route('/user/<username>')
@@ -265,7 +264,7 @@ def delete_user(username):
         return redirect(url_for('welcome'))
     except:
         error_string = _('Il y a eu une erreur avec la suppression de l\'utilisateur.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Supprimer des factures
 @app.route('/delete_bill/<facture_id>')
@@ -278,7 +277,7 @@ def delete_bill(facture_id):
         return redirect(url_for('bill'))
     except:
         error_string = _('Il y a eu une erreur avec la suppression de la facture.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Supprimer des contacts
 @app.route('/delete_contact/<contact_id>')
@@ -291,7 +290,7 @@ def delete_contact(contact_id):
         return redirect(url_for('contacts'))
     except:
         error_string = _('Il y a eu une erreur avec la suppression du contact.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Supprimer des comptes
 @app.route('/delete_compte/<compte_id>')
@@ -304,7 +303,7 @@ def delete_compte(compte_id):
         return redirect(url_for('comptes'))
     except:
         error_string = _('Il y a eu une erreur avec la suppression du compte.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Supprimer des profils d'entreprise
 @app.route('/delete_company_profil/<company_profil_id>')
@@ -317,7 +316,7 @@ def delete_company_profil(company_profil_id):
         return redirect(url_for('index'))
     except:
         error_string = _('Il y a eu une erreur avec la suppression du profil d\'entreprise.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Modifier des factures
 @app.route('/update_bill/<facture_id>', methods=['GET', 'POST'])
@@ -352,10 +351,10 @@ def update_bill(facture_id):
             form.subtotal.data = facture_to_update.subtotal
             form.tax.data = facture_to_update.tax
             form.contact_id.id = facture_to_update.contact_id
-        return render_template('update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
+        return render_template('update/update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification de la facture.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Modifier des contacts
 @app.route('/update_contact/<contact_id>', methods=['GET', 'POST'])
@@ -381,10 +380,10 @@ def update_contact(contact_id):
             form.phone_number.data = contact_to_update.phone_number
             form.email.data = contact_to_update.email
             form.address.data = contact_to_update.address
-        return render_template('update_contact.html', title=_('Modification du contact'), form=form, contact=contact_to_update)
+        return render_template('update/update_contact.html', title=_('Modification du contact'), form=form, contact=contact_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification du contact.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Modifier des comptes
 @app.route('/update_compte/<compte_id>', methods=['GET', 'POST'])
@@ -403,10 +402,10 @@ def update_compte(compte_id):
                 return redirect(url_for('comptes'))
         elif request.method == 'GET':
             form.name.data = compte_to_update.name
-        return render_template('update_compte.html', title=_('Modification du compte'), form=form, compte=compte_to_update)
+        return render_template('update/update_compte.html', title=_('Modification du compte'), form=form, compte=compte_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification du compte.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Modifier des profils d'entreprise
 @app.route('/update_company_profil/<company_profil_id>', methods=['GET', 'POST'])
@@ -425,10 +424,10 @@ def update_company_profil(company_profil_id):
                 return redirect(url_for('index'))
         elif request.method == 'GET':
             form.name.data = company_profile_to_update.name
-        return render_template('update_company_profil.html', title=_('Modification du profil d\'entreprise'), form=form, company_profile=company_profile_to_update)
+        return render_template('update/update_company_profil.html', title=_('Modification du profil d\'entreprise'), form=form, company_profile=company_profile_to_update)
     except:
         error_string = _('Il y a eu une erreur avec la modification du profil d\'entreprise.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Pour savoir c'est quand la dernière fois que l'utilisateur s'est connecté
 @app.before_request
@@ -452,10 +451,10 @@ def edit_profile():
         elif request.method == 'GET':
             form.username.data = current_user.username
             form.about_me.data = current_user.about_me
-        return render_template('edit_profile.html', title=_('Modifier votre profil'),form=form)
+        return render_template('update/edit_profile.html', title=_('Modifier votre profil'),form=form)
     except:
         error_string = _('Il y a eu une erreur avec la modification du profil.')
-        return render_template('error.html', title=_('Erreur'), error=error_string)
+        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # UNIQUEMENT POUR LES ADMINISTRATEURS
 @app.route('/all')

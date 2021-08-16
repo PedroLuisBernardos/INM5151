@@ -456,7 +456,7 @@ msgstr "Conectarse"
 
 #: app/templates/base.html:59
 msgid "Se déconnecter"
-msgstr "Conectarse"
+msgstr "Desconectarse"
 
 #: app/templates/base.html:65 app/templates/user.html:19
 msgid "Changer le thème"

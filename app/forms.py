@@ -80,7 +80,11 @@ class FactureForm(FlaskForm):
     subtotal = DecimalField(_l('Sous-total'), validators=[DataRequired(message=_l("Veuillez entrer un montant numérique"))], places=2)
     tax = DecimalField(_l('Taxe (%)'), default=14.975, validators=[NumberRange(0, 100, _l("Veuillez entrer un nombre entre 0 et 100"))], places=3)
 
-    contact_id = SelectField(_l('Contact ID'), validators=[DataRequired(message=_l('Veuillez entrer un contact'))])
+    # Query qui get tous les contacts de l'utilisateur actif
+    def get_contacts():
+        return Contact.query.filter_by(user_id=current_user.id)
+
+    contact_id = QuerySelectField(_l('Contact ID'), validators=[DataRequired(message=_l('Veuillez entrer un contact'))], query_factory=get_contacts, get_label="name", allow_blank=True)
 
     # Query qui get tous les comptes de l'utilisateur actif
     def get_comptes():

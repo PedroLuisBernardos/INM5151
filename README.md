@@ -1,90 +1,37 @@
-# INM5151 Système de Facturation (sdf)
-
----
-Oubliez pas de tout documenter dans les logs et de dire les parties que vous ne faites pas ! Au cas où elles sont aussi utiles ! J'ai mis très brievement ce qu'on doit faire dans les [logs](logs.md) du projet.
-
-## TODO sprint 2
+# INM5151-30-E21 - Système de Facturation (sdf)
 
 ---
 
-* [X] Mettre en gras l'onglet actif. Présentement le seul onglet en gras est **Accueil** à cause du `<li class="nav-item active">`.
+Cet API est un système de facturation fait pour notre cours [INM5151](https://etudier.uqam.ca/cours?sigle=INM5151) à l'UQAM lors de l'été 2021.
 
-* [X] Ajouter un support par email pour une réinialisation de mot de passe. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support).
-
-* [X] Ajouter une gestion des dates et du temps. Ceci modifiera le `timestamp` du modèle `Facture` aussi. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times).
-
-* [ ] Améliorer le module **Facture** en ajoutant des attributs. Faire les modifications nécessaires dans les routes et les pages html concernées.
-  * [X] Un deuxième `id` (attribut `reference`). Lui qui est déjà présent est l'id de la base de données, nous on veut un deuxième `id` (attribut `reference`), **unique** et **personnalisable**. L'ajouter dans le formulaire et dans l'affichage des factures.
-  * [X] Un booléen nommé `paiement`, en *drop-down*: **payée** ou **non-payée**. L'ajouter dans le formulaire et dans l'affichage des factures. Par défaut, se placer sur `non-payée`.
-  * [X] Une valeur fixe `taxe` qui est de **14.975%**. L'ajouter dans le formulaire et dans l'affichage des factures. Faire le calcul du montant `amount` automatiquement.
-  * [ ] Un *drop-down* **modifiable** nommé `comptes de revenus/dépenses`. Il va avoir une page pour les créer et ils seront disponibles dans le *drop-down* des factures. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin). L'ajouter dans le formulaire et dans l'affichage des factures.
-  * [ ] idem mais nommé `contacts`.
-  * [ ] Créer une page nommée `modele_facture.html` dans la barre de navigation. Il y aura un formulaire qui nous permet d'ajouter des modèles de facture. Ces modèles seront visibles dans l'ajout (uniquement l'ajout) de factures sous forme de *drop-down*. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin).
-
-## TODO sprint 3
+## Auteurs
 
 ---
 
+* [Pedro Luis Bernardos](https://github.com/PedroLuisBernardos)
+* [Willy Tim](https://github.com/WillyTim)
+* [Thuc-An Truong](https://github.com/ta-truong)
+
+## TODO - Tâches non-complétées
+
+---
+
+* [ ] Améliorer le module **Facture**. Faire les modifications nécessaires dans les routes et les pages html concernées.
+  * [ ] Ajouter dans le *drop-down* de `comptes de revenus/dépenses` et de `contacts` une option pour en créer un.
+  * [ ] Créer une page nommée `modele_facture.html` et l'ajouter dans la barre de navigation. Il y aura un formulaire qui nous permet d'ajouter des modèles de facture. Ces modèles seront visibles dans l'ajout (uniquement l'ajout) de factures sous forme de *drop-down*. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin).
 * [ ] Pourquoi **loyer** ne s'affiche pas dans aucune langue dans la barre de navigation ?
-
 * [ ] Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
-
 * [ ] Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
-
 * [ ] Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
-
-* [ ] Ajouter un modèle `profil d'entreprise` et une page `profils_entreprise.html`. Cette page sera la première page que l'utilisateur **connecté** verra. On va devoir **ajouter**, **modifier** et **supprimer** des profils d'entreprise (au maximum 5). Une fois le profil sélectionné, on est redirigés à la page `index.html`. Ajouter dans la barre de navigation (sûrement dans le *drop-down* de **Mon profil** un lien pour modifier le profil courrant).
-
-* [ ] Ajouter un bouton pour modifier la langue au lieu de se fier de la langue du navigateur.
-
-* [ ] Ajouter du javascript. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xx-some-javascript-magic).
-
-* [ ] Lui je sais pas c'est quoi, faudra voir si c'est pertinent. Ajouter des background jobs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxii-background-jobs).
-
 * [ ] Gérer l'exportation de factures en format PDF.
-
 * [ ] Ajouter un favicon
-
 * [ ] Gérer l'envoi des factures par email (exportées en PDF).
-
-* [ ] Si c'est pas déjà fait, gérer les notifications de rappel par email (le email qui est dans le modèle `User`).
-
 * [ ] Gérer le filtrage de factures.
-
 * [ ] Gérer le calcul des montants des factures sélectionnées.
-
-* [ ] Gérer la modification du thème (page supplémentaire dans **Mon profil**).
-
-* [ ] Séparer l'ajout de la facture et la page d'affichage de celles-ci.
-
 * [ ] Améliorer le CSS pour rendre l'application plus belle.
-
 * [ ] Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
-
 * [ ] Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
-
 * [ ] *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
-
-* [ ] Pour aller plus loin selon Miguel. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis). Aussi, pour aller plus loin, section sur les APIs. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxiii-application-programming-interfaces-apis).
-
-* [ ] Déploiement sur Héroku, Linux ou Docker. Faudra en choisir un des trois. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux).
-
-## Documents
-
----
-[OpsCon](https://docs.google.com/document/d/1gFm7OCDQM8OezZi54VzVFRqCNnuyvWAwm8ISOs8H8CQ/edit#)
-
-[PowerPoint OpsCon](https://docs.google.com/presentation/d/1uslppIrlWSKgbWBgeMfVUH1LqGnuOxLnIFBX-3rYHqU/edit)
-
-[Sprint 1](https://docs.google.com/document/d/1YnsLE2BXZ-MREk3PWpu65Rmxpdcfev8nZcXn98PMk6g/edit#)
-
-[Sprint 2](https://docs.google.com/document/d/1lO-c5NVTmTi0fNSdPrdDFZLOJ1LAXKsj9Yy7t4s5Eb0/edit?usp=sharing)
-
-[PowerPoint Sprint 2](https://docs.google.com/presentation/d/1ovp0vUbbqoy77J7YeX1wLURpROjskBO-f2CdZjpM9RQ/edit?usp=sharing)
-
-[Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
-
-[Les logs du projet](logs.md)
 
 ## Comment utiliser l'application
 
@@ -117,7 +64,7 @@ make
 Installer les librairies nescessaires:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt --user
 ```
 
 Rouler l'application
@@ -126,12 +73,7 @@ Rouler l'application
 flask run
 ```
 
-### Ça ne marche pas ?
-
----
-Remplacez `#!/usr/bin/python2` par `#!/usr/bin/python3` dans le fichier `/home/myUser/.local/bin/flask`.
-
-### Allez utiliser l'application
+### Ouvrir l'application
 
 ---
 
@@ -139,15 +81,10 @@ Ouvrir un navigateur et aller à l'adresse: <http://127.0.0.1:5000/>
 
 Une fois vous avez terminé faites `Ctrl+C` dans votre terminal.
 
-### Modifier la langue
-
----
-
-La langue est choisie selon [la langue de votre navigateur](//settings/?search=language). Les langues disponibles sont le français (par défaut), l'anglais et l'espagnol.
-
 ## Pour les administrateurs
 
 ---
+
 Un utilisateur de base est déjà présent:
 
 ```
@@ -156,8 +93,17 @@ email: admin@admin.com
 pass: admin
 ```
 
-Pour voir tous les utilisateurs et toutes les factures voir <http://127.0.0.1:5000/all>
-On peut les supprimer dans l'application mais pour le faire en ligne de commande:
+## Autres commandes
+
+---
+
+### Vider la base de données manuellement
+
+---
+
+Pour voir tous les utilisateurs et toutes les factures voir <http://127.0.0.1:5000/all>.
+
+Pour vider la base de données vous pouvez faire la suite de commandes suivante:
 
 ```bash
 flask shell
@@ -169,8 +115,24 @@ flask shell
 >>> for f in factures:
 ...     db.session.delete(f)
 ...
+>>> contacts = Contact.query.all()
+>>> for c in users:
+...     db.session.delete(c)
+...
+>>> comptes = Compte.query.all()
+>>> for c in factures:
+...     db.session.delete(c)
+...
+>>> profilsEntreprise = CompanyProfil.query.all()
+>>> for p in users:
+...     db.session.delete(p)
+...
 >>> db.session.commit()
 ```
+
+### Mettre à jour la base de données
+
+---
 
 Pour mettre à jour les nouvelles versions de la bd (en changeant le fichier `modules.py`):
 
@@ -185,38 +147,63 @@ En cas d'erreur:
 flask db downgrade
 ```
 
+### Ajouter une nouvelle langue
+
+---
+
+Pour ajouter une nouvelle langue faire les commandes suivantes:
+
+```bash
+flask translate init <nom de la langue>
+flask translate update
+# aller modifier le fichier `app/translations/<nom de la langue>/messages.po`
+flask translate compile
+```
+
 ## Explication des répertoires et des fichiers
 
 ---
 
 ```
-app/                        --> répertoire qui héberge l'application
-    static/                 --> répertoire qui contient les fichiers statiques de l'application
-        css/                --> répertoire qui contient le CSS de l'application
-            style.css       --> CSS de l'application (en plus de Bootstrap)
-        js/                 --> répertoire qui contient le JS de l'application
-            script.js       --> JS de l'application (en plus de Bootstrap)
-        translations/       --> répertoire qui contient les traductions
-            en/             --> répertoire qui contient les traductions en anglais
-            es/             --> répertoire qui contient les traductions en espagnol
-    templates/              --> répertoire qui contient les modèles des pages HTML
-        email/              --> répertoire qui gère les pages en lien avec les email
-        errors/             --> répertoire qui gère les pages en lien avec les erreurs
-        all.html            --> page cachée, qui contient tous les utilisateurs et toutes les factures
-        base.html           --> HTML de base
-        bill.html           --> page de factures
-        comptes.html        --> page des comptes
-        contacts.html       --> page des contacts
-        edit_profile.html   --> page de modification du profil de l'utilisateur
-        error.html          --> page d'erreurs généraux
-        index.html          --> page d'accueil des utilisateurs où on voit les factures
-        login.html          --> page de login
-        register.html       --> page d'inscription
-        user.html           --> page du profil de l'utilisateur
-        update_facture.html --> page de modification de la facture sélectionnée
-        wellcome.html       --> page d'accueil des invités
+app/                            --> répertoire qui héberge l'application
+    errors/                     --> répertoire qui contient les routes des erreurs
+        __init__.py             --> défini les blueprint des erreurs
+        handlers.py             --> défini les routes des erreurs
+    static/                     --> répertoire qui contient les fichiers statiques de l'application
+        css/                    --> répertoire qui contient le CSS de l'application
+            style.css           --> CSS de l'application (en plus de Bootstrap)
+        js/                     --> répertoire qui contient le JS de l'application
+            script.js           --> JS de l'application (en plus de Bootstrap)
+    templates/                  --> répertoire qui contient les modèles des pages HTML
+        errors/                 --> répertoire qui gère les pages en lien avec les erreurs
+            404.html            --> page qui gère l'erreur 404
+            500.html            --> page qui gère l'erreur 500
+            error.html          --> page d'erreurs généraux
+        update/                 --> répertoire qui contient les pages de modification
+            edit_profile.html   --> page de modification du profil de l'utilisateur
+            register_com...     --> page qui gère l'ajout d'un profil d'entreprise
+            reset_pass...       --> page de demande de la réinitialisaiton du mot de passe
+            reset_password.html --> page de réinitialisation du mot de passe
+            update_company...   --> page qui gère la modification du profil d'entreprise
+            update_compte.html  --> page qui gère la modification du compte
+            update_contact.html --> page qui gère la modification du contact
+            update_facture.html --> page qui gère la modification de la facture
+        all.html                --> page cachée, qui contient tous les utilisateurs et toutes les factures
+        base.html               --> HTML de base
+        bill.html               --> page de factures
+        comptes.html            --> page des comptes
+        contacts.html           --> page des contacts
+        index.html              --> page d'accueil des utilisateurs où on voit les factures
+        login.html              --> page de login
+        register.html           --> page d'inscription
+        user.html               --> page du profil de l'utilisateur
+        update_facture.html     --> page de modification de la facture sélectionnée
+        wellcome.html           --> page d'accueil des invités
+    translations/               --> répertoire qui contient les traductions
+        en/                     --> répertoire qui contient les traductions en anglais
+        es/                     --> répertoire qui contient les traductions en espagnol
     __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application
-    cli.py                  --> défini des commandes flask traduction plus simples pour la gestion des traductions
+    cli.py                  --> défini des commandes flask traduction plus simples pour la gestion des 
     errors.py               --> défini les erreurs possibles
     forms.py                --> défini les formulaires (connexion, inscription ...)
     models.py               --> défini les modèles de la base de données (user, facture ...)
@@ -233,3 +220,11 @@ Makefile                    --> permet de rouler l'application en une seule comm
 requirements.txt            --> liste de librairies à installer
 sdf.py                      --> défini l'instance de l'application Flask
 ```
+
+## Documents
+
+---
+
+[Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+
+[Les logs du projet](logs.md)

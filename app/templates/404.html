@@ -1,8 +1,0 @@
-<!-- 404.html -->
-<!-- page qui gère l'erreur 404 -->
-{% extends "base.html" %}
-
-{% block app_content %}
-    <h1>404: {{ _("Cette page n'existe pas") }}</h1>
-    <p><a href="{{ url_for('index') }}">{{ _('Retourner') }}</a></p>
-{% endblock %}

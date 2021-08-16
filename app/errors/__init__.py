@@ -1,3 +1,6 @@
+# __init__.py
+# défini le blueprint des erreurs
+
 from flask import Blueprint
 
 bp = Blueprint('errors', __name__)

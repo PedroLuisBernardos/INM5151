@@ -454,7 +454,7 @@ msgstr "Sign in"
 
 #: app/templates/base.html:59
 msgid "Se déconnecter"
-msgstr "Sign in"
+msgstr "Sign out"
 
 #: app/templates/base.html:65 app/templates/user.html:19
 msgid "Changer le thème"
