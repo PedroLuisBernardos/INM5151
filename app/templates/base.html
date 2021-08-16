@@ -69,11 +69,11 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               {% for language in AVAILABLE_LANGUAGES.items() %}
                 {% if CURRENT_LANGUAGE == language[0] %}
-                  {{ language[1] }}
+                <a class="dropdown-item" href="">{{ language[1] }}</a>
                 {% else %}
                   <a class="dropdown-item" href="{{ url_for('set_language', language=language[0]) }}">{{ language[1] }}</a>
-                  <div class="dropdown-divider"></div>
                 {% endif %}
+                <div class="dropdown-divider"></div>
               {% endfor %}
             </div>
           </li>
