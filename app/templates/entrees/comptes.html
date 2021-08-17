@@ -31,8 +31,8 @@
             <td>{{ compte.id }}</td>
             <td>{{ compte.name }}</td>
             <td>
-                <a class="btn btn-info" href="{{ url_for('update_compte', compte_id=compte.id) }}">{{ _('Modifier') }}</a>
-                <a class="btn btn-danger" href="{{ url_for('delete_compte', compte_id=compte.id) }}">{{ _('Supprimer') }}</a>
+                <a class="btn btn-info" href="{{ url_for('entrees.update_compte', compte_id=compte.id) }}">{{ _('Modifier') }}</a>
+                <a class="btn btn-danger" href="{{ url_for('entrees.delete_compte', compte_id=compte.id) }}">{{ _('Supprimer') }}</a>
             </td>
         </tr>
     {% endfor %}

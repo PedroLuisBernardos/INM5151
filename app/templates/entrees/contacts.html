@@ -1,11 +1,10 @@
-<!-- login.html -->
-<!-- page de connexion pour les utilisateurs -->
+<!-- contacts.html -->
+<!-- page contacts pour les utilisateurs -->
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Enregistrer un profil d\'entreprise') }}</h1>
-    <!-- Form pour se connecter a l'application -->
+    <h1>{{ _('Enregistrer un contact') }}</h1>
     <hr>
     {% if form %}
         <div class="form-group">
@@ -21,19 +20,25 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">{{ _('Nom') }}</th>
+            <th scope="col">{{ _('Téléphone') }}</th>
+            <th scope="col">{{ _('Adresse courriel') }}</th>
+            <th scope="col">{{ _('Adresse') }}</th>
             <th scope="col">{{ _('Options') }}</th>
           </tr>
         </thead>
         <tbody>
-    {% for company_profil in companyProfil %}
+    {% for contact in contacts %}
         <!-- Corps des contacts -->
         <tr>
             <!-- À ajouter des attributs -->
-            <td>{{ company_profil.id }}</td>
-            <td>{{ company_profil.name }}</td>
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.phone_number }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.address }}</td>
             <td>
-                <a class="btn btn-info" href="{{ url_for('update_company_profil', company_profil_id=company_profil.id) }}">{{ _('Modifier') }}</a>
-                <a class="btn btn-danger" href="{{ url_for('delete_company_profil', company_profil_id=company_profil.id) }}">{{ _('Supprimer') }}</a>
+                <a class="btn btn-info" href="{{ url_for('entrees.update_contact', contact_id=contact.id) }}">{{ _('Modifier') }}</a>
+                <a class="btn btn-danger" href="{{ url_for('entrees.delete_contact', contact_id=contact.id) }}">{{ _('Supprimer') }}</a>
             </td>
         </tr>
     {% endfor %}
@@ -47,5 +52,4 @@
         <a class="btn btn-link" href="{{ next_url }}">{{ _('Page suivante') }}</a>
     {% endif %}
     <br><br>
-
 {% endblock %}

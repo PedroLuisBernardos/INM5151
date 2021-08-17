@@ -55,8 +55,8 @@
             <td>{{ facture.total }}</td>
             <td class="{{ date_state }}">{{ facture_state }}</td>
             <td>
-                <a class="btn btn-info" href="{{ url_for('update_bill', facture_id=facture.id) }}">{{ _('Modifier') }}</a>
-                <a class="btn btn-danger" href="{{ url_for('delete_bill', facture_id=facture.id) }}">{{ _('Supprimer') }}</a>
+                <a class="btn btn-info" href="{{ url_for('entrees.update_bill', facture_id=facture.id) }}">{{ _('Modifier') }}</a>
+                <a class="btn btn-danger" href="{{ url_for('entrees.delete_bill', facture_id=facture.id) }}">{{ _('Supprimer') }}</a>
             </td>
         </tr>
     {% endfor %}

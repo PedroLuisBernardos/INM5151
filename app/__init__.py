@@ -54,4 +54,12 @@ app.register_blueprint(errors_bp)
 from app.auth import bp as auth_bp
 app.register_blueprint(auth_bp, url_prefix='/auth')
 
+# Gestion des entrées
+from app.entrees import bp as entrees_bp
+app.register_blueprint(entrees_bp)
+
+# Gestion des utilisateurs
+from app.user import bp as user_bp
+app.register_blueprint(user_bp)
+
 from app import routes, models

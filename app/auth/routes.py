@@ -16,7 +16,7 @@ def login():
   try:
     # Si l'utilisateur est actuellement connecté, ne pas aller à la page /login
     if current_user.is_authenticated:
-      return redirect(url_for('index'))
+      return redirect(url_for('entrees.index'))
     form = LoginForm()
     # Si le form a été submit
     if form.validate_on_submit():
@@ -28,7 +28,7 @@ def login():
         return redirect(url_for('auth.login'))
       # Si l'utilisateur et le mdp sont justes, le Flask-Forms va le marquer comme logged. Des variables comme current_user seront maintenant remplies
       login_user(user, remember=form.remember_me.data)
-      return redirect(url_for('index'))
+      return redirect(url_for('entrees.index'))
     return render_template('auth/login.html', title=_('Connexion'), form=form)
   except Exception:
     error_string = _('Il y a eu une erreur avec la connexion.')
@@ -43,7 +43,7 @@ def logout():
       logout_user()
       flash(_('Vous avez été déconnecté.'))
       return redirect(url_for('welcome'))
-    return redirect(url_for('index'))
+    return redirect(url_for('entrees.index'))
   except Exception:
     error_string = _('Il y a eu une erreur avec la déconnexion.')
     return render_template('errors/error.html', title=_('Erreur'), error=error_string)
@@ -52,7 +52,7 @@ def logout():
 @bp.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
   if current_user.is_authenticated:
-    return redirect(url_for('index'))
+    return redirect(url_for('entrees.index'))
   form = ResetPasswordRequestForm()
   if form.validate_on_submit():
     user = User.query.filter_by(email=form.email.data).first()
@@ -68,10 +68,10 @@ def reset_password_request():
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
   if current_user.is_authenticated:
-    return redirect(url_for('index'))
+    return redirect(url_for('entrees.index'))
   user = User.verify_reset_password_token(token)
   if not user:
-    return redirect(url_for('index'))
+    return redirect(url_for('entrees.index'))
   form = ResetPasswordForm()
   if form.validate_on_submit():
     user.set_password(form.password.data)
@@ -86,7 +86,7 @@ def register():
   try:
     # Si l'utilisateur est actuellement connecté, ne pas aller à la page /login
     if current_user.is_authenticated:
-      return redirect(url_for('index'))
+      return redirect(url_for('entrees.index'))
     form = RegistrationForm()
     if form.validate_on_submit():
       user = User(username=form.username.data, email=form.email.data)

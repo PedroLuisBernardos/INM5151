@@ -19,7 +19,7 @@
             <hr>
         {% endif %}
 
-        <a href="{{ url_for('register_company_profil') }}">
+        <a href="{{ url_for('entrees.register_company_profil') }}">
             <span>
                 {{ _('Gérer vos profil d\'entreprise') }}
             </span>
@@ -27,7 +27,7 @@
 
     {% else %}
         <h2>{{ _('Vous n\'avez pas de profil d\'entreprise') }}</h2>
-        <a href="{{ url_for('register_company_profil') }}">
+        <a href="{{ url_for('entrees.register_company_profil') }}">
             <span>
                 {{ _('Ajouter un profil d\'entreprise') }}
             </span>

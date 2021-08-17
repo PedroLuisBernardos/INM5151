@@ -28,6 +28,7 @@ Cet API est un système de facturation fait pour notre cours [INM5151](https://e
 * [ ] Modifier la structure de l'application.
 * [ ] Gérer l'envoi des factures par email (exportées en PDF).
 * [ ] Gérer le filtrage de factures.
+* [ ] Fixer la footbar au bas de la page.
 * [ ] Gérer le calcul des montants des factures sélectionnées.
 * [ ] Améliorer le CSS pour rendre l'application plus belle.
 * [ ] Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
