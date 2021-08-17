@@ -16,8 +16,9 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <!-- Bootstrap -->
+      <!-- Bootstrap et FontAwesome -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- CSS -->
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
       <!-- Favicon -->
@@ -116,4 +117,14 @@
     {{ moment.include_moment() }}
     {{ moment.lang('fr') }} <!-- Ajout de la langue français pour la date -->
   {% endblock %}
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-dark text-muted">
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://github.com/PedroLuisBernardos">Pedro Luis Bernardos</a>, <a class="text-reset fw-bold" href="https://github.com/WillyTim">Willy Tim</a>, <a class="text-reset fw-bold" href="https://github.com/ta-truong">Thuc-An Truong</a>
+    </div>
+  </footer>
 {% endblock %}
+
+
