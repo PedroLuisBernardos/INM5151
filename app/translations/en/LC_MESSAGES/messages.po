@@ -272,7 +272,7 @@ msgstr "Please enter a valid phone number (123-456-7890)"
 
 #: app/entrees/forms.py:81
 msgid "Nom de l'entreprise"
-msgstr "Nombre de la empresa"
+msgstr "Company name"
 
 #: app/entrees/forms.py:81
 msgid "Veuillez choisir un profil d'entreprise"
