@@ -149,7 +149,7 @@ def delete_bill(facture_id):
         db.session.delete(facture_to_delete)
         db.session.commit()
         return redirect(url_for('entrees.bill'))
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la suppression de la facture.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
@@ -162,7 +162,7 @@ def delete_contact(contact_id):
         db.session.delete(contact_to_delete)
         db.session.commit()
         return redirect(url_for('entrees.contacts'))
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la suppression du contact.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
@@ -175,7 +175,7 @@ def delete_compte(compte_id):
         db.session.delete(compte_to_delete)
         db.session.commit()
         return redirect(url_for('entrees.comptes'))
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la suppression du compte.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
@@ -188,7 +188,7 @@ def delete_company_profil(company_profil_id):
         db.session.delete(company_profil_to_delete)
         db.session.commit()
         return redirect(url_for('entrees.index'))
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la suppression du profil d\'entreprise.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
@@ -211,7 +211,8 @@ def update_bill(facture_id):
                 facture_to_update.subtotal = form.subtotal.data
                 facture_to_update.total = form.get_total(form.tax.data, form.subtotal.data)
                 facture_to_update.tax = form.tax.data
-                facture_to_update.contact_id = form.contact_id.id
+                facture_to_update.compte_id = form.compte_id.data.id
+                facture_to_update.contact_id = form.contact_id.data.id
 
                 db.session.commit()
                 flash(_('Les modifications ont été sauvegardées.'))
@@ -224,9 +225,11 @@ def update_bill(facture_id):
             form.description.data = facture_to_update.description
             form.subtotal.data = facture_to_update.subtotal
             form.tax.data = facture_to_update.tax
-            form.contact_id.id = facture_to_update.contact_id
+            form.compte_id = facture_to_update.compte_id
+            form.contact_id = facture_to_update.contact_id
+
         return render_template('entrees/update_facture.html', title=_('Modification de la facture'), form=form, facture=facture_to_update)
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la modification de la facture.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
@@ -255,7 +258,7 @@ def update_contact(contact_id):
             form.email.data = contact_to_update.email
             form.address.data = contact_to_update.address
         return render_template('entrees/update_contact.html', title=_('Modification du contact'), form=form, contact=contact_to_update)
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la modification du contact.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
@@ -277,7 +280,7 @@ def update_compte(compte_id):
         elif request.method == 'GET':
             form.name.data = compte_to_update.name
         return render_template('entrees/update_compte.html', title=_('Modification du compte'), form=form, compte=compte_to_update)
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la modification du compte.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
@@ -299,6 +302,6 @@ def update_company_profil(company_profil_id):
         elif request.method == 'GET':
             form.name.data = company_profile_to_update.name
         return render_template('entrees/update_company_profil.html', title=_('Modification du profil d\'entreprise'), form=form, company_profile=company_profile_to_update)
-    except:
+    except Exception:
         error_string = _('Il y a eu une erreur avec la modification du profil d\'entreprise.')
         return render_template('errors/error.html', title=_('Erreur'), error=error_string)
