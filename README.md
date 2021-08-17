@@ -8,9 +8,9 @@ Cet API est un système de facturation fait pour notre cours [INM5151](https://e
 
 ---
 
-* [Pedro Luis Bernardos](https://github.com/PedroLuisBernardos)
-* [Willy Tim](https://github.com/WillyTim)
-* [Thuc-An Truong](https://github.com/ta-truong)
+* [Pedro Luis Bernardos](https://www.linkedin.com/in/pedro-luis-bernardos/)
+* [Willy Tim](https://www.linkedin.com/in/willy-tim/)
+* [Thuc-An Truong](https://www.linkedin.com/in/thuc-an-truong-915941148/)
 
 ## TODO - Tâches non complétées
 
