@@ -2,14 +2,11 @@
 # défini les routes de l'application
 from datetime import date, datetime
 from flask import render_template, flash, redirect, url_for, request, session
-from flask_login import login_user, logout_user, current_user, login_required
+from flask_login import logout_user, current_user, login_required
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, FactureForm, ContactForm, CompanyProfilForm, SelectCompanyProfilForm, CompteForm
+from app.forms import EditProfileForm, FactureForm, ContactForm, CompanyProfilForm, SelectCompanyProfilForm, CompteForm
 from app.models import User, Facture, Contact, CompanyProfil, Compte
 from flask_babel import _
-from app.forms import ResetPasswordRequestForm
-from app.email import send_password_reset_email
-from app.forms import ResetPasswordForm
 
 # Page d'accueil pour les utilisateurs - page pour choisir les profils d'entreprise
 @app.route('/index', methods=['GET', 'POST'])
@@ -58,7 +55,6 @@ def register_company_profil():
     next_url = url_for('register_company_profil', companyProfil=register_company_profil.next_num) if companyProfil.has_next else None
     prev_url = url_for('register_company_profil', companyProfil=register_company_profil.prev_num) if companyProfil.has_prev else None
     return render_template("update/register_company_profil.html", title=_('Accueil'), companyProfil=companyProfil.items, form=form, next_url=next_url, prev_url=prev_url)
-
 
 # Page de création de factures
 @app.route('/bill', methods=['GET', 'POST'])
@@ -151,96 +147,6 @@ def welcome():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     return render_template('welcome.html', title=_('Bienvenue'))
-
-# Se connecter
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    try:
-        # Si l'utilisateur est actuellement connecté, ne pas aller à la page /login
-        if current_user.is_authenticated:
-            return redirect(url_for('index'))
-        form = LoginForm()
-        # Si le form a été submit
-        if form.validate_on_submit():
-            # filter.by va lire la base de données. S'il y a un match ou pas, il va mettre cette valeur dans la variable user
-            user = User.query.filter_by(username=form.username.data).first()
-            # Si l'utilisateur n'existe pas OU si le mot de passe est incorrect... Erreur !
-            if user is None or not user.check_password(form.password.data):
-                flash(_('Utilisateur ou mot de passes invalides !'))
-                return redirect(url_for('login'))
-            # Si l'utilisateur et le mdp sont justes, le Flask-Forms va le marquer comme logged. Des variables comme current_user seront maintenant remplies
-            login_user(user, remember=form.remember_me.data)
-            return redirect(url_for('index'))
-        return render_template('login.html', title=_('Connexion'), form=form)
-    except:
-        error_string = _('Il y a eu une erreur avec la connexion.')
-        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
-
-# Se déconnecter
-@app.route('/logout')
-def logout():
-    try:
-        # Si l'utilisateur est actuellement connecté, le déconnecter
-        if current_user.is_authenticated:
-            logout_user()
-            flash(_('Vous avez été déconnecté.'))
-            return redirect(url_for('welcome'))
-        return redirect(url_for('index'))
-    except:
-        error_string = _('Il y a eu une erreur avec la déconnexion.')
-        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
-
-# Page de de demande de réinitialisation du mot de passe
-@app.route('/reset_password_request', methods=['GET', 'POST'])
-def reset_password_request():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form = ResetPasswordRequestForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user:
-            send_password_reset_email(user)
-            flash(_('Consultez vos courriels pour réinitialiser votre mot de passe.'))
-            return redirect(url_for('login'))
-        else:
-            flash(_('Cette adresse courriel n\'est pas inscrite.'))
-    return render_template('update/reset_password_request.html', title=_('Réinitialiser un mot de passe'), form=form)
-
-# Page de réinitialisation du mot de passe
-@app.route('/reset_password/<token>', methods=['GET', 'POST'])
-def reset_password(token):
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    user = User.verify_reset_password_token(token)
-    if not user:
-        return redirect(url_for('index'))
-    form = ResetPasswordForm()
-    if form.validate_on_submit():
-        user.set_password(form.password.data)
-        db.session.commit()
-        flash(_('Votre mot de passe a été réinitialisé.'))
-        return redirect(url_for('login'))
-    return render_template('update/reset_password.html', form=form)
-
-# Page d'enregistrement
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    try:
-        # Si l'utilisateur est actuellement connecté, ne pas aller à la page /login
-        if current_user.is_authenticated:
-            return redirect(url_for('index'))
-        form = RegistrationForm()
-        if form.validate_on_submit():
-            user = User(username=form.username.data, email=form.email.data)
-            user.set_password(form.password.data)
-            db.session.add(user)
-            db.session.commit()
-            flash(_('Vous êtes maintenant inscrit !'))
-            return redirect(url_for('login'))
-        return render_template('register.html', title=_('S\'inscrire'), form=form)
-    except:
-        error_string = _('Il y a eu une erreur avec l\'inscription.')
-        return render_template('errors/error.html', title=_('Erreur'), error=error_string)
 
 # Page profil
 @app.route('/user/<username>')

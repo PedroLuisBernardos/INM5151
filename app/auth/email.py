@@ -1,3 +1,5 @@
+# email.py
+# se charge des envois par courriel et de la réinitialisation du mot de passe
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -27,6 +29,4 @@ def send_email(subject, recipients, html_body):
 # Envoie un courriel de réinitialisation de mot de passe
 def send_password_reset_email(user):
     token = user.get_reset_password_token()
-    send_email(subject=_('[SDF] Réinitialisez votre mot de passe'),
-               recipients=[user.email],
-               html_body=render_template('email/reset_password.html', user=user, token=token))
+    send_email(subject=_('[SDF] Réinitialisez votre mot de passe'), recipients=[user.email], html_body=render_template('auth/reset_password.html', title=_('Réinitialiser un mot de passe'), user=user, token=token))

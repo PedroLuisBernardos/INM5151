@@ -1,55 +1,14 @@
 # forms.py
 # défini les formulaires de l'application
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, DecimalField, DateField, SelectField
-from wtforms.validators import NumberRange, ValidationError, DataRequired, Email, EqualTo, Length
+from wtforms import StringField, SubmitField, TextAreaField, DecimalField, DateField, SelectField
+from wtforms.validators import NumberRange, ValidationError, DataRequired, Email, Length
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from flask_babel import _, lazy_gettext as _l
 from datetime import date
 from app.models import User, Contact, CompanyProfil, Compte
 import re
 from flask_login import current_user
-
-# Défini un formulaire de connexion
-class LoginForm(FlaskForm):
-    username = StringField(_l('Utilisateur'), validators=[DataRequired(message=_l('Veuillez entrer un utilisateur valide'))])
-    password = PasswordField(_l('Mot de passe'), validators=[DataRequired(message=_l('Veuillez entrer un mot de passe valide'))])
-    remember_me = BooleanField(_l('Se souvenir de moi'))
-    submit = SubmitField(_l('Connexion'))
-
-# Défini un formulaire demande de reinitialisation de mot du passe
-class ResetPasswordRequestForm(FlaskForm):
-    email = StringField(_l('Adresse courriel'), validators=[DataRequired(message=_l('Veuillez entrer une adresse courriel valide')), Email(message=_l('Veuillez entrer une adresse courriel valide'))])
-    submit = SubmitField(_l('Demander la réinitialisation'))
-
-# Défini un formulaire de reinitialisation de mot du passe
-class ResetPasswordForm(FlaskForm):
-    password = PasswordField(_l('Mot de passe'), validators=[DataRequired(message=_l('Veuillez entrer un mot de passe valide'))])
-    password2 = PasswordField(
-        _l('Entrez à nouveau votre mot de passe'), validators=[DataRequired(message=_l('Veuillez entrer à nouveau votre mot de passe')),EqualTo('password',message=_l('Les mots de passe ne sont pas identiques'))])
-    submit = SubmitField(_l('Réinitialiser votre mot de passe'))
-
-# Défini un formulaire de création de comptes
-class RegistrationForm(FlaskForm):
-    username = StringField(_l('Utilisateur'), validators=[DataRequired(message=_l('Veuillez entrer un utilisateur valide'))])
-    # le champ Email() vérifie la bonne structure d'une adresse courriel
-    email = StringField(_l('Adresse courriel'), validators=[DataRequired(message=_l('Veuillez entrer une adresse courriel valide')), Email(message=_l('Veuillez entrer une adresse courriel valide'))])
-    password = PasswordField(_l('Mot de passe'), validators=[DataRequired(message=_l('Veuillez entrer un mot de passe valide'))])
-    password2 = PasswordField(
-        _l('Entrez à nouveau votre mot de passe'), validators=[DataRequired(message=_l('Veuillez entrer à nouveau votre mot de passe')), EqualTo('password', message=_l('Les mots de passe ne sont pas identiques'))])
-    submit = SubmitField(_l('Créer un compte'))
-
-    # Si le nom d'utilisateur existe déjà
-    def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
-        if user is not None:
-            raise ValidationError(_l('Ce nom d\'utilisateur est déjà utilisé'))
-
-    # Si le email existe déjà
-    def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if user is not None:
-            raise ValidationError(_l('Cette adresse courriel est déjà utilisée'))
 
 # Modifier le profil de l'utilisateur
 class EditProfileForm(FlaskForm):
@@ -139,3 +98,4 @@ class SelectCompanyProfilForm(FlaskForm):
 
     company_profil_name = QuerySelectField(_l('Nom de l\'entreprise'), validators=[DataRequired(message=_l('Veuillez choisir un profil d\'entreprise'))], query_factory=get_company_profil, get_label="name", allow_blank=False)
     submit = SubmitField(_l('Sélectionner'))
+    

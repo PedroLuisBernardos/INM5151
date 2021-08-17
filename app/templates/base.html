@@ -40,10 +40,10 @@
             </li>
             {% if current_user.is_anonymous %}
             <li class="nav-item {% if request.url_rule.endpoint == 'register' %}active{% endif %}">
-              <a class="nav-link" href="{{ url_for('register') }}">{{ _("S'inscrire") }}</a>
+              <a class="nav-link" href="{{ url_for('auth.register') }}">{{ _("S'inscrire") }}</a>
             </li>
             <li class="nav-item {% if request.url_rule.endpoint == 'login' %}active{% endif %}">
-              <a class="nav-link" href="{{ url_for('login') }}">{{ _('Se connecter') }}</a>
+              <a class="nav-link" href="{{ url_for('auth.login') }}">{{ _('Se connecter') }}</a>
             </li>
             {% else %}
             <li class="nav-item {% if request.url_rule.endpoint == 'contacts' %}active{% endif %}">
@@ -60,7 +60,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('user', username=current_user.username) }}">{{ _('Mon profil') }}</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url_for('logout') }}">{{ _('Se déconnecter') }}</a>
+                <a class="dropdown-item" href="{{ url_for('auth.logout') }}">{{ _('Se déconnecter') }}</a>
               </div>
             </li>
             {% endif %}
@@ -117,7 +117,9 @@
     {{ moment.include_moment() }}
     {{ moment.lang('fr') }} <!-- Ajout de la langue français pour la date -->
   {% endblock %}
+
   <!-- Footer -->
+  <br><br>
   <footer class="text-center text-lg-start bg-dark text-muted">
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
@@ -126,5 +128,3 @@
     </div>
   </footer>
 {% endblock %}
-
-

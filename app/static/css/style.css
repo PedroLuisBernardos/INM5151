@@ -4,7 +4,6 @@ html{
     background-color: white;
 }
 body {
-    width:99%;
     margin-left:auto;
     margin-right:auto;
     background-color: var(--bg); 
@@ -19,4 +18,11 @@ html[theme='dark'] {
 }
 .current-language{
     background-color: #fcfccc;
+}
+footer{
+    position: static;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    display: inline-block;
 }
