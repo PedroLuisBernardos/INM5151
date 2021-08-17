@@ -174,6 +174,7 @@ app/                            --> répertoire qui héberge l'application
             style.css           --> CSS de l'application (en plus de Bootstrap)
         js/                     --> répertoire qui contient le JS de l'application
             script.js           --> JS de l'application (en plus de Bootstrap)
+        favicon.ico             --> favicon
     templates/                  --> répertoire qui contient les modèles des pages HTML
         errors/                 --> répertoire qui gère les pages en lien avec les erreurs
             404.html            --> page qui gère l'erreur 404
