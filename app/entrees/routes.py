@@ -30,8 +30,8 @@ def index():
 
     # Tous les profils d'entreprise de l'utilisateur actuel
     companyProfil = CompanyProfil.query.filter_by(user_id=current_user.id).paginate(page, app.config['COMPANY_PROFIL_PAR_PAGE'], False)
-    next_url = url_for('entrees.index', companyProfil=index.next_num) if companyProfil.has_next else None
-    prev_url = url_for('entrees.index', companyProfil=index.prev_num) if companyProfil.has_prev else None
+    next_url = url_for('entrees.index', page=companyProfil.next_num) if companyProfil.has_next else None
+    prev_url = url_for('entrees.index', page=companyProfil.prev_num) if companyProfil.has_prev else None
     return render_template("entrees/index.html", title=_('Accueil'), form=form, companyProfil=companyProfil.items, next_url=next_url, prev_url=prev_url)
 
 # Page de modification de profil d'entreprise
@@ -53,8 +53,8 @@ def register_company_profil():
     
     page = request.args.get('page', 1, type=int)
     companyProfil = CompanyProfil.query.filter_by(user_id=current_user.id).paginate(page, app.config['COMPANY_PROFIL_PAR_PAGE'], False)
-    next_url = url_for('entrees.register_company_profil', companyProfil=register_company_profil.next_num) if companyProfil.has_next else None
-    prev_url = url_for('entrees.register_company_profil', companyProfil=register_company_profil.prev_num) if companyProfil.has_prev else None
+    next_url = url_for('entrees.register_company_profil', page=companyProfil.next_num) if companyProfil.has_next else None
+    prev_url = url_for('entrees.register_company_profil', page=companyProfil.prev_num) if companyProfil.has_prev else None
     return render_template("entrees/register_company_profil.html", title=_('Accueil'), companyProfil=companyProfil.items, form=form, next_url=next_url, prev_url=prev_url)
 
 # Page de création de factures
@@ -79,8 +79,8 @@ def bill():
         # Toutes les factures de l'utilisateur actuel et du profil d'entreprise actuel
         page = request.args.get('page', 1, type=int)
         factures = Facture.query.filter_by(user_id=current_user.id, profilEntreprise_id=current_user.profil_courrant).paginate(page, app.config['FACTURES_PAR_PAGE'], False)
-        next_url = url_for('entrees.index', page=factures.next_num) if factures.has_next else None
-        prev_url = url_for('entrees.index', page=factures.prev_num) if factures.has_prev else None
+        next_url = url_for('entrees.bill', page=factures.next_num) if factures.has_next else None
+        prev_url = url_for('entrees.bill', page=factures.prev_num) if factures.has_prev else None
         return render_template("entrees/bill.html", title=_('Facture'), form=form, factures=factures.items, date_today=date.today(), next_url=next_url, prev_url=prev_url)
     else:
         flash(_('Veuillez créer un profil d\'entreprise avant d\'effectuer cette action.'))

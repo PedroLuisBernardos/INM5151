@@ -14,9 +14,9 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    FACTURES_PAR_PAGE = 15
-    CONTACTS_PAR_PAGE = 15
-    COMPTES_PAR_PAGE = 15
-    COMPANY_PROFIL_PAR_PAGE = 15
+    FACTURES_PAR_PAGE = 5
+    CONTACTS_PAR_PAGE = 5
+    COMPTES_PAR_PAGE = 5
+    COMPANY_PROFIL_PAR_PAGE = 2
 
     LANGUAGES = {'fr': 'Français', 'en': 'English', 'es': 'Español'}
