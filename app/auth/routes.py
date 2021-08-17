@@ -62,7 +62,7 @@ def reset_password_request():
       return redirect(url_for('auth.login'))
     else:
       flash(_('Cette adresse courriel n\'est pas inscrite.'))
-  return render_template('auth/reset_password_request.html', title=_('Réinitialiser un mot de passe'), form=form)
+  return render_template('email/reset_password_request.html', title=_('Réinitialiser un mot de passe'), form=form)
 
 # Page de réinitialisation du mot de passe
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
@@ -78,7 +78,7 @@ def reset_password(token):
     db.session.commit()
     flash(_('Votre mot de passe a été réinitialisé.'))
     return redirect(url_for('auth.login'))
-  return render_template('auth/reset_password.html', title=_('Réinitialiser un mot de passe'), form=form)
+  return render_template('email/reset_password.html', title=_('Réinitialiser un mot de passe'), form=form)
 
 # Page d'enregistrement
 @bp.route('/register', methods=['GET', 'POST'])
