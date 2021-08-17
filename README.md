@@ -1,4 +1,4 @@
-# INM5151-30-E21 - Système de Facturation (sdf)
+# ![](app/static/favicon.ico) INM5151-30-E21 - Système de Facturation (sdf)
 
 ---
 
