@@ -34,7 +34,7 @@ def index():
     prev_url = url_for('entrees.index', page=companyProfil.prev_num) if companyProfil.has_prev else None
     return render_template("entrees/index.html", title=_('Accueil'), form=form, companyProfil=companyProfil.items, next_url=next_url, prev_url=prev_url)
 
-# Page de modification de profil d'entreprise
+# Page d'ajout de profil d'entreprise
 @bp.route('/register_company_profil', methods=['GET', 'POST'])
 @login_required
 def register_company_profil():
