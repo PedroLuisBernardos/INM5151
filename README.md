@@ -24,7 +24,7 @@ Cet API est un système de facturation fait pour notre cours [INM5151](https://e
 * [ ] Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
 * [ ] Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
 * [ ] Gérer l'exportation de factures en format PDF.
-* [ ] Ajouter un favicon
+* [ ] Modifier la structure de l'application
 * [ ] Gérer l'envoi des factures par email (exportées en PDF).
 * [ ] Gérer le filtrage de factures.
 * [ ] Gérer le calcul des montants des factures sélectionnées.
