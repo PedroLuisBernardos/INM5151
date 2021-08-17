@@ -2,7 +2,7 @@
 
 ---
 
-Cet API est un système de facturation fait pour notre cours [INM5151](https://etudier.uqam.ca/cours?sigle=INM5151) à l'UQAM lors de l'été 2021.
+Cet API est un système de facturation fait pour notre cours [INM5151](https://etudier.uqam.ca/cours?sigle=INM5151) à l'UQAM lors de l'été 2021. On a du apprendre à utiliser Python et Flask pour développer une application de notre choix. Nous avons suivi principalement [ce tutoriel](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) mais nous avons complété avec des recherches sur Internet pour aller plus loin et pour bien documenter notre api.
 
 ## Auteurs
 
@@ -25,14 +25,12 @@ Cet API est un système de facturation fait pour notre cours [INM5151](https://e
 * [ ] Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
 * [ ] Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
 * [ ] Gérer l'exportation de factures en format PDF.
-* [ ] Modifier la structure de l'application.
 * [ ] Gérer l'envoi des factures par email (exportées en PDF).
 * [ ] Gérer le filtrage de factures.
 * [ ] Fixer la footbar au bas de la page.
 * [ ] Gérer le calcul des montants des factures sélectionnées.
 * [ ] Améliorer le CSS pour rendre l'application plus belle.
 * [ ] Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
-* [ ] Améliorer la structure de l'application. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure).
 * [ ] *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
 
 ## Comment utiliser l'application
@@ -168,49 +166,35 @@ flask translate compile
 
 ```
 app/                            --> répertoire qui héberge l'application
+    auth/                       --> répertoire qui contient les routes en lien avec l'authentication
+        ...
+    entrees/                    --> répertoire qui contient les routes en lien avec les entrées: profils, factures, contacts et comptes
+        ...
     errors/                     --> répertoire qui contient les routes des erreurs
-        __init__.py             --> défini les blueprint des erreurs
-        handlers.py             --> défini les routes des erreurs
-    static/                     --> répertoire qui contient les fichiers statiques de l'application
-        css/                    --> répertoire qui contient le CSS de l'application
-            style.css           --> CSS de l'application (en plus de Bootstrap)
-        js/                     --> répertoire qui contient le JS de l'application
-            script.js           --> JS de l'application (en plus de Bootstrap)
-        favicon.ico             --> favicon
+        ...
+    static/                     --> répertoire qui contient les fichiers statiques de l'application: css, js et images
+        ...
     templates/                  --> répertoire qui contient les modèles des pages HTML
-        errors/                 --> répertoire qui gère les pages en lien avec les erreurs
-            404.html            --> page qui gère l'erreur 404
-            500.html            --> page qui gère l'erreur 500
-            error.html          --> page d'erreurs générale
-        update/                 --> répertoire qui contient les pages de modification
-            edit_profile.html   --> page de modification du profil de l'utilisateur
-            register_com...     --> page qui gère l'ajout d'un profil d'entreprise
-            reset_pass...       --> page de demande de la réinitialisation du mot de passe
-            reset_password.html --> page de réinitialisation du mot de passe
-            update_company...   --> page qui gère la modification du profil d'entreprise
-            update_compte.html  --> page qui gère la modification du compte
-            update_contact.html --> page qui gère la modification du contact
-            update_facture.html --> page qui gère la modification de la facture
+        auth/                   --> répertoire qui contient les modèles des pages en lien avec l'authentication
+            ...
+        email/                  --> répertoire qui contient les modèles des pages en lien avec les envois par email
+            ...
+        entrees/                --> répertoire qui contient les modèles des pages en lien avec les entrées
+            ...
+        errors/                 --> répertoire qui contient les modèles des pages en lien avec les erreurs
+        user/                   --> répertoire qui contient les modèles des pages en lien avec l'utilisateur courrant
         all.html                --> page cachée, qui contient tous les utilisateurs et toutes les factures
         base.html               --> HTML de base
-        bill.html               --> page de factures
-        comptes.html            --> page des comptes
-        contacts.html           --> page des contacts
-        index.html              --> page d'accueil des utilisateurs où on voit les factures
-        login.html              --> page de login
-        register.html           --> page d'inscription
-        user.html               --> page du profil de l'utilisateur
-        update_facture.html     --> page de modification de la facture sélectionnée
         wellcome.html           --> page d'accueil des invités
     translations/               --> répertoire qui contient les traductions
         en/                     --> répertoire qui contient les traductions en anglais
         es/                     --> répertoire qui contient les traductions en espagnol
     __init__.py             --> exécute et définit les symboles que les paquets exposent à l'extérieur de l'application
     cli.py                  --> défini des commandes flask traduction plus simples pour la gestion des 
-    errors.py               --> défini les erreurs possibles
-    forms.py                --> défini les formulaires (connexion, inscription ...)
     models.py               --> défini les modèles de la base de données (user, facture ...)
-    routes.py               --> défini les routes vers les différentes pages (/, /index, /login, ...)
+    routes.py               --> défini les routes vers les pages générales
+    user/                   --> répertoire qui contient les routes en lien avec l'utilisateur courrant
+        ...
 
 migrations/                 --> répertoire qui contient les modifications faites dans la bd
 
