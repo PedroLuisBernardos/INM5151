@@ -4,12 +4,10 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Bonjour') }}, <strong>{{ current_user.username }}</strong> !</h1>
     <h1>{{ _('Vos profils d\'entreprise') }}</h1>
     <hr>
     {% if companyProfil|length > 0 %}
-        <h2>{{ _('Sélectionner votre entreprise') }}</h2>
-        <h3>{{ _('Le profil sélectionné est') }}<strong>{{  nameSelect }}</strong></h3>
+        <h3>{{ _('Sélectionner votre entreprise') }}</h3>
         {% if form %}
             <div class="form-group">
                 <div class="col-md-4">
