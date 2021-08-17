@@ -5,7 +5,6 @@
 {% block html %}
   {% block head %}
     {% block metas %}
-<!-- base.html -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
     {% endblock %}
@@ -17,9 +16,10 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
+      <!-- Bootstrap -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <!-- CSS -->
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     {% endblock %}
@@ -28,7 +28,7 @@
     <!-- Barre de navigation -->
     {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{{ url_for('index') }}">{{ _('Système de facturation') }}</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">{{ _('Système de Facturation') }}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -72,7 +72,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               {% for language in AVAILABLE_LANGUAGES.items() %}
                 {% if CURRENT_LANGUAGE == language[0] %}
-                <a class="dropdown-item" href="">{{ language[1] }}</a>
+                <a class="dropdown-item current-language" href="">{{ language[1] }}</a>
                 {% else %}
                   <a class="dropdown-item" href="{{ url_for('set_language', language=language[0]) }}">{{ language[1] }}</a>
                 {% endif %}
@@ -88,14 +88,8 @@
       </div>
     </nav>
     <hr>
-    <!--
-    <div class="container">
-      <div class="toggle-container">
-          <input type="hidden" id="switch" name="theme" /><label for="switch"></label>
-      </div>
-    </div>-->
     {% endblock %}
-    <!-- Affichage des messages Flash précisés dans Routes -->
+    <!-- Affichage des messages Flash précisés dans routes.py -->
     {% block content %}
       {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -107,16 +101,19 @@
       {% endif %}
       {% endwith %}
     {% endblock %}
-    <!-- Bloc a utiliser dans les autres pages -->
+    <!-- Bloc à utiliser dans les autres pages -->
     {% block app_content %}{% endblock %}
   {% endblock %}
+
   {% block scripts %}
+    <!-- Bootstrap et JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {{ super() }}
     {{ moment.include_moment() }}
-    {{ moment.lang('fr') }} <!-- Ajout de la langue français pour la date-->
+    {{ moment.lang('fr') }} <!-- Ajout de la langue français pour la date -->
   {% endblock %}
 {% endblock %}

@@ -3,7 +3,6 @@ html{
     color: black;
     background-color: white;
 }
-
 body {
     width:97%;
     margin-left:auto;
@@ -11,14 +10,13 @@ body {
     background-color: var(--bg); 
     color: var(--bg);
 }
-
-
 html[theme='dark'] {
     color: white;
     background: #282828;
 }
-
-
 .past-due {
     color: red;
+}
+.current-language{
+    background-color: #fcfccc;
 }
