@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-08-16 22:08-0400\n"
+"POT-Creation-Date: 2021-08-17 12:39-0400\n"
 "PO-Revision-Date: 2021-07-07 11:59-0400\n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -22,546 +22,419 @@ msgstr ""
 msgid "Vous devez vous connecter pour accéder à cette page !"
 msgstr "¡Debe iniciar sesión para acceder a esta página!"
 
-#: app/email.py:30
-msgid "[SDF] Réinitialisez votre mot de passe"
-msgstr "[SDF] Restablecer su contraseña"
-
-#: app/forms.py:15 app/forms.py:34 app/forms.py:56
-msgid "Utilisateur"
-msgstr "Usuario"
-
-#: app/forms.py:15 app/forms.py:34
-msgid "Veuillez entrer un utilisateur valide"
-msgstr "Introduce un usuario válido"
-
-#: app/forms.py:16 app/forms.py:27 app/forms.py:37
-msgid "Mot de passe"
-msgstr "Contraseña"
-
-#: app/forms.py:16 app/forms.py:27 app/forms.py:37
-msgid "Veuillez entrer un mot de passe valide"
-msgstr "Introduce una contraseña válida"
-
-#: app/forms.py:17
-msgid "Se souvenir de moi"
-msgstr "Recuérdame"
-
-#: app/forms.py:18 app/routes.py:174
-msgid "Connexion"
-msgstr "Conexión"
-
-#: app/forms.py:22 app/forms.py:36 app/forms.py:112
-#: app/templates/contacts.html:24
-msgid "Adresse courriel"
-msgstr "Correo electrónico"
-
-#: app/forms.py:22 app/forms.py:36 app/forms.py:112
-msgid "Veuillez entrer une adresse courriel valide"
-msgstr "Introduce una dirección de correo electrónico válida"
-
-#: app/forms.py:23
-msgid "Demander la réinitialisation"
-msgstr "Solicitar"
-
-#: app/forms.py:29 app/forms.py:39
-msgid "Entrez à nouveau votre mot de passe"
-msgstr "Vuelva a introducir su contraseña"
-
-#: app/forms.py:29 app/forms.py:39
-msgid "Veuillez entrer à nouveau votre mot de passe"
-msgstr "Vuelve a introducir la contraseña"
-
-#: app/forms.py:29 app/forms.py:39
-msgid "Les mots de passe ne sont pas identiques"
-msgstr "Las contraseñas no son las mismas"
-
-#: app/forms.py:30
-msgid "Réinitialiser votre mot de passe"
-msgstr "Restablecer su contraseña"
-
-#: app/forms.py:40
-msgid "Créer un compte"
-msgstr "Crear una cuenta"
-
-#: app/forms.py:46 app/forms.py:70
-msgid "Ce nom d'utilisateur est déjà utilisé"
-msgstr "Este nombre de usuario ya se ha utilizado."
-
-#: app/forms.py:52
-msgid "Cette adresse courriel est déjà utilisée"
-msgstr "Esta dirección de correo electrónico ya se ha utilizado."
-
-#: app/forms.py:56
-msgid "Veuillez saisir un nom d'utilisateur"
-msgstr "Introduce un nombre de usuario"
-
-#: app/forms.py:57
-msgid "À propos de moi"
-msgstr "Acerca de mí"
-
-#: app/forms.py:58 app/forms.py:95 app/forms.py:114 app/forms.py:126
-#: app/forms.py:132
-msgid "Enregistrer"
-msgstr "Guardar"
-
-#: app/forms.py:75 app/templates/bill.html:39
-msgid "Impayée"
-msgstr "No pagada"
-
-#: app/forms.py:75 app/templates/bill.html:37
-msgid "Payée"
-msgstr "Pagada"
-
-#: app/forms.py:76 app/templates/bill.html:21
-msgid "Référence"
-msgstr "Referencia"
-
-#: app/forms.py:76
-msgid "Veuillez entrer une référence"
-msgstr "Introduce una referencia"
-
-#: app/forms.py:76 app/forms.py:110 app/forms.py:125 app/forms.py:131
-msgid "Veuillez écrire entre 1 et 50 caractères"
-msgstr "Escribe entre 1 y 50 caracteres"
-
-#: app/forms.py:77 app/templates/bill.html:24
-msgid "Date"
-msgstr "Fecha"
-
-#: app/forms.py:77
-msgid "Veuillez entrer une date (AAAA-MM-JJ)"
-msgstr "Introduce una fecha (AAAA-MM-DD)"
-
-#: app/forms.py:78 app/templates/bill.html:25
-msgid "Date d'échéance"
-msgstr "Fecha de vencimiento"
-
-#: app/forms.py:78
-msgid "Veuillez entrer une date d'échéance (AAAA-MM-JJ)"
-msgstr "Introduce una fecha de vencimiento (AAAA-MM-DD)"
-
-#: app/forms.py:79 app/templates/bill.html:22
-msgid "Description"
-msgstr "Descripción"
-
-#: app/forms.py:79
-msgid "Veuillez entrer une description"
-msgstr "Introduce una descripción"
-
-#: app/forms.py:79 app/forms.py:113
-msgid "Veuillez écrire entre 1 et 140 caractères"
-msgstr "Escribe entre 1 y 140 caracteres"
-
-#: app/forms.py:80 app/templates/bill.html:26
-msgid "Sous-total"
-msgstr "Total parcial"
-
-#: app/forms.py:80
-msgid "Veuillez entrer un montant numérique"
-msgstr "Introduce un número"
-
-#: app/forms.py:81
-msgid "Taxe (%)"
-msgstr "Impuesto (%)"
-
-#: app/forms.py:81
-msgid "Veuillez entrer un nombre entre 0 et 100"
-msgstr "Introduce un número entre 0 y 100"
-
-#: app/forms.py:87 app/templates/bill.html:23
-msgid "Contact ID"
-msgstr "ID del Contacto"
-
-#: app/forms.py:87
-msgid "Veuillez entrer un contact"
-msgstr "Introduce un contacto"
-
-#: app/forms.py:93
-msgid "Compte ID"
-msgstr "Cuentas ID"
-
-#: app/forms.py:93
-msgid "Veuillez entrer un compte"
-msgstr "Introduce una nombre de cuenta"
-
-#: app/forms.py:100
-msgid "La date d'échéance doit être la même ou après la date initale"
-msgstr "La fecha de vencimiento debe ser igual o posterior a la fecha original"
-
-#: app/forms.py:110 app/forms.py:125 app/forms.py:131
-#: app/templates/comptes.html:22 app/templates/contacts.html:22
-#: app/templates/update/register_company_profil.html:23
-msgid "Nom"
-msgstr "Nombre"
-
-#: app/forms.py:110 app/forms.py:125 app/forms.py:131
-msgid "Veuillez entrer un nom"
-msgstr "Introduce una nombre"
-
-#: app/forms.py:111 app/templates/contacts.html:23
-msgid "Téléphone"
-msgstr "Número de teléfono"
-
-#: app/forms.py:111
-msgid "Veuillez entrer un numéro de téléphone (123-456-7890)"
-msgstr "Introduce un número de teléfono (123-456-7890)"
-
-#: app/forms.py:113 app/templates/contacts.html:25
-msgid "Adresse"
-msgstr "Dirección"
-
-#: app/forms.py:113
-msgid "Veuillez entrer une adresse"
-msgstr "Introduce una dirección"
-
-#: app/forms.py:121
-msgid "Veuillez entrer un numéro de téléphone valide (123-456-7890)"
-msgstr "Introduce un número de teléfono válido (123-456-7890)"
-
-#: app/forms.py:140
-msgid "Nom de l'entreprise"
-msgstr "Nombre de la empresa"
-
-#: app/forms.py:140
-msgid "Veuillez choisir un profil d'entreprise"
-msgstr "Introduce un perfil de empresa"
-
-#: app/forms.py:141
-msgid "Sélectionner"
-msgstr "Seleccione"
-
-#: app/routes.py:25
-msgid "Vous avez sélectionné "
-msgstr "Se ha desconectado."
-
-#: app/routes.py:28
-msgid "Erreur. Profil d'entreprise non trouvé."
-msgstr "Error. Perfil de empresa no encontrado."
-
-#: app/routes.py:37 app/routes.py:60 app/templates/base.html:38
-msgid "Accueil"
-msgstr "Página principal"
-
-#: app/routes.py:48 app/routes.py:419
-msgid "Ce profil d'entreprise existe déjà."
-msgstr "Este perfil de empresa ya existe."
-
-#: app/routes.py:53
-msgid "Votre profile d'entreprise a été ajouté."
-msgstr "Se ha agregado su perfil de empresa."
-
-#: app/routes.py:74 app/routes.py:330
-msgid "Cette référence existe déjà."
-msgstr "La referencia ya existe."
-
-#: app/routes.py:79
-msgid "Votre facture a été ajoutée."
-msgstr "Se ha agregado la factura."
-
-#: app/routes.py:87
-msgid "Facture"
-msgstr "Facturas"
-
-#: app/routes.py:89 app/routes.py:116 app/routes.py:143
-msgid "Veuillez créer un profil d'entreprise avant d'effectuer cette action."
-msgstr "Por favor cree un perfil de empresa antes de hacer esta acción."
-
-#: app/routes.py:101 app/routes.py:368
-msgid "Ce contact existe déjà."
-msgstr "El contacto ya existe."
-
-#: app/routes.py:106
-msgid "Votre contact a été ajouté."
-msgstr "Se ha agregado el contacto."
-
-#: app/routes.py:114 app/templates/base.html:49
-msgid "Contacts"
-msgstr "Contactos"
-
-#: app/routes.py:128 app/routes.py:397
-msgid "Ce compte existe déjà."
-msgstr "El contacto ya existe."
-
-#: app/routes.py:133
-msgid "Votre compte a été ajouté."
-msgstr "Se ha agregado el contacto."
-
-#: app/routes.py:141 app/templates/base.html:52
-msgid "Comptes"
-msgstr "Cuentas"
-
-#: app/routes.py:153
+#: app/routes.py:17
 msgid "Bienvenue"
 msgstr "Bienvenido"
 
-#: app/routes.py:169
+#: app/auth/email.py:30
+msgid "[SDF] Réinitialisez votre mot de passe"
+msgstr "[SDF] Restablecer su contraseña"
+
+#: app/auth/forms.py:12 app/auth/forms.py:31 app/user/forms.py:11
+msgid "Utilisateur"
+msgstr "Usuario"
+
+#: app/auth/forms.py:12 app/auth/forms.py:31
+msgid "Veuillez entrer un utilisateur valide"
+msgstr "Introduce un usuario válido"
+
+#: app/auth/forms.py:13 app/auth/forms.py:24 app/auth/forms.py:34
+msgid "Mot de passe"
+msgstr "Contraseña"
+
+#: app/auth/forms.py:13 app/auth/forms.py:24 app/auth/forms.py:34
+msgid "Veuillez entrer un mot de passe valide"
+msgstr "Introduce una contraseña válida"
+
+#: app/auth/forms.py:14
+msgid "Se souvenir de moi"
+msgstr "Recuérdame"
+
+#: app/auth/forms.py:15 app/auth/routes.py:32
+msgid "Connexion"
+msgstr "Conexión"
+
+#: app/auth/forms.py:19 app/auth/forms.py:33 app/entrees/forms.py:53
+#: app/templates/entrees/contacts.html:24
+msgid "Adresse courriel"
+msgstr "Correo electrónico"
+
+#: app/auth/forms.py:19 app/auth/forms.py:33 app/entrees/forms.py:53
+msgid "Veuillez entrer une adresse courriel valide"
+msgstr "Introduce una dirección de correo electrónico válida"
+
+#: app/auth/forms.py:20
+msgid "Demander la réinitialisation"
+msgstr "Solicitar"
+
+#: app/auth/forms.py:26 app/auth/forms.py:36
+msgid "Entrez à nouveau votre mot de passe"
+msgstr "Vuelva a introducir su contraseña"
+
+#: app/auth/forms.py:26 app/auth/forms.py:36
+msgid "Veuillez entrer à nouveau votre mot de passe"
+msgstr "Vuelve a introducir la contraseña"
+
+#: app/auth/forms.py:26 app/auth/forms.py:36
+msgid "Les mots de passe ne sont pas identiques"
+msgstr "Las contraseñas no son las mismas"
+
+#: app/auth/forms.py:27
+msgid "Réinitialiser votre mot de passe"
+msgstr "Restablecer su contraseña"
+
+#: app/auth/forms.py:37
+msgid "Créer un compte"
+msgstr "Crear una cuenta"
+
+#: app/auth/forms.py:43 app/user/forms.py:25
+msgid "Ce nom d'utilisateur est déjà utilisé"
+msgstr "Este nombre de usuario ya se ha utilizado."
+
+#: app/auth/forms.py:49
+msgid "Cette adresse courriel est déjà utilisée"
+msgstr "Esta dirección de correo electrónico ya se ha utilizado."
+
+#: app/auth/routes.py:27
 msgid "Utilisateur ou mot de passes invalides !"
 msgstr "¡Usuario o contraseña no válidos!"
 
-#: app/routes.py:176
+#: app/auth/routes.py:34
 msgid "Il y a eu une erreur avec la connexion."
 msgstr "Se ha producido un error con la conexión."
 
-#: app/routes.py:177 app/routes.py:191 app/routes.py:243 app/routes.py:267
-#: app/routes.py:280 app/routes.py:293 app/routes.py:306 app/routes.py:319
-#: app/routes.py:357 app/routes.py:386 app/routes.py:408 app/routes.py:430
-#: app/routes.py:457
+#: app/auth/routes.py:35 app/auth/routes.py:49 app/auth/routes.py:101
+#: app/entrees/routes.py:154 app/entrees/routes.py:167
+#: app/entrees/routes.py:180 app/entrees/routes.py:193
+#: app/entrees/routes.py:231 app/entrees/routes.py:260
+#: app/entrees/routes.py:282 app/entrees/routes.py:304 app/user/routes.py:34
+#: app/user/routes.py:54
 msgid "Erreur"
 msgstr "Error"
 
-#: app/routes.py:186
+#: app/auth/routes.py:44
 msgid "Vous avez été déconnecté."
 msgstr "Se ha desconectado."
 
-#: app/routes.py:190
+#: app/auth/routes.py:48
 msgid "Il y a eu une erreur avec la déconnexion."
 msgstr "Hubo un error con la desconexión."
 
-#: app/routes.py:203
+#: app/auth/routes.py:61
 msgid "Consultez vos courriels pour réinitialiser votre mot de passe."
 msgstr "Revise sus correos electrónicos para restablecer su contraseña."
 
-#: app/routes.py:206
+#: app/auth/routes.py:64
 msgid "Cette adresse courriel n'est pas inscrite."
-msgstr ""
-"Esta dirección de correo electrónico Esta dirección de email no está "
-"registrada."
+msgstr "Esta dirección de correo electrónico Esta dirección de email no está registrada."
 
-#: app/routes.py:207 app/templates/update/reset_password_request.html:7
+#: app/auth/routes.py:65 app/auth/routes.py:81
+#: app/templates/email/reset_password_request.html:7
 msgid "Réinitialiser un mot de passe"
 msgstr "Restablecer la contraseña"
 
-#: app/routes.py:221
+#: app/auth/routes.py:79
 msgid "Votre mot de passe a été réinitialisé."
 msgstr "Tu contraseña ha sido restablecida."
 
-#: app/routes.py:238
+#: app/auth/routes.py:96
 msgid "Vous êtes maintenant inscrit !"
 msgstr "¡Ya estás registrado!"
 
-#: app/routes.py:240 app/templates/base.html:42 app/templates/register.html:8
+#: app/auth/routes.py:98 app/templates/auth/register.html:8
+#: app/templates/base.html:43
 msgid "S'inscrire"
 msgstr "Registrarse"
 
-#: app/routes.py:242
+#: app/auth/routes.py:100
 msgid "Il y a eu une erreur avec l'inscription."
 msgstr "Hubo un error con el registro."
 
-#: app/routes.py:250 app/templates/base.html:58 app/templates/base.html:60
-msgid "Mon profil"
-msgstr "Mi perfil"
+#: app/entrees/forms.py:16 app/templates/entrees/bill.html:39
+msgid "Impayée"
+msgstr "No pagada"
 
-#: app/routes.py:266
-msgid "Il y a eu une erreur avec la suppression de l'utilisateur."
-msgstr "Se ha producido un error con la eliminación del usuario."
+#: app/entrees/forms.py:16 app/templates/entrees/bill.html:37
+msgid "Payée"
+msgstr "Pagada"
 
-#: app/routes.py:279
+#: app/entrees/forms.py:17 app/templates/entrees/bill.html:21
+msgid "Référence"
+msgstr "Referencia"
+
+#: app/entrees/forms.py:17
+msgid "Veuillez entrer une référence"
+msgstr "Introduce una referencia"
+
+#: app/entrees/forms.py:17 app/entrees/forms.py:51 app/entrees/forms.py:66
+#: app/entrees/forms.py:72
+msgid "Veuillez écrire entre 1 et 50 caractères"
+msgstr "Escribe entre 1 y 50 caracteres"
+
+#: app/entrees/forms.py:18 app/templates/entrees/bill.html:24
+msgid "Date"
+msgstr "Fecha"
+
+#: app/entrees/forms.py:18
+msgid "Veuillez entrer une date (AAAA-MM-JJ)"
+msgstr "Introduce una fecha (AAAA-MM-DD)"
+
+#: app/entrees/forms.py:19 app/templates/entrees/bill.html:25
+msgid "Date d'échéance"
+msgstr "Fecha de vencimiento"
+
+#: app/entrees/forms.py:19
+msgid "Veuillez entrer une date d'échéance (AAAA-MM-JJ)"
+msgstr "Introduce una fecha de vencimiento (AAAA-MM-DD)"
+
+#: app/entrees/forms.py:20 app/templates/entrees/bill.html:22
+msgid "Description"
+msgstr "Descripción"
+
+#: app/entrees/forms.py:20
+msgid "Veuillez entrer une description"
+msgstr "Introduce una descripción"
+
+#: app/entrees/forms.py:20 app/entrees/forms.py:54
+msgid "Veuillez écrire entre 1 et 140 caractères"
+msgstr "Escribe entre 1 y 140 caracteres"
+
+#: app/entrees/forms.py:21 app/templates/entrees/bill.html:26
+msgid "Sous-total"
+msgstr "Total parcial"
+
+#: app/entrees/forms.py:21
+msgid "Veuillez entrer un montant numérique"
+msgstr "Introduce un número"
+
+#: app/entrees/forms.py:22
+msgid "Taxe (%)"
+msgstr "Impuesto (%)"
+
+#: app/entrees/forms.py:22
+msgid "Veuillez entrer un nombre entre 0 et 100"
+msgstr "Introduce un número entre 0 y 100"
+
+#: app/entrees/forms.py:28 app/templates/entrees/bill.html:23
+msgid "Contact ID"
+msgstr "ID del Contacto"
+
+#: app/entrees/forms.py:28
+msgid "Veuillez entrer un contact"
+msgstr "Introduce un contacto"
+
+#: app/entrees/forms.py:34
+msgid "Compte ID"
+msgstr "Cuentas ID"
+
+#: app/entrees/forms.py:34
+msgid "Veuillez entrer un compte"
+msgstr "Introduce una nombre de cuenta"
+
+#: app/entrees/forms.py:36 app/entrees/forms.py:55 app/entrees/forms.py:67
+#: app/entrees/forms.py:73 app/user/forms.py:13
+msgid "Enregistrer"
+msgstr "Guardar"
+
+#: app/entrees/forms.py:41
+msgid "La date d'échéance doit être la même ou après la date initale"
+msgstr "La fecha de vencimiento debe ser igual o posterior a la fecha original"
+
+#: app/entrees/forms.py:51 app/entrees/forms.py:66 app/entrees/forms.py:72
+#: app/templates/entrees/comptes.html:22 app/templates/entrees/contacts.html:22
+#: app/templates/entrees/register_company_profil.html:23
+msgid "Nom"
+msgstr "Nombre"
+
+#: app/entrees/forms.py:51 app/entrees/forms.py:66 app/entrees/forms.py:72
+msgid "Veuillez entrer un nom"
+msgstr "Introduce una nombre"
+
+#: app/entrees/forms.py:52 app/templates/entrees/contacts.html:23
+msgid "Téléphone"
+msgstr "Número de teléfono"
+
+#: app/entrees/forms.py:52
+msgid "Veuillez entrer un numéro de téléphone (123-456-7890)"
+msgstr "Introduce un número de teléfono (123-456-7890)"
+
+#: app/entrees/forms.py:54 app/templates/entrees/contacts.html:25
+msgid "Adresse"
+msgstr "Dirección"
+
+#: app/entrees/forms.py:54
+msgid "Veuillez entrer une adresse"
+msgstr "Introduce una dirección"
+
+#: app/entrees/forms.py:62
+msgid "Veuillez entrer un numéro de téléphone valide (123-456-7890)"
+msgstr "Introduce un número de teléfono válido (123-456-7890)"
+
+#: app/entrees/forms.py:81
+msgid "Nom de l'entreprise"
+msgstr "Nombre de la empresa"
+
+#: app/entrees/forms.py:81
+msgid "Veuillez choisir un profil d'entreprise"
+msgstr "Introduce un perfil de empresa"
+
+#: app/entrees/forms.py:82
+msgid "Sélectionner"
+msgstr "Seleccione"
+
+#: app/entrees/routes.py:23
+msgid "Vous avez sélectionné "
+msgstr "Se ha desconectado."
+
+#: app/entrees/routes.py:26
+msgid "Erreur. Profil d'entreprise non trouvé."
+msgstr "Error. Perfil de empresa no encontrado."
+
+#: app/entrees/routes.py:35 app/entrees/routes.py:58 app/templates/base.html:39
+msgid "Accueil"
+msgstr "Página principal"
+
+#: app/entrees/routes.py:46 app/entrees/routes.py:293
+msgid "Ce profil d'entreprise existe déjà."
+msgstr "Este perfil de empresa ya existe."
+
+#: app/entrees/routes.py:51
+msgid "Votre profile d'entreprise a été ajouté."
+msgstr "Se ha agregado su perfil de empresa."
+
+#: app/entrees/routes.py:71 app/entrees/routes.py:204
+msgid "Cette référence existe déjà."
+msgstr "La referencia ya existe."
+
+#: app/entrees/routes.py:76
+msgid "Votre facture a été ajoutée."
+msgstr "Se ha agregado la factura."
+
+#: app/entrees/routes.py:84
+msgid "Facture"
+msgstr "Facturas"
+
+#: app/entrees/routes.py:86 app/entrees/routes.py:113 app/entrees/routes.py:140
+msgid "Veuillez créer un profil d'entreprise avant d'effectuer cette action."
+msgstr "Por favor cree un perfil de empresa antes de hacer esta acción."
+
+#: app/entrees/routes.py:98 app/entrees/routes.py:242
+msgid "Ce contact existe déjà."
+msgstr "El contacto ya existe."
+
+#: app/entrees/routes.py:103
+msgid "Votre contact a été ajouté."
+msgstr "Se ha agregado el contacto."
+
+#: app/entrees/routes.py:111 app/templates/base.html:50
+msgid "Contacts"
+msgstr "Contactos"
+
+#: app/entrees/routes.py:125 app/entrees/routes.py:271
+msgid "Ce compte existe déjà."
+msgstr "El contacto ya existe."
+
+#: app/entrees/routes.py:130
+msgid "Votre compte a été ajouté."
+msgstr "Se ha agregado el contacto."
+
+#: app/entrees/routes.py:138 app/templates/base.html:53
+msgid "Comptes"
+msgstr "Cuentas"
+
+#: app/entrees/routes.py:153
 msgid "Il y a eu une erreur avec la suppression de la facture."
 msgstr "Se ha producido un error con la supresión de la factura."
 
-#: app/routes.py:292
+#: app/entrees/routes.py:166
 msgid "Il y a eu une erreur avec la suppression du contact."
 msgstr "Se ha producido un error con la supresión del contacto."
 
-#: app/routes.py:305
+#: app/entrees/routes.py:179
 msgid "Il y a eu une erreur avec la suppression du compte."
 msgstr "Se ha producido un error con la supresión de la cuenta."
 
-#: app/routes.py:318
+#: app/entrees/routes.py:192
 msgid "Il y a eu une erreur avec la suppression du profil d'entreprise."
 msgstr "Se ha producido un error con la supresión del perfil de empresa."
 
-#: app/routes.py:343 app/routes.py:376 app/routes.py:401 app/routes.py:423
-#: app/routes.py:449
+#: app/entrees/routes.py:217 app/entrees/routes.py:250
+#: app/entrees/routes.py:275 app/entrees/routes.py:297 app/user/routes.py:46
 msgid "Les modifications ont été sauvegardées."
 msgstr "Se han guardado los cambios."
 
-#: app/routes.py:354
+#: app/entrees/routes.py:228
 msgid "Modification de la facture"
 msgstr "Modifification de la facture"
 
-#: app/routes.py:356
+#: app/entrees/routes.py:230
 msgid "Il y a eu une erreur avec la modification de la facture."
 msgstr "Se ha producido un error con la modificación de la factura."
 
-#: app/routes.py:383
+#: app/entrees/routes.py:257
 msgid "Modification du contact"
 msgstr "Modificación de contacto"
 
-#: app/routes.py:385
+#: app/entrees/routes.py:259
 msgid "Il y a eu une erreur avec la modification du contact."
 msgstr "Se ha producido un error con la modificación del contacto."
 
-#: app/routes.py:405
+#: app/entrees/routes.py:279
 msgid "Modification du compte"
 msgstr "Modificación de la cuenta"
 
-#: app/routes.py:407
+#: app/entrees/routes.py:281
 msgid "Il y a eu une erreur avec la modification du compte."
 msgstr "Se ha producido un error con la modificación de la cuenta."
 
-#: app/routes.py:427
+#: app/entrees/routes.py:301
 msgid "Modification du profil d'entreprise"
 msgstr "Modificación del perfil de empresa"
 
-#: app/routes.py:429
+#: app/entrees/routes.py:303
 msgid "Il y a eu une erreur avec la modification du profil d'entreprise."
 msgstr "Se ha producido un error con la modificación del perfil de empresa."
-
-#: app/routes.py:454 app/templates/user.html:17
-msgid "Modifier votre profil"
-msgstr "Edita tu perfil"
-
-#: app/routes.py:456
-msgid "Il y a eu une erreur avec la modification du profil."
-msgstr "Se ha producido un error con la modificación del perfil."
 
 #: app/templates/all.html:6
 msgid "Utilisateurs"
 msgstr "Usuarios"
 
-#: app/templates/all.html:27 app/templates/base.html:55
+#: app/templates/all.html:27 app/templates/base.html:56
 msgid "Factures"
 msgstr "Facturas"
 
-#: app/templates/base.html:14 app/templates/base.html:16
-#: app/templates/base.html:31
+#: app/templates/base.html:13 app/templates/base.html:15
+#: app/templates/base.html:32
 msgid "Système de Facturation"
 msgstr "Sistema de Facturación"
 
-#: app/templates/base.html:45 app/templates/login.html:8
+#: app/templates/auth/login.html:8 app/templates/base.html:46
 msgid "Se connecter"
 msgstr "Conectarse"
 
-#: app/templates/base.html:62
+#: app/templates/base.html:59 app/templates/base.html:61 app/user/routes.py:17
+msgid "Mon profil"
+msgstr "Mi perfil"
+
+#: app/templates/base.html:63
 msgid "Se déconnecter"
 msgstr "Desconectarse"
 
-#: app/templates/base.html:68 app/templates/user.html:19
+#: app/templates/base.html:69
 msgid "Changer le thème"
 msgstr "Cambiar el tema"
 
-#: app/templates/base.html:71
+#: app/templates/base.html:72
 msgid "Changer la langue"
 msgstr "Cambiar el idioma"
 
-#: app/templates/base.html:85
+#: app/templates/base.html:86
 msgid "Exemple: loyer"
 msgstr "Ejemplo: alquiler"
 
-#: app/templates/base.html:86
+#: app/templates/base.html:87
 msgid "Rechercher"
 msgstr "Buscar"
-
-#: app/templates/bill.html:7
-msgid "Enregistrer une facture"
-msgstr "Registra una factura"
-
-#: app/templates/bill.html:27
-msgid "Taxe"
-msgstr "Impuesto"
-
-#: app/templates/bill.html:28
-msgid "Total"
-msgstr "Total"
-
-#: app/templates/bill.html:29
-msgid "Statut"
-msgstr "Estado"
-
-#: app/templates/bill.html:30 app/templates/comptes.html:23
-#: app/templates/contacts.html:26
-#: app/templates/update/register_company_profil.html:24
-msgid "Options"
-msgstr "Opciones"
-
-#: app/templates/bill.html:58 app/templates/comptes.html:34
-#: app/templates/contacts.html:40
-#: app/templates/update/register_company_profil.html:35
-msgid "Modifier"
-msgstr "Modificar"
-
-#: app/templates/bill.html:59 app/templates/comptes.html:35
-#: app/templates/contacts.html:41
-#: app/templates/update/register_company_profil.html:36
-msgid "Supprimer"
-msgstr "Suprimir"
-
-#: app/templates/bill.html:67 app/templates/comptes.html:43
-#: app/templates/contacts.html:49
-#: app/templates/update/register_company_profil.html:44
-msgid "Page précédente"
-msgstr "Página anterior"
-
-#: app/templates/bill.html:70 app/templates/comptes.html:46
-#: app/templates/contacts.html:52
-#: app/templates/update/register_company_profil.html:47
-msgid "Page suivante"
-msgstr "Página siguiente"
-
-#: app/templates/comptes.html:7
-msgid "Enregistrer un compte"
-msgstr "Registra un contacto"
-
-#: app/templates/contacts.html:7
-msgid "Enregistrer un contact"
-msgstr "Registra un contacto"
-
-#: app/templates/index.html:7
-msgid "Bonjour"
-msgstr "Hola"
-
-#: app/templates/index.html:8
-msgid "Vos profils d'entreprise"
-msgstr "Sus perfiles de empresa"
-
-#: app/templates/index.html:11
-msgid "Sélectionner votre entreprise"
-msgstr "Seleccione una empresa"
-
-#: app/templates/index.html:12
-msgid "Le profil sélectionné est"
-msgstr "El perfil seleccionado es"
-
-#: app/templates/index.html:24
-msgid "Gérer vos profil d'entreprise"
-msgstr "Gestionar sus perfiles de empresa"
-
-#: app/templates/index.html:29
-msgid "Vous n'avez pas de profil d'entreprise"
-msgstr "Usted no tiene ningun perfil de empresa"
-
-#: app/templates/index.html:32
-msgid "Ajouter un profil d'entreprise"
-msgstr "Agregar un perfil de empresa"
-
-#: app/templates/login.html:15
-msgid "Mot de passe oublié ?"
-msgstr "¿Contraseña olvidada?"
-
-#: app/templates/login.html:15
-msgid "Réinitialisez-le ici."
-msgstr "Restablecerlo aquí."
-
-#: app/templates/login.html:17
-msgid "Nouvel utilisateur ?"
-msgstr "¿Nuevo usuario?"
-
-#: app/templates/login.html:17
-msgid "Inscrivez-vous !"
-msgstr "¡Registrarse!"
-
-#: app/templates/user.html:12
-msgid "Profil de l'utilisateur"
-msgstr "Perfil del usuario"
-
-#: app/templates/user.html:14
-msgid "Dernière connexion"
-msgstr "Última conexión"
-
-#: app/templates/user.html:25
-msgid "Supprimer le compte"
-msgstr "Borrar la cuenta"
 
 #: app/templates/welcome.html:6
 msgid "Bienvenue !"
@@ -579,12 +452,159 @@ msgstr "conectese"
 msgid "pour accéder à l'application."
 msgstr "para acceder a la aplicación."
 
+#: app/templates/auth/login.html:15
+msgid "Mot de passe oublié ?"
+msgstr "¿Contraseña olvidada?"
+
+#: app/templates/auth/login.html:15
+msgid "Réinitialisez-le ici."
+msgstr "Restablecerlo aquí."
+
+#: app/templates/auth/login.html:17
+msgid "Nouvel utilisateur ?"
+msgstr "¿Nuevo usuario?"
+
+#: app/templates/auth/login.html:17
+msgid "Inscrivez-vous !"
+msgstr "¡Registrarse!"
+
+#: app/templates/email/reset_password.html:7
+msgid "Réinitialisez votre mot de passe"
+msgstr "Restablecer su contraseña"
+
+#: app/templates/email/reset_password_template.html:3
+#: app/templates/entrees/index.html:7
+msgid "Bonjour"
+msgstr "Hola"
+
+#: app/templates/email/reset_password_template.html:5
+#, fuzzy
+msgid "Pour réinitialiser votre mot de passe:"
+msgstr "Restablecer su contraseña"
+
+#: app/templates/email/reset_password_template.html:6
+msgid "Cliquez ici"
+msgstr "Haga clic aquí"
+
+#: app/templates/email/reset_password_template.html:8
+msgid "Alternativement, vous pouvez coller le lien suivant dans votre navigateur:"
+msgstr "Alternativamente, puede pegar el siguiente enlace en su navegador:"
+
+#: app/templates/email/reset_password_template.html:10
+msgid ""
+"Si vous n'avez pas demandé la réinitialisation de votre mot de passe, "
+"ignorez ce message."
+msgstr "Si usted no pidio un reseteo de su contraseña, "
+"ignore este mensaje."
+
+#: app/templates/email/reset_password_template.html:12
+msgid "Sincèrement,"
+msgstr "Sinceramente,"
+
+#: app/templates/entrees/bill.html:7
+msgid "Enregistrer une facture"
+msgstr "Registra una factura"
+
+#: app/templates/entrees/bill.html:27
+msgid "Taxe"
+msgstr "Impuesto"
+
+#: app/templates/entrees/bill.html:28
+msgid "Total"
+msgstr "Total"
+
+#: app/templates/entrees/bill.html:29
+msgid "Statut"
+msgstr "Estado"
+
+#: app/templates/entrees/bill.html:30 app/templates/entrees/comptes.html:23
+#: app/templates/entrees/contacts.html:26
+#: app/templates/entrees/register_company_profil.html:24
+msgid "Options"
+msgstr "Opciones"
+
+#: app/templates/entrees/bill.html:58 app/templates/entrees/comptes.html:34
+#: app/templates/entrees/contacts.html:40
+#: app/templates/entrees/register_company_profil.html:35
+msgid "Modifier"
+msgstr "Modificar"
+
+#: app/templates/entrees/bill.html:59 app/templates/entrees/comptes.html:35
+#: app/templates/entrees/contacts.html:41
+#: app/templates/entrees/register_company_profil.html:36
+msgid "Supprimer"
+msgstr "Suprimir"
+
+#: app/templates/entrees/bill.html:67 app/templates/entrees/comptes.html:43
+#: app/templates/entrees/contacts.html:49
+#: app/templates/entrees/register_company_profil.html:44
+msgid "Page précédente"
+msgstr "Página anterior"
+
+#: app/templates/entrees/bill.html:70 app/templates/entrees/comptes.html:46
+#: app/templates/entrees/contacts.html:52
+#: app/templates/entrees/register_company_profil.html:47
+msgid "Page suivante"
+msgstr "Página siguiente"
+
+#: app/templates/entrees/comptes.html:7
+msgid "Enregistrer un compte"
+msgstr "Registra un contacto"
+
+#: app/templates/entrees/contacts.html:7
+msgid "Enregistrer un contact"
+msgstr "Registra un contacto"
+
+#: app/templates/entrees/index.html:8
+msgid "Vos profils d'entreprise"
+msgstr "Sus perfiles de empresa"
+
+#: app/templates/entrees/index.html:11
+msgid "Sélectionner votre entreprise"
+msgstr "Seleccione una empresa"
+
+#: app/templates/entrees/index.html:12
+msgid "Le profil sélectionné est"
+msgstr "El perfil seleccionado es"
+
+#: app/templates/entrees/index.html:24
+msgid "Gérer vos profil d'entreprise"
+msgstr "Gestionar sus perfiles de empresa"
+
+#: app/templates/entrees/index.html:29
+msgid "Vous n'avez pas de profil d'entreprise"
+msgstr "Usted no tiene ningun perfil de empresa"
+
+#: app/templates/entrees/index.html:32
+msgid "Ajouter un profil d'entreprise"
+msgstr "Agregar un perfil de empresa"
+
+#: app/templates/entrees/register_company_profil.html:7
+msgid "Enregistrer un profil d'entreprise"
+msgstr "Guardar un perfil de empresa"
+
+#: app/templates/entrees/update_company_profil.html:7
+msgid "Modifier le profil d'entreprise"
+msgstr "Modificar el perfil de empresa"
+
+#: app/templates/entrees/update_compte.html:7
+msgid "Modifier le compte"
+msgstr "Modificar la cuenta"
+
+#: app/templates/entrees/update_contact.html:7
+msgid "Modifier le contact"
+msgstr "Modificar el contacto"
+
+#: app/templates/entrees/update_facture.html:7
+msgid "Modifier la facture"
+msgstr "Modificar la factura"
+
 #: app/templates/errors/404.html:6
 msgid "Cette page n'existe pas"
 msgstr "Esta página no existe"
 
 #: app/templates/errors/404.html:7 app/templates/errors/500.html:8
-#: app/templates/errors/error.html:9
+#: app/templates/errors/error.html:8
 msgid "Retourner"
 msgstr "Regresar"
 
@@ -596,33 +616,41 @@ msgstr "Se ha producido un error inesperado"
 msgid "Un administrateur a été prévenu, désolé pour l'inconvénient."
 msgstr "Un administrador ha sido notificado, lo siento por las molestias."
 
-#: app/templates/update/edit_profile.html:7
+#: app/templates/user/edit_profile.html:7
 msgid "Modifier le profil"
 msgstr "Modificar el perfil"
 
-#: app/templates/update/register_company_profil.html:7
-msgid "Enregistrer un profil d'entreprise"
-msgstr "Guardar un perfil de empresa"
+#: app/templates/user/user.html:11
+msgid "Profil de l'utilisateur"
+msgstr "Perfil del usuario"
 
-#: app/templates/update/reset_password.html:7
-msgid "Réinitialisez votre mot de passe"
-msgstr "Restablecer su contraseña"
+#: app/templates/user/user.html:13
+msgid "Dernière connexion"
+msgstr "Última conexión"
 
-#: app/templates/update/update_company_profil.html:7
-msgid "Modifier le profil d'entreprise"
-msgstr "Modificar el perfil de empresa"
+#: app/templates/user/user.html:16 app/user/routes.py:51
+msgid "Modifier votre profil"
+msgstr "Edita tu perfil"
 
-#: app/templates/update/update_compte.html:7
-msgid "Modifier le compte"
-msgstr "Modificar la cuenta"
+#: app/templates/user/user.html:22
+msgid "Supprimer le compte"
+msgstr "Borrar la cuenta"
 
-#: app/templates/update/update_contact.html:7
-msgid "Modifier le contact"
-msgstr "Modificar el contacto"
+#: app/user/forms.py:11
+msgid "Veuillez saisir un nom d'utilisateur"
+msgstr "Introduce un nombre de usuario"
 
-#: app/templates/update/update_facture.html:7
-msgid "Modifier la facture"
-msgstr "Modificar la factura"
+#: app/user/forms.py:12
+msgid "À propos de moi"
+msgstr "Acerca de mí"
+
+#: app/user/routes.py:33
+msgid "Il y a eu une erreur avec la suppression de l'utilisateur."
+msgstr "Se ha producido un error con la eliminación del usuario."
+
+#: app/user/routes.py:53
+msgid "Il y a eu une erreur avec la modification du profil."
+msgstr "Se ha producido un error con la modificación del perfil."
 
 #~ msgid "Système de Facturation"
 #~ msgstr "Sistema de Facturación"
