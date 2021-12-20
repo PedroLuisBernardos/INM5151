@@ -12,27 +12,6 @@ Cet API est un système de facturation fait pour notre cours [INM5151](https://e
 * [Willy Tim](https://www.linkedin.com/in/willy-tim/)
 * [Thuc-An Truong](https://www.linkedin.com/in/thuc-an-truong-915941148/)
 
-## TODO - Tâches non complétées
-
----
-
-* [ ] Améliorer le module **Facture**. Faire les modifications nécessaires dans les routes et les pages HTML concernées.
-  * [ ] Ajouter dans le *drop-down* de `comptes de revenus/dépenses` et de `contacts` une option pour en créer un.
-  * [ ] Créer une page nommée `modele_facture.html` et l'ajouter dans la barre de navigation. Il y aura un formulaire qui nous permet d'ajouter des modèles de facture. Ces modèles seront visibles dans l'ajout (uniquement l'ajout) de factures sous forme de *drop-down*. On doit aussi pouvoir les créer directement dans ce *drop-down* (l'option est à la toute fin).
-* [ ] Pourquoi **loyer** ne s'affiche pas dans aucune langue dans la barre de navigation ?
-* [ ] Traduire tout ce qui est en anglais en français: les erreurs dans les formulaires, les hover dans les formulaires, etc.
-* [ ] Ajouter des avatars personnalisés.
-* [ ] Faire la gestion de la barre de recherche. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search).
-* [ ] Faire la gestion des notifications. [Voir comment faire ici](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xxi-user-notifications).
-* [ ] Gérer l'exportation de factures en format PDF.
-* [ ] Gérer l'envoi des factures par email (exportées en PDF).
-* [ ] Gérer le filtrage de factures.
-* [ ] Fixer la footbar au bas de la page.
-* [ ] Gérer le calcul des montants des factures sélectionnées.
-* [ ] Améliorer le CSS pour rendre l'application plus belle.
-* [ ] Ajouter des `try/except` dans **toutes** les routes du fichier `routes.py`.
-* [ ] *Bonus: pouvoir cliquer dans les id des utilisateurs dans la page `/all` et en le faisant faire apparaître les Factures pour cet Utilisateur.*
-
 ## Comment utiliser l'application
 
 ---
