@@ -104,7 +104,7 @@ app/                            --> répertoire qui héberge l'application
     cli.py                  --> défini des commandes flask traduction plus simples pour la gestion des 
     models.py               --> défini les modèles de la base de données (user, facture ...)
     routes.py               --> défini les routes vers les pages générales
-    user/                   --> répertoire qui contient les routes en lien avec l'utilisateur courrant
+    user/                   --> répertoire qui contient les routes en lien avec l'utilisateur courant
         ...
 
 migrations/                 --> répertoire qui contient les modifications faites dans la bd
