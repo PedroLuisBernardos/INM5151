@@ -1,22 +1,14 @@
 # ![](app/static/favicon.ico) INM5151-30-E21 - Système de Facturation (sdf)
 
----
-
 Cet API est un système de facturation fait pour notre cours [INM5151](https://etudier.uqam.ca/cours?sigle=INM5151) à l'UQAM lors de l'été 2021. On a dû apprendre à utiliser Python et Flask pour développer une application de notre choix. Nous avons suivi principalement [ce tutoriel](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) mais nous avons complété notre apprentissage avec des recherches sur Internet.
 
 ## Auteurs
-
----
 
 * [Pedro Luis Bernardos](https://www.linkedin.com/in/pedro-luis-bernardos/)
 * [Willy Tim](https://www.linkedin.com/in/willy-tim/)
 * [Thuc-An Truong](https://www.linkedin.com/in/thuc-an-truong-915941148/)
 
-## Comment utiliser l'application
-
----
-
-### Installation
+## :wrench: Installation
 
 Cloner ce dépôt et accéder au répertoire principal
 
@@ -25,7 +17,9 @@ $ git clone https://github.com/ta-truong/inm5151-ete2021-projet
 $ cd inm5151-ete2021-projet
 ```
 
-Pour la suite, **vous avez deux possibilités**:
+## :shell: Utilisation
+
+**Vous avez deux possibilités**:
 
 #### 1: Makefile
 
@@ -43,23 +37,17 @@ Installer les librairies nécessaires:
 pip install -r requirements.txt --user
 ```
 
-Lancer l'application
+### Lancer l'application
 
 ```bash
 flask run
 ```
-
-### Ouvrir l'application
-
----
 
 Ouvrir un navigateur et aller à l'adresse: <http://127.0.0.1:5000/>
 
 Une fois vous avez terminé faites `Ctrl+C` dans votre terminal.
 
 ### Mettre à jour la base de données
-
----
 
 Pour mettre à jour les nouvelles versions de la bd (en changeant le fichier `modules.py`):
 
@@ -76,8 +64,6 @@ flask db downgrade
 
 ### Ajouter une nouvelle langue
 
----
-
 Pour ajouter une nouvelle langue, faire les commandes suivantes:
 
 ```bash
@@ -87,9 +73,7 @@ flask translate update
 flask translate compile
 ```
 
-## Explication des répertoires et des fichiers
-
----
+## 📂 Explication des répertoires et des fichiers
 
 ```
 app/                            --> répertoire qui héberge l'application
@@ -136,8 +120,6 @@ sdf.py                      --> défini l'instance de l'application Flask
 ```
 
 ## Documents de référence
-
----
 
 [Documentation Flask](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
