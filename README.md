@@ -15,30 +15,27 @@ Cet API est un système de facturation fait pour notre cours [INM5151](https://e
 ## Comment utiliser l'application
 
 ---
+
+### Installation
+
 Cloner ce dépôt et accéder au répertoire principal
 
 ```bash
-git clone https://github.com/ta-truong/inm5151-ete2021-projet
-cd inm5151-ete2021-projet
+$ git clone https://github.com/ta-truong/inm5151-ete2021-projet
+$ cd inm5151-ete2021-projet
 ```
 
-### Vous avez deux possibilités
-
----
+Pour la suite, **vous avez deux possibilités**:
 
 #### 1: Makefile
-
----
 
 Faites uniquement la commande suivante:
 
 ```bash
-make
+$ make
 ```
 
 #### 2: Au long
-
----
 
 Installer les librairies nécessaires:
 
@@ -46,7 +43,7 @@ Installer les librairies nécessaires:
 pip install -r requirements.txt --user
 ```
 
-Rouler l'application
+Lancer l'application
 
 ```bash
 flask run
@@ -59,55 +56,6 @@ flask run
 Ouvrir un navigateur et aller à l'adresse: <http://127.0.0.1:5000/>
 
 Une fois vous avez terminé faites `Ctrl+C` dans votre terminal.
-
-## Pour les administrateurs
-
----
-
-Un utilisateur de base est déjà présent:
-
-```
-user: admin
-email: admin@admin.com
-pass: admin
-```
-
-## Autres commandes
-
----
-
-### Vider la base de données manuellement
-
----
-
-Pour voir tous les utilisateurs et toutes les factures voir <http://127.0.0.1:5000/all>.
-
-Pour vider la base de données, vous pouvez faire la suite de commandes suivante:
-
-```bash
-flask shell
->>> users = User.query.all()
->>> for u in users:
-...     db.session.delete(u)
-...
->>> factures = Facture.query.all()
->>> for f in factures:
-...     db.session.delete(f)
-...
->>> contacts = Contact.query.all()
->>> for c in users:
-...     db.session.delete(c)
-...
->>> comptes = Compte.query.all()
->>> for c in factures:
-...     db.session.delete(c)
-...
->>> profilsEntreprise = CompanyProfil.query.all()
->>> for p in users:
-...     db.session.delete(p)
-...
->>> db.session.commit()
-```
 
 ### Mettre à jour la base de données
 
@@ -187,7 +135,7 @@ requirements.txt            --> liste de librairies à installer
 sdf.py                      --> défini l'instance de l'application Flask
 ```
 
-## Documents
+## Documents de référence
 
 ---
 
