@@ -1,5 +1,13 @@
 # ![](app/static/favicon.ico) INM5151-30-E21 - Système de Facturation (sdf)
 
+![Version](https://img.shields.io/badge/version-été2021-success?style=flat)
+![Lisence](https://img.shields.io/badge/lisence-MIT-green?style=flat)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white)
+![Version](https://img.shields.io/badge/version-3.7|3.8|3.9-3776AB?style=flat&)
+![Flask](https://img.shields.io/badge/framework-Flask-000000?style=flat&logo=Flask&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/db-SQLAlchemy-000000?style=flat&)
+![Bootstrap](https://img.shields.io/badge/CSS-Bootstrap-7952B3?style=flat&logo=Bootstrap&logoColor=white)
+
 Cet API est un système de facturation fait pour notre cours [INM5151](https://etudier.uqam.ca/cours?sigle=INM5151) à l'UQAM lors de l'été 2021. On a dû apprendre à utiliser Python et Flask pour développer une application de notre choix. Nous avons suivi principalement [ce tutoriel](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) mais nous avons complété notre apprentissage avec des recherches sur Internet.
 
 ## Auteurs
