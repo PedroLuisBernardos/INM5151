@@ -1,7 +1,7 @@
 # ![](app/static/favicon.ico) INM5151-30-E21 - Système de Facturation (sdf)
 
 ![Version](https://img.shields.io/badge/version-été2021-success?style=flat)
-![Lisence](https://img.shields.io/badge/lisence-MIT-green?style=flat)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white)
 ![Version](https://img.shields.io/badge/version-3.7|3.8|3.9-3776AB?style=flat&)
 ![Flask](https://img.shields.io/badge/framework-Flask-000000?style=flat&logo=Flask&logoColor=white)
